@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>jeecg-boot-module-csm</artifactId>
+  <version>2.1.0</version>
+  <parent>
+    <groupId>org.jeecgframework.boot</groupId>
+    <artifactId>jeecg-boot-parent</artifactId>
+    <version>2.1.0</version>
+  </parent>
+  <groupId>org.jeecgframework.boot</groupId>
+  <name>jeecg-boot-module-csm</name>
+  <url>http://maven.apache.org</url>
+
+  <repositories>
+		<repository>
+			<id>aliyun</id>
+			<name>aliyun Repository</name>
+			<url>http://maven.aliyun.com/nexus/content/groups/public</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>jeecg</id>
+			<name>jeecg Repository</name>
+			<url>http://maven.jeecg.org/nexus/content/repositories/jeecg</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+<!-- 		<repository>
+	  		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	  	</repository> -->
+	</repositories>
+  <dependencies>
+    <dependency>
+      	<groupId>junit</groupId>
+      	<artifactId>junit</artifactId>
+      	<version>3.8.1</version>
+      	<scope>test</scope>
+    </dependency>
+    <dependency>
+		<groupId>org.jeecgframework.boot</groupId>
+		<artifactId>jeecg-boot-base-common</artifactId>
+	</dependency>
+  </dependencies>
+  
+</project>

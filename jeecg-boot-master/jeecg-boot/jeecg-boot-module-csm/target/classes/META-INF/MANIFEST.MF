@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Implementation-Title: jeecg-boot-module-csm
+Implementation-Version: 2.1.0
+Built-By: dell
+Implementation-Vendor-Id: org.jeecgframework.boot
+Build-Jdk: 1.8.0_191
+Implementation-URL: http://maven.apache.org
+Created-By: Maven Integration for Eclipse
+
