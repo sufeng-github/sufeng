@@ -23,16 +23,16 @@
           <j-dict-select-tag type="list" v-decorator="['scrId']" :trigger-change="true" dictCode="" placeholder="请选择螺钉架"/>
         </a-form-item>
         <a-form-item label="送货员" :labelCol="labelCol" :wrapperCol="wrapperCol">
-          <j-dict-select-tag type="list" v-decorator="['deliverymanId']" :trigger-change="true" dictCode="" placeholder="请选择送货员"/>
+          <j-select-user-by-dep v-decorator="['deliverymanId']" :trigger-change="true"/>
         </a-form-item>
         <a-form-item label="跟台员" :labelCol="labelCol" :wrapperCol="wrapperCol">
-          <j-dict-select-tag type="list" v-decorator="['followerId']" :trigger-change="true" dictCode="" placeholder="请选择跟台员"/>
+          <j-select-user-by-dep v-decorator="['followerId']" :trigger-change="true"/>
         </a-form-item>
         <a-form-item label="销售员" :labelCol="labelCol" :wrapperCol="wrapperCol">
-          <j-dict-select-tag type="list" v-decorator="['salerId']" :trigger-change="true" dictCode="" placeholder="请选择销售员"/>
+          <j-select-user-by-dep v-decorator="['salerId']" :trigger-change="true"/>
         </a-form-item>
         <a-form-item label="医院" :labelCol="labelCol" :wrapperCol="wrapperCol">
-          <j-dict-select-tag type="list" v-decorator="['hospitalId']" :trigger-change="true" dictCode="" placeholder="请选择医院"/>
+          <j-dict-select-tag type="list" v-decorator="['hospitalId']" :trigger-change="true" dictCode="hospitals" placeholder="请选择医院"/>
         </a-form-item>
         <a-form-item label="患者" :labelCol="labelCol" :wrapperCol="wrapperCol">
           <a-input v-decorator="[ 'patient', validatorRules.patient]" placeholder="请输入患者"></a-input>
@@ -44,10 +44,10 @@
           <a-input v-decorator="[ 'bednum', validatorRules.bednum]" placeholder="请输入病床号"></a-input>
         </a-form-item>
         <a-form-item label="销售公司" :labelCol="labelCol" :wrapperCol="wrapperCol">
-          <j-dict-select-tag type="list" v-decorator="['companyId']" :trigger-change="true" dictCode="" placeholder="请选择销售公司"/>
+          <j-dict-select-tag type="list" v-decorator="['companyId']" :trigger-change="true" dictCode="saleCompany" placeholder="请选择销售公司"/>
         </a-form-item>
         <a-form-item label="取货员" :labelCol="labelCol" :wrapperCol="wrapperCol">
-          <j-dict-select-tag type="list" v-decorator="['fetcherId']" :trigger-change="true" dictCode="" placeholder="请选择取货员"/>
+          <j-select-user-by-dep v-decorator="['fetcherId']" :trigger-change="true"/>
         </a-form-item>
         <a-form-item label="客户" :labelCol="labelCol" :wrapperCol="wrapperCol">
           <j-dict-select-tag type="list" v-decorator="['customerId']" :trigger-change="true" dictCode="" placeholder="请选择客户"/>
@@ -68,12 +68,14 @@
   import { httpAction } from '@/api/manage'
   import pick from 'lodash.pick'
   import JDate from '@/components/jeecg/JDate'  
+  import JSelectUserByDep from '@/components/jeecgbiz/JSelectUserByDep'
   import JDictSelectTag from "@/components/dict/JDictSelectTag"
   
   export default {
     name: "CsmOrderInfoModal",
     components: { 
       JDate,
+      JSelectUserByDep,
       JDictSelectTag,
     },
     data () {

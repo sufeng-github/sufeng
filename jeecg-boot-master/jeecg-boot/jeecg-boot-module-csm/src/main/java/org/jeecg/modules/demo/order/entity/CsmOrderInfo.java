@@ -15,7 +15,7 @@ import org.jeecg.common.aspect.annotation.Dict;
 /**
  * @Description: csm_order_info
  * @Author: jeecg-boot
- * @Date:   2019-10-30
+ * @Date:   2019-11-04
  * @Version: V1.0
  */
 @Data

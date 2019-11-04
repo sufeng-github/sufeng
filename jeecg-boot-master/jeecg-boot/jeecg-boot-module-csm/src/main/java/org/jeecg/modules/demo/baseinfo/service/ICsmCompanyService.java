@@ -6,7 +6,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 /**
  * @Description: csm_company
  * @Author: jeecg-boot
- * @Date:   2019-10-30
+ * @Date:   2019-11-04
  * @Version: V1.0
  */
 public interface ICsmCompanyService extends IService<CsmCompany> {

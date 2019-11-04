@@ -44,7 +44,7 @@
             </a-col>
             <a-col :md="6" :sm="8">
               <a-form-item label="医院">
-                <a-input placeholder="请输入医院" v-model="queryParam.hospitalId"></a-input>
+                <j-dict-select-tag placeholder="请选择医院" v-model="queryParam.hospitalId" dictCode="hospitals"/>
               </a-form-item>
             </a-col>
             <a-col :md="6" :sm="8">
@@ -64,7 +64,7 @@
             </a-col>
             <a-col :md="6" :sm="8">
               <a-form-item label="销售公司">
-                <a-input placeholder="请输入销售公司" v-model="queryParam.companyId"></a-input>
+                <j-dict-select-tag placeholder="请选择销售公司" v-model="queryParam.companyId" dictCode="saleCompany"/>
               </a-form-item>
             </a-col>
             <a-col :md="6" :sm="8">
@@ -250,38 +250,17 @@
           {
             title:'送货员',
             align:"center",
-            dataIndex: 'deliverymanId',
-            customRender:(text)=>{
-              if(!text){
-                return ''
-              }else{
-                return filterMultiDictText(this.dictOptions['deliverymanId'], text+"")
-              }
-            }
+            dataIndex: 'deliverymanId'
           },
           {
             title:'跟台员',
             align:"center",
-            dataIndex: 'followerId',
-            customRender:(text)=>{
-              if(!text){
-                return ''
-              }else{
-                return filterMultiDictText(this.dictOptions['followerId'], text+"")
-              }
-            }
+            dataIndex: 'followerId'
           },
           {
             title:'销售员',
             align:"center",
-            dataIndex: 'salerId',
-            customRender:(text)=>{
-              if(!text){
-                return ''
-              }else{
-                return filterMultiDictText(this.dictOptions['salerId'], text+"")
-              }
-            }
+            dataIndex: 'salerId'
           },
           {
             title:'医院',
@@ -325,14 +304,7 @@
           {
             title:'取货员',
             align:"center",
-            dataIndex: 'fetcherId',
-            customRender:(text)=>{
-              if(!text){
-                return ''
-              }else{
-                return filterMultiDictText(this.dictOptions['fetcherId'], text+"")
-              }
-            }
+            dataIndex: 'fetcherId'
           },
           {
             title:'客户',
@@ -376,12 +348,8 @@
          opeId:[],
          toolId:[],
          scrId:[],
-         deliverymanId:[],
-         followerId:[],
-         salerId:[],
          hospitalId:[],
          companyId:[],
-         fetcherId:[],
          customerId:[],
          status:[],
         } 
@@ -409,34 +377,14 @@
             this.$set(this.dictOptions, 'scrId', res.result)
           }
         })
-        initDictOptions('').then((res) => {
-          if (res.success) {
-            this.$set(this.dictOptions, 'deliverymanId', res.result)
-          }
-        })
-        initDictOptions('').then((res) => {
-          if (res.success) {
-            this.$set(this.dictOptions, 'followerId', res.result)
-          }
-        })
-        initDictOptions('').then((res) => {
-          if (res.success) {
-            this.$set(this.dictOptions, 'salerId', res.result)
-          }
-        })
-        initDictOptions('').then((res) => {
+        initDictOptions('hospitals').then((res) => {
           if (res.success) {
             this.$set(this.dictOptions, 'hospitalId', res.result)
           }
         })
-        initDictOptions('').then((res) => {
+        initDictOptions('saleCompany').then((res) => {
           if (res.success) {
             this.$set(this.dictOptions, 'companyId', res.result)
-          }
-        })
-        initDictOptions('').then((res) => {
-          if (res.success) {
-            this.$set(this.dictOptions, 'fetcherId', res.result)
           }
         })
         initDictOptions('').then((res) => {
