@@ -1,4 +1,4 @@
-package org.jeecg.modules.demo.baseinfo.controller;
+package org.jeecg.modules.demo.system.controller;
 
 import java.util.Arrays;
 import java.util.List;
@@ -12,8 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import org.jeecg.common.api.vo.Result;
 import org.jeecg.common.system.query.QueryGenerator;
 import org.jeecg.common.util.oConvertUtils;
-import org.jeecg.modules.demo.baseinfo.entity.CsmCompany;
-import org.jeecg.modules.demo.baseinfo.service.ICsmCompanyService;
+import org.jeecg.modules.demo.system.entity.CsmSysdict;
+import org.jeecg.modules.demo.system.service.ICsmSysdictService;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
@@ -34,35 +34,35 @@ import org.springframework.web.servlet.ModelAndView;
 import com.alibaba.fastjson.JSON;
 
  /**
- * @Description: csm_company
+ * @Description: systemDict
  * @Author: jeecg-boot
- * @Date:   2019-11-04
+ * @Date:   2019-11-13
  * @Version: V1.0
  */
 @RestController
-@RequestMapping("/baseinfo/csmCompany")
+@RequestMapping("/system/csmSysdict")
 @Slf4j
-public class CsmCompanyController {
+public class CsmSysdictController {
 	@Autowired
-	private ICsmCompanyService csmCompanyService;
+	private ICsmSysdictService csmSysdictService;
 	
 	/**
 	  * 分页列表查询
-	 * @param csmCompany
+	 * @param csmSysdict
 	 * @param pageNo
 	 * @param pageSize
 	 * @param req
 	 * @return
 	 */
 	@GetMapping(value = "/list")
-	public Result<IPage<CsmCompany>> queryPageList(CsmCompany csmCompany,
+	public Result<IPage<CsmSysdict>> queryPageList(CsmSysdict csmSysdict,
 									  @RequestParam(name="pageNo", defaultValue="1") Integer pageNo,
 									  @RequestParam(name="pageSize", defaultValue="10") Integer pageSize,
 									  HttpServletRequest req) {
-		Result<IPage<CsmCompany>> result = new Result<IPage<CsmCompany>>();
-		QueryWrapper<CsmCompany> queryWrapper = QueryGenerator.initQueryWrapper(csmCompany, req.getParameterMap());
-		Page<CsmCompany> page = new Page<CsmCompany>(pageNo, pageSize);
-		IPage<CsmCompany> pageList = csmCompanyService.page(page, queryWrapper);
+		Result<IPage<CsmSysdict>> result = new Result<IPage<CsmSysdict>>();
+		QueryWrapper<CsmSysdict> queryWrapper = QueryGenerator.initQueryWrapper(csmSysdict, req.getParameterMap());
+		Page<CsmSysdict> page = new Page<CsmSysdict>(pageNo, pageSize);
+		IPage<CsmSysdict> pageList = csmSysdictService.page(page, queryWrapper);
 		result.setSuccess(true);
 		result.setResult(pageList);
 		return result;
@@ -70,14 +70,14 @@ public class CsmCompanyController {
 	
 	/**
 	  *   添加
-	 * @param csmCompany
+	 * @param csmSysdict
 	 * @return
 	 */
 	@PostMapping(value = "/add")
-	public Result<CsmCompany> add(@RequestBody CsmCompany csmCompany) {
-		Result<CsmCompany> result = new Result<CsmCompany>();
+	public Result<CsmSysdict> add(@RequestBody CsmSysdict csmSysdict) {
+		Result<CsmSysdict> result = new Result<CsmSysdict>();
 		try {
-			csmCompanyService.save(csmCompany);
+			csmSysdictService.save(csmSysdict);
 			result.success("添加成功！");
 		} catch (Exception e) {
 			log.error(e.getMessage(),e);
@@ -88,17 +88,17 @@ public class CsmCompanyController {
 	
 	/**
 	  *  编辑
-	 * @param csmCompany
+	 * @param csmSysdict
 	 * @return
 	 */
 	@PutMapping(value = "/edit")
-	public Result<CsmCompany> edit(@RequestBody CsmCompany csmCompany) {
-		Result<CsmCompany> result = new Result<CsmCompany>();
-		CsmCompany csmCompanyEntity = csmCompanyService.getById(csmCompany.getId());
-		if(csmCompanyEntity==null) {
+	public Result<CsmSysdict> edit(@RequestBody CsmSysdict csmSysdict) {
+		Result<CsmSysdict> result = new Result<CsmSysdict>();
+		CsmSysdict csmSysdictEntity = csmSysdictService.getById(csmSysdict.getId());
+		if(csmSysdictEntity==null) {
 			result.error500("未找到对应实体");
 		}else {
-			boolean ok = csmCompanyService.updateById(csmCompany);
+			boolean ok = csmSysdictService.updateById(csmSysdict);
 			//TODO 返回false说明什么？
 			if(ok) {
 				result.success("修改成功!");
@@ -116,7 +116,7 @@ public class CsmCompanyController {
 	@DeleteMapping(value = "/delete")
 	public Result<?> delete(@RequestParam(name="id",required=true) String id) {
 		try {
-			csmCompanyService.removeById(id);
+			csmSysdictService.removeById(id);
 		} catch (Exception e) {
 			log.error("删除失败",e.getMessage());
 			return Result.error("删除失败!");
@@ -130,12 +130,12 @@ public class CsmCompanyController {
 	 * @return
 	 */
 	@DeleteMapping(value = "/deleteBatch")
-	public Result<CsmCompany> deleteBatch(@RequestParam(name="ids",required=true) String ids) {
-		Result<CsmCompany> result = new Result<CsmCompany>();
+	public Result<CsmSysdict> deleteBatch(@RequestParam(name="ids",required=true) String ids) {
+		Result<CsmSysdict> result = new Result<CsmSysdict>();
 		if(ids==null || "".equals(ids.trim())) {
 			result.error500("参数不识别！");
 		}else {
-			this.csmCompanyService.removeByIds(Arrays.asList(ids.split(",")));
+			this.csmSysdictService.removeByIds(Arrays.asList(ids.split(",")));
 			result.success("删除成功!");
 		}
 		return result;
@@ -147,13 +147,13 @@ public class CsmCompanyController {
 	 * @return
 	 */
 	@GetMapping(value = "/queryById")
-	public Result<CsmCompany> queryById(@RequestParam(name="id",required=true) String id) {
-		Result<CsmCompany> result = new Result<CsmCompany>();
-		CsmCompany csmCompany = csmCompanyService.getById(id);
-		if(csmCompany==null) {
+	public Result<CsmSysdict> queryById(@RequestParam(name="id",required=true) String id) {
+		Result<CsmSysdict> result = new Result<CsmSysdict>();
+		CsmSysdict csmSysdict = csmSysdictService.getById(id);
+		if(csmSysdict==null) {
 			result.error500("未找到对应实体");
 		}else {
-			result.setResult(csmCompany);
+			result.setResult(csmSysdict);
 			result.setSuccess(true);
 		}
 		return result;
@@ -166,10 +166,10 @@ public class CsmCompanyController {
    * @param response
    */
   @RequestMapping(value = "/exportXls")
-  public ModelAndView exportXls(HttpServletRequest request, CsmCompany csmCompany) {
+  public ModelAndView exportXls(HttpServletRequest request, CsmSysdict csmSysdict) {
       // Step.1 组装查询条件查询数据
-      QueryWrapper<CsmCompany> queryWrapper = QueryGenerator.initQueryWrapper(csmCompany, request.getParameterMap());
-      List<CsmCompany> pageList = csmCompanyService.list(queryWrapper);
+      QueryWrapper<CsmSysdict> queryWrapper = QueryGenerator.initQueryWrapper(csmSysdict, request.getParameterMap());
+      List<CsmSysdict> pageList = csmSysdictService.list(queryWrapper);
       // Step.2 AutoPoi 导出Excel
       ModelAndView mv = new ModelAndView(new JeecgEntityExcelView());
       // 过滤选中数据
@@ -178,13 +178,13 @@ public class CsmCompanyController {
     	  mv.addObject(NormalExcelConstants.DATA_LIST, pageList);
       }else {
     	  List<String> selectionList = Arrays.asList(selections.split(","));
-    	  List<CsmCompany> exportList = pageList.stream().filter(item -> selectionList.contains(item.getId())).collect(Collectors.toList());
+    	  List<CsmSysdict> exportList = pageList.stream().filter(item -> selectionList.contains(item.getId())).collect(Collectors.toList());
     	  mv.addObject(NormalExcelConstants.DATA_LIST, exportList);
       }
       //导出文件名称
-      mv.addObject(NormalExcelConstants.FILE_NAME, "csm_company列表");
-      mv.addObject(NormalExcelConstants.CLASS, CsmCompany.class);
-      mv.addObject(NormalExcelConstants.PARAMS, new ExportParams("csm_company列表数据", "导出人:Jeecg", "导出信息"));
+      mv.addObject(NormalExcelConstants.FILE_NAME, "systemDict列表");
+      mv.addObject(NormalExcelConstants.CLASS, CsmSysdict.class);
+      mv.addObject(NormalExcelConstants.PARAMS, new ExportParams("systemDict列表数据", "导出人:Jeecg", "导出信息"));
       return mv;
   }
 
@@ -206,9 +206,9 @@ public class CsmCompanyController {
           params.setHeadRows(1);
           params.setNeedSave(true);
           try {
-              List<CsmCompany> listCsmCompanys = ExcelImportUtil.importExcel(file.getInputStream(), CsmCompany.class, params);
-              csmCompanyService.saveBatch(listCsmCompanys);
-              return Result.ok("文件导入成功！数据行数:" + listCsmCompanys.size());
+              List<CsmSysdict> listCsmSysdicts = ExcelImportUtil.importExcel(file.getInputStream(), CsmSysdict.class, params);
+              csmSysdictService.saveBatch(listCsmSysdicts);
+              return Result.ok("文件导入成功！数据行数:" + listCsmSysdicts.size());
           } catch (Exception e) {
               log.error(e.getMessage(),e);
               return Result.error("文件导入失败:"+e.getMessage());

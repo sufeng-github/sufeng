@@ -13,7 +13,7 @@
     <!-- 操作按钮区域 -->
     <div class="table-operator">
       <a-button @click="handleAdd" type="primary" icon="plus">新增</a-button>
-      <a-button type="primary" icon="download" @click="handleExportXls('csm_company')">导出</a-button>
+      <a-button type="primary" icon="download" @click="handleExportXls('systemDict')">导出</a-button>
       <a-upload name="file" :showUploadList="false" :multiple="false" :headers="tokenHeader" :action="importExcelUrl" @change="handleImportExcel">
         <a-button type="primary" icon="import">导入</a-button>
       </a-upload>
@@ -80,23 +80,23 @@
       </a-table>
     </div>
 
-    <csmCompany-modal ref="modalForm" @ok="modalFormOk"></csmCompany-modal>
+    <csmSysdict-modal ref="modalForm" @ok="modalFormOk"></csmSysdict-modal>
   </a-card>
 </template>
 
 <script>
 
   import { JeecgListMixin } from '@/mixins/JeecgListMixin'
-  import CsmCompanyModal from './modules/CsmCompanyModal'
+  import CsmSysdictModal from './modules/CsmSysdictModal'
   export default {
-    name: "CsmCompanyList",
+    name: "CsmSysdictList",
     mixins:[JeecgListMixin],
     components: {
-      CsmCompanyModal
+      CsmSysdictModal
     },
     data () {
       return {
-        description: 'csm_company管理页面',
+        description: 'systemDict管理页面',
         // 表头
         columns: [
           {
@@ -110,14 +110,29 @@
             }
           },
           {
-            title:'名称',
+            title:'类型',
             align:"center",
-            dataIndex: 'name'
+            dataIndex: 'type'
           },
           {
-            title:'编码',
+            title:'字典名称',
             align:"center",
-            dataIndex: 'code'
+            dataIndex: 'dictname'
+          },
+          {
+            title:'字典编码',
+            align:"center",
+            dataIndex: 'dictcode'
+          },
+          {
+            title:'描述',
+            align:"center",
+            dataIndex: 'description'
+          },
+          {
+            title:'删除状态',
+            align:"center",
+            dataIndex: 'delflag'
           },
           {
             title: '操作',
@@ -127,11 +142,11 @@
           }
         ],
         url: {
-          list: "/baseinfo/csmCompany/list",
-          delete: "/baseinfo/csmCompany/delete",
-          deleteBatch: "/baseinfo/csmCompany/deleteBatch",
-          exportXlsUrl: "/baseinfo/csmCompany/exportXls",
-          importExcelUrl: "baseinfo/csmCompany/importExcel",
+          list: "/system/csmSysdict/list",
+          delete: "/system/csmSysdict/delete",
+          deleteBatch: "/system/csmSysdict/deleteBatch",
+          exportXlsUrl: "/system/csmSysdict/exportXls",
+          importExcelUrl: "system/csmSysdict/importExcel",
         },
         dictOptions:{
         } 

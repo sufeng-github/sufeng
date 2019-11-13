@@ -55,7 +55,7 @@
         </a-form-item>
           
         <a-form-item label="销售公司" :labelCol="labelCol" :wrapperCol="wrapperCol">
-          <j-dict-select-tag type="list" v-decorator="['companyId']" :trigger-change="true" dictCode="saleCompany" placeholder="请选择销售公司"/>
+          <m-dict-select-tag type="list" v-decorator="['companyId']" :trigger-change="true" dictCode="saleCompany" placeholder="请选择销售公司"/>
         </a-form-item>
           
         <a-form-item label="取货员" :labelCol="labelCol" :wrapperCol="wrapperCol">
@@ -83,6 +83,7 @@
   import JDate from '@/components/jeecg/JDate'  
   import JSelectUserByDep from '@/components/jeecgbiz/JSelectUserByDep'
   import JDictSelectTag from "@/components/dict/JDictSelectTag"
+  import MDictSelectTag from "@/componentsmy/combo/JDictSelectTag"
 
   export default {
     name: "CsmOrderInfoModal",
@@ -90,6 +91,7 @@
       JDate,
       JSelectUserByDep,
       JDictSelectTag,
+      MDictSelectTag,
     },
     data () {
       return {

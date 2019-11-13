@@ -1,27 +1,36 @@
 <template>
-  <a-modal
+  <a-drawer
     :title="title"
     :width="width"
-    :visible="visible"
-    :confirmLoading="confirmLoading"
-    @ok="handleOk"
-    @cancel="handleCancel"
-    cancelText="关闭">
+    placement="right"
+    :closable="false"
+    @close="close"
+    :visible="visible">
+  
     <a-spin :spinning="confirmLoading">
       <a-form :form="form">
 
-        <a-form-item label="名称" :labelCol="labelCol" :wrapperCol="wrapperCol">
-          <a-input v-decorator="[ 'name', validatorRules.name]" placeholder="请输入名称"></a-input>
+        <a-form-item label="类型" :labelCol="labelCol" :wrapperCol="wrapperCol">
+          <a-input v-decorator="[ 'type', validatorRules.type]" placeholder="请输入类型"></a-input>
         </a-form-item>
-          
-        <a-form-item label="编码" :labelCol="labelCol" :wrapperCol="wrapperCol">
-          <a-input v-decorator="[ 'code', validatorRules.code]" placeholder="请输入编码"></a-input>
+        <a-form-item label="字典名称" :labelCol="labelCol" :wrapperCol="wrapperCol">
+          <a-input v-decorator="[ 'dictname', validatorRules.dictname]" placeholder="请输入字典名称"></a-input>
         </a-form-item>
-          
+        <a-form-item label="字典编码" :labelCol="labelCol" :wrapperCol="wrapperCol">
+          <a-input v-decorator="[ 'dictcode', validatorRules.dictcode]" placeholder="请输入字典编码"></a-input>
+        </a-form-item>
+        <a-form-item label="描述" :labelCol="labelCol" :wrapperCol="wrapperCol">
+          <a-input v-decorator="[ 'description', validatorRules.description]" placeholder="请输入描述"></a-input>
+        </a-form-item>
+        <a-form-item label="删除状态" :labelCol="labelCol" :wrapperCol="wrapperCol">
+          <a-input-number v-decorator="[ 'delflag', validatorRules.delflag]" placeholder="请输入删除状态" style="width: 100%"/>
+        </a-form-item>
         
       </a-form>
     </a-spin>
-  </a-modal>
+    <a-button type="primary" @click="handleOk">确定</a-button>
+    <a-button type="primary" @click="handleCancel">取消</a-button>
+  </a-drawer>
 </template>
 
 <script>
@@ -30,7 +39,7 @@
   import pick from 'lodash.pick'
   
   export default {
-    name: "CsmCompanyModal",
+    name: "CsmSysdictModal",
     components: { 
     },
     data () {
@@ -51,12 +60,15 @@
 
         confirmLoading: false,
         validatorRules:{
-        name:{},
-        code:{},
+        type:{},
+        dictname:{},
+        dictcode:{},
+        description:{},
+        delflag:{},
         },
         url: {
-          add: "/baseinfo/csmCompany/add",
-          edit: "/baseinfo/csmCompany/edit",
+          add: "/system/csmSysdict/add",
+          edit: "/system/csmSysdict/edit",
         }
      
       }
@@ -72,7 +84,7 @@
         this.model = Object.assign({}, record);
         this.visible = true;
         this.$nextTick(() => {
-          this.form.setFieldsValue(pick(this.model,'name','code'))
+          this.form.setFieldsValue(pick(this.model,'type','dictname','dictcode','description','delflag'))
         })
       },
       close () {
@@ -115,9 +127,18 @@
         this.close()
       },
       popupCallback(row){
-        this.form.setFieldsValue(pick(row,'name','code'))
+        this.form.setFieldsValue(pick(row,'type','dictname','dictcode','description','delflag'))
       }
       
     }
   }
 </script>
+
+<style lang="less" scoped>
+/** Button按钮间距 */
+  .ant-btn {
+    margin-left: 30px;
+    margin-bottom: 30px;
+    float: right;
+  }
+</style>
