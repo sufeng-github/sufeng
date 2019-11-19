@@ -49,7 +49,7 @@
             </a-col>
             <a-col :md="6" :sm="8">
               <a-form-item label="销售公司">
-                <m-dict-select-tag placeholder="请输入销售公司" v-model="queryParam.status" dictCode="csm_company"/>
+                <m-dict-select-tag placeholder="请输入销售公司" v-model="queryParam.companyId" dictCode="csm_company"/>
               </a-form-item>
             </a-col>
             <a-col :md="6" :sm="8">
