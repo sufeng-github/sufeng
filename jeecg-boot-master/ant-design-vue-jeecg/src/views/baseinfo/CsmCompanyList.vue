@@ -120,6 +120,37 @@
             dataIndex: 'code'
           },
           {
+            title:'创建人',
+            align:"center",
+            dataIndex: 'createBy'
+          },
+          {
+            title:'创建日期',
+            align:"center",
+            dataIndex: 'createTime',
+            customRender:function (text) {
+              return !text?"":(text.length>10?text.substr(0,10):text)
+            }
+          },
+          {
+            title:'更新人',
+            align:"center",
+            dataIndex: 'updateBy'
+          },
+          {
+            title:'更新日期',
+            align:"center",
+            dataIndex: 'updateTime',
+            customRender:function (text) {
+              return !text?"":(text.length>10?text.substr(0,10):text)
+            }
+          },
+          {
+            title:'所属部门',
+            align:"center",
+            dataIndex: 'sysOrgCode'
+          },
+          {
             title: '操作',
             dataIndex: 'action',
             align:"center",

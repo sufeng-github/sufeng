@@ -26,20 +26,8 @@
           <j-dict-select-tag type="list" v-decorator="['scrId']" :trigger-change="true" dictCode="" placeholder="请选择螺钉架"/>
         </a-form-item>
           
-        <a-form-item label="送货员" :labelCol="labelCol" :wrapperCol="wrapperCol">
-          <j-select-user-by-dep v-decorator="['deliverymanId']" :trigger-change="true"/>
-        </a-form-item>
-          
-        <a-form-item label="跟台员" :labelCol="labelCol" :wrapperCol="wrapperCol">
-          <j-select-user-by-dep v-decorator="['followerId']" :trigger-change="true"/>
-        </a-form-item>
-          
-        <a-form-item label="销售员" :labelCol="labelCol" :wrapperCol="wrapperCol">
-          <j-select-user-by-dep v-decorator="['salerId']" :trigger-change="true"/>
-        </a-form-item>
-          
         <a-form-item label="医院" :labelCol="labelCol" :wrapperCol="wrapperCol">
-          <j-dict-select-tag type="list" v-decorator="['hospitalId']" :trigger-change="true" dictCode="hospitals" placeholder="请选择医院"/>
+          <j-dict-select-tag type="list" v-decorator="['hospitalId']" :trigger-change="true" dictCode="" placeholder="请选择医院"/>
         </a-form-item>
           
         <a-form-item label="患者" :labelCol="labelCol" :wrapperCol="wrapperCol">
@@ -55,15 +43,15 @@
         </a-form-item>
           
         <a-form-item label="销售公司" :labelCol="labelCol" :wrapperCol="wrapperCol">
-          <m-dict-select-tag type="list" v-decorator="['companyId']" :trigger-change="true" dictCode="saleCompany" placeholder="请选择销售公司"/>
-        </a-form-item>
-          
-        <a-form-item label="取货员" :labelCol="labelCol" :wrapperCol="wrapperCol">
-          <j-select-user-by-dep v-decorator="['fetcherId']" :trigger-change="true"/>
+          <m-dict-select-tag type="list" v-decorator="['companyId']" :trigger-change="true" dictCode="csm_company" placeholder="请选择销售公司"/>
         </a-form-item>
           
         <a-form-item label="客户" :labelCol="labelCol" :wrapperCol="wrapperCol">
           <j-dict-select-tag type="list" v-decorator="['customerId']" :trigger-change="true" dictCode="" placeholder="请选择客户"/>
+        </a-form-item>
+          
+        <a-form-item label="发票号" :labelCol="labelCol" :wrapperCol="wrapperCol">
+          <a-input v-decorator="[ 'invoices', validatorRules.invoices]" placeholder="请输入发票号"></a-input>
         </a-form-item>
           
         <a-form-item label="状态" :labelCol="labelCol" :wrapperCol="wrapperCol">
@@ -81,15 +69,12 @@
   import { httpAction } from '@/api/manage'
   import pick from 'lodash.pick'
   import JDate from '@/components/jeecg/JDate'  
-  import JSelectUserByDep from '@/components/jeecgbiz/JSelectUserByDep'
   import JDictSelectTag from "@/components/dict/JDictSelectTag"
-  import MDictSelectTag from "@/componentsmy/combo/JDictSelectTag"
-
+  import MDictSelectTag from '@/componentsmy/combo/JDictSelectTag.vue'
   export default {
     name: "CsmOrderInfoModal",
     components: { 
       JDate,
-      JSelectUserByDep,
       JDictSelectTag,
       MDictSelectTag,
     },
@@ -115,16 +100,13 @@
         date:{},
         toolId:{},
         scrId:{},
-        deliverymanId:{},
-        followerId:{},
-        salerId:{},
         hospitalId:{},
         patient:{},
         code:{},
         bednum:{},
         companyId:{},
-        fetcherId:{},
         customerId:{},
+        invoices:{},
         status:{},
         },
         url: {
@@ -145,7 +127,7 @@
         this.model = Object.assign({}, record);
         this.visible = true;
         this.$nextTick(() => {
-          this.form.setFieldsValue(pick(this.model,'opeId','date','toolId','scrId','deliverymanId','followerId','salerId','hospitalId','patient','code','bednum','companyId','fetcherId','customerId','status'))
+          this.form.setFieldsValue(pick(this.model,'opeId','date','toolId','scrId','hospitalId','patient','code','bednum','companyId','customerId','invoices','status'))
         })
       },
       close () {
@@ -188,7 +170,7 @@
         this.close()
       },
       popupCallback(row){
-        this.form.setFieldsValue(pick(row,'opeId','date','toolId','scrId','deliverymanId','followerId','salerId','hospitalId','patient','code','bednum','companyId','fetcherId','customerId','status'))
+        this.form.setFieldsValue(pick(row,'opeId','date','toolId','scrId','hospitalId','patient','code','bednum','companyId','customerId','invoices','status'))
       }
       
     }

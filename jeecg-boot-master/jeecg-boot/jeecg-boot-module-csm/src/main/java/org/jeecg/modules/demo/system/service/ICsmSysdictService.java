@@ -1,14 +1,16 @@
 package org.jeecg.modules.demo.system.service;
 
-import org.jeecg.modules.demo.system.entity.CsmSysdict;
-import com.baomidou.mybatisplus.extension.service.IService;
+import java.util.List;
+import org.jeecg.common.system.vo.DictModel;
 
 /**
  * @Description: systemDict
  * @Author: jeecg-boot
- * @Date:   2019-11-13
+ * @Date:   2019-11-14
  * @Version: V1.0
  */
-public interface ICsmSysdictService extends IService<CsmSysdict> {
+public interface ICsmSysdictService {
+
+	public List<DictModel> queryDictItemsByCode(String code);
 
 }

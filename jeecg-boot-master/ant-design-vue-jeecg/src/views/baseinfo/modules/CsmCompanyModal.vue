@@ -18,6 +18,26 @@
           <a-input v-decorator="[ 'code', validatorRules.code]" placeholder="请输入编码"></a-input>
         </a-form-item>
           
+        <a-form-item label="创建人" :labelCol="labelCol" :wrapperCol="wrapperCol">
+          <a-input v-decorator="[ 'createBy', validatorRules.createBy]" placeholder="请输入创建人"></a-input>
+        </a-form-item>
+          
+        <a-form-item label="创建日期" :labelCol="labelCol" :wrapperCol="wrapperCol">
+          <j-date placeholder="请选择创建日期" v-decorator="[ 'createTime', validatorRules.createTime]" :trigger-change="true" style="width: 100%"/>
+        </a-form-item>
+          
+        <a-form-item label="更新人" :labelCol="labelCol" :wrapperCol="wrapperCol">
+          <a-input v-decorator="[ 'updateBy', validatorRules.updateBy]" placeholder="请输入更新人"></a-input>
+        </a-form-item>
+          
+        <a-form-item label="更新日期" :labelCol="labelCol" :wrapperCol="wrapperCol">
+          <j-date placeholder="请选择更新日期" v-decorator="[ 'updateTime', validatorRules.updateTime]" :trigger-change="true" style="width: 100%"/>
+        </a-form-item>
+          
+        <a-form-item label="所属部门" :labelCol="labelCol" :wrapperCol="wrapperCol">
+          <a-input v-decorator="[ 'sysOrgCode', validatorRules.sysOrgCode]" placeholder="请输入所属部门"></a-input>
+        </a-form-item>
+          
         
       </a-form>
     </a-spin>
@@ -28,10 +48,12 @@
 
   import { httpAction } from '@/api/manage'
   import pick from 'lodash.pick'
+  import JDate from '@/components/jeecg/JDate'  
   
   export default {
     name: "CsmCompanyModal",
     components: { 
+      JDate,
     },
     data () {
       return {
@@ -53,6 +75,11 @@
         validatorRules:{
         name:{},
         code:{},
+        createBy:{},
+        createTime:{},
+        updateBy:{},
+        updateTime:{},
+        sysOrgCode:{},
         },
         url: {
           add: "/baseinfo/csmCompany/add",
@@ -72,7 +99,7 @@
         this.model = Object.assign({}, record);
         this.visible = true;
         this.$nextTick(() => {
-          this.form.setFieldsValue(pick(this.model,'name','code'))
+          this.form.setFieldsValue(pick(this.model,'name','code','createBy','createTime','updateBy','updateTime','sysOrgCode'))
         })
       },
       close () {
@@ -115,7 +142,7 @@
         this.close()
       },
       popupCallback(row){
-        this.form.setFieldsValue(pick(row,'name','code'))
+        this.form.setFieldsValue(pick(row,'name','code','createBy','createTime','updateBy','updateTime','sysOrgCode'))
       }
       
     }

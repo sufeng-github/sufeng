@@ -28,23 +28,8 @@
               </a-form-item>
             </a-col>
             <a-col :md="6" :sm="8">
-              <a-form-item label="送货员">
-                <a-input placeholder="请输入送货员" v-model="queryParam.deliverymanId"></a-input>
-              </a-form-item>
-            </a-col>
-            <a-col :md="6" :sm="8">
-              <a-form-item label="跟台员">
-                <a-input placeholder="请输入跟台员" v-model="queryParam.followerId"></a-input>
-              </a-form-item>
-            </a-col>
-            <a-col :md="6" :sm="8">
-              <a-form-item label="销售员">
-                <a-input placeholder="请输入销售员" v-model="queryParam.salerId"></a-input>
-              </a-form-item>
-            </a-col>
-            <a-col :md="6" :sm="8">
               <a-form-item label="医院">
-                <j-dict-select-tag placeholder="请选择医院" v-model="queryParam.hospitalId" dictCode="hospitals"/>
+                <a-input placeholder="请输入医院" v-model="queryParam.hospitalId"></a-input>
               </a-form-item>
             </a-col>
             <a-col :md="6" :sm="8">
@@ -64,17 +49,17 @@
             </a-col>
             <a-col :md="6" :sm="8">
               <a-form-item label="销售公司">
-                <j-dict-select-tag placeholder="请选择销售公司" v-model="queryParam.companyId" dictCode="saleCompany"/>
-              </a-form-item>
-            </a-col>
-            <a-col :md="6" :sm="8">
-              <a-form-item label="取货员">
-                <a-input placeholder="请输入取货员" v-model="queryParam.fetcherId"></a-input>
+                <m-dict-select-tag placeholder="请输入销售公司" v-model="queryParam.status" dictCode="csm_company"/>
               </a-form-item>
             </a-col>
             <a-col :md="6" :sm="8">
               <a-form-item label="客户">
                 <a-input placeholder="请输入客户" v-model="queryParam.customerId"></a-input>
+              </a-form-item>
+            </a-col>
+            <a-col :md="6" :sm="8">
+              <a-form-item label="发票号">
+                <a-input placeholder="请输入发票号" v-model="queryParam.invoices"></a-input>
               </a-form-item>
             </a-col>
             <a-col :md="6" :sm="8">
@@ -178,13 +163,16 @@
   import { JeecgListMixin } from '@/mixins/JeecgListMixin'
   import CsmOrderInfoModal from './modules/CsmOrderInfoModal'
   import JDictSelectTag from '@/components/dict/JDictSelectTag.vue'
+  import MDictSelectTag from '@/componentsmy/combo/JDictSelectTag.vue'
   import JDate from '@/components/jeecg/JDate.vue'
   import {initDictOptions, filterMultiDictText} from '@/components/dict/JDictSelectUtil'
+  import {initDictOptionsmy} from '@/componentsmy/combo/JDictSelectUtil'
   export default {
     name: "CsmOrderInfoList",
     mixins:[JeecgListMixin],
     components: {
       JDictSelectTag,
+      MDictSelectTag,
       JDate,
       CsmOrderInfoModal
     },
@@ -248,21 +236,6 @@
             }
           },
           {
-            title:'送货员',
-            align:"center",
-            dataIndex: 'deliverymanId'
-          },
-          {
-            title:'跟台员',
-            align:"center",
-            dataIndex: 'followerId'
-          },
-          {
-            title:'销售员',
-            align:"center",
-            dataIndex: 'salerId'
-          },
-          {
             title:'医院',
             align:"center",
             dataIndex: 'hospitalId',
@@ -302,11 +275,6 @@
             }
           },
           {
-            title:'取货员',
-            align:"center",
-            dataIndex: 'fetcherId'
-          },
-          {
             title:'客户',
             align:"center",
             dataIndex: 'customerId',
@@ -317,6 +285,11 @@
                 return filterMultiDictText(this.dictOptions['customerId'], text+"")
               }
             }
+          },
+          {
+            title:'发票号',
+            align:"center",
+            dataIndex: 'invoices'
           },
           {
             title:'状态',
@@ -377,12 +350,12 @@
             this.$set(this.dictOptions, 'scrId', res.result)
           }
         })
-        initDictOptions('hospitals').then((res) => {
+        initDictOptions('').then((res) => {
           if (res.success) {
             this.$set(this.dictOptions, 'hospitalId', res.result)
           }
         })
-        initDictOptions('saleCompany').then((res) => {
+        initDictOptionsmy('csm_company').then((res) => {
           if (res.success) {
             this.$set(this.dictOptions, 'companyId', res.result)
           }
