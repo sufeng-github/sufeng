@@ -32,6 +32,12 @@ public class CsmCompany implements Serializable {
 	/**编码*/
 	@Excel(name = "编码", width = 15)
 	private java.lang.String code;
+	/**顺序*/
+	@Excel(name = "顺序", width = 15)
+	private java.lang.String screwOrder;
+	/**删除标致*/
+	@Excel(name = "删除标致", width = 15)
+	private java.lang.String delFlag;
 	/**创建人*/
 	@Excel(name = "创建人", width = 15)
 	private java.lang.String createBy;

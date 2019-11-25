@@ -13,6 +13,12 @@
         <a-form-item label="名称" :labelCol="labelCol" :wrapperCol="wrapperCol">
           <a-input v-decorator="[ 'name', validatorRules.name]" placeholder="请输入名称"></a-input>
         </a-form-item>
+        <a-form-item label="地址" :labelCol="labelCol" :wrapperCol="wrapperCol">
+          <a-input v-decorator="[ 'address', validatorRules.address]" placeholder="请输入地址"></a-input>
+        </a-form-item>
+        <a-form-item label="税号" :labelCol="labelCol" :wrapperCol="wrapperCol">
+          <a-input v-decorator="[ 'tfn', validatorRules.tfn]" placeholder="请输入税号"></a-input>
+        </a-form-item>
         <a-form-item label="编码" :labelCol="labelCol" :wrapperCol="wrapperCol">
           <a-input v-decorator="[ 'code', validatorRules.code]" placeholder="请输入编码"></a-input>
         </a-form-item>
@@ -46,7 +52,7 @@
   import JDate from '@/components/jeecg/JDate'  
   
   export default {
-    name: "CsmCompanyModal",
+    name: "CsmHospitalModal",
     components: { 
       JDate,
     },
@@ -69,6 +75,8 @@
         confirmLoading: false,
         validatorRules:{
         name:{},
+        address:{},
+        tfn:{},
         code:{},
         createBy:{},
         createTime:{},
@@ -77,8 +85,8 @@
         sysOrgCode:{},
         },
         url: {
-          add: "/baseinfo/csmCompany/add",
-          edit: "/baseinfo/csmCompany/edit",
+          add: "/hospital/csmHospital/add",
+          edit: "/hospital/csmHospital/edit",
         }
      
       }
@@ -94,7 +102,7 @@
         this.model = Object.assign({}, record);
         this.visible = true;
         this.$nextTick(() => {
-          this.form.setFieldsValue(pick(this.model,'name','code','createBy','createTime','updateBy','updateTime','sysOrgCode'))
+          this.form.setFieldsValue(pick(this.model,'name','address','tfn','code','createBy','createTime','updateBy','updateTime','sysOrgCode'))
         })
       },
       close () {
@@ -137,7 +145,7 @@
         this.close()
       },
       popupCallback(row){
-        this.form.setFieldsValue(pick(row,'name','code','createBy','createTime','updateBy','updateTime','sysOrgCode'))
+        this.form.setFieldsValue(pick(row,'name','address','tfn','code','createBy','createTime','updateBy','updateTime','sysOrgCode'))
       }
       
     }

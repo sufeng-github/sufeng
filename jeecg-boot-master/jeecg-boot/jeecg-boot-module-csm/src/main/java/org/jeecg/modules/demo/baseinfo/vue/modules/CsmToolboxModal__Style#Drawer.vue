@@ -1,59 +1,42 @@
 <template>
-  <a-modal
+  <a-drawer
     :title="title"
     :width="width"
-    :visible="visible"
-    :confirmLoading="confirmLoading"
-    @ok="handleOk"
-    @cancel="handleCancel"
-    cancelText="关闭">
+    placement="right"
+    :closable="false"
+    @close="close"
+    :visible="visible">
+  
     <a-spin :spinning="confirmLoading">
       <a-form :form="form">
 
         <a-form-item label="名称" :labelCol="labelCol" :wrapperCol="wrapperCol">
           <a-input v-decorator="[ 'name', validatorRules.name]" placeholder="请输入名称"></a-input>
         </a-form-item>
-          
         <a-form-item label="编码" :labelCol="labelCol" :wrapperCol="wrapperCol">
           <a-input v-decorator="[ 'code', validatorRules.code]" placeholder="请输入编码"></a-input>
         </a-form-item>
-          
-        <a-form-item label="创建人" :labelCol="labelCol" :wrapperCol="wrapperCol">
-          <a-input v-decorator="[ 'createBy', validatorRules.createBy]" placeholder="请输入创建人"></a-input>
+        <a-form-item label="状态" :labelCol="labelCol" :wrapperCol="wrapperCol">
+          <j-dict-select-tag type="list" v-decorator="['status']" :trigger-change="true" dictCode="toolStatus" placeholder="请选择状态"/>
         </a-form-item>
-          
-        <a-form-item label="创建日期" :labelCol="labelCol" :wrapperCol="wrapperCol">
-          <j-date placeholder="请选择创建日期" v-decorator="[ 'createTime', validatorRules.createTime]" :trigger-change="true" style="width: 100%"/>
-        </a-form-item>
-          
-        <a-form-item label="更新人" :labelCol="labelCol" :wrapperCol="wrapperCol">
-          <a-input v-decorator="[ 'updateBy', validatorRules.updateBy]" placeholder="请输入更新人"></a-input>
-        </a-form-item>
-          
-        <a-form-item label="更新日期" :labelCol="labelCol" :wrapperCol="wrapperCol">
-          <j-date placeholder="请选择更新日期" v-decorator="[ 'updateTime', validatorRules.updateTime]" :trigger-change="true" style="width: 100%"/>
-        </a-form-item>
-          
-        <a-form-item label="所属部门" :labelCol="labelCol" :wrapperCol="wrapperCol">
-          <a-input v-decorator="[ 'sysOrgCode', validatorRules.sysOrgCode]" placeholder="请输入所属部门"></a-input>
-        </a-form-item>
-          
         
       </a-form>
     </a-spin>
-  </a-modal>
+    <a-button type="primary" @click="handleOk">确定</a-button>
+    <a-button type="primary" @click="handleCancel">取消</a-button>
+  </a-drawer>
 </template>
 
 <script>
 
   import { httpAction } from '@/api/manage'
   import pick from 'lodash.pick'
-  import JDate from '@/components/jeecg/JDate'  
+  import JDictSelectTag from "@/components/dict/JDictSelectTag"
   
   export default {
-    name: "CsmCompanyModal",
+    name: "CsmToolboxModal",
     components: { 
-      JDate,
+      JDictSelectTag,
     },
     data () {
       return {
@@ -75,15 +58,11 @@
         validatorRules:{
         name:{},
         code:{},
-        createBy:{},
-        createTime:{},
-        updateBy:{},
-        updateTime:{},
-        sysOrgCode:{},
+        status:{},
         },
         url: {
-          add: "/baseinfo/csmCompany/add",
-          edit: "/baseinfo/csmCompany/edit",
+          add: "/baseInfo/csmToolbox/add",
+          edit: "/baseInfo/csmToolbox/edit",
         }
      
       }
@@ -99,7 +78,7 @@
         this.model = Object.assign({}, record);
         this.visible = true;
         this.$nextTick(() => {
-          this.form.setFieldsValue(pick(this.model,'name','code','createBy','createTime','updateBy','updateTime','sysOrgCode'))
+          this.form.setFieldsValue(pick(this.model,'name','code','status'))
         })
       },
       close () {
@@ -142,9 +121,18 @@
         this.close()
       },
       popupCallback(row){
-        this.form.setFieldsValue(pick(row,'name','code','createBy','createTime','updateBy','updateTime','sysOrgCode'))
+        this.form.setFieldsValue(pick(row,'name','code','status'))
       }
       
     }
   }
 </script>
+
+<style lang="less" scoped>
+/** Button按钮间距 */
+  .ant-btn {
+    margin-left: 30px;
+    margin-bottom: 30px;
+    float: right;
+  }
+</style>

@@ -4,6 +4,48 @@
     <div class="table-page-search-wrapper">
       <a-form layout="inline" @keyup.enter.native="searchQuery">
         <a-row :gutter="24">
+          <a-col :md="6" :sm="8">
+            <a-form-item label="名称">
+              <a-input placeholder="请输入名称" v-model="queryParam.name"></a-input>
+            </a-form-item>
+          </a-col>
+          <a-col :md="6" :sm="8">
+            <a-form-item label="规格">
+              <a-input placeholder="请输入规格" v-model="queryParam.species"></a-input>
+            </a-form-item>
+          </a-col>
+          <template v-if="toggleSearchStatus">
+            <a-col :md="6" :sm="8">
+              <a-form-item label="编码">
+                <a-input placeholder="请输入编码" v-model="queryParam.code"></a-input>
+              </a-form-item>
+            </a-col>
+            <a-col :md="6" :sm="8">
+              <a-form-item label="型号">
+                <a-input placeholder="请输入型号" v-model="queryParam.model"></a-input>
+              </a-form-item>
+            </a-col>
+            <a-col :md="6" :sm="8">
+              <a-form-item label="注册号">
+                <a-input placeholder="请输入注册号" v-model="queryParam.regnum"></a-input>
+              </a-form-item>
+            </a-col>
+            <a-col :md="6" :sm="8">
+              <a-form-item label="供应商">
+                <a-input placeholder="请输入供应商" v-model="queryParam.supplierId"></a-input>
+              </a-form-item>
+            </a-col>
+          </template>
+          <a-col :md="6" :sm="8" >
+            <span style="float: left;overflow: hidden;" class="table-page-search-submitButtons">
+              <a-button type="primary" @click="searchQuery" icon="search">查询</a-button>
+              <a-button type="primary" @click="searchReset" icon="reload" style="margin-left: 8px">重置</a-button>
+              <a @click="handleToggleSearch" style="margin-left: 8px">
+                {{ toggleSearchStatus ? '收起' : '展开' }}
+                <a-icon :type="toggleSearchStatus ? 'up' : 'down'"/>
+              </a>
+            </span>
+          </a-col>
 
         </a-row>
       </a-form>
@@ -13,7 +55,7 @@
     <!-- 操作按钮区域 -->
     <div class="table-operator">
       <a-button @click="handleAdd" type="primary" icon="plus">新增</a-button>
-      <a-button type="primary" icon="download" @click="handleExportXls('csm_company')">导出</a-button>
+      <a-button type="primary" icon="download" @click="handleExportXls('csm_bom')">导出</a-button>
       <a-upload name="file" :showUploadList="false" :multiple="false" :headers="tokenHeader" :action="importExcelUrl" @change="handleImportExcel">
         <a-button type="primary" icon="import">导入</a-button>
       </a-upload>
@@ -80,23 +122,25 @@
       </a-table>
     </div>
 
-    <csmCompany-modal ref="modalForm" @ok="modalFormOk"></csmCompany-modal>
+    <csmBom-modal ref="modalForm" @ok="modalFormOk"></csmBom-modal>
   </a-card>
 </template>
 
 <script>
 
   import { JeecgListMixin } from '@/mixins/JeecgListMixin'
-  import CsmCompanyModal from './modules/CsmCompanyModal'
+  import CsmBomModal from './modules/CsmBomModal'
+  import JDictSelectTag from '@/components/dict/JDictSelectTag.vue'
   export default {
-    name: "CsmCompanyList",
+    name: "CsmBomList",
     mixins:[JeecgListMixin],
     components: {
-      CsmCompanyModal
+      JDictSelectTag,
+      CsmBomModal
     },
     data () {
       return {
-        description: 'csm_company管理页面',
+        description: 'csm_bom管理页面',
         // 表头
         columns: [
           {
@@ -115,40 +159,36 @@
             dataIndex: 'name'
           },
           {
+            title:'规格',
+            align:"center",
+            dataIndex: 'species'
+          },
+          {
             title:'编码',
             align:"center",
             dataIndex: 'code'
           },
           {
-            title:'创建人',
+            title:'型号',
             align:"center",
-            dataIndex: 'createBy'
+            dataIndex: 'model'
           },
           {
-            title:'创建日期',
+            title:'注册号',
             align:"center",
-            dataIndex: 'createTime',
-            customRender:function (text) {
-              return !text?"":(text.length>10?text.substr(0,10):text)
+            dataIndex: 'regnum'
+          },
+          {
+            title:'供应商',
+            align:"center",
+            dataIndex: 'supplierId',
+            customRender:(text)=>{
+              if(!text){
+                return ''
+              }else{
+                return filterMultiDictText(this.dictOptions['supplierId'], text+"")
+              }
             }
-          },
-          {
-            title:'更新人',
-            align:"center",
-            dataIndex: 'updateBy'
-          },
-          {
-            title:'更新日期',
-            align:"center",
-            dataIndex: 'updateTime',
-            customRender:function (text) {
-              return !text?"":(text.length>10?text.substr(0,10):text)
-            }
-          },
-          {
-            title:'所属部门',
-            align:"center",
-            dataIndex: 'sysOrgCode'
           },
           {
             title: '操作',
@@ -158,13 +198,14 @@
           }
         ],
         url: {
-          list: "/baseinfo/csmCompany/list",
-          delete: "/baseinfo/csmCompany/delete",
-          deleteBatch: "/baseinfo/csmCompany/deleteBatch",
-          exportXlsUrl: "/baseinfo/csmCompany/exportXls",
-          importExcelUrl: "baseinfo/csmCompany/importExcel",
+          list: "/bom/csmBom/list",
+          delete: "/bom/csmBom/delete",
+          deleteBatch: "/bom/csmBom/deleteBatch",
+          exportXlsUrl: "/bom/csmBom/exportXls",
+          importExcelUrl: "bom/csmBom/importExcel",
         },
         dictOptions:{
+         supplierId:[],
         } 
       }
     },
@@ -175,6 +216,11 @@
     },
     methods: {
       initDictConfig(){
+        initDictOptions('').then((res) => {
+          if (res.success) {
+            this.$set(this.dictOptions, 'supplierId', res.result)
+          }
+        })
       }
        
     }
