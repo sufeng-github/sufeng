@@ -204,10 +204,7 @@
           {
             title:'序列号',
             align:"center",
-            dataIndex: '
-
-
-            '
+            dataIndex: 'serialnum'
           },
           {
             title:'日期',
