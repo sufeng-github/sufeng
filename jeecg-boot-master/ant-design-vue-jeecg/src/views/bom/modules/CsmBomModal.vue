@@ -31,7 +31,7 @@
         </a-form-item>
           
         <a-form-item label="供应商" :labelCol="labelCol" :wrapperCol="wrapperCol">
-          <j-dict-select-tag type="list" v-decorator="['supplierId']" :trigger-change="true" dictCode="" placeholder="请选择供应商"/>
+          <m-dict-select-tag type="list" v-decorator="['supplierId']" :trigger-change="true" dictCode="csm_suppiler" placeholder="请选择供应商"/>
         </a-form-item>
           
         
@@ -45,11 +45,12 @@
   import { httpAction } from '@/api/manage'
   import pick from 'lodash.pick'
   import JDictSelectTag from "@/components/dict/JDictSelectTag"
-  
+  import MDictSelectTag from '@/componentsmy/combo/JDictSelectTag.vue'
   export default {
     name: "CsmBomModal",
     components: { 
       JDictSelectTag,
+      MDictSelectTag,
     },
     data () {
       return {

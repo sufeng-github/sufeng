@@ -15,6 +15,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface ICsmScrewframeService extends IService<CsmScrewframe> {
 
-	List<BaseTree> queryTreeList();
+	List<CsmScrewframe> queryTreeList();
 
 }

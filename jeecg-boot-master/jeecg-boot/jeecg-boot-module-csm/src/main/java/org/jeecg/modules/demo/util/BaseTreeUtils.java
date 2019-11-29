@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import org.jeecg.common.util.oConvertUtils;
+import org.jeecg.modules.demo.screw.entity.CsmScrewframe;
+
 import cn.hutool.core.util.ObjectUtil;
 
 public class BaseTreeUtils {
@@ -54,6 +56,7 @@ public class BaseTreeUtils {
 				if(ObjectUtil.isEmpty(data.getTitle())){
 					data.setTitle(data.getName());
 				}
+				
 				treeList.add(data);
 				dataList.remove(data);
 				i--;
@@ -80,4 +83,18 @@ public class BaseTreeUtils {
 			
 		}
 	}
+	
+	public static List<CsmScrewframe> getScrewframeModelList(List<CsmScrewframe> dataList){
+		List<CsmScrewframe> treeList = new ArrayList<CsmScrewframe>();
+		for(CsmScrewframe item: dataList) {
+			item.setKey(item.getId().toString());
+			item.setValue(item.getId().toString());
+			item.setTitle(item.getName());
+			treeList.add(item);
+		}
+		return treeList;
+	}
+	
+	
+
 }

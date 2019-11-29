@@ -354,11 +354,6 @@
             this.$set(this.dictOptions, 'companyId', res.result)
           }
         })
-/*        initDictOptionsmy('csm_company').then((res) => {
-          if (res.success) {
-            this.$set(this.dictOptions, 'customerId', res.result)
-          }
-        })*/
         initDictOptions('orderStatus').then((res) => {
           if (res.success) {
             this.$set(this.dictOptions, 'status', res.result)

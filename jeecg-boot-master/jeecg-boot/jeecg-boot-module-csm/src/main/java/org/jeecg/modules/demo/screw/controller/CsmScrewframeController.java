@@ -227,10 +227,10 @@ public class CsmScrewframeController {
 	 * @return
 	 */
 	@RequestMapping(value = "/queryTreeList", method = RequestMethod.GET)
-	public Result<List<BaseTree>> queryTreeList() {
-		Result<List<BaseTree>> result = new Result<>();
+	public Result<List<CsmScrewframe>> queryTreeList() {
+		Result<List<CsmScrewframe>> result = new Result<>();
 		try {
-			List<BaseTree> list = csmScrewframeService.queryTreeList();
+			List<CsmScrewframe> list = csmScrewframeService.queryTreeList();
 			result.setResult(list);
 			result.setSuccess(true);
 		} catch (Exception e) {

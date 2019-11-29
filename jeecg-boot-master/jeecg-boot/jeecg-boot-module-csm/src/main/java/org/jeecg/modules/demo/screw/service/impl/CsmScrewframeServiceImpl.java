@@ -25,13 +25,14 @@ public class CsmScrewframeServiceImpl extends ServiceImpl<CsmScrewframeMapper, C
 
 	@Cacheable(value = CacheConstant.DEPART_INFO_CACHE)
 	@Override
-	public List<BaseTree> queryTreeList() {
+	public List<CsmScrewframe> queryTreeList() {
 		LambdaQueryWrapper<CsmScrewframe> query = new LambdaQueryWrapper<CsmScrewframe>();
 		query.eq(CsmScrewframe::getDelflag, CommonConstant.DEL_FLAG_0.toString());
-		//query.orderByAsc(CsmScrewframe::getScreworder);
+		//query.orderByAsc(CsmScrewframe::getSort);
 		List<CsmScrewframe> list = this.list(query);
 		// 调用wrapTreeDataToTreeList方法生成树状数据
-		return BaseTreeUtils.getTreeModelList(list,false);
+		//return BaseTreeUtils.getTreeModelList(list,false);
+		return BaseTreeUtils.getScrewframeModelList(list);
 		
 	}
 }

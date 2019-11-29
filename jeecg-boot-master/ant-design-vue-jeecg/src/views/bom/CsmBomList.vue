@@ -32,7 +32,8 @@
             </a-col>
             <a-col :md="6" :sm="8">
               <a-form-item label="供应商">
-                <a-input placeholder="请输入供应商" v-model="queryParam.supplierId"></a-input>
+               <!-- <a-input placeholder="请输入供应商" v-model="queryParam.supplierId"></a-input>-->
+                <m-dict-select-tag placeholder="请选择供应商" v-model="queryParam.supplierId" dictCode="csm_suppiler"/>
               </a-form-item>
             </a-col>
           </template>
@@ -129,13 +130,17 @@
 <script>
 
   import { JeecgListMixin } from '@/mixins/JeecgListMixin'
+  import MDictSelectTag from '@/componentsmy/combo/JDictSelectTag.vue'
+  import {initDictOptionsmy} from '@/componentsmy/combo/JDictSelectUtil'
   import CsmBomModal from './modules/CsmBomModal'
   import JDictSelectTag from '@/components/dict/JDictSelectTag.vue'
+  import {filterMultiDictText} from '@/components/dict/JDictSelectUtil'
   export default {
     name: "CsmBomList",
     mixins:[JeecgListMixin],
     components: {
       JDictSelectTag,
+      MDictSelectTag,
       CsmBomModal
     },
     data () {
@@ -216,7 +221,7 @@
     },
     methods: {
       initDictConfig(){
-        initDictOptions('').then((res) => {
+        initDictOptionsmy('csm_suppiler').then((res) => {
           if (res.success) {
             this.$set(this.dictOptions, 'supplierId', res.result)
           }

@@ -6,6 +6,19 @@
 	<select id="queryDictItemsByCode" parameterType="String" resultType="org.jeecg.common.system.vo.DictModel">
 	 	select s.id as "value",s.name as "text" from ${code} s	   
 	</select>
+	
+	<select id="queryForeignKeys" parameterType="String" resultType="String">
+	 	select ${fk} from ${DB}	   
+	</select>
+	
+	<select id="findTListByIds" parameterType="String" resultType="org.jeecg.modules.demo.bom.entity.CsmBom">
+        SELECT * from ${DB}
+        WHERE id in
+        <foreach collection="ids" item="dramaId" open="(" close=")" separator=",">
+            #{dramaId}
+        </foreach>
+    </select>
+
 </mapper>
 
  		<!--    select s.item_value as "value",s.item_text as "text" from sys_dict_item s
