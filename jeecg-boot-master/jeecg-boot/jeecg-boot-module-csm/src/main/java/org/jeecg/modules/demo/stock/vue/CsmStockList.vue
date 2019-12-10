@@ -18,18 +18,27 @@
           </a-col>
           <template v-if="toggleSearchStatus">
             <a-col :md="6" :sm="8">
+              <a-form-item label="数量">
+                <a-input placeholder="请输入数量" v-model="queryParam.quantity"></a-input>
+              </a-form-item>
+            </a-col>
+            <a-col :md="6" :sm="8">
               <a-form-item label="批号">
                 <a-input placeholder="请输入批号" v-model="queryParam.lotnum"></a-input>
               </a-form-item>
             </a-col>
-            <a-col :md="6" :sm="8">
+            <a-col :md="12" :sm="16">
               <a-form-item label="有效日期">
-                <j-date placeholder="请选择有效日期" v-model="queryParam.valuedate"></j-date>
+                <j-date placeholder="请选择开始日期" class="query-group-cust" v-model="queryParam.valuedate_begin"></j-date>
+                <span class="query-group-split-cust"></span>
+                <j-date placeholder="请选择结束日期" class="query-group-cust" v-model="queryParam.valuedate_end"></j-date>
               </a-form-item>
             </a-col>
-            <a-col :md="6" :sm="8">
+            <a-col :md="12" :sm="16">
               <a-form-item label="生产日期">
-                <j-date placeholder="请选择生产日期" v-model="queryParam.pd"></j-date>
+                <j-date placeholder="请选择开始日期" class="query-group-cust" v-model="queryParam.pd_begin"></j-date>
+                <span class="query-group-split-cust"></span>
+                <j-date placeholder="请选择结束日期" class="query-group-cust" v-model="queryParam.pd_end"></j-date>
               </a-form-item>
             </a-col>
             <a-col :md="6" :sm="8">
@@ -38,8 +47,23 @@
               </a-form-item>
             </a-col>
             <a-col :md="6" :sm="8">
-              <a-form-item label="bomId">
-                <a-input placeholder="请输入bomId" v-model="queryParam.bomId"></a-input>
+              <a-form-item label="仓库名称">
+                <a-input placeholder="请输入仓库名称" v-model="queryParam.stockname"></a-input>
+              </a-form-item>
+            </a-col>
+            <a-col :md="6" :sm="8">
+              <a-form-item label="库位">
+                <a-input placeholder="请输入库位" v-model="queryParam.located"></a-input>
+              </a-form-item>
+            </a-col>
+            <a-col :md="6" :sm="8">
+              <a-form-item label="安全库存">
+                <a-input placeholder="请输入安全库存" v-model="queryParam.safequantity"></a-input>
+              </a-form-item>
+            </a-col>
+            <a-col :md="6" :sm="8">
+              <a-form-item label="状态">
+                <j-dict-select-tag placeholder="请选择状态" v-model="queryParam.status" dictCode="stockStatus"/>
               </a-form-item>
             </a-col>
           </template>
@@ -137,11 +161,14 @@
 
   import { JeecgListMixin } from '@/mixins/JeecgListMixin'
   import CsmStockModal from './modules/CsmStockModal'
+  import JDictSelectTag from '@/components/dict/JDictSelectTag.vue'
   import JDate from '@/components/jeecg/JDate.vue'
+  import {initDictOptions, filterMultiDictText} from '@/components/dict/JDictSelectUtil'
   export default {
     name: "CsmStockList",
     mixins:[JeecgListMixin],
     components: {
+      JDictSelectTag,
       JDate,
       CsmStockModal
     },
@@ -205,14 +232,31 @@
             dataIndex: 'mjn'
           },
           {
+            title:'仓库名称',
+            align:"center",
+            dataIndex: 'stockname'
+          },
+          {
+            title:'库位',
+            align:"center",
+            dataIndex: 'located'
+          },
+          {
             title:'安全库存',
             align:"center",
             dataIndex: 'safequantity'
           },
           {
-            title:'bomId',
+            title:'状态',
             align:"center",
-            dataIndex: 'bomId'
+            dataIndex: 'status',
+            customRender:(text)=>{
+              if(!text){
+                return ''
+              }else{
+                return filterMultiDictText(this.dictOptions['status'], text+"")
+              }
+            }
           },
           {
             title: '操作',
@@ -229,6 +273,7 @@
           importExcelUrl: "stock/csmStock/importExcel",
         },
         dictOptions:{
+         status:[],
         } 
       }
     },
@@ -239,6 +284,11 @@
     },
     methods: {
       initDictConfig(){
+        initDictOptions('stockStatus').then((res) => {
+          if (res.success) {
+            this.$set(this.dictOptions, 'status', res.result)
+          }
+        })
       }
        
     }

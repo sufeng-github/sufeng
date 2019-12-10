@@ -15,7 +15,7 @@ import org.jeecg.common.aspect.annotation.Dict;
 /**
  * @Description: csm_stock
  * @Author: jeecg-boot
- * @Date:   2019-11-26
+ * @Date:   2019-12-04
  * @Version: V1.0
  */
 @Data
@@ -53,27 +53,33 @@ public class CsmStock implements Serializable {
 	/**灭菌号*/
 	@Excel(name = "灭菌号", width = 15)
 	private java.lang.String mjn;
+	/**仓库名称*/
+	@Excel(name = "仓库名称", width = 15)
+	private java.lang.String stockname;
+	/**库位*/
+	@Excel(name = "库位", width = 15)
+	private java.lang.String located;
 	/**安全库存*/
 	@Excel(name = "安全库存", width = 15)
 	private java.lang.Integer safequantity;
-	/**采购详细id*/
-	@Excel(name = "采购详细id", width = 15)
-	private java.lang.String purchaseItemId;
+	/**状态*/
+	@Excel(name = "状态", width = 15)
+	private java.lang.String status;
+	/**采购id*/
+	@Excel(name = "采购id", width = 15)
+	private java.lang.String purchaseId;
 	/**bomId*/
 	@Excel(name = "bomId", width = 15)
 	private java.lang.String bomId;
+	/**备货id*/
+	@Excel(name = "备货id", width = 15)
+	private java.lang.String readyId;
 	/**销售id*/
 	@Excel(name = "销售id", width = 15)
 	private java.lang.String saleId;
 	/**送货id*/
 	@Excel(name = "送货id", width = 15)
 	private java.lang.String deliveryId;
-	/**备货id*/
-	@Excel(name = "备货id", width = 15)
-	private java.lang.String hospitalstockId;
-	/**退换调库id*/
-	@Excel(name = "退换调库id", width = 15)
-	private java.lang.String beaId;
 	/**调出库id*/
 	@Excel(name = "调出库id", width = 15)
 	private java.lang.String transferId;

@@ -5,7 +5,7 @@ import java.util.List;
 import org.apache.poi.ss.formula.functions.T;
 import org.jeecg.common.system.vo.DictModel;
 import org.jeecg.modules.demo.bom.entity.CsmBom;
-import org.jeecg.modules.demo.stock.entity.CsmStock;
+
 
 /**
  * @Description: systemDict

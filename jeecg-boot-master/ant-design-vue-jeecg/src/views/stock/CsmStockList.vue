@@ -18,18 +18,27 @@
           </a-col>
           <template v-if="toggleSearchStatus">
             <a-col :md="6" :sm="8">
+              <a-form-item label="数量">
+                <a-input placeholder="请输入数量" v-model="queryParam.quantity"></a-input>
+              </a-form-item>
+            </a-col>
+            <a-col :md="6" :sm="8">
               <a-form-item label="批号">
                 <a-input placeholder="请输入批号" v-model="queryParam.lotnum"></a-input>
               </a-form-item>
             </a-col>
-            <a-col :md="6" :sm="8">
+            <a-col :md="12" :sm="16">
               <a-form-item label="有效日期">
-                <j-date placeholder="请选择有效日期" v-model="queryParam.valuedate"></j-date>
+                <j-date placeholder="请选择开始日期" class="query-group-cust" v-model="queryParam.valuedate_begin"></j-date>
+                <span class="query-group-split-cust"></span>
+                <j-date placeholder="请选择结束日期" class="query-group-cust" v-model="queryParam.valuedate_end"></j-date>
               </a-form-item>
             </a-col>
-            <a-col :md="6" :sm="8">
+            <a-col :md="12" :sm="16">
               <a-form-item label="生产日期">
-                <j-date placeholder="请选择生产日期" v-model="queryParam.pd"></j-date>
+                <j-date placeholder="请选择开始日期" class="query-group-cust" v-model="queryParam.pd_begin"></j-date>
+                <span class="query-group-split-cust"></span>
+                <j-date placeholder="请选择结束日期" class="query-group-cust" v-model="queryParam.pd_end"></j-date>
               </a-form-item>
             </a-col>
             <a-col :md="6" :sm="8">
@@ -38,18 +47,23 @@
               </a-form-item>
             </a-col>
             <a-col :md="6" :sm="8">
-              <a-form-item label="bomId">
-                <a-input placeholder="请输入bomId" v-model="queryParam.bomId"></a-input>
+              <a-form-item label="仓库名称">
+                <a-input placeholder="请输入仓库名称" v-model="queryParam.stockname"></a-input>
               </a-form-item>
             </a-col>
             <a-col :md="6" :sm="8">
-              <a-form-item label="名称">
-                <a-input placeholder="请输入名称" v-model="assistParam.name"></a-input>
+              <a-form-item label="库位">
+                <a-input placeholder="请输入库位" v-model="queryParam.located"></a-input>
               </a-form-item>
             </a-col>
             <a-col :md="6" :sm="8">
-              <a-form-item label="规格">
-                <a-input placeholder="请输入规格" v-model="assistParam.species"></a-input>
+              <a-form-item label="安全库存">
+                <a-input placeholder="请输入安全库存" v-model="queryParam.safequantity"></a-input>
+              </a-form-item>
+            </a-col>
+            <a-col :md="6" :sm="8">
+              <a-form-item label="状态">
+                <j-dict-select-tag placeholder="请选择状态" v-model="queryParam.status" dictCode="stockStatus"/>
               </a-form-item>
             </a-col>
           </template>
@@ -68,7 +82,7 @@
       </a-form>
     </div>
     <!-- 查询区域-END -->
-
+    
     <!-- 操作按钮区域 -->
     <div class="table-operator">
       <a-button @click="handleAdd" type="primary" icon="plus">新增</a-button>
@@ -102,7 +116,7 @@
         :loading="loading"
         :rowSelection="{selectedRowKeys: selectedRowKeys, onChange: onSelectChange}"
         @change="handleTableChange">
-
+        
         <template slot="imgSlot" slot-scope="text">
           <span v-if="!text" style="font-size: 12px;font-style: italic;">无此图片</span>
           <img v-else :src="getImgView(text)" height="25px" alt="图片不存在" style="max-width:80px;font-size: 12px;font-style: italic;"/>
@@ -147,16 +161,14 @@
 
   import { JeecgListMixin } from '@/mixins/JeecgListMixin'
   import CsmStockModal from './modules/CsmStockModal'
+  import JDictSelectTag from '@/components/dict/JDictSelectTag.vue'
   import JDate from '@/components/jeecg/JDate.vue'
-  import {initDictOptionsmy} from '@/componentsmy/combo/JDictSelectUtil'
-  import { getTextById } from '@/componentsmy/combo/JDictSelectUtil'
-  import { getAction, httpAction, postAction,putAction } from '@/api/manage'
-  import {initForeignKey,filterMultiIdText} from '@/componentsmy/combo/JDictSelectUtil'
   import {initDictOptions, filterMultiDictText} from '@/components/dict/JDictSelectUtil'
   export default {
     name: "CsmStockList",
     mixins:[JeecgListMixin],
     components: {
+      JDictSelectTag,
       JDate,
       CsmStockModal
     },
@@ -175,32 +187,6 @@
               return parseInt(index)+1;
             }
           },
-
-          {
-            title:'名称',
-            align:"center",
-            customRender: (t,r) =>{
-              if(!r.bomId){
-                return ''
-              }else{
-                let res = filterMultiIdText(this.foreignKey.bomId, r.bomId+"")
-                return res.name;
-              }
-            }
-          },
-          {
-            title:'规格',
-            align:"center",
-            customRender: (t,r) =>{
-              if(!r.bomId){
-                return ''
-              }else{
-                let res = filterMultiIdText(this.foreignKey.bomId, r.bomId+"")
-                return res.species;
-              }
-            }
-          },
-
           {
             title:'序列号',
             align:"center",
@@ -246,9 +232,31 @@
             dataIndex: 'mjn'
           },
           {
+            title:'仓库名称',
+            align:"center",
+            dataIndex: 'stockname'
+          },
+          {
+            title:'库位',
+            align:"center",
+            dataIndex: 'located'
+          },
+          {
             title:'安全库存',
             align:"center",
             dataIndex: 'safequantity'
+          },
+          {
+            title:'状态',
+            align:"center",
+            dataIndex: 'status',
+            customRender:(text)=>{
+              if(!text){
+                return ''
+              }else{
+                return filterMultiDictText(this.dictOptions['status'], text+"")
+              }
+            }
           },
           {
             title: '操作',
@@ -264,18 +272,9 @@
           exportXlsUrl: "/stock/csmStock/exportXls",
           importExcelUrl: "stock/csmStock/importExcel",
         },
-        dictOptions: {
-
-        },
-        /*辅助参数*/
-        assistParam: {
-          bomId:[],
-        },
-        foreignKey:{
-          bomId:[],
-
-        },
-
+        dictOptions:{
+         status:[],
+        } 
       }
     },
     computed: {
@@ -285,20 +284,13 @@
     },
     methods: {
       initDictConfig(){
-
-        let fk={fk:'bomId'};
-        //var that=this;
-        initForeignKey('csm_stock', fk).then((res) => {
+        initDictOptions('stockStatus').then((res) => {
           if (res.success) {
-            //this.$set(that.dictOptions, 'bomId', res.result);
-            //console.log(res.result);
-            this.foreignKey.bomId = res.result
-
+            this.$set(this.dictOptions, 'status', res.result)
           }
         })
-
       }
-
+       
     }
   }
 </script>

@@ -31,11 +31,17 @@
         <a-form-item label="灭菌号" :labelCol="labelCol" :wrapperCol="wrapperCol">
           <a-input v-decorator="[ 'mjn', validatorRules.mjn]" placeholder="请输入灭菌号"></a-input>
         </a-form-item>
+        <a-form-item label="仓库名称" :labelCol="labelCol" :wrapperCol="wrapperCol">
+          <a-input v-decorator="[ 'stockname', validatorRules.stockname]" placeholder="请输入仓库名称"></a-input>
+        </a-form-item>
+        <a-form-item label="库位" :labelCol="labelCol" :wrapperCol="wrapperCol">
+          <a-input v-decorator="[ 'located', validatorRules.located]" placeholder="请输入库位"></a-input>
+        </a-form-item>
         <a-form-item label="安全库存" :labelCol="labelCol" :wrapperCol="wrapperCol">
           <a-input-number v-decorator="[ 'safequantity', validatorRules.safequantity]" placeholder="请输入安全库存" style="width: 100%"/>
         </a-form-item>
-        <a-form-item label="bomId" :labelCol="labelCol" :wrapperCol="wrapperCol">
-          <a-input v-decorator="[ 'bomId', validatorRules.bomId]" placeholder="请输入bomId"></a-input>
+        <a-form-item label="状态" :labelCol="labelCol" :wrapperCol="wrapperCol">
+          <j-dict-select-tag type="list" v-decorator="['status']" :trigger-change="true" dictCode="stockStatus" placeholder="请选择状态"/>
         </a-form-item>
         
       </a-form>
@@ -50,11 +56,13 @@
   import { httpAction } from '@/api/manage'
   import pick from 'lodash.pick'
   import JDate from '@/components/jeecg/JDate'  
+  import JDictSelectTag from "@/components/dict/JDictSelectTag"
   
   export default {
     name: "CsmStockModal",
     components: { 
       JDate,
+      JDictSelectTag,
     },
     data () {
       return {
@@ -81,8 +89,10 @@
         valuedate:{},
         pd:{},
         mjn:{},
+        stockname:{},
+        located:{},
         safequantity:{},
-        bomId:{},
+        status:{},
         },
         url: {
           add: "/stock/csmStock/add",
@@ -102,7 +112,7 @@
         this.model = Object.assign({}, record);
         this.visible = true;
         this.$nextTick(() => {
-          this.form.setFieldsValue(pick(this.model,'serialnum','date','quantity','lotnum','valuedate','pd','mjn','safequantity','bomId'))
+          this.form.setFieldsValue(pick(this.model,'serialnum','date','quantity','lotnum','valuedate','pd','mjn','stockname','located','safequantity','status'))
         })
       },
       close () {
@@ -145,7 +155,7 @@
         this.close()
       },
       popupCallback(row){
-        this.form.setFieldsValue(pick(row,'serialnum','date','quantity','lotnum','valuedate','pd','mjn','safequantity','bomId'))
+        this.form.setFieldsValue(pick(row,'serialnum','date','quantity','lotnum','valuedate','pd','mjn','stockname','located','safequantity','status'))
       }
       
     }

@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 /**
  * @Description: csm_stock
  * @Author: jeecg-boot
- * @Date:   2019-11-26
+ * @Date:   2019-12-04
  * @Version: V1.0
  */
 public interface CsmStockMapper extends BaseMapper<CsmStock> {
