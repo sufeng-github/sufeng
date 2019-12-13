@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import org.jeecg.common.util.oConvertUtils;
-import org.jeecg.modules.demo.screw.entity.CsmScrewframe;
+import org.jeecg.modules.demo.screwframe.entity.CsmScrewframe;
 
 import cn.hutool.core.util.ObjectUtil;
 

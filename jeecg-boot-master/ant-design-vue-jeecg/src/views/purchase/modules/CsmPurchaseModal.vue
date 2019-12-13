@@ -10,7 +10,7 @@
     :footer="null"
     :okButtonProps="{ props: {disabled : ModalDisabled} }">
 
-    <!--<a-row class="marginB20" v-show="modalStatus != 'look'">
+    <a-row class="marginB20" v-show="modalStatus != 'look'">
       <div class="fromSteps">
         <a-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
           <div class="textalignM">
@@ -30,24 +30,9 @@
           </div>
         </a-col>
       </div>
-    </a-row>-->
-    
-    <a-row class="marginB20" v-show="modalStatus != 'look'">
-      <div class="fromSteps">
-        <a-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-          <div class="textalignM">
-            <a-steps size="small" :current="addCurrent" v-show="modalStatus == 'add'">
-              <a-step title="供应商信息" description />
-              <a-step title="物料明细" description class="canNotPoiter"/>
-            </a-steps>
-            <a-steps size="small" :current="editCurrent" v-show="modalStatus == 'edit'" class="canPoiter">
-              <a-step title="供应商信息" description @click="goMain" />
-              <a-step title="物料明细" description @click="goDetail" />
-            </a-steps>
-          </div>
-        </a-col>
-      </div>
     </a-row>
+
+
     <div v-show="tabIndex == 0">
       <a-spin :spinning="confirmLoading">
         <a-form :form="form" style="margin-top:20px;">
@@ -76,7 +61,7 @@
         <a-row>
           <a-col :span="24" class="textalignR" style="margin-top:20px;">
             <div>
-              <a-button type="primary" @click="saveTable">保存</a-button>
+              <a-button type="primary" >保存</a-button><!-- saveTable-->
             </div>
           </a-col>
         </a-row>
@@ -114,6 +99,10 @@
         <a-collapse-panel header="工作单元" key="1" :forceRender="true">
           <div v-if="!ModalDisabled" class="btnRow table-operator marginB10">
             <a-button @click="addOrEditDetail(1)" type="primary" icon="plus" size="small">新增</a-button>
+            <a-button type="primary" icon="download" @click="handleExportXls('供应商资料')" size="small">导出</a-button>
+            <a-upload name="file" :showUploadList="false" :multiple="false" :headers="tokenHeader" :action="importExcelUrl" @change="handleImportExcel2">
+              <a-button type="primary" icon="import" size="small">导入</a-button>
+            </a-upload>
           </div>
 
           <a-table
@@ -191,7 +180,51 @@
           xs: { span: 24 },
           sm: { span: 16 },
         },
+        columns1: [
+          {
+            title: '#',
+            dataIndex: '',
+            key: 'rowIndex',
+            width: 60,
+            align: 'center',
+            customRender: function(t, r, index) {
+              return parseInt(index) + 1
+            }
+          },
+          {
+            title: '供应商编码',
+            align: 'center',
+            dataIndex: 'code'
 
+          },
+          {
+            title: '供应商名称',
+            align: 'center',
+            dataIndex: 'name'
+
+          },
+          {
+            title: '负责人',
+            align: 'center',
+            dataIndex: 'leader'
+
+          },
+
+          {
+            title: '负责人电话',
+            align: 'center',
+            dataIndex: 'telephone'
+
+          },
+          {
+            title: '操作',
+            dataIndex: 'action',
+            align: 'center',
+            scopedSlots: { customRender: 'action' }
+          }
+        ],
+        dataSource1: [],
+        loading1: false,
         confirmLoading: false,
         validatorRules:{
         date:{},

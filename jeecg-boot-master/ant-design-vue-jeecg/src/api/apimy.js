@@ -10,7 +10,7 @@ import { getAction,deleteAction,putAction,postAction} from '@/api/manage'
 export const ajaxGetDictItems = (code, params)=>getAction(`/system/csmSysdict/getDictItems/${code}`,params);
 
 export const ajaxGetTextById = (code, params)=>getAction(`${code}`,params);
-const queryScrewTreeList = (params)=>getAction("/screw/csmScrewframe/queryTreeList",params);
+const queryScrewTreeList = (params)=>getAction("/screwframe/csmScrewframe/queryTreeList",params);
 const ajaxGetForeignKeys = (code, params)=>getAction(`/system/csmSysdict/getForeignKeys/${code}`,params);
 
 export {

@@ -109,6 +109,7 @@
   import { JeecgListMixin } from '@/mixins/JeecgListMixin'
   import CsmScrewframeModal from './modules/CsmScrewframeModal'
   import JDictSelectTag from '@/components/dict/JDictSelectTag.vue'
+  import {initDictOptions, filterMultiDictText} from '@/components/dict/JDictSelectUtil'
   export default {
     name: "CsmScrewframeList",
     mixins:[JeecgListMixin],
@@ -196,7 +197,7 @@
       initDictConfig(){
         initDictOptions('').then((res) => {
           if (res.success) {
-            this.$set(this.dictOptions, 'status', res.result)
+            this.$set(this.dictOptions, '', res.result)
           }
         })
       }
