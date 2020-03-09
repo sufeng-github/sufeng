@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no" /> 
+  <title></title> 
+  <script type="text/javascript" src="../../../custom/jquery.min.js"></script>
+  <script type="text/javascript" src="../../js/myjs/JsBarcode.all.js"></script>  
+ </head> 
+ <body> 
+  <svg id="svgcode"></svg> 
+  <!-- or --> 
+  <canvas id="canvascode"></canvas> 
+  <!-- or --> 
+  <img id="imgcode" /> 
+  <script>  
+/*         $("#svgcode").JsBarcode('wqerfsadgefghsdfhrtfghEWQERE234');
+
+        $("#canvascode").JsBarcode('地硅');
+  
+        $("#imgcode").JsBarcode("5678678980"); */
+         $("#imgcode").JsBarcode("435180234400" , {
+   // JsBarcode("#imgcode", "435180234400", {
+	// format: "CODE39",//选择要使用的条形码类型
+	 width:1,//设置条之间的宽度
+	 height:50,//高度
+	 displayValue:true,//是否在条形码下方显示文字
+	// text:"456",//覆盖显示的文本
+	// fontOptions:"bold italic",//使文字加粗体或变斜体
+	// font:"fantasy",//设置文本的字体
+	 textAlign:"left",//设置文本的水平对齐方式
+	 textPosition:"top",//设置文本的垂直位置
+	 textMargin:5,//设置条形码和文本之间的间距
+	 fontSize:10,//设置文本的大小
+	 background:"#eee",//设置条形码的背景
+	 lineColor:"#000",//设置条和文本的颜色。
+	 margin:5//设置条形码周围的空白边距
+	});
+  </script> 
+ </body>
+</html>

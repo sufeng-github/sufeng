@@ -1,0 +1,92 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="utf-8"> 
+    
+    <title>工作台</title> 
+	<link rel="stylesheet" href="../css/workbench_test.css">
+ <!--    <link rel="stylesheet" type="text/css" href="./item/css/nav-css3.css"> -->
+	<script type="text/javascript" src="../../../../../custom/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../../../custom/jquery.easyui.min.js"></script>	
+</head> 
+<body>
+
+    <div id="container">
+	
+        <div id="bd">
+            <div class="bd-content">              		
+                <div class="center-part">   
+					<div class="center-items chart1">	
+						<iframe scrolling="no" frameborder="0" id = "left-top1" src="" style="width:100%;height:100%;"></iframe>
+                    </div>							
+					<div class="center-items chart1">							
+						<iframe scrolling="no" frameborder="0" id = "left-top2" src="" style="width:100%;height:100%;"></iframe>	
+                    </div>		
+                    <div class="center-items chart1">						
+						<iframe scrolling="no" frameborder="0" id = "left-top3" src="" style="width:100%;height:100%;"></iframe>
+                    </div>	
+                    <div class="center-items chart1">						
+						<iframe scrolling="no" frameborder="0" id = "left-top4" src="" style="width:100%;height:100%;"></iframe>
+                    </div>	
+                    <div class="center-items chart2">						
+						<div class="item">
+							<div class="chart1">
+								<iframe scrolling="no" frameborder="0" id = "left-bottom3" src="" style="width:100%;height:100%;"></iframe>	
+							</div>
+						</div>
+						<div class="item">
+							<div class="chart2">
+								<iframe scrolling="no" frameborder="0" id = "left-bottom2" src="" style="width:100%;height:100%;"></iframe>	
+							</div>
+						</div>
+						<div class="item">
+							<div class="chart3">
+								<iframe scrolling="no" frameborder="0" id = "left-bottom1" src="" style="width:100%;height:100%;"></iframe>	
+							</div>
+						</div>
+                    </div> 				
+                </div>
+				<div class="right-zone">
+					<div class="right-items chart1">	
+						<iframe scrolling="no" frameborder="0" id = "right-part1" src="" style="width:100%;height:100%;"></iframe>	
+					</div>
+  					<div class="right-items chart1">	
+						<iframe scrolling="no" frameborder="0" id = "right-part2" src="" style="width:100%;height:100%;"></iframe>		
+					</div> 
+					<div class="right-items chart1">
+                       	<iframe scrolling="no" frameborder="0" id = "right-part3" src="" style="width:100%;height:100%;"></iframe>	
+					</div>	
+ 					<div class="right-items chart1">
+                       	<iframe scrolling="no" frameborder="0" id = "right-part4" src="" style="width:100%;height:100%;"></iframe>	
+					</div>	
+					<div class="right-items chart1">
+                       	<iframe scrolling="no" frameborder="0" id = "right-part5" src="" style="width:100%;height:100%;"></iframe>	
+					</div>			
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+  
+    <script type="text/javascript">
+	  	setTimeout(function(){
+	       
+	        $('#left-top1').attr("src","./item/left-top1.jsp");
+	        $('#left-top2').attr("src","./item/left-top2.jsp");
+	        $('#left-top3').attr("src","./item/left-top3.jsp");
+	        $('#left-top4').attr("src","./item/left-top4.jsp");
+	        $('#left-bottom3').attr("src","./item/left-bottom3.jsp");
+	        $('#left-bottom2').attr("src","./item/left-bottom2.jsp");
+	        $('#left-bottom1').attr("src","./item/left-bottom1.jsp");
+	       	$('#right-part1').attr("src","./item/right-part1.jsp");
+	       	$('#right-part2').attr("src","./item/right-part2.jsp");
+	       	$('#right-part3').attr("src","./item/right-part3.jsp");
+	       	$('#right-part4').attr("src","./item/right-part4.jsp");
+	       	$('#right-part5').attr("src","./item/right-part5.jsp"); 
+           
+	    },30);
+  	
+    </script>
+</body> 
+</html>

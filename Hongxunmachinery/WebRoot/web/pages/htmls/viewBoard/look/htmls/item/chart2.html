@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>echarts.js案例一</title>
+	<link rel="stylesheet" href="./css/chart2.css">
+	<script type="text/javascript" src="../../incubator-echarts-4.2.1/dist/echarts.min.js"></script>
+</head>
+<body>
+
+	<div id="container">
+		<div class="bd">
+			<div class="zone">
+		
+				<div class="item chart">
+				
+					<div class="item-part1"  id="chart"></div> <!-- 不用区 -->
+					<div class="item-part2" >
+						<div class="item1">
+							<div class="item1-part1">
+								<h2>Progress</h2>
+							</div>
+							<div class="item1-part2"></div> <!-- 分划线 -->
+							<div class="item1-part3">
+								<div class="item-side">
+									<div class="chart">
+										<img src="./img/arrowleft.png"/ style="margin-left:5px; margin-top:100%">
+									</div>
+								</div>
+								<div class="item-center">
+									<div class="text">
+										<div class="text-item1"> Status: </div>
+										<div class="text-item2"> sadf1 </div>
+									</div>
+									<div class="text">
+										<div class="text-item1"> Reason: </div>
+										<div class="text-item2"> sadf1 </div>
+									</div>
+									<div class="text">
+										<div class="text-item1"> Start time: </div>
+										<div class="text-item2"> sadf1 </div>
+									</div>
+									<div class="text">
+										<div class="text-item1"> Duration: </div>
+										<div class="text-item2"> sadf1 </div>
+									</div>
+									<div class="text">
+										<div class="text-item1"> SFO ID: </div>
+										<div class="text-item2"> sadf1 </div>
+									</div>
+									<div class="text">
+										<div class="text-item1"> Material name: </div>
+										<div class="text-item2"> sadf1 </div>
+									</div>
+									<div class="text">
+										<div class="text-item1"> Batch: </div>
+										<div class="text-item2"> sadf1 </div>
+									</div>
+								</div>
+								<div class="item-side">
+									<div class="chart">
+										<img src="./img/arrowright.png"/ style="margin-left:5px; margin-top:100%">
+									</div>
+								</div>
+							</div>
+						</div>	
+						
+						<div class="item2" id="chart1">
+							
+						</div>	
+						<div class="item2" id="chart2">
+							
+						</div>					
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>			
+	<!--
+    <div id="chart" style="width:600px;height:400px;"></div>
+	-->
+</body>
+<script type="text/javascript">
+ 
+	var myChart = echarts.init(document.getElementById('chart1'));
+    
+		var data = [];
+		var dataCount = 100;
+		var startTime = '2018/05/18 9:10'; 
+		var categories = ['设备状态']
+		var types = [{
+				name: '运行',
+				color: 'green'
+			},
+			{
+				name: '待机',
+				color: 'yellow'
+			},
+			{
+				name: '停机',
+				color: 'red'
+			},
+		];
+
+		// Generate mock data
+
+		// echarts.util.each(categories, function(category, index) {
+		//     var baseTime = startTime;
+		//     for (var i = 0; i < dataCount; i++) {
+		//         var typeItem = types[Math.round(Math.random() * (types.length - 1))];
+		//         var duration = Math.round(Math.random() * 10000);
+		//         data.push({
+		//             name: typeItem.name,
+		//             value: [
+		//                 index,
+		//                 baseTime,
+		//                 baseTime += duration,
+		//                 duration
+		//             ],
+		//             itemStyle: {
+		//                 normal: {
+		//                     color: typeItem.color
+		//                 }
+		//             }
+		//         });
+		//         baseTime += Math.round(Math.random() * 200);
+		//     }
+		// });
+
+		data = [
+			{name: '运行',value: [0, '2018/05/18 9:10', '2018/05/18 9:12', 0],itemStyle:{normal: {color: 'green'}}},
+			{name: '停机',value: [0, '2018/05/18 9:12', '2018/05/18 9:14', 0],itemStyle:{normal: {color: 'red'}}},
+			{name: '运行',value: [0, '2018/05/18 9:14', '2018/05/18 9:18', 0],itemStyle:{normal: {color: 'green'}}},
+			{name: '停机',value: [0, '2018/05/18 9:18', '2018/05/18 9:50', 0],itemStyle:{normal: {color: 'red'}}},
+			{name: '停机',value: [0, '2018/05/18 9:50', '2018/05/18 10:50', 0],itemStyle:{normal: {color: 'yellow'}}},
+			{name: ''	 ,value: [0, '2018/05/18 10:50', '2018/05/18 24:00', 0],itemStyle:{normal: {color: '#c0c0c0'}}},
+			]
+
+
+		function renderItem(params, api) {
+			var categoryIndex = api.value(0);
+			var start = api.coord([api.value(1), categoryIndex]);
+			var end = api.coord([api.value(2), categoryIndex]);
+			var height = api.size([0, 1])[1] * 0.6;
+
+			return {
+				type: 'rect',
+				shape: echarts.graphic.clipRectByRect({
+					x: start[0],
+					y: start[1] - height / 3,
+					width: end[0] - start[0],
+					height: height
+				}, {
+					x: params.coordSys.x,
+					y: params.coordSys.y,
+					width: params.coordSys.width,
+					height: params.coordSys.height
+				}),
+				style: api.style()
+			};
+		}
+
+		options = {
+			// tooltip: {
+			//     formatter: function(params) {
+			//         console.log(params)
+			//         return params.marker + params.name + ': ' + params.value[3] / 1000 + ' s';
+			//     }
+			// },
+			title: {
+				text: '',
+				left: 'center'
+			},
+			/*legend: {
+				data: types,
+				top: '50%',
+				left: '60px',
+				selectedMode: false,
+			},
+			dataZoom: [{
+				type: 'slider',
+				filterMode: 'weakFilter',
+				showDataShadow: false,
+				top: '50%',
+				height: 5,
+				start: 0,
+				end: 100, 
+				borderColor: 'transparent',
+				backgroundColor: '#e2e2e2',
+				handleIcon: 'M10.7,11.9H9.3c-4.9,0.3-8.8,4.4-8.8,9.4c0,5,3.9,9.1,8.8,9.4h1.3c4.9-0.3,8.8-4.4,8.8-9.4C19.5,16.3,15.6,12.2,10.7,11.9z M13.3,24.4H6.7v-1.2h6.6z M13.3,22H6.7v-1.2h6.6z M13.3,19.6H6.7v-1.2h6.6z', // jshint ignore:line
+				handleSize: 10,
+				handleStyle: {
+					shadowBlur: 6,
+					shadowOffsetX: 1,
+					shadowOffsetY: 2,
+					shadowColor: '#aaa'
+				},
+				labelFormatter: ''
+			}, {
+				type: 'inside',
+				filterMode: 'weakFilter'
+			}],*/
+			grid: {
+				left: '60px',
+				right: '3%',
+				bottom: '0%',
+				top: '0%',
+				height: '100%'
+			},
+			xAxis: {
+				type: 'time',
+				
+				min: startTime,
+				scale: true,
+				show: false
+				
+				//axisLabel: {
+				//     formatter: function(val) {
+				//         return Math.max(0, val - startTime);
+				//     }
+				//}
+			},
+			yAxis: {
+				data: categories,
+				
+				show:true
+				
+			},
+			series: [
+				{name: types[0].name, type: 'bar', data: [], color: 'red'},
+				{name: types[1].name, type: 'bar', data: [], color: 'green'},
+				{name: types[2].name, type: 'bar', data: [], color: 'yellow'},
+				{
+				type: 'custom',
+				renderItem: renderItem,
+		
+				itemStyle: {
+					normal: {
+						opacity: 0.8						
+					}
+				},
+				encode: {
+					x: [1, 2, 3],
+					y: 0,
+				},
+				data: data
+			}]
+		};
+    myChart.setOption(options);
+
+</script>
+</html>

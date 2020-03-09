@@ -1,0 +1,138 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+    <head> 
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <title>uimaker信息管理系统</title> 
+        <link href="../../css/base.css" rel="stylesheet">
+        <link href="../platform.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../../custom/uimaker/easyui.css">
+        <link rel="stylesheet" type="text/css" href="../../../custom/uimaker/icon.css">
+        <link rel="stylesheet" href="../../css/providers1.css">
+		<link rel="stylesheet" href="../../css/style.css" media="screen" type="text/css" /> 
+    </head> 
+    <body>
+    
+
+        <div id="pf-bd">
+            <div id="pf-sider">
+                <h2 class="pf-model-name">
+                    <span class="iconfont"></span>
+                    <span class="pf-name">设备管理</span>
+                    <span class="toggle-icon"></span>
+                </h2>
+<!-- 
+onclick="addTab('设备状态监控','./pf_bd_tables5_1.html')"
+onclick="addTab('设备台帐管理','./pf_bd_tables5_8.html')"
+onclick="addTab('设备状态监控','./pf_bd_tables5_6.html')"
+onclick="addTab('设备维修记录','./pf_bd_tables5_7.html')"
+ -->
+                <ul class="mcd-menu">
+                     <li class="current">
+                        <a href="javascript:void(0)" >
+                           	<i class="iconfont">&#xe630;</i>       
+							<strong>设备状态监控</strong>
+							<small>shebeijiankong</small>
+                        </a>
+                     </li>
+                     <li>
+                        <a href="javascript:void(0)" >
+                            <i class="iconfont">&#xe605;</i>       
+							<strong>设备台帐管理</strong>
+							<small>shebeitaizhang</small>
+                        </a>
+    
+                     </li>
+                     <li>
+                        <a href="javascript:void(0)" >
+                            <i class="iconfont">&#xe638;</i>       
+							<strong>设备OEE计算</strong>
+							<small>shebeioeejisuan</small>
+                        </a>
+          
+                     </li>
+                     <li>
+                        <a href="javascript:void(0)" >
+                            <i class="iconfont">&#xe60b;</i>       
+							<strong>设备维修记录</strong>
+							<small>shebeiweixujilu</small>
+                        </a>
+   
+                     </li>
+
+                 </ul> 
+            </div>
+            <div id="pf-page">
+                <div id="tt" class="easyui-tabs1" style="width:100%;height:100%;">    
+                    <!-- 
+                    <div title="首页" style="padding:10px 5px 5px 10px;">
+                        <iframe class="page-iframe" src="./pf_bd_tables5_1.html" frameborder="no"   border="no" height="100%" width="100%" scrolling="auto"></iframe>
+                    </div>
+                    
+                    <div title="采购组织" style="padding:10px 5px 5px 10px;" data-options="closable:true">
+                        <iframe class="page-iframe" src="./pf_bd_tables4_2.html" frameborder="no"   border="no" height="100%" width="100%" scrolling="auto"></iframe>
+                    </div>
+                    <div title="基本信息" data-options="closable:true" style="padding:10px 5px 5px 10px;">
+                        <iframe class="page-iframe" src="./pf_bd_tables4_3.html" frameborder="no"   border="no" height="100%" width="100%" scrolling="auto"></iframe>
+                    </div>
+                    <div title="供应商" data-options="closable:true" style="padding:10px 5px 5px 10px;">
+                        <iframe class="page-iframe" src="./pf_bd_tables4_4.html" frameborder="no"   border="no" height="100%" width="100%" scrolling="auto"></iframe>
+                    </div> 
+                     -->                                
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="../../../custom/jquery.min.js"></script>
+        <script type="text/javascript" src="../../../custom/jquery.easyui.min.js"></script>
+        <script type="text/javascript" src="../../js/main.js"></script> 
+        <script type="text/javascript">
+            $('.easyui-tabs1').tabs({
+                  tabHeight: 44,
+                  onSelect:function(title,index){
+                    var currentTab = $('.easyui-tabs1').tabs("getSelected");
+                    if(currentTab.find("iframe") && currentTab.find("iframe").size()){
+                        currentTab.find("iframe").attr("src",currentTab.find("iframe").attr("src"));
+                    }
+                  }
+                })
+        </script>
+        <script type="text/javascript">
+            function addTab(title, url){
+                if ($('#tt').tabs('exists', title)){
+                    $('#tt').tabs('select', title);
+                } else {
+                    var content = '<iframe scrolling="auto" frameborder="0"  src="'+url+'" style="width:100%;height:100%;"></iframe>';
+                    $('#tt').tabs('add',{
+                        title:title,
+                        content:content,
+                        closable:true
+                    });
+                }
+            }
+
+            function ajax(){
+                $.ajax({ 
+                        type: "post",  
+                        url:"http://122.152.249.67:9080/MySpringMVC_TEST01/screwdata.htm/load",   
+                        traditional: true,
+                        dataType:"json",  
+                        beforeSend: function () {
+                           //load();
+                           //alert("beforeSend");
+                        },
+                        complete: function () {
+                           // disLoad();
+                        },
+                        success: function(result) {
+                            alert("success");
+                        },
+                        error : function() {
+                            alert("asdf");
+                        }
+                    });                         
+            }
+        </script>
+
+    </body> 
+</html>

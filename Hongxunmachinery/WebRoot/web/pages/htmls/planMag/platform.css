@@ -1,0 +1,18 @@
+html{height:100%;background:#1da028;min-width:1200px;overflow:hidden}
+
+#pf-bd{position:absolute;top:0px;bottom:0px; left:0;right:0;padding:0 0 0 0;z-index:1;transition:all 0.3s ease}
+
+
+#pf-bd #pf-page{float:left;width:100%;height:100%;background:#fff;z-index:0;}
+#pf-bd #pf-page .easyui-tabs1{min-width:980px !important;height:100% !important;}
+#pf-bd #pf-page .easyui-tabs1 .tabs-header{border-top:none}
+#pf-bd #pf-page .easyui-tabs1 .tabs li{border-top:1px solid #bfbfbf;-moz-border-radius:2px 2px 0 0;-webkit-border-radius:2px 2px 0 0;border-radius:2px 2px 0}
+#pf-bd #pf-page .easyui-tabs1 .tabs li a.tabs-close{background:url('../../images/main/tabs_close_pf.png?1464531592')}
+#pf-bd #pf-page .easyui-tabs1 .tabs li:hover a.tabs-close{background:url('../../images/main/tabs_close_hover.png?1464355659')}
+#pf-bd #pf-page .easyui-tabs1 .tabs{padding-left:5px !important}
+#pf-bd #pf-page .easyui-tabs1 .tabs li.tabs-selected{border-top:3px solid #1da02b}
+#pf-bd #pf-page .easyui-tabs1 .tabs-panels{border-bottom:none !important}
+#pf-bd #pf-page .easyui-tabs1 .tabs li a.tabs-inner{background:#dbdbdb;color:#000;border-bottom:1px solid #bfbfbf;height:32px !important;line-height:32px !important}
+#pf-bd #pf-page .easyui-tabs1 .tabs li:hover a.tabs-inner,#pf-bd #pf-page .easyui-tabs1 .tabs li.tabs-selected a.tabs-inner{background:#fff}
+#pf-bd #pf-page .panel-body{overflow:hidden}
+

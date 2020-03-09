@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>TreeGrid - jQuery EasyUI Demo</title>
+ 	<link rel="stylesheet" href="../../../custom/uimaker/easyui.css"> 
+	<link rel="stylesheet" type="text/css" href="../../../custom/uimaker/icon.css">    
+    <link href="../../css/basic_info.css" rel="stylesheet">
+	<script type="text/javascript" src="../../../custom/easy1.6/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../custom/easy1.6/jquery.easyui.min.js"></script> 
+    <script type="text/javascript" src="../../js/myjs/myjs.js"></script>  
+    <script type="text/javascript" src="../../../custom/easyui-lang-zh_CN.js"></script>
+		
+	<script>
+	//***************************************************************************************树形表格(数据库用一个表,用parentid关联)
+		$(function(){
+			$('#dd_tg').hide();
+			$('#tg').treegrid({
+				//title:'树形表格',
+				//iconCls:'icon-save',
+				width:'100%',                                         
+				height:600,                                           
+				nowrap: false,
+				animate:true,
+				collapsible:true,                     
+				url:'http://localhost:8080/MySpringMVC_TEST/bomTree.htm/loadData',
+				idField:'ID',                                        
+				treeField:'BomMaterialNum',
+				columns:[[ 
+					{field:'ID',title:'ID',width:20},
+					{field:'BomMaterialNum',title:'部件号',width:198,editor:'text'},
+					{field:'BomQuantity',title:'数量',width:198},
+					{field:'BomSpacification',title:'技术规格',width:198},
+					{field:'BomLength',title:'长度',width:198},                                          
+				    {field:'BomDrawingNum',title:'图号',width:198},
+				    {field:'BomPosion',title:'位置',width:198},
+				    {field:'BomMaterial',title:'材料',width:198},
+					{field:'parentID',title:'parentID',width:20}
+				]],
+				onContextMenu: function(e, row){
+					e.preventDefault();
+					$(this).treegrid('unselectAll');
+					$(this).treegrid('select',row.ID);
+					$('#mm').menu('show', {
+						left:e.pageX,
+						top:e.pageY				
+					});
+				
+				},
+  //*****************************************************************************工具栏
+					toolbar:[{
+					id:'btnadd',
+					text:'添加',
+					iconCls:'icon-add',
+					handler:function(){
+						//$('#btnsave').linkbutton('enable');
+						add_tg();
+					}
+				},{
+					id:'btnedit',
+					text:'编辑',
+					iconCls:'icon-edit',
+					handler:function(){
+						//$('#btnsave').linkbutton('enable');
+						edit_tg();
+					}
+				},{
+					id:'btncut',
+					text:'删除',
+					iconCls:'icon-no',
+					handler:function(){
+						//$('#btnsave').linkbutton('enable');
+						dele_tg();
+					}
+				}]
+			});
+		});
+
+ //******************************************************************************添加
+		function add_tg(){
+			$("#fm_tg").form("clear");
+			var s='';
+			var node = $('#tg').treegrid('getSelected');
+			if (node){
+				$('#dd_tg').show();
+				s='#dd_tg';
+				$(''+s).dialog({   
+				    title: '添加/编辑',   
+				    width: 350,   
+				    height: 220,   
+				    closed: false,   
+				    cache: false,   
+				    modal: true,
+				    buttons:[{
+						text:'保存',
+						iconCls:'icon-save',
+						handler:function(){
+							var data = [{
+ 									ID:0,
+									BomMaterialNum: $("#fm_tg").find('input[name=BomMaterialNum]').val(),
+									BomQuantity: $("#fm_tg").find('input[name=BomQuantity]').val(),
+									BomSpacification: $("#fm_tg").find('input[name=BomSpacification]').val(),
+									BomLength: $("#fm_tg").find('input[name=BomLength]').val(),
+									BomDrawingNum: $("#fm_tg").find('input[name=BomDrawingNum]').val(),
+									BomPosion: $("#fm_tg").find('input[name=BomPosion]').val(),
+									BomMaterial: $("#fm_tg").find('input[name=BomMaterial]').val(),
+									parentID: node.ID
+							}] ;
+								
+							$.ajax({ 
+									type: "post",  
+									url:'http://localhost:8080/MySpringMVC_TEST/bomTree.htm/saveRow',
+									data:data[0],
+									traditional: true,
+									dataType:"json",  
+									beforeSend: function () {
+										load();
+									},
+									complete: function () {
+										disLoad();
+									},
+									success: function(result) {
+										/*$.messager.show({
+											title:'提示信息',
+											msg:'操作成功！'
+										});*/
+										//alert(JSON.stringify(result));
+										$('#tg').treegrid('append',{
+											parent: node.ID,  
+			 								data: result
+										});
+										$(''+s).window('close');
+									},
+									error : function() {
+								       	alert("出错了！");
+								   	}
+							});	
+					         
+						}
+					},{
+						text:'关闭',
+						iconCls:'icon-cancel',
+						handler:function(){
+							$(''+s).window('close');
+						}
+					}]
+				}); 
+			}	
+		}
+//*********************************************************************编辑
+		function edit_tg(){
+			var s='';
+			 var node = $('#tg').treegrid('getSelected');
+			if (node){
+					var node = $('#tg').treegrid('getSelected');
+					var nodep = $('#tg').treegrid('getParent',node.ID);
+					var nodec = $('#tg').treegrid('getChildren',node.ID);
+					var nodes = $('#tg').treegrid('getChildren');      //*******************treegrid('getChildren')获取的是该节点本身及(其所有子节点)或(兄弟节点和父节点)
+					var f_id;
+					var f_lx;
+					if(!(nodep!=null && node.ID!=nodep.ID && (nodec[0]==null))){                                 //**************************判断点击的节点是否是父节点
+								f_id=node.id;
+								f_lx=node.type;
+								$('#ffid').val(f_id);
+								$('#fflx').val(f_lx);
+								$('#ddf_tg').show();
+								 s='#ddf_tg';
+					}else{
+					
+								//f_id=nodep.ID;
+								//f_lx=nodep.type;
+								$('#BomMaterialNum').val(node.BomMaterialNum);
+								$('#BomQuantity').val(node.BomQuantity);
+								$('#BomSpacification').val(node.BomSpacification);
+								$('#BomLength').val(node.BomLength);
+								$('#BomDrawingNum').val(node.BomDrawingNum);
+								$('#BomPosion').val(node.BomPosion);
+								$('#BomMaterial').val(node.BomMaterial);
+								$('#parentID').val(node.parentID);
+								$('#ID').val(node.ID);
+								$('#dd_tg').show();
+								s='#dd_tg';
+					}
+		 		$(''+s).dialog({   
+				    title: '编辑',   
+				    width: 400,   
+				    height: 250,   
+				    closed: false,   
+				    cache: false,   
+				    modal: true,
+				    buttons:[{
+						text:'保存',
+						iconCls:'icon-save',
+						handler:function(){
+/* 							$.post("#", $("#fm_tg").serialize(),function(data){
+									$('#tg').treegrid('reload');
+									$(''+s).window('close');
+									}
+							
+							); */
+							$('#tg').treegrid('update',{
+								id: node.ID,  // the node has a 'id' value that defined through 'idField' property
+ 								row: {
+									BomMaterialNum: $("#fm_tg").find('input[name=BomMaterialNum]').val(),
+									BomQuantity: $("#fm_tg").find('input[name=BomQuantity]').val(),
+									BomSpacification: $("#fm_tg").find('input[name=BomSpacification]').val(),
+									BomLength: $("#fm_tg").find('input[name=BomLength]').val(),
+									BomDrawingNum: $("#fm_tg").find('input[name=BomDrawingNum]').val(),
+									BomPosion: $("#fm_tg").find('input[name=BomPosion]').val(),
+									BomMaterial: $("#fm_tg").find('input[name=BomMaterial]').val(),
+									parentID: $("#fm_tg").find('input[name=parentID]').val()
+								}
+								//data:$("#fm_tg").serialize()
+							});
+							
+							$.ajax({ 
+									type: "post",  
+									url:'http://localhost:8080/MySpringMVC_TEST/bomTree.htm/saveRow',
+									data:{
+										BomMaterialNum: $("#fm_tg").find('input[name=BomMaterialNum]').val(),
+										BomQuantity: $("#fm_tg").find('input[name=BomQuantity]').val(),
+										BomSpacification: $("#fm_tg").find('input[name=BomSpacification]').val(),
+										BomLength: $("#fm_tg").find('input[name=BomLength]').val(),
+										BomDrawingNum: $("#fm_tg").find('input[name=BomDrawingNum]').val(),
+										BomPosion: $("#fm_tg").find('input[name=BomPosion]').val(),
+										BomMaterial: $("#fm_tg").find('input[name=BomMaterial]').val(),
+										parentID: $("#fm_tg").find('input[name=parentID]').val(),
+										ID: $("#fm_tg").find('input[name=ID]').val()
+									},
+									traditional: true,
+									dataType:"json",  
+									beforeSend: function () {
+										load();
+									},
+									complete: function () {
+										disLoad();
+									},
+									success: function(result) {
+										$(''+s).window('close');
+									},
+									error : function() {
+								       	alert("出错了！");
+								   	}
+							});	
+							//$(''+s).window('close');
+						}
+					},{
+						text:'关闭',
+						iconCls:'icon-cancel',
+						handler:function(){
+							$(''+s).window('close');
+						}
+					}]
+				}); 
+			}
+		}
+//*********************************************************************************删除
+		function dele_tg(){
+			$.messager.confirm("提示信息","确认信息",function(r){
+				 var node = $('#tg').treegrid('getSelected');
+				 if (node){
+					
+					$.ajax({ 
+						type: "post",  
+						url:'http://localhost:8080/MySpringMVC_TEST/bomTree.htm/deleteRow',
+						data:{										
+								BomMaterialNum: node.BomMaterialNum,
+								BomQuantity:node.BomQuantity,
+								BomSpacification: node.BomSpacification,
+								BomLength: node.BomLength,
+								BomDrawingNum: node.BomDrawingNum,
+								BomPosion: node.BomPosion,
+								BomMaterial: node.BomMaterial,
+								parentID: node.parentID,
+								ID: node.ID
+							},
+						traditional: true,
+						dataType:"json",  
+						beforeSend: function () {
+							load();
+						},
+						complete: function () {
+							disLoad();
+						},
+						success: function(result) {
+							$('#tg').treegrid('remove', node.ID);
+							$.messager.show({
+								title:'提示信息',
+								msg:'操作成功！'
+							});
+						},
+						error : function() {
+					       	alert("出错了！");
+					   	}
+					});	
+				}
+			});	
+		}
+  	
+	</script>
+</head>
+<body>
+<div >
+<!--树形表格  -->
+	<table id="tg" ></table>
+<!--添加/编辑弹出框  子-->
+
+	<div id="dd_tg">
+ 		  <form id="fm_tg">	  
+<!--  		     <input type="hidden" name="ID" id="ID">
+ 		     <input type="hidden" name="parentID" id="parentID">
+ 			 <p> 部件号:<input name="flx" id="flx" readonly="readonly"><p/> 
+			 <p> 部件号:<input name="BomMaterialNum" id="BomMaterialNum"><p/>
+			 <p> 数量:&nbsp;&nbsp;&nbsp;<input name="BomQuantity" id="BomQuantity"><p/>
+			 <p> 技术规格:&nbsp;&nbsp;&nbsp;<input name="BomSpacification" id="BomSpacification"><p/>
+			 <p> 长度:&nbsp;&nbsp;&nbsp;<input name="BomLength" id="BomLength"><p/>
+			 <p> 图号:&nbsp;&nbsp;&nbsp;<input name="BomDrawingNum" id="BomDrawingNum"><p/>
+			 <p> 位置:&nbsp;&nbsp;&nbsp;<input name="BomPosion" id="BomPosion"><p/>
+			 <p> 材料&nbsp;&nbsp;&nbsp;<input name="BomMaterial" id="BomMaterial"><p/> -->
+			   	<input type="hidden" name="ID" id="ID">
+ 		     	<input type="hidden" name="parentID" id="parentID">
+				<div>
+						<table > 
+		                    <tr> 
+		                        <td style="width:50px;text-align:right;"> 部件号 </td> 
+		                        <td> <input  name="BomMaterialNum" id="BomMaterialNum" class="easyui-textbox" style="width:120px;" data-options="validType:'text'"> </td>                     
+		                        <td style="width:37px;text-align:right;"> 数量 </td> 
+		                        <td> <input  name="BomQuantity" id="BomQuantity" class="easyui-textbox" style="width:105px;"> </td>    
+		                    </tr> 
+		                </table>     
+				</div>
+				<div>
+						<table > 
+							<tr> 
+		                        <td style="width:50px;text-align:right;"> 技术规格 </td> 
+		                        <td> <input name="BomSpacification" id="BomSpacification" class="easyui-textbox" style="width:120px;" data-options="validType:'text'"> </td> 
+		                       	<td style="width:37px;text-align:right;"> 长度 </td> 
+		                       	<td> <input  name="BomLength" id="BomLength" class="easyui-textbox" style="width:105px;"> </td>                         
+		                    </tr> 
+		                </table> 
+				</div>
+				<div>
+						<table > 
+		                    <tr> 
+		                        <td style="width:50px;text-align:right;"> 图号 </td> 
+		                        <td> <input name="BomDrawingNum" id="BomDrawingNum" class="easyui-textbox" style="width:120px;" data-options="validType:'text'"> </td> 
+		                       	<td style="width:37px;text-align:right;"> 位置 </td> 
+		                       	<td> <input name="BomPosion" id="BomPosion" class="easyui-textbox" style="width:105px;"> </td>
+		                    </tr> 
+		                </table> 
+				</div>
+				<div>
+						<table > 
+		                    <tr> 
+	   							<td style="width:50px;text-align:right;"> 材料 </td> 
+		                        <td> <input name="BomMaterial" id="BomMaterial" class="easyui-textbox" style="width:120px;" data-options="validType:'text'"> </td> 								
+		                    </tr> 
+		                </table> 
+				</div>
+	      </form>
+	</div>
+	<div id="mm" class="easyui-menu" style="width: 120px;">
+		<div onclick="add_tg()">新增</div>
+		<div onclick="edit_tg()">更新</div>
+		<div onclick="dele_tg()">删除</div>
+	</div>
+</div>
+</body>
+</html>

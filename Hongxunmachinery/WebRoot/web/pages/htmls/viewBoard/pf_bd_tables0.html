@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>uimaker信息管理系统</title>
+<link href="../../css/base.css" rel="stylesheet">
+<link href="./platform.css" rel="stylesheet">
+<link rel="stylesheet" href="../../../custom/uimaker/easyui.css">
+<link rel="stylesheet" type="text/css"
+	href="../../../custom/uimaker/icon.css">
+<link rel="stylesheet" href="../../css/providers1.css">
+<link rel="stylesheet" href="../../css/style.css" media="screen"
+	type="text/css" />
+
+<link rel="stylesheet" href="css3-accordion-menu/css/normalize.css">
+<link rel="stylesheet" href="css3-accordion-menu/css/style.css"
+	media="screen" type="text/css" />
+
+</head>
+<body>
+
+	<div id="pf-bd">
+		<!-- <div id="pf-sider">
+			<h2 class="pf-model-name">
+				<span class="iconfont"></span> <span class="pf-name">看板信息</span> <span
+					class="toggle-icon"></span>
+			</h2>
+			<ul>
+				<li class="dropdown"><a href="#" data-toggle="dropdown">基础信息 <i class="icon-arrow"></i></a>
+					<ul class="dropdown-menu">
+						<li><a href="javascript:void(0)" onclick="addTab('Bom','../one/pf_bd_tables1_13.jsp')">Bom</a></li>
+						<li><a href="javascript:void(0)" onclick="addTab('产品图纸文档','../one/pf_bd_tables1_3.jsp')">产品图纸文档</a></li>
+						<li><a href="javascript:void(0)" onclick="addTab('标准工序流程','../one/pf_bd_tables1_14.jsp')">标准工序流程</a></li>
+						<li><a href="javascript:void(0)" onclick="addTab('供应商信息','../one/pf_bd_tables2_10.jsp')">供应商信息</a></li>
+					</ul>
+				</li>
+				<li class="dropdown"><a href="#" data-toggle="dropdown">计划管理 <i class="icon-arrow"></i></a>
+					<ul class="dropdown-menu">
+						<li><a href="javascript:void(0)" onclick="addTab('订单计划','../two/pf_bd_tables2_11.jsp')">订单计划</a></li>
+						<li><a href="javascript:void(0)" onclick="addTab('采购计划','../two/pf_bd_tables2_1.jsp')">采购计划</a></li>
+						<li><a href="javascript:void(0)" onclick="addTab('排产计划','../two/pf_bd_tables2_13.jsp')">排产计划</a></li>
+						<li><a href="javascript:void(0)" onclick="addTab('委外计划','../two/pf_bd_tables2_10.jsp')">委外计划</a></li>
+					</ul>
+				</li> 	
+				<li class="dropdown"><a href="#" data-toggle="dropdown">库存管理 <i class="icon-arrow"></i></a>
+					<ul class="dropdown-menu">
+						<li> <a href="javascript:void(0)" onclick="addTab('原料仓库记录','../four/pf_bd_tables4_2.jsp')">原料仓库记录</a></li>
+						<li> <a href="javascript:void(0)" onclick="addTab('采购入库操作','../four/pf_bd_tables4_1.jsp')">采购入库操作</a></li>
+						<li> <a href="javascript:void(0)" onclick="addTab('委外入库操作','../four/pf_bd_tables4_7.jsp')">委外入库操作</a></li>
+						<li> <a href="javascript:void(0)" onclick="addTab('生产领料操作','../four/pf_bd_tables4_11.jsp')">生产领料操作</a></li>
+						<li> <a href="javascript:void(0)" onclick="addTab('委外领料操作','../four/pf_bd_tables4_6.jsp')">委外领料操作</a></li>
+						<li> <a href="javascript:void(0)" onclick="addTab('成品入库操作','../four/pf_bd_tables4_17.jsp')">成品入库操作</a></li>
+						<li> <a href="javascript:void(0)" onclick="addTab('产品发货操作','../four/pf_bd_tables4_15.jsp')">产品发货操作</a></li>
+					</ul>
+				</li>
+				<li class="dropdown"><a href="#" data-toggle="dropdown">生产管理 <i class="icon-arrow"></i></a>
+					<ul class="dropdown-menu">
+						<li> <a href="javascript:void(0)" onclick="addTab('生产工序计划查询','./pf_bd_tables4_2.jsp')">生产工序计划查询</a></li>
+						<li> <a href="javascript:void(0)" onclick="addTab('生产效率数据采集','./pf_bd_tables4_1.jsp')">生产效率数据采集</a></li>
+						<li> <a href="javascript:void(0)" onclick="addTab('工单生产状态跟踪','./pf_bd_tables4_7.jsp')">工单生产状态跟踪</a></li>
+						<li> <a href="javascript:void(0)" onclick="addTab('工序加工效率统计 ','./pf_bd_tables4_11.jsp')">工序加工效率统计 </a></li>			
+					</ul>
+				</li>
+
+				<li class="dropdown"><a href="#" data-toggle="dropdown">设备管理 <i class="icon-arrow"></i></a>
+					<ul class="dropdown-menu">
+						<li> <a href="javascript:void(0)" onclick="addTab('设备状态监控','./pf_bd_tables4_2.jsp')">设备状态监控</a></li>
+						<li> <a href="javascript:void(0)" onclick="addTab('设备台帐管理','./pf_bd_tables4_1.jsp')">设备台帐管理</a></li>
+						<li> <a href="javascript:void(0)" onclick="addTab('设备状态监控','./pf_bd_tables4_7.jsp')">设备状态监控</a></li>
+						<li> <a href="javascript:void(0)" onclick="addTab('设备维修记录 ','./pf_bd_tables4_11.jsp')">设备维修记录</a></li>			
+					</ul>
+				</li>
+				  			
+				<li class="dropdown"><a href="#" data-toggle="dropdown">财务统计 <i class="icon-arrow"></i></a>	
+					<ul class="dropdown-menu">
+						<li> <a href="javascript:void(0)" onclick="addTab('原料采购','../six/pf_bd_tables6_2.jsp')">原料采购</a></li>
+						<li> <a href="javascript:void(0)" onclick="addTab('委外加工','../six/pf_bd_tables6_3.jsp')">委外加工</a></li>
+						<li> <a href="javascript:void(0)" onclick="addTab('成品销售','../six/pf_bd_tables6_1.jsp')">成品销售</a></li>						
+					</ul>
+				</li>              
+			</ul>
+		</div> -->
+		<div id="pf-page">
+			<div id="tt" class="easyui-tabs1" style="width:100%;height:100%;">
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="../../../custom/jquery.min.js"></script>
+	<script type="text/javascript"
+		src="../../../custom/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="../../js/main.js"></script>
+	<script type="text/javascript" src="../../js/myjs/myjs.js"></script>
+	<script type="text/javascript">
+		$('.easyui-tabs1').tabs({
+			tabHeight : 44,
+			onSelect : function(title, index) {
+				var currentTab = $('.easyui-tabs1').tabs("getSelected");
+				if (currentTab.find("iframe") && currentTab.find("iframe").size()) {
+					currentTab.find("iframe").attr("src", currentTab.find("iframe").attr("src"));
+				}
+			}
+		})
+	</script>
+	<script type="text/javascript">
+		function addTab(title, url) {
+			//alert(1);
+			if ($('#tt').tabs('exists', title)) {
+				$('#tt').tabs('select', title);
+			} else {
+				var content = '<iframe scrolling="auto" frameborder="0"  src="' + url + '" style="width:100%;height:100%;"></iframe>';
+				$('#tt').tabs('add', {
+					title : title,
+					content : content,
+					closable : false
+				});
+			}
+		}
+		$(function() {
+			setTimeout(function() {				
+				//addTab('看板信息', './look/htmls/oee.html');
+				addTab('库存报警','./instoreHtml/pf_bd_tables0_0_4.jsp');
+				addTab('装配发货单','./instoreHtml/pf_bd_tables0_0_5.jsp');
+				addTab('焊接送货单','./instoreHtml/pf_bd_tables0_0_6.jsp');
+			}, 300);
+		});
+		var index = 0;
+		var t = $('#tt');
+		var tabs = t.tabs('tabs');
+		setInterval(function(){
+		    t.tabs('select', tabs[index].panel('options').title);
+		    index++;
+		    if (index >= tabs.length){
+		        index = 0;
+		    }
+		}, 9000); 
+	</script>
+	<script src="css3-accordion-menu/js/index.js"></script>
+</body>
+</html>

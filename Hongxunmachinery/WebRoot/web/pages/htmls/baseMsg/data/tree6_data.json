@@ -1,0 +1,12 @@
+[
+{"id":1,"parendId":0,"name":"Foods"},
+{"id":2,"parentId":1,"name":"Fruits"},
+{"id":3,"parentId":1,"name":"Vegetables"},
+{"id":4,"parentId":2,"name":"abc.pdf"},
+{"id":5,"parentId":2,"name":"Win7_网络OPC的DCOM配置说明.pdf"},
+{"id":6,"parentId":4,"name":"tomato"},
+{"id":7,"parentId":3,"name":"carrot"},
+{"id":8,"parentId":3,"name":"cabbage"},
+{"id":9,"parentId":3,"name":"potato"},
+{"id":10,"parentId":3,"name":"lettuce"}
+]
