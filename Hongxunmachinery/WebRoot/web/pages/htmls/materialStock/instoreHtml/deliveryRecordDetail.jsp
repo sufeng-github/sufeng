@@ -101,14 +101,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			$('#tt').datagrid('reload');				
 		}
 		
+		function getNumID(){
+			if(parent.getFatherDeItemStr()=="material"){
+				return window.parent.window.getPurchaseDeNumID('#dialog')			 
+			}else{
+				return 0;
+			}
+		}
+		
 		$('#num').combobox({
 			        prompt:'请输入要查询的部件号', 	//提示信息
 					//required:true, 	//是否必填
 					mode:'remote', 		//动态去服务器端拿数据；而mode:'local'是取本地数据的也就是javascirpt(内存)中的数据
 					url:'${pageContext.request.contextPath}/purchaseDeItem.htm/autotimp', 	//请求数据路径
-/* 					queryParams : {
-						numId : window.parent.window.getPurchaseDeNumID('#dialog')
-					}, */
+ 					queryParams : {
+						numId : getNumID()						
+					}, 
 					editable:true, 		//可编辑
 					hasDownArrow:false, 	//下拉面板不关闭
 					valueField: "id", 	//数组的键索引
@@ -120,9 +128,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					   // console.log("------ "+param.q+" ------"); 	//param.q ：combobox框输入的参数，请求方式POST
 		
 					    if(param == null || param.q == null || param.q.replace(/ /g, '') == ''){ 
-					    	if(parent.getFatherDeItemStr()=="material"){
-							 	param.numId=window.parent.window.getPurchaseDeNumID('#dialog')			 
-							}	
+	
 					        var value = $(this).combobox('getValue'); 
 					        if(value){	//不为空的时候才传关键字到后台，模糊查询数据到前台
 						    	param.q = value; 

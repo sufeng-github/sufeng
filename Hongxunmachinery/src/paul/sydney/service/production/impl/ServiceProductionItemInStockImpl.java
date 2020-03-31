@@ -58,13 +58,15 @@ public class ServiceProductionItemInStockImpl implements ServiceProductionItemIn
 
 
 	@Override
-	public List<Map<String, Object>> autotimp(String str) {
+	public List<Map<String, Object>> autotimp(String str, String name) {
 		// TODO Auto-generated method stub
 		List<Map<String,Object>> list = new ArrayList<Map<String,Object>>();
 		List<String> listObj = new ArrayList<String>();
 		StringBuilder hql=new StringBuilder("from HongXunProductionItemInStock a where 1=1");
 		hql.append(" and a.hongXunProductionStock.materialNum like ?");
-		listObj.add("%" + str + "%");		
+		listObj.add("%" + str + "%");	
+		hql.append(" and name = ?");
+		listObj.add(name);
 		List<HongXunProductionItemInStock> hongXunProductionItemInStocks = iProductionItemInStockDao.getListByHQL(hql.toString(), listObj.toArray());
 		for(HongXunProductionItemInStock item: hongXunProductionItemInStocks){	
 			Map<String,Object> map = new HashMap<String,Object>();

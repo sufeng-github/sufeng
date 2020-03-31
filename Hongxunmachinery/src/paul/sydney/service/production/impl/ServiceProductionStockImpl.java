@@ -51,13 +51,15 @@ public class ServiceProductionStockImpl implements ServiceProductionStockInf{
 	}
 	
 	@Override
-	public List<Map<String, Object>> autotimp(String str) {
+	public List<Map<String, Object>> autotimp(String str, String name) {
 		// TODO Auto-generated method stub
 		List<Map<String,Object>> list = new ArrayList<Map<String,Object>>();
 		List<String> listObj = new ArrayList<String>();
 		StringBuilder hql=new StringBuilder("from HongXunProductionStock where 1=1");
 		hql.append(" and materialNum like ?");
 		listObj.add("%" + str + "%");
+		hql.append(" and name = ?");
+		listObj.add(name);
 		List<HongXunProductionStock> hongXunProductionStocks = iProductionDao.getListByHQL(hql.toString(), listObj.toArray());
 		for(HongXunProductionStock item: hongXunProductionStocks){	
 			Map<String,Object> map = new HashMap<String,Object>();

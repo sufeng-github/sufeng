@@ -17,7 +17,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <script type="text/javascript" src="../../../js/myjs/xlsx.js"></script>
     <script type="text/javascript" src="../../../js/myjs/datagrid-export.js"></script>
     <script type="text/javascript" src="../../../js/myjs/myjs.js"></script>  
-<!--    	<script type="text/javascript" src="../../../js/myjs/production.js"></script>  --> 
+	<script type="text/javascript" src="../../../js/myjs/production.js"></script>
    	<script type="text/javascript" src="../../../js/myjs/common.js"></script>  
     <script type="text/javascript" src="../../../js/myjs/gridHeader.js"></script> 
     <script type="text/javascript" src="../../../../custom/easyui-lang-zh_CN.js"></script>
@@ -40,8 +40,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<td>结束时间:</td>
 								<td><input class="easyui-datebox" id="endTime"  style="height:25px;width:150px;line-height:25px;"></input></td>											
 								<td><a href="javascript:;" class="easyui-linkbutton"  onclick="find()" >查找</a></td>
-								<td><a href="javascript:;"  class="easyui-linkbutton"   onclick="$('#tt').datagrid('toExcel','采购单.xls')">导出</a></td>
-								<td><a href="javascript:;"  class="easyui-linkbutton"   onclick="$('#tt').datagrid('print','DataGrid')">打印</a></td>
+								<td><a href="javascript:;" class="easyui-linkbutton"  onclick="$('#tt').datagrid('toExcel','采购单.xls')">导出</a></td>
+								<td><a href="javascript:;" class="easyui-linkbutton"  onclick="$('#tt').datagrid('print','DataGrid')">打印</a></td>
 							</tr>
 						</table>						
 			 </div> 			
@@ -144,6 +144,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				hasDownArrow:false, //下拉面板不关闭
 				valueField: "id", 	//数组的键索引
 				textField: "name", 	//数组的值索引
+				queryParams : {
+					name:getName('son')
+				},
 				icons:[{
 						//iconCls:'icon-search'
 					}],

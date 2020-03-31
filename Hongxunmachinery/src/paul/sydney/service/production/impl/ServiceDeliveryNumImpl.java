@@ -6,6 +6,8 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -14,6 +16,7 @@ import paul.sydney.model.HongXunDeliveryNum;
 import paul.sydney.model.HongXunProductionStock;
 import paul.sydney.model.HongXunPurchaseDeNum;
 import paul.sydney.service.production.ServiceDeliveryNumInf;
+import paul.sydney.service.utils.IServiceUtilsInf;
 import paul.sydney.commen.result.PageResults;
 import paul.sydney.dao.IProductionDao;
 import paul.sydney.dao.IProductionDeliveryItemDao;
@@ -43,7 +46,11 @@ public class ServiceDeliveryNumImpl implements ServiceDeliveryNumInf{
 	public void setStockDao(IProductionDeliveryItemDao iProductionDeliveryItemDao) {
 		this.iProductionDeliveryItemDao = iProductionDeliveryItemDao;
 	}
-
+	@Autowired
+	IServiceUtilsInf iServiceUtilsInf;
+	public void setStockDao(IServiceUtilsInf iServiceUtilsInf) {
+		this.iServiceUtilsInf = iServiceUtilsInf;
+	}
 	
 	@Override
 	public List<Map<String, Object>> getEntity() {
@@ -91,8 +98,13 @@ public class ServiceDeliveryNumImpl implements ServiceDeliveryNumInf{
 	}
 
 	@Override
-	public void updateRow(HongXunDeliveryNum hongXunDeliveryNum) {
+	public void updateRow(HongXunDeliveryNum item) {
 		// TODO Auto-generated method stub
+		HongXunDeliveryNum hongXunDeliveryNum = iProductionDeliveryNumDao.get(item.getIdc());
+		hongXunDeliveryNum.setCustomer(item.getCustomer());
+		hongXunDeliveryNum.setDate(item.getDate());
+		hongXunDeliveryNum.setRemark(item.getRemark());
+		hongXunDeliveryNum.setSupplierCode(item.getSupplierCode());
 		iProductionDeliveryNumDao.update(hongXunDeliveryNum);
 	}
 	
@@ -134,7 +146,20 @@ public class ServiceDeliveryNumImpl implements ServiceDeliveryNumInf{
 			hql.append(" and name = ?");
 			list.add(hongXunDeliveryNum.getName());
 		}
-		return iProductionDeliveryNumDao.findPageByFetchedHql(hql.toString(), "select count(*) " + hql.toString(), pageNo, pageSize,list.toArray());
+		PageResults<HongXunDeliveryNum> result = iProductionDeliveryNumDao.findPageByFetchedHql(hql.toString(), "select count(*) " + hql.toString(), pageNo, pageSize,list.toArray());
+    	 
+    	List<HongXunDeliveryNum> hongXunDeliveryNums = result.getRows();
+    	for(HongXunDeliveryNum item: hongXunDeliveryNums){
+    		Set<HongXunDeliveryItem> hongXunDeliveryItems = item.getHongXunDeliveryItems();
+    		int cnt = 0;
+    		for(HongXunDeliveryItem item1: hongXunDeliveryItems){
+    			if(item1.getStatus().equals("完成")){
+    				cnt++;
+    			}
+    		}
+    		item.setStatus(iServiceUtilsInf.print(cnt, hongXunDeliveryItems.size()));
+    	}
+    	return result;
 	}	
 
 }

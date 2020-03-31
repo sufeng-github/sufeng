@@ -19,7 +19,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <script type="text/javascript" src="../../../js/myjs/xlsx.js"></script>
     <script type="text/javascript" src="../../../js/myjs/datagrid-export.js"></script>
     <script type="text/javascript" src="../../../js/myjs/myjs.js"></script>  
-<!--    	<script type="text/javascript" src="../../../js/myjs/production.js"></script>  --> 
+    <script type="text/javascript" src="../../../js/myjs/production.js"></script> 
    	<script type="text/javascript" src="../../../js/myjs/common.js"></script>  
     <script type="text/javascript" src="../../../js/myjs/gridHeader.js"></script> 
     <script type="text/javascript" src="../../../../custom/easyui-lang-zh_CN.js"></script>
@@ -204,17 +204,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			obj.thisInQuantity = $('#quantity').textbox('getText');
 			obj.idc = $('#idc').textbox('getText');
 			if($('#name').textbox('getText')==""){
-				if(parent.parent.getFatherParameter()=='productionStock.htm'){
-					obj.name = 'pro';
-				}else{
-					obj.name = 'weld'; 
-				}
+				obj.name = getName('sonson'); 	
 			}else{
 				obj.name = $('#name').textbox('getText');
 			}
 			list.push(obj);
 			//alert(JSON.stringify(list));
-			ajax("${pageContext.request.contextPath}/productionStock.htm/inStock",list,"装配件入库")
+			ajax("${pageContext.request.contextPath}/productionStock.htm/inStock",list,"成品入库")
 		} 
 	</script>
 

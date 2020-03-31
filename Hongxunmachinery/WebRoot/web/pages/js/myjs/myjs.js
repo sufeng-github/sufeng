@@ -292,12 +292,20 @@
 						},
 						success : function(result) {
 							//alert(result);
-							//if((msg.indexOf('删除') > -1) || (msg.indexOf('提单') > -1) || (msg.indexOf('生成采购单')>-1) || (msg.indexOf('采购入库')>-1)){
-							$('#tt').datagrid('reload');
+							if(msg.indexOf('成品入库') > -1){
+								alert('入库成功')
+							}else{
+								$('#tt').datagrid('reload');
+							}
 							//}
 						},
 						error : function() {
-							alert("异常！");
+							if(msg.indexOf('删除') > -1){
+								alert('存在关联项禁止删除')
+							}else{
+								alert("异常！");
+							}
+							
 						}
 					});
 				}
@@ -318,7 +326,8 @@
 						},
 						success : function(result) {
 							if(msg=="成品出库"){
-								return true;	
+								parent.getFatherFlesh();
+								parent.getFatherDialogClose();							
 							}
 						},
 						error : function() {

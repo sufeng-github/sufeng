@@ -121,7 +121,7 @@ public class ServicePurchaseDeItemImpl implements ServicePurchaseDeItemInf{
 			List<Object> listObj = new ArrayList<Object>();
 			StringBuilder hql=new StringBuilder("from HongXunPurchaseDeItem a where 1=1");
 			//String类型属性	
-			if(numId != null){
+			if(numId != 0){
 				hql.append(" and a.hongXunPurchaseDeNum.idc =?");
 				listObj.add(numId);	
 			}

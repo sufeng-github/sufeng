@@ -185,6 +185,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			$("#dialog").dialog("open"); // 打开dialog     	     	
 		}
 		
+		function getFatherDialogClose(){
+			$("#dialog").dialog("close"); // 打开dialog     	    
+		}
+		function getFatherFlesh(){
+			$('#tt').datagrid('reload');
+		}
 		$('#num').combobox({
 			prompt : '请输入部件号', //提示信息
 			//required:true, 	//是否必填

@@ -35,8 +35,8 @@ public class ControllerProductionItemInStock {
    	@RequestMapping("/autotimp")
    	public List<Map<String,Object>> autotimp(HttpServletRequest request) {
     	String q=request.getParameter("q");
-    	//String name=request.getParameter("name");
-   		return service.autotimp(q);  
+    	String name=request.getParameter("name");
+   		return service.autotimp(q, name);  
    	} 
     
     @ResponseBody

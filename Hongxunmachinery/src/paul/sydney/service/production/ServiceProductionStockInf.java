@@ -26,7 +26,7 @@ public interface ServiceProductionStockInf {
 
 	PageResults<HongXunProductionStock> scanInStock(HongXunProductionStock hongXunProductionStock, PageResults<HongXunProductionStock> result);
 
-	List<Map<String, Object>> autotimp(String str);
+	List<Map<String, Object>> autotimp(String str, String name);
 
 /*	PageResults<HongXunProductionStock> outStock(HongXunProductionStock hongXunProductionStock,
 			PageResults<HongXunProductionStock> result);*/

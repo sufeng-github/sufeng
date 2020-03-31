@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import paul.sydney.model.HongXunFile;
 import paul.sydney.service.others.ServiceFileopInf;
-@Transactional
+
 @Controller 
 @RequestMapping("/fileop.htm") 
 public class ControllerFileOP {

@@ -16,7 +16,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <script type="text/javascript" src="../../../../../jquery-easyui-1.7.0/jquery.easyui.min.js"></script> 
    	<script type="text/javascript" src="../../../js/myjs/xlsx.js"></script>
     <script type="text/javascript" src="../../../js/myjs/datagrid-export.js"></script>
-    <script type="text/javascript" src="../../../js/myjs/myjs.js"></script>    
+    <script type="text/javascript" src="../../../js/myjs/myjs.js"></script>  
+    <script type="text/javascript" src="../../../js/myjs/production.js"></script>  
     <script type="text/javascript" src="../../../js/myjs/gridHeader.js"></script> 
     <script type="text/javascript" src="../../../../custom/easyui-lang-zh_CN.js"></script>
 </head>
@@ -277,11 +278,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					return data;					
 				},
 				onBeforeLoad(param){
-					if(parent.getFatherParameter()=='productionStock.htm'){
-						param.name='pro'
-					}else{
-						param.name='weld'
-					}
+					param.name=getName('son')				
 				},
 				onBeforeEdit:function(index,row){
 					$(this).datagrid('updateRow', {index:index,row:{editing:true}})
@@ -315,7 +312,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			valueField : "id", //数组的键索引
 			textField : "name", //数组的值索引
 			queryParams : {
-				//orderNumID : window.parent.window.getOrderNumID()
+				name:getName('son')
 			},
 			icons : [ {
 				//iconCls : 'icon-search'
@@ -325,11 +322,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				if (param == null || param.q == null || param.q.replace(/ /g, '') == '') {
 					var value = $(this).combobox('getValue');
 					if (value) { //不为空的时候才传关键字到后台，模糊查询数据到前台
-						if(parent.getFatherParameter()=='productionStock.htm'){
-							param.name='pro';
-						}else{
-							param.name='weld';
-						}
+						
 						param.q = value;
 						return true;
 					}

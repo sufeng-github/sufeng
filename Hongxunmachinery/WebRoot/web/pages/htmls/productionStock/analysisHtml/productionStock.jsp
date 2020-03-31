@@ -19,6 +19,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <script type="text/javascript" src="../../../js/myjs/xlsx.js"></script>
     <script type="text/javascript" src="../../../js/myjs/datagrid-export.js"></script>
     <script type="text/javascript" src="../../../js/myjs/myjs.js"></script>  
+    <script type="text/javascript" src="../../../js/myjs/production.js"></script>  
    	<script type="text/javascript" src="../../../js/myjs/common.js"></script>  
     <script type="text/javascript" src="../../../js/myjs/gridHeader.js"></script> 
     <script type="text/javascript" src="../../../../custom/easyui-lang-zh_CN.js"></script>
@@ -116,21 +117,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		}
 		function add(){
 			var param = {};
-			if(parent.getFatherParameter()=='productionStock.htm'){
-				param.name='pro'
-			}else{
-				param.name='weld'
-			}
+			param.name = getName('son');
 			insert(param);
 			//insert();
 		}
 		$('#tt').datagrid({	
 			onBeforeLoad(param){
-				if(parent.getFatherParameter()=='productionStock.htm'){
-					param.name='pro'
-				}else{
-					param.name='weld'
-				}
+				param.name = getName('son');
 			},
 			onBeforeEdit:function(index,row){
 				$(this).datagrid('updateRow', {index:index,row:{editing:true}})
@@ -166,19 +159,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			//	$('#importBtn').linkbutton('disable');
 			//} 
 
-        function isOnlyRead(){
-			var str = localStorage.getItem('authority1'); 			
-	        str = str.substr(6, 1);
-			if(str.charAt(0)==1){	
-	        	return true;					        			
-	        }else{
-	        	return false;
-	        }    		        	    	         		
-		} 
+
 		
 		function style(value,row,index){	
 			return 'background-color:#999999;color:red;';
 		}
+
 		
          $('#num').combobox({
 		        prompt:'请输入要查询的部件号', 	//提示信息
@@ -189,6 +175,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				hasDownArrow:false, //下拉面板不关闭
 				valueField: "id", 	//数组的键索引
 				textField: "name", 	//数组的值索引
+				queryParams : {
+					name:getName('son')
+				},
 				icons:[{
 						iconCls:'icon-search'
 					}],

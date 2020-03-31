@@ -10,7 +10,7 @@ import paul.sydney.model.HongXunPurchaseItemInStock;
 
 public interface ServiceProductionItemInStockInf {
 
-	List<Map<String, Object>> autotimp(String q);	
+	List<Map<String, Object>> autotimp(String q, String name);	
 
 	PageResults<HongXunProductionItemInStock> getData(HongXunProductionItemInStock hongXunProductionItemInStock,
 			Integer pageNo, Integer pageSize);

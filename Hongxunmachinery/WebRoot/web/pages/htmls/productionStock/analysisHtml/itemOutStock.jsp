@@ -141,10 +141,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			obj.quantity = $('#quantity').textbox('getText');			
 			//list.push(obj);
 			//alert(JSON.stringify(list));
-			if(ajaxObj("${pageContext.request.contextPath}/productionStock.htm/outStock",obj,"成品出库")==true){
-				
-			
-			}
+			ajaxObj("${pageContext.request.contextPath}/productionStock.htm/outStock",obj,"成品出库");
 			
 		} 
 	</script>
