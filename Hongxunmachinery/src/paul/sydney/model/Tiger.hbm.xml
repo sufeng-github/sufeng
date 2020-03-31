@@ -1,0 +1,954 @@
+<?xml version="1.0" encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="paul.sydney.model">
+
+    <class name="HongXunPurchaseNum" table="hongXunPurchaseNum" dynamic-update="true">
+        <id name="idc" column="ID" type="integer" > 
+            <generator class="identity"/>           
+        </id>  
+        <property name="purchaseNum" 			column="purchaseNum" 			not-null="true"  length="30" />
+        <property name="productionItemNum" 		column="productionItemNum" 		not-null="false" length="30" />
+        <property name="productionDes" 			column="productionDes" 			not-null="false" length="30" />
+        <property name="purchaseDate" 			column="purchaseDate" 			not-null="true"  length="10" />
+        <property name="purchaseAmount" 		column="purchaseAmount" 		not-null="false" length="10" />
+        <property name="purchaseDeliveryDate" 	column="purchaseDeliveryDate" 	not-null="false" length="10" />
+		<property name="purchasingAgent" 		column="purchasingAgent" 		not-null="false" length="10" />
+		<property name="purchaseSupplier" 		column="purchaseSupplier" 		not-null="false" length="20" />
+		<property name="purchaseStatus" 		column="purchaseStatus" 		not-null="false" length="10" />
+		<property name="purchaseQuantity" 		column="purchaseQuantity" 		not-null="false" length="10" />
+		<property name="purchaseProcedure" 		column="purchaseProcedure" 		not-null="false" length="20" />
+		<property name="purchaseRemark" 		column="purchaseRemark" 		not-null="false" length="80" />
+    	<set name="hongXunPurchaseItems" cascade="all" lazy="false" fetch="join">                       
+            <key column="numId" />  
+            <one-to-many class="HongXunPurchaseItem" />  
+        </set> 
+    </class> 						
+
+    <class name="HongXunPurchaseItem" table="HongXunPurchaseItem" dynamic-update="true">
+        <id name="idc" column="ID" type="integer" > 
+            <generator class="identity"/>           
+        </id>
+        <many-to-one name="hongXunPurchaseDeItem" class="HongXunPurchaseDeItem" cascade="none" lazy="false" fetch="join" column="deItemId"></many-to-one>     
+		<many-to-one name="hongXunPurchaseNum" class="HongXunPurchaseNum" cascade="none" lazy="false" fetch="join" column="numId" not-null="true"></many-to-one>
+<!--    <property name="materialNum" 				column="materialNum" 				not-null="false"  length="30" />
+        <property name="materialName" 				column="materialName" 				not-null="false" length="20" />	
+        <property name="specification" 				column="specification" 				not-null="false" length="100" /> -->	
+		<!-- <property name="materialLotNum" 		column="materialLotNum" 			not-null="false" length="20" /> -->
+		<!-- <property name="attribute" 			column="attribute" 					not-null="false" length="20" />		     --> 
+        <property name="materialRealQuantity" 		column="materialRealQuantity" 		not-null="false" length="10" type="integer"/>
+        <property name="materialPurchaseQuantity" 	column="materialPurchaseQuantity" 	not-null="false" length="10" type="integer"/>	
+        <property name="arrivalQuantity" 			column="arrivalQuantity" 			not-null="false" length="10" type="integer"/>			
+        <property name="price" 						column="price" 						not-null="false" length="10" />
+        <property name="materialMoney" 				column="materialMoney" 				not-null="false" length="10" />
+        <property name="supplier" 					column="supplier" 					not-null="false" length="50" />	
+		<property name="materialRemark" 			column="materialRemark" 			not-null="false" length="80" />
+		<property name="materialState" 				column="materialState" 				not-null="false" length="10" />
+		<!-- <property name="deliveryDate" 			column="deliveryDate" 				not-null="false" length="10" />	 -->
+		<!-- <property name="purchaseNumID" 		column="purchaseNumID" 				not-null="false" length="10" /> -->
+		<!-- <property name="numId" 		column="numId" 	not-null="false" length="10" /> -->
+		
+		
+<!--   	<set name="hongXunPurchaseItemInStock" cascade="save-update" lazy="false" inverse="true">
+         	<key column="mainID"></key>
+           	<one-to-many class="HongXunPurchaseItemInStock"/>
+        </set>   -->
+<!--         <set name="hongXunPurchaseItemOutStock" cascade="save-update" lazy="false" inverse="false">
+         	<key column="mainID"></key>
+           	<one-to-many class="HongXunPurchaseItemOutStock"/>
+        </set>  -->
+        <!-- <many-to-one name="hongXunDataOne" class="HongXunDataOne" fetch="join" column="mainID"></many-to-one> -->
+	
+    </class>
+	
+	<class name="HongXunPurchaseDeNum" table="hongXunPurchaseDeNum" dynamic-update="true"  >
+        <id name="idc" column="ID" type="integer" > 
+            <generator class="identity"/>           
+        </id>  
+        <property name="purchaseDeNum" 			column="purchaseDeNum" 			not-null="true"  length="30" /> 
+        <property name="purchaseDeDate" 		column="purchaseDeDate" 		not-null="true"  length="10" />
+		<property name="purchaseDeStatus" 		column="purchaseDeStatus" 		not-null="false" length="10" />
+		<property name="purchaseDeRemark" 		column="purchaseDeRemark" 		not-null="false" length="80" />
+    	<set name="hongXunPurchaseDeItems" cascade="all" inverse="true" lazy="false" fetch="join">                       
+            <key column="deNumId" />  
+            <one-to-many class="HongXunPurchaseDeItem" />  
+        </set>  
+    </class>
+
+	
+	<class name="HongXunPurchaseDeItem" table="HongXunPurchaseDeItem" dynamic-update="true">
+        <id name="idc" column="ID" type="integer" > 
+            <generator class="identity"/>           
+        </id>  
+        <property name="quantity" 		column="quantity" 		not-null="false"  length="10" />        
+		<property name="deliveryDate" 	column="deliveryDate" 		not-null="false" length="10" />	
+		<property name="supplier" 		column="supplier" 		not-null="false" length="10" />		
+		<property name="status" 		column="status" 		not-null="false" length="10" />
+		<many-to-one name="hongXunMaterialStock" class="HongXunMaterialStock" cascade="none" lazy="false" fetch="join" column="materialStockId"></many-to-one>		
+        <many-to-one name="hongXunPurchaseDeNum" class="HongXunPurchaseDeNum" cascade="none" lazy="false" fetch="join" column="deNumId" not-null="true"></many-to-one>
+    </class>
+
+	<class name="HongXunPurchaseItemInStock" table="HongXunPurchaseItemInStock" dynamic-update="true">
+        <id name="idc" column="ID" type="integer" > 
+            <generator class="identity"/>           
+        </id>  
+        <many-to-one name="hongXunPurchaseItem" class="HongXunPurchaseItem" cascade="none" lazy="false" fetch="join" column="itemId"></many-to-one>     
+        <property name="instoreDate" 		column="instoreDate" 			not-null="false" length="20" />	  
+        <property name="realQuantity" 		column="realQuantity" 			not-null="false" length="10" />  		
+		<property name="lotNum" 			column="lotNum" 				not-null="false" length="20" />				
+		<property name="remark" 			column="remark" 				not-null="false" length="80" />	
+		<property name="purchaseItemID" 	column="purchaseItemID" 		not-null="false" length="10" />
+    </class>
+			
+    <class name="HongXunMaterialStock" table="HongXunMaterialStock" dynamic-update="true">
+        <id name="idc" column="ID" type="integer" > 
+            <generator class="identity"/>           
+        </id> 
+        <property name="materialNum" 		column="materialNum" 		not-null="true"  length="30" />
+        <property name="specification" 		column="specification" 		not-null="false" length="120" />	   
+        <property name="quantity" 			column="quantity" 			not-null="false" length="10" /> 
+		<property name="safeQuantity" 		column="safeQuantity" 		not-null="false" length="10" />
+		<property name="calQuantity" 		column="calQuantity" 		not-null="false" length="10" />
+		<property name="alarm" 				column="alarm" 				not-null="false" length="10" />
+		<property name="status" 			column="status" 			not-null="false" length="10" />
+		<property name="itemQuantity" 		column="itemQuantity" 		not-null="false" length="10" />
+		<property name="inRoadQuantity" 	column="inRoadQuantity" 	not-null="false" length="10" />
+		<property name="inQuantity" 		column="inQuantity" 		not-null="false" length="10" />
+		<property name="outQuantity" 		column="outQuantity" 		not-null="false" length="10" />
+		<property name="purQuantity" 		column="purQuantity" 		not-null="false" length="10" />			
+		<property name="unit" 				column="unit" 				not-null="false" length="10" />
+        <property name="localCode" 			column="localCode" 			not-null="false" length="10" />
+        <property name="remark" 			column="remark" 			not-null="false" length="50" />      
+        <property name="purchaseId" 		column="purchaseId" 		not-null="false" length="10" />	   
+        <one-to-one name="hongXunMaterialCompilation" class="HongXunMaterialCompilation" cascade="save-update"></one-to-one>   
+    </class>
+    
+    <class name="HongXunMaterialCompilation" table="HongXunMaterialCompilation" dynamic-update="true">
+        <id name="idc" column="ID" type="integer" > 
+ 			  <generator class="foreign">
+			  		<param name="property">hongXunMaterialStock</param>
+			  </generator>  
+        </id> 
+        	<!-- constrained: true 表示为从表方 -->
+        <one-to-one name="hongXunMaterialStock" class="HongXunMaterialStock" cascade="none" constrained="true" ></one-to-one>
+        <property name="stockId" 			column="stockId" 			not-null="false" length="30" />	
+<!--         <property name="materialNum" 		column="materialNum" 		not-null="true"  length="30" />
+        <property name="specification" 		column="specification" 		not-null="false" length="120" /> -->	
+           
+        <property name="quantity1" 			column="quantity1" 			not-null="false" length="10" /> 
+		<property name="inQuantity1" 		column="inQuantity1" 		not-null="false" length="10" />
+		<property name="outQuantity1" 		column="outQuantity1" 		not-null="false" length="10" />
+		<property name="checkQuantity1" 	column="checkQuantity1" 	not-null="false" length="10" />
+		<property name="diffQuantity1" 		column="diffQuantity1" 		not-null="false" length="10" />
+		<property name="remark1" 			column="remark1" 			not-null="false" length="50" />
+      
+       	<property name="quantity2" 			column="quantity2" 			not-null="false" length="10" /> 
+		<property name="inQuantity2" 		column="inQuantity2" 		not-null="false" length="10" />
+		<property name="outQuantity2" 		column="outQuantity2" 		not-null="false" length="10" />
+		<property name="checkQuantity2" 	column="checkQuantity2" 	not-null="false" length="10" />
+		<property name="diffQuantity2" 		column="diffQuantity2" 		not-null="false" length="10" />
+		<property name="remark2" 			column="remark2" 			not-null="false" length="50" />
+		      
+       	<property name="quantity3" 			column="quantity3" 			not-null="false" length="10" /> 
+		<property name="inQuantity3" 		column="inQuantity3" 		not-null="false" length="10" />
+		<property name="outQuantity3" 		column="outQuantity3" 		not-null="false" length="10" />
+		<property name="checkQuantity3" 	column="checkQuantity3" 	not-null="false" length="10" />
+		<property name="diffQuantity3" 		column="diffQuantity3" 		not-null="false" length="10" />
+		<property name="remark3" 			column="remark3" 			not-null="false" length="50" />
+		      
+       	<property name="quantity4" 			column="quantity4" 			not-null="false" length="10" /> 
+		<property name="inQuantity4" 		column="inQuantity4" 		not-null="false" length="10" />
+		<property name="outQuantity4" 		column="outQuantity4" 		not-null="false" length="10" />
+		<property name="checkQuantity4" 	column="checkQuantity4" 	not-null="false" length="10" />
+		<property name="diffQuantity4" 		column="diffQuantity4" 		not-null="false" length="10" />
+		<property name="remark4" 			column="remark4" 			not-null="false" length="50" />
+		      
+       	<property name="quantity5" 			column="quantity5" 			not-null="false" length="10" /> 
+		<property name="inQuantity5" 		column="inQuantity5" 		not-null="false" length="10" />
+		<property name="outQuantity5" 		column="outQuantity5" 		not-null="false" length="10" />
+		<property name="checkQuantity5" 	column="checkQuantity5" 	not-null="false" length="10" />
+		<property name="diffQuantity5" 		column="diffQuantity5" 		not-null="false" length="10" />
+		<property name="remark5" 			column="remark5" 			not-null="false" length="50" />
+		      
+       	<property name="quantity6" 			column="quantity6" 			not-null="false" length="10" /> 
+		<property name="inQuantity6" 		column="inQuantity6" 		not-null="false" length="10" />
+		<property name="outQuantity6" 		column="outQuantity6" 		not-null="false" length="10" />
+		<property name="checkQuantity6" 	column="checkQuantity6" 	not-null="false" length="10" />
+		<property name="diffQuantity6" 		column="diffQuantity6" 		not-null="false" length="10" />
+		<property name="remark6" 			column="remark6" 			not-null="false" length="50" />
+		      
+       	<property name="quantity7" 			column="quantity7" 			not-null="false" length="10" /> 
+		<property name="inQuantity7" 		column="inQuantity7" 		not-null="false" length="10" />
+		<property name="outQuantity7" 		column="outQuantity7" 		not-null="false" length="10" />
+		<property name="checkQuantity7" 	column="checkQuantity7" 	not-null="false" length="10" />
+		<property name="diffQuantity7" 		column="diffQuantity7" 		not-null="false" length="10" />
+		<property name="remark7" 			column="remark7" 			not-null="false" length="50" />
+		      
+       	<property name="quantity8" 			column="quantity8" 			not-null="false" length="10" /> 
+		<property name="inQuantity8" 		column="inQuantity8" 		not-null="false" length="10" />
+		<property name="outQuantity8" 		column="outQuantity8" 		not-null="false" length="10" />
+		<property name="checkQuantity8" 	column="checkQuantity8" 	not-null="false" length="10" />
+		<property name="diffQuantity8" 		column="diffQuantity8" 		not-null="false" length="10" />
+		<property name="remark8" 			column="remark8" 			not-null="false" length="50" />
+		      
+       	<property name="quantity9" 			column="quantity9" 			not-null="false" length="10" /> 
+		<property name="inQuantity9" 		column="inQuantity9" 		not-null="false" length="10" />
+		<property name="outQuantity9" 		column="outQuantity9" 		not-null="false" length="10" />
+		<property name="checkQuantity9" 	column="checkQuantity9" 	not-null="false" length="10" />
+		<property name="diffQuantity9" 		column="diffQuantity9" 		not-null="false" length="10" />
+		<property name="remark9" 			column="remark9" 			not-null="false" length="50" />
+		      
+       	<property name="quantity10" 		column="quantity10" 		not-null="false" length="10" /> 
+		<property name="inQuantity10" 		column="inQuantity10" 		not-null="false" length="10" />
+		<property name="outQuantity10" 		column="outQuantity10" 		not-null="false" length="10" />
+		<property name="checkQuantity10" 	column="checkQuantity10" 	not-null="false" length="10" />
+		<property name="diffQuantity10" 	column="diffQuantity10" 	not-null="false" length="10" />
+		<property name="remark10" 			column="remark10" 			not-null="false" length="50" />
+		      
+       	<property name="quantity11" 		column="quantity11" 		not-null="false" length="10" /> 
+		<property name="inQuantity11" 		column="inQuantity11" 		not-null="false" length="10" />
+		<property name="outQuantity11" 		column="outQuantity11" 		not-null="false" length="10" />
+		<property name="checkQuantity11" 	column="checkQuantity11" 	not-null="false" length="10" />
+		<property name="diffQuantity11" 	column="diffQuantity11" 	not-null="false" length="10" />
+		<property name="remark11" 			column="remark11" 			not-null="false" length="50" />
+		      
+       	<property name="quantity12" 		column="quantity12" 		not-null="false" length="10" /> 
+		<property name="inQuantity12" 		column="inQuantity12" 		not-null="false" length="10" />
+		<property name="outQuantity12" 		column="outQuantity12" 		not-null="false" length="10" />
+		<property name="checkQuantity12" 	column="checkQuantity12" 	not-null="false" length="10" />
+		<property name="diffQuantity12" 	column="diffQuantity12" 	not-null="false" length="10" />
+		<property name="remark12" 			column="remark12" 			not-null="false" length="50" />
+		      
+
+    </class>
+    
+
+    <class name="HongXunMaterialOutStoreNum" table="HongXunMaterialOutStoreNum" dynamic-update="true">
+        <id name="idc" column="ID" type="integer" > 
+            <generator class="identity"/>           
+        </id>    
+        <property name="outStoreNum" 		column="outStoreNum" 			not-null="true" length="30" />  
+		<property name="workProcedure" 		column="workProcedure" 			not-null="false" length="120" />	
+		<property name="quantity" 			column="quantity" 				not-null="false" length="20" />	
+		<property name="state" 				column="state" 					not-null="false" length="20" />				
+		<property name="remark" 			column="remark" 				not-null="false" length="50" />	
+
+    </class> 
+
+    <class name="HongXunMaterialOutStoreItem" table="HongXunMaterialOutStoreItem" dynamic-update="true">
+        <id name="idc" column="ID" type="integer" > 
+            <generator class="identity"/>           
+        </id>  
+        <property name="materialNum" 				column="materialNum" 				not-null="true"  length="30" /> 
+        <property name="specification" 				column="specification" 				not-null="false" length="120" />	
+		<property name="materialLotNum" 			column="materialLotNum" 			not-null="false" length="20" />
+		<property name="attribute" 					column="attribute" 					not-null="false" length="20" />		
+        <property name="storeOutPlanQuantity" 		column="storeOutPlanQuantity" 		not-null="false" length="10" type="integer"/>
+        <property name="storeOutRealQuantity" 		column="storeOutRealQuantity" 		not-null="false" length="10" type="integer"/>  
+        <property name="unit" 						column="unit" 						not-null="false" length="10" />   
+		<property name="remark" 					column="remark" 					not-null="false" length="80" />
+		<property name="state" 						column="state" 						not-null="false" length="10" />
+		<property name="staff" 						column="staff" 						not-null="false" length="10" />
+		<property name="storeOutDate" 				column="storeOutDate" 				not-null="false" length="10" />
+		<property name="outStoreNumID" 				column="outStoreNumID" 				not-null="false" length="10" />
+		
+
+    </class>
+
+    
+    <class name="HongXunMaterialItemOutStock" table="hongXunMaterialItemOutStock" dynamic-update="true">
+        <id name="idc" column="ID" type="integer" > 
+            <generator class="identity"/>           
+        </id>    
+        <property name="quantity" 			column="quantity" 				not-null="false" length="10" />  
+		<property name="date" 				column="date" 					not-null="false" length="20" />	
+		<property name="staff" 				column="staff" 					not-null="false" length="20" />	
+		<property name="lotNum" 			column="lotNum" 				not-null="false" length="20" />				
+		<property name="remark" 			column="remark" 				not-null="false" length="80" />	
+		<property name="outStoreItemID" 	column="outStoreItemID" 		not-null="false" length="10" />	
+        <property name="unit" 				column="unit" 					not-null="false" length="10" />
+        <property name="materialStockID" 	column="materialStockID" 		not-null="false" length="10" />
+	<!-- 	<many-to-one name="hongXunPurchaseItem" class="HongXunPurchaseItem" fetch="join" column="mainID"></many-to-one> -->
+   
+    </class>  	
+    
+    <class name="HongXunMaterialNoLimitOutStock" table="hongXunMaterialNoLimitOutStock" dynamic-update="true">
+        <id name="idc" column="ID" type="integer" > 
+            <generator class="identity"/>           
+        </id>    
+        <property name="quantity" 			column="quantity" 				not-null="false" length="10" />  
+		<property name="date" 				column="date" 					not-null="false" length="20" />	
+		<property name="staff" 				column="staff" 					not-null="false" length="20" />	
+		<property name="lotNum" 			column="lotNum" 				not-null="false" length="20" />				
+		<property name="remark" 			column="remark" 				not-null="false" length="80" />			
+        <property name="unit" 				column="unit" 					not-null="false" length="10" />
+        <property name="materialStockID" 	column="materialStockID" 		not-null="false" length="10" />
+	<!-- 	<many-to-one name="hongXunPurchaseItem" class="HongXunPurchaseItem" fetch="join" column="mainID"></many-to-one> -->
+    </class>  
+    
+    <class name="HongXunMaterialNoLimitInStock" table="hongXunMaterialNoLimitInStock" dynamic-update="true">
+        <id name="idc" column="ID" type="integer" > 
+            <generator class="identity"/>           
+        </id>    
+        <property name="quantity" 			column="quantity" 				not-null="false" length="10" />  
+		<property name="date" 				column="date" 					not-null="false" length="20" />	
+		<property name="staff" 				column="staff" 					not-null="false" length="20" />	
+		<property name="lotNum" 			column="lotNum" 				not-null="false" length="20" />				
+		<property name="remark" 			column="remark" 				not-null="false" length="80" />			
+        <property name="unit" 				column="unit" 					not-null="false" length="10" />
+        <property name="materialStockID" 	column="materialStockID" 		not-null="false" length="10" />
+    </class> 
+    
+    <class name="HongXunWorkNum" table="HongXunWorkNum" dynamic-update="true">
+        <id name="idc" column="ID" type="integer"> 
+            <generator class="identity"/>           
+        </id> 
+        <property name="orderNum" 			column="orderNum" 			not-null="false"  	length="20" />
+        <property name="componentNum" 		column="componentNum" 		not-null="false" 	length="20" />
+        <property name="componentName" 		column="componentName" 		not-null="false"  	length="20" />
+        <property name="workStartDate" 		column="workStartDate" 		not-null="false"  	length="20" />
+        <property name="workEndDate" 		column="workEndDate" 		not-null="false"  	length="20" />
+        <!-- <property name="stockoutNum" 		column="stockoutNum" 		not-null="true"  	length="20" /> -->
+        <property name="workNum" 			column="workNum" 			not-null="false" 	length="20" />
+		<property name="workProcedure" 		column="workProcedure" 		not-null="false" 	length="20" />
+        <property name="workQuantity" 		column="workQuantity" 		not-null="false" 	length="10" type="integer"/>	
+        <property name="remark" 			column="remark" 			not-null="false" 	length="80" /> 
+        <property name="state" 				column="state" 				not-null="false" 	length="30" />
+<!--         <set name="hongXunWorkItem" cascade="save-update" lazy="true" inverse="true">
+         	<key column="grandfID"></key>
+           	<one-to-many class="HongXunWorkItem"/>
+        </set> --> 
+    </class> 
+	
+   	<class name="HongXunWorkItem" table="HongXunWorkItem" dynamic-update="true">
+        <id name="idc" column="ID" type="integer"> 
+            <generator class="identity"/>           
+        </id> 
+		<property name="state" 				column="state" 				not-null="false" 	length="30" />
+        <property name="remark" 			column="remark" 			not-null="false"  	length="80" />
+        <property name="quantity" 			column="quantity" 			not-null="false" 	length="10" type="integer"/>	
+        <property name="orderNum" 			column="orderNum" 			not-null="false"  	length="30" />
+        <property name="lineNum" 			column="lineNum" 			not-null="false"  	length="30" />
+        <property name="groupNum" 			column="groupNum" 			not-null="false"  	length="30" />
+        <property name="materialNum" 		column="materialNum" 		not-null="false"  	length="30" />
+       	<property name="attribute" 			column="attribute" 			not-null="false" 	length="20" />	
+       	<property name="bomMaterialCuting" 	column="bomMaterialCuting" 	not-null="false" 	length="20" />			
+        <property name="bomPlateCuting" 	column="bomPlateCuting" 	not-null="false" 	length="20" />
+        <property name="bomMaterialWeld" 	column="bomMaterialWeld" 	not-null="false" 	length="20" />	 
+        <property name="bomWeiwai" 			column="bomWeiwai" 			not-null="false" 	length="20" />
+       	<property name="bomPainting" 		column="bomPainting" 		not-null="false" 	length="100" />
+        <property name="bomAssemble" 		column="bomAssemble" 		not-null="false" 	length="20" />	
+        <property name="specification" 		column="specification" 		not-null="false"  	length="120" />       
+  		<property name="drawNum" 			column="drawNum" 			not-null="false"  	length="30" /> 
+  		<property name="supplier" 			column="supplier" 			not-null="false"  	length="30" />		 
+  		<property name="unit" 				column="unit" 				not-null="false"  	length="10" />  
+  		<property name="workNumID" 			column="workNumID" 			not-null="false"  	length="10" />  
+  		<property name="orderNumID" 		column="orderNumID" 		not-null="false" 	length="10" />
+  		<property name="workDeliveryDate" 	column="workDeliveryDate" 	not-null="false" 	length="15" />
+  		
+    </class> 
+    
+    <class name="HongXunWeiwaiNum" table="HongXunWeiwaiNum" dynamic-update="true">
+        <id name="idc" column="idc" type="integer"> 
+            <generator class="identity"/>           
+        </id> 
+        <property name="weiwaiNum" 			column="weiwaiNum" 			not-null="false"  	length="20" />
+        <property name="weiwaiProcedure" 	column="weiwaiProcedure" 	not-null="false" 	length="20" />
+        <property name="weiwaiQuantity" 	column="weiwaiQuantity" 	not-null="false" 	length="10" type="integer"/>
+        <property name="weiwaiMoney" 		column="weiwaiMoney" 		not-null="false"  	length="10" />
+        <property name="weiwaiDate" 		column="weiwaiDate" 		not-null="false"  	length="10" />
+        <property name="weiwaiDeliveryDate" column="weiwaiDeliveryDate" not-null="false"  	length="10" />
+        <property name="workNum" 			column="workNum" 			not-null="false" 	length="20" />
+		<property name="weiwaiStaff" 		column="weiwaiStaff" 		not-null="false" 	length="10" />
+        <property name="supplier" 			column="supplier" 			not-null="false" 	length="20" />	
+        <property name="remark" 			column="remark" 			not-null="false" 	length="80" /> 
+        <property name="state" 				column="state" 				not-null="false" 	length="10" />
+    </class> 
+
+    <class name="HongXunWeiwaiItem" table="HongXunWeiwaiItem" dynamic-update="true">
+        <id name="idc" column="ID" type="integer" > 
+            <generator class="identity"/>           
+        </id>  
+        <property name="materialNum" 			column="materialNum" 			not-null="true"  length="30" />
+        <property name="materialName" 			column="materialName" 			not-null="false" length="20" />	
+        <property name="attribute" 				column="attribute" 				not-null="false" length="20" />
+        <property name="specification" 			column="specification" 			not-null="false" length="100" />		
+        <property name="planQuantity" 			column="planQuantity" 			not-null="false" length="10" type="integer"/>
+        <property name="realQuantity" 			column="realQuantity" 			not-null="false" length="10" type="integer"/>
+        <property name="realDeliveryDate" 		column="realDeliveryDate" 		not-null="false" length="20" />		
+        <property name="unit" 					column="unit" 					not-null="false" length="10" />
+        <property name="price" 					column="price" 					not-null="false" length="10" />
+        <property name="supplier" 				column="supplier" 				not-null="false" length="20" />	
+        <property name="weiwaiMoney" 			column="weiwaiMoney" 			not-null="false" length="10" /> 
+		<property name="remark" 				column="remark" 				not-null="false" length="80" />	
+		<property name="weiwaiNumID" 			column="weiwaiNumID" 			not-null="false" length="10" />
+		<property name="orderNumID" 			column="orderNumID" 			not-null="false" length="10" />
+    </class>
+
+
+    <class name="HongXunBomTree" table="HongXunBomTree" dynamic-update="true">
+        <id name="idc" column="ID" type="integer" > 
+            <generator class="identity"/>           
+        </id>
+		<property name="sn" 	column="sn" 	not-null="false"  	length="10" />
+        <property name="bomQuantity" 		column="bomQuantity" 		not-null="false" 	length="20" />
+        <property name="bomSpacification" 	column="bomSpacification" 	not-null="false"  	length="100" />
+        <property name="bomLength" 			column="bomLength" 			not-null="false"  	length="20" />
+        <property name="bomDrawingNum" 		column="bomDrawingNum" 		not-null="false"  	length="20" />
+        <property name="bomPosion" 			column="bomPosion" 			not-null="false"  	length="20" />
+        <property name="bomMaterial" 		column="bomMaterial" 		not-null="false"  	length="20" />
+        <property name="bomMaterialNum" 	column="bomMaterialNum" 	not-null="false"  	length="20" />
+		<property name="attribute" 			column="attribute" 			not-null="false" 	length="20" />
+        <property name="bomMaterialCuting" 	column="bomMaterialCuting" 	not-null="false" 	length="20" />			
+        <property name="bomPlateCuting" 	column="bomPlateCuting" 	not-null="false" 	length="20" />
+        <property name="bomMaterialWeld" 	column="bomMaterialWeld" 	not-null="false" 	length="20" />	 
+        <property name="bomWeiwai" 			column="bomWeiwai" 			not-null="false" 	length="20" />
+       	<property name="bomPainting" 		column="bomPainting" 		not-null="false" 	length="100" />
+        <property name="bomAssemble" 		column="bomAssemble" 		not-null="false" 	length="20" />
+       	<property name="bomLocation" 		column="bomLocation" 		not-null="false" 	length="20" />
+        <property name="remark" 			column="remark" 			not-null="false" 	length="100" />
+   		<property name="parentID" 			column="parentID" 			not-null="false" 	length="10" />
+   		<property name="nodeID" 			column="nodeID" 			not-null="false" 	length="10" />	
+   		<property name="bomGroup" 			column="bomGroup" 			not-null="false" 	length="30" />
+   		<property name="topID" 				column="topID" 				not-null="false" 	length="10" />
+    </class>   
+    
+   	<class name="HongXunSpecialMaterialNum" table="HongXunSpecialMaterialNum" dynamic-update="true">
+        <id name="idc" column="ID" type="integer" > 
+            <generator class="identity"/>           
+        </id>
+        <property name="materialNum" 				column="materialNum" 				not-null="true"  length="30" /> 
+        <property name="specification" 				column="specification" 				not-null="false" length="120"/>	
+		<property name="attribute" 					column="attribute" 					not-null="false" length="20" />		
+        <property name="localtion" 					column="localtion" 					not-null="false" length="10" />
+ 		<property name="remark" 					column="remark" 					not-null="false" length="80" />		
+	</class> 	
+
+    
+ 	
+	<class name="HongXunFile" table="HongXunFile">
+        <id name="idc" column="ID" type="integer" > 
+            <generator class="identity"/>           
+        </id> 
+        <property name="parentId" column="parentId"/>
+		<property name="name" column="name"/>
+		<property name="description" column="description" type="java.sql.Clob"/>
+		<property name="myfile" column="myfile" type="java.sql.Blob"/>
+	</class> 
+	 
+
+	<class name="HongXunOrderNum" table="HongXunOrderNum" dynamic-update="true">
+        <id name="idc" column="ID" type="integer" > 
+            <generator class="identity"/>           
+        </id>  
+        <property name="orderNum" 			column="orderNum" 			not-null="true"  	length="20" />
+        <property name="orderQuantity" 		column="orderQuantity" 		not-null="false"  	length="20" />
+        <property name="poCreateDate" 		column="poCreateDate" 		not-null="false" 	length="10" />
+        <property name="orderAmount" 		column="orderAmount" 		not-null="false" 	length="20" />
+        <property name="status" 			column="status" 			not-null="false"  	length="20" />
+        <property name="remark" 			column="remark" 			not-null="false"  	length="20" />
+ 	</class>  
+ 	  
+	<class name="HongXunPoN" table="HongXunPoN" dynamic-update="true">
+        <id name="idc" column="ID" type="integer" > 
+            <generator class="identity"/>           
+        </id>  
+        <property name="supplier" 				column="supplier" 			not-null="false" length="30" />         
+        <property name="pon" 					column="pon" 				not-null="false" length="20" />	 
+        <property name="line" 					column="line" 				not-null="false" length="20" />		    
+        <property name="groupd" 				column="groupd" 			not-null="false" length="10" />      
+        <property name="materialNo" 			column="materialNo" 		not-null="true"  length="30" />
+        <property name="materialDesc" 			column="materialDesc" 		not-null="false" length="100" />		
+        <property name="exemption" 				column="exemption" 			not-null="false" length="10" />
+        <property name="unit" 					column="unit" 				not-null="false" length="10" /> 
+        <property name="quantity" 				column="quantity" 			not-null="true"  length="10"  type="integer"/> 
+		<property name="price" 					column="price" 				not-null="false" length="80" />	
+		<property name="totalAmount" 			column="totalAmount" 		not-null="false" length="10" />
+ 		<property name="deliveredQuantity" 		column="deliveredQuantity" 	not-null="false" length="10"  type="integer"/> 
+		<property name="returnedQuantity" 		column="returnedQuantity" 	not-null="false" length="10"  type="integer"/>	
+		<property name="nonDelivery" 			column="nonDelivery" 		not-null="false" length="10"  type="integer"/>
+		<property name="readyQuantity" 			column="readyQuantity" 		not-null="false" length="10"  type="integer"/>
+		<property name="inroadQuantity" 		column="inroadQuantity" 	not-null="false" length="10"  type="integer"/>
+		<property name="poDeliveryDate" 		column="poDeliveryDate" 	not-null="true"  length="10" />
+		<property name="poCreateDate" 			column="poCreateDate" 		not-null="false" length="10" />
+		<property name="workDeliveryDate" 		column="workDeliveryDate" 	not-null="false" length="10" />
+		<property name="attribute" 				column="attribute" 			not-null="false" length="30" />
+		<property name="others" 				column="others" 			not-null="false" length="100" />
+     	<property name="status" 				column="status" 			not-null="false" length="30" />  	
+   		<property name="workQuantity" 			column="workQuantity" 		not-null="false" length="10"  type="integer"/>
+   		<property name="stockInQuantity" 		column="stockInQuantity" 	not-null="false" length="10"  type="integer"/>
+   		<property name="stockOutQuantity" 		column="stockOutQuantity" 	not-null="false" length="10"  type="integer"/>
+   		<property name="orderNumID" 			column="orderNumID" 		not-null="false" length="10" />
+   
+    </class>		
+
+	<class name="HongXunPonNum" table="HongXunPonNum" dynamic-update="true">
+        <id name="idc" column="ID" type="integer" > 
+            <generator class="identity"/>           
+        </id>  
+        <property name="supplier" 				column="supplier" 			not-null="false" length="30" />         
+        <property name="pon" 					column="pon" 				not-null="false" length="20" />	       
+        <property name="quantity" 				column="quantity" 			not-null="true"  length="10"  type="integer"/> 		
+		<property name="totalAmount" 			column="totalAmount" 		not-null="false" length="10" />
+		<property name="poCreateDate" 			column="poCreateDate" 		not-null="false" length="10" />
+     	<property name="status" 				column="status" 			not-null="false" length="30" />  	  		
+   
+    </class>	
+
+
+	<class name="HongXunSupplier" table="HongXunSupplier" dynamic-update="true">
+        <id name="idc" column="ID" type="integer" > 
+            <generator class="identity"/>           
+        </id>  
+        <property name="supplierCode" 			column="supplierCode" 		not-null="false" length="20" />         
+        <property name="supplier" 				column="supplier" 			not-null="false" length="20" />	 
+        <property name="category" 				column="category" 			not-null="false" length="50" />		    
+        <property name="attribute" 				column="attribute" 			not-null="false" length="10" />      
+        <property name="purCondition" 			column="purCondition" 		not-null="false" length="30" />
+        <property name="period" 				column="period" 			not-null="false" length="10" />		
+        <property name="address" 				column="address" 			not-null="false" length="20" />
+        <property name="people" 				column="people" 			not-null="false" length="10" /> 
+        <property name="phone" 					column="phone" 				not-null="false" length="20" />  
+        <property name="remark" 				column="remark" 			not-null="false" length="20" />  
+		
+    </class>
+    
+    <class name="HongXunProductionItemInStock" table="HongXunProductionItemInStock" dynamic-update="true">
+        <id name="idc" column="ID" type="integer" > 
+            <generator class="identity"/>           
+        </id>  
+        <property name="date" 				column="date" 			not-null="false" length="20" />	  
+        <property name="quantity" 			column="quantity" 		not-null="false" length="10" />  		
+		<property name="lotNum" 			column="lotNum" 		not-null="false" length="20" />				
+		<property name="remark" 			column="remark" 		not-null="false" length="40" />	
+		<property name="poNID" 				column="poNID" 			not-null="false" length="10" />
+		<many-to-one name="hongXunProductionStock" class="HongXunProductionStock" cascade="none" lazy="false" fetch="join" column="numId"></many-to-one>
+    </class>
+    
+    <class name="HongXunProductionItemOutStock" table="HongXunProductionItemOutStock" dynamic-update="true">
+        <id name="idc" column="ID" type="integer" > 
+            <generator class="identity"/>           
+        </id>  
+        <property name="date" 				column="date" 			not-null="false" length="20" />	  
+        <property name="quantity" 			column="quantity" 		not-null="false" length="10" />  		
+		<property name="lotNum" 			column="lotNum" 		not-null="false" length="20" />				
+		<property name="remark" 			column="remark" 		not-null="false" length="40" />	
+		<property name="poNID" 				column="poNID" 			not-null="false" length="10" />
+    </class>
+    
+   	<class name="HongXunProductionNoLimitItemInStock" table="HongXunProductionNoLimitItemInStock" dynamic-update="true">
+        <id name="idc" column="ID" type="integer" > 
+            <generator class="identity"/>           
+        </id>  
+        <property name="date" 				column="date" 			not-null="false" length="20" />	  
+        <property name="quantity" 			column="quantity" 		not-null="false" length="10" />  		
+		<property name="lotNum" 			column="lotNum" 		not-null="false" length="20" />				
+		<property name="remark" 			column="remark" 		not-null="false" length="40" />	
+		<property name="materialNum" 		column="materialNum" 	not-null="true"  length="30" />
+        <property name="specification" 		column="specification" 	not-null="false" length="120" />
+    </class>
+    
+    <class name="HongXunProductionNoLimitItemOutStock" table="HongXunProductionNoLimitItemOutStock" dynamic-update="true">
+        <id name="idc" column="ID" type="integer" > 
+            <generator class="identity"/>           
+        </id>  
+        <property name="date" 				column="date" 			not-null="false" length="20" />	  
+        <property name="quantity" 			column="quantity" 		not-null="false" length="10" />  		
+		<property name="lotNum" 			column="lotNum" 		not-null="false" length="20" />				
+		<property name="remark" 			column="remark" 		not-null="false" length="40" />	
+		<property name="materialNum" 		column="materialNum" 	not-null="true"  length="30" />
+        <property name="specification" 		column="specification" 	not-null="false" length="120" />
+    </class>
+    <class name="HongXunWeldNoLimitItemInStock" table="HongXunWeldNoLimitItemInStock" dynamic-update="true">
+        <id name="idc" column="ID" type="integer" > 
+            <generator class="identity"/>           
+        </id>  
+        <property name="date" 				column="date" 			not-null="false" length="20" />	  
+        <property name="quantity" 			column="quantity" 		not-null="false" length="10" />  		
+		<property name="lotNum" 			column="lotNum" 		not-null="false" length="20" />				
+		<property name="remark" 			column="remark" 		not-null="false" length="40" />	
+		<property name="materialNum" 		column="materialNum" 	not-null="true"  length="30" />
+        <property name="specification" 		column="specification" 	not-null="false" length="120" />
+    </class>
+    <class name="HongXunWeldNoLimitItemOutStock" table="HongXunWeldNoLimitItemOutStock" dynamic-update="true">
+        <id name="idc" column="ID" type="integer" > 
+            <generator class="identity"/>           
+        </id>  
+        <property name="date" 				column="date" 			not-null="false" length="20" />	  
+        <property name="quantity" 			column="quantity" 		not-null="false" length="10" />  		
+		<property name="lotNum" 			column="lotNum" 		not-null="false" length="20" />				
+		<property name="remark" 			column="remark" 		not-null="false" length="40" />	
+		<property name="materialNum" 		column="materialNum" 	not-null="true"  length="30" />
+        <property name="specification" 		column="specification" 	not-null="false" length="120" />
+    </class>
+    <class name="HongXunProductionStock" table="HongXunProductionStock" dynamic-update="true">
+		<id name="idc" column="ID" type="integer" > 
+            <generator class="identity"/>           
+        </id> 
+        <property name="materialNum" 		column="materialNum" 		not-null="true"  length="30" />
+        <property name="specification" 		column="specification" 		not-null="false" length="120" />	   
+        <property name="quantity" 			column="quantity" 			not-null="false" length="10" /> 
+        <property name="inQuantity" 		column="inQuantity" 		not-null="false" length="10" />
+		<property name="outQuantity" 		column="outQuantity" 		not-null="false" length="10" />
+		<property name="lastInQuantity" 	column="lastInQuantity" 	not-null="false" length="10" />	
+		<property name="safeQuantity" 		column="safeQuantity" 		not-null="false" length="10" />
+		<property name="calQuantity" 		column="calQuantity" 		not-null="false" length="10" />
+		<property name="alarm" 				column="alarm" 				not-null="false" length="10" />
+		<property name="itemQuantity" 		column="itemQuantity" 		not-null="false" length="10" />
+		<property name="inRoadQuantity" 	column="inRoadQuantity" 	not-null="false" length="10" />
+		<property name="unit" 				column="unit" 				not-null="false" length="10" />
+        <property name="localCode" 			column="localCode" 			not-null="false" length="10" />
+        <property name="name" 				column="name" 				not-null="true"  length="10" />
+        <property name="remark" 			column="remark" 			not-null="false" length="50" />	
+        <one-to-one name="hongXunAssembleCompilation" class="HongXunAssembleCompilation" cascade="save-update"></one-to-one>
+    </class>
+    <class name="HongXunOnlineStock" table="HongXunOnlineStock" dynamic-update="true">
+		<id name="idc" column="ID" type="integer" > 
+            <generator class="identity"/>           
+        </id> 
+        <property name="materialNum" 		column="materialNum" 		not-null="true"  length="30" />
+        <property name="specification" 		column="specification" 		not-null="false" length="120" />	   
+        <property name="quantity" 			column="quantity" 			not-null="false" length="10" /> 
+ 		<property name="remark" 			column="remark" 			not-null="false" length="50" />	
+    </class>    
+   	<class name="HongXunWeldItemInStock" table="HongXunWeldItemInStock" dynamic-update="true">
+        <id name="idc" column="ID" type="integer" > 
+            <generator class="identity"/>           
+        </id>  
+        <property name="date" 				column="date" 			not-null="false" length="20" />	  
+        <property name="quantity" 			column="quantity" 		not-null="false" length="10" />  		
+		<property name="lotNum" 			column="lotNum" 		not-null="false" length="20" />				
+		<property name="remark" 			column="remark" 		not-null="false" length="40" />	
+		<property name="poNID" 				column="poNID" 			not-null="false" length="10" />
+
+    </class>
+    
+    <class name="HongXunWeldItemOutStock" table="HongXunWeldItemOutStock" dynamic-update="true">
+        <id name="idc" column="ID" type="integer" > 
+            <generator class="identity"/>           
+        </id>  
+        <property name="date" 				column="date" 			not-null="false" length="20" />	  
+        <property name="quantity" 			column="quantity" 		not-null="false" length="10" />  		
+		<property name="lotNum" 			column="lotNum" 		not-null="false" length="20" />				
+		<property name="remark" 			column="remark" 		not-null="false" length="40" />	
+		<property name="poNID" 				column="poNID" 			not-null="false" length="10" />
+    </class>
+    
+    <class name="HongXunProductionWeldStock" table="HongXunProductionWeldStock" dynamic-update="true">
+		<id name="idc" column="ID" type="integer" > 
+            <generator class="identity"/>           
+        </id> 
+        <property name="materialNum" 		column="materialNum" 		not-null="true"  length="30" />
+        <property name="specification" 		column="specification" 		not-null="false" length="120" />	   
+        <property name="quantity" 			column="quantity" 			not-null="false" length="10" /> 
+        <property name="inQuantity" 		column="inQuantity" 		not-null="false" length="10" />
+		<property name="outQuantity" 		column="outQuantity" 		not-null="false" length="10" />
+		<property name="safeQuantity" 		column="safeQuantity" 		not-null="false" length="10" />
+		<property name="calQuantity" 		column="calQuantity" 		not-null="false" length="10" />
+		<property name="alarm" 				column="alarm" 				not-null="false" length="10" />
+		<property name="itemQuantity" 		column="itemQuantity" 		not-null="false" length="10" />
+		<property name="inRoadQuantity" 	column="inRoadQuantity" 	not-null="false" length="10" />
+		<property name="unit" 				column="unit" 				not-null="false" length="10" />
+        <property name="localCode" 			column="localCode" 			not-null="false" length="10" />
+        <property name="remark" 			column="remark" 			not-null="false" length="50" />	
+        <one-to-one name="hongXunWeldCompilation" class="HongXunWeldCompilation" cascade="save-update"></one-to-one>   
+    </class>
+   	
+    <class name="HongXunDeliveryNum" table="HongXunDeliveryNum" dynamic-update="true">
+		<id name="idc" column="ID" type="integer" > 
+            <generator class="identity"/>           
+        </id> 
+        <property name="deliveryNum" 		column="deliveryNum" 		not-null="true"  length="30" />
+        <property name="customer" 			column="customer" 			not-null="false" length="40" />	   
+        <property name="supplierCode" 		column="supplierCode" 		not-null="false" length="40" /> 
+		<property name="date" 				column="date" 				not-null="false" length="20" />	
+		<property name="status" 			column="status" 			not-null="false" length="20" />	  
+		<property name="name" 				column="name" 				not-null="true"  length="20" />	  
+        <property name="remark" 			column="remark" 			not-null="false" length="80" />
+        <set name="hongXunDeliveryItems" cascade="all" inverse="true" lazy="false" fetch="join">                       
+            <key column="numId" />  
+            <one-to-many class="HongXunDeliveryItem" />  
+        </set>  	
+    </class>
+
+   	<class name="HongXunDeliveryItem" table="HongXunDeliveryItem" dynamic-update="true">
+		<id name="idc" column="ID" type="integer" > 
+            <generator class="identity"/>           
+        </id>   
+        <property name="pon" 					column="pon" 				not-null="false" length="20" />	 
+        <property name="line" 					column="line" 				not-null="false" length="20" />		          
+        <property name="materialNo" 			column="materialNo" 		not-null="true"  length="30" />
+        <property name="materialDesc" 			column="materialDesc" 		not-null="false" length="100" />		
+        <property name="exemption" 				column="exemption" 			not-null="false" length="10" />
+        <property name="unit" 					column="unit" 				not-null="false" length="10" /> 
+        <property name="code" 					column="code" 				not-null="false" length="30" /> 
+		<property name="projectNum" 			column="projectNum" 		not-null="false" length="100" />					
+     	<property name="status" 				column="status" 			not-null="false" length="30" />  
+     	<property name="remark" 				column="remark" 			not-null="false" length="80" />		
+   		<property name="sendQuantity" 			column="sendQuantity" 		not-null="false" length="10"  type="integer"/>  		
+<!--    		<property name="deliveryNumID" 			column="deliveryNumID" 		not-null="false" length="10" /> -->
+		<many-to-one name="hongXunDeliveryNum" class="HongXunDeliveryNum" cascade="none" lazy="false" fetch="join" column="numId"></many-to-one>
+		
+   	<!-- 	<many-to-one name="hongXunProductionStock" class="HongXunProductionStock" cascade="none" lazy="false" fetch="join" column="stockId"></many-to-one> -->
+    </class>
+    
+   	<class name="HongXunDeliveryWeldNum" table="HongXunDeliveryWeldNum" dynamic-update="true">
+		<id name="idc" column="ID" type="integer" > 
+            <generator class="identity"/>           
+        </id> 
+        <property name="deliveryNum" 		column="deliveryNum" 		not-null="true"  length="30" />
+        <property name="customer" 			column="customer" 			not-null="false" length="40" />	   
+        <property name="supplierCode" 		column="supplierCode" 		not-null="false" length="40" /> 
+		<property name="date" 				column="date" 				not-null="false" length="20" />	
+		<property name="status" 			column="status" 			not-null="false" length="20" />	    
+        <property name="remark" 			column="remark" 			not-null="false" length="80" />	
+    </class>
+
+   	<class name="HongXunDeliveryWeldItem" table="HongXunDeliveryWeldItem" dynamic-update="true">
+		<id name="idc" column="ID" type="integer" > 
+            <generator class="identity"/>           
+        </id>   
+        <property name="pon" 					column="pon" 				not-null="false" length="20" />	 
+        <property name="line" 					column="line" 				not-null="false" length="20" />		          
+        <property name="materialNo" 			column="materialNo" 		not-null="true"  length="30" />
+        <property name="materialDesc" 			column="materialDesc" 		not-null="false" length="100" />		
+        <property name="exemption" 				column="exemption" 			not-null="false" length="10" />
+        <property name="unit" 					column="unit" 				not-null="false" length="10" /> 
+        <property name="code" 					column="code" 				not-null="false" length="30" /> 
+		<property name="projectNum" 			column="projectNum" 		not-null="false" length="100" />					
+     	<property name="status" 				column="status" 			not-null="false" length="30" />  
+     	<property name="remark" 				column="remark" 			not-null="false" length="80" />		
+   		<property name="sendQuantity" 			column="sendQuantity" 		not-null="false" length="10"  type="integer"/>  		
+   		<property name="deliveryNumID" 			column="deliveryNumID" 		not-null="false" length="10" />
+    </class>
+    <class name="HongXunAssembleCompilation" table="HongXunAssembleCompilation" dynamic-update="true">
+        <id name="idc" column="ID" type="integer" > 
+ 			  <generator class="foreign">
+			  		<param name="property">hongXunProductionStock</param>
+			  </generator>  
+			   <!-- <generator class="identity"/>    -->       
+        </id> 
+        	<!-- constrained: true 表示为从表方 -->
+         	<one-to-one name="hongXunProductionStock" class="HongXunProductionStock" cascade="none" constrained="true" ></one-to-one>
+        <property name="stockId" 			column="stockId" 			not-null="false" length="30" />	
+           
+        <property name="quantity1" 			column="quantity1" 			not-null="false" length="10" /> 
+		<property name="inQuantity1" 		column="inQuantity1" 		not-null="false" length="10" />
+		<property name="outQuantity1" 		column="outQuantity1" 		not-null="false" length="10" />
+		<property name="checkQuantity1" 	column="checkQuantity1" 	not-null="false" length="10" />
+		<property name="diffQuantity1" 		column="diffQuantity1" 		not-null="false" length="10" />
+		<property name="remark1" 			column="remark1" 			not-null="false" length="50" />
+      
+       	<property name="quantity2" 			column="quantity2" 			not-null="false" length="10" /> 
+		<property name="inQuantity2" 		column="inQuantity2" 		not-null="false" length="10" />
+		<property name="outQuantity2" 		column="outQuantity2" 		not-null="false" length="10" />
+		<property name="checkQuantity2" 	column="checkQuantity2" 	not-null="false" length="10" />
+		<property name="diffQuantity2" 		column="diffQuantity2" 		not-null="false" length="10" />
+		<property name="remark2" 			column="remark2" 			not-null="false" length="50" />
+		      
+       	<property name="quantity3" 			column="quantity3" 			not-null="false" length="10" /> 
+		<property name="inQuantity3" 		column="inQuantity3" 		not-null="false" length="10" />
+		<property name="outQuantity3" 		column="outQuantity3" 		not-null="false" length="10" />
+		<property name="checkQuantity3" 	column="checkQuantity3" 	not-null="false" length="10" />
+		<property name="diffQuantity3" 		column="diffQuantity3" 		not-null="false" length="10" />
+		<property name="remark3" 			column="remark3" 			not-null="false" length="50" />
+		      
+       	<property name="quantity4" 			column="quantity4" 			not-null="false" length="10" /> 
+		<property name="inQuantity4" 		column="inQuantity4" 		not-null="false" length="10" />
+		<property name="outQuantity4" 		column="outQuantity4" 		not-null="false" length="10" />
+		<property name="checkQuantity4" 	column="checkQuantity4" 	not-null="false" length="10" />
+		<property name="diffQuantity4" 		column="diffQuantity4" 		not-null="false" length="10" />
+		<property name="remark4" 			column="remark4" 			not-null="false" length="50" />
+		      
+       	<property name="quantity5" 			column="quantity5" 			not-null="false" length="10" /> 
+		<property name="inQuantity5" 		column="inQuantity5" 		not-null="false" length="10" />
+		<property name="outQuantity5" 		column="outQuantity5" 		not-null="false" length="10" />
+		<property name="checkQuantity5" 	column="checkQuantity5" 	not-null="false" length="10" />
+		<property name="diffQuantity5" 		column="diffQuantity5" 		not-null="false" length="10" />
+		<property name="remark5" 			column="remark5" 			not-null="false" length="50" />
+		      
+       	<property name="quantity6" 			column="quantity6" 			not-null="false" length="10" /> 
+		<property name="inQuantity6" 		column="inQuantity6" 		not-null="false" length="10" />
+		<property name="outQuantity6" 		column="outQuantity6" 		not-null="false" length="10" />
+		<property name="checkQuantity6" 	column="checkQuantity6" 	not-null="false" length="10" />
+		<property name="diffQuantity6" 		column="diffQuantity6" 		not-null="false" length="10" />
+		<property name="remark6" 			column="remark6" 			not-null="false" length="50" />
+		      
+       	<property name="quantity7" 			column="quantity7" 			not-null="false" length="10" /> 
+		<property name="inQuantity7" 		column="inQuantity7" 		not-null="false" length="10" />
+		<property name="outQuantity7" 		column="outQuantity7" 		not-null="false" length="10" />
+		<property name="checkQuantity7" 	column="checkQuantity7" 	not-null="false" length="10" />
+		<property name="diffQuantity7" 		column="diffQuantity7" 		not-null="false" length="10" />
+		<property name="remark7" 			column="remark7" 			not-null="false" length="50" />
+		      
+       	<property name="quantity8" 			column="quantity8" 			not-null="false" length="10" /> 
+		<property name="inQuantity8" 		column="inQuantity8" 		not-null="false" length="10" />
+		<property name="outQuantity8" 		column="outQuantity8" 		not-null="false" length="10" />
+		<property name="checkQuantity8" 	column="checkQuantity8" 	not-null="false" length="10" />
+		<property name="diffQuantity8" 		column="diffQuantity8" 		not-null="false" length="10" />
+		<property name="remark8" 			column="remark8" 			not-null="false" length="50" />
+		      
+       	<property name="quantity9" 			column="quantity9" 			not-null="false" length="10" /> 
+		<property name="inQuantity9" 		column="inQuantity9" 		not-null="false" length="10" />
+		<property name="outQuantity9" 		column="outQuantity9" 		not-null="false" length="10" />
+		<property name="checkQuantity9" 	column="checkQuantity9" 	not-null="false" length="10" />
+		<property name="diffQuantity9" 		column="diffQuantity9" 		not-null="false" length="10" />
+		<property name="remark9" 			column="remark9" 			not-null="false" length="50" />
+		      
+       	<property name="quantity10" 		column="quantity10" 		not-null="false" length="10" /> 
+		<property name="inQuantity10" 		column="inQuantity10" 		not-null="false" length="10" />
+		<property name="outQuantity10" 		column="outQuantity10" 		not-null="false" length="10" />
+		<property name="checkQuantity10" 	column="checkQuantity10" 	not-null="false" length="10" />
+		<property name="diffQuantity10" 	column="diffQuantity10" 	not-null="false" length="10" />
+		<property name="remark10" 			column="remark10" 			not-null="false" length="50" />
+		      
+       	<property name="quantity11" 		column="quantity11" 		not-null="false" length="10" /> 
+		<property name="inQuantity11" 		column="inQuantity11" 		not-null="false" length="10" />
+		<property name="outQuantity11" 		column="outQuantity11" 		not-null="false" length="10" />
+		<property name="checkQuantity11" 	column="checkQuantity11" 	not-null="false" length="10" />
+		<property name="diffQuantity11" 	column="diffQuantity11" 	not-null="false" length="10" />
+		<property name="remark11" 			column="remark11" 			not-null="false" length="50" />
+		      
+       	<property name="quantity12" 		column="quantity12" 		not-null="false" length="10" /> 
+		<property name="inQuantity12" 		column="inQuantity12" 		not-null="false" length="10" />
+		<property name="outQuantity12" 		column="outQuantity12" 		not-null="false" length="10" />
+		<property name="checkQuantity12" 	column="checkQuantity12" 	not-null="false" length="10" />
+		<property name="diffQuantity12" 	column="diffQuantity12" 	not-null="false" length="10" />
+		<property name="remark12" 			column="remark12" 			not-null="false" length="50" />
+    </class>
+    
+    <class name="HongXunWeldCompilation" table="HongXunWeldCompilation" dynamic-update="true">
+		<id name="idc" column="ID" type="integer" > 
+ 			  <generator class="foreign">
+			  		<param name="property">hongXunProductionWeldStock</param>
+			  </generator>  
+			   <!-- <generator class="identity"/>    -->       
+        </id> 
+        	<!-- constrained: true 表示为从表方 -->
+         	<one-to-one name="hongXunProductionWeldStock" class="HongXunProductionWeldStock" cascade="none" constrained="true" ></one-to-one>
+        <property name="stockId" 			column="stockId" 			not-null="false" length="30" />
+<!--         <property name="materialNum" 		column="materialNum" 		not-null="true"  length="30" />
+        <property name="specification" 		column="specification" 		not-null="false" length="120" />	
+            -->
+        <property name="quantity1" 			column="quantity1" 			not-null="false" length="10" /> 
+		<property name="inQuantity1" 		column="inQuantity1" 		not-null="false" length="10" />
+		<property name="outQuantity1" 		column="outQuantity1" 		not-null="false" length="10" />
+		<property name="checkQuantity1" 	column="checkQuantity1" 	not-null="false" length="10" />
+		<property name="diffQuantity1" 		column="diffQuantity1" 		not-null="false" length="10" />
+		<property name="remark1" 			column="remark1" 			not-null="false" length="50" />
+      
+       	<property name="quantity2" 			column="quantity2" 			not-null="false" length="10" /> 
+		<property name="inQuantity2" 		column="inQuantity2" 		not-null="false" length="10" />
+		<property name="outQuantity2" 		column="outQuantity2" 		not-null="false" length="10" />
+		<property name="checkQuantity2" 	column="checkQuantity2" 	not-null="false" length="10" />
+		<property name="diffQuantity2" 		column="diffQuantity2" 		not-null="false" length="10" />
+		<property name="remark2" 			column="remark2" 			not-null="false" length="50" />
+		      
+       	<property name="quantity3" 			column="quantity3" 			not-null="false" length="10" /> 
+		<property name="inQuantity3" 		column="inQuantity3" 		not-null="false" length="10" />
+		<property name="outQuantity3" 		column="outQuantity3" 		not-null="false" length="10" />
+		<property name="checkQuantity3" 	column="checkQuantity3" 	not-null="false" length="10" />
+		<property name="diffQuantity3" 		column="diffQuantity3" 		not-null="false" length="10" />
+		<property name="remark3" 			column="remark3" 			not-null="false" length="50" />
+		      
+       	<property name="quantity4" 			column="quantity4" 			not-null="false" length="10" /> 
+		<property name="inQuantity4" 		column="inQuantity4" 		not-null="false" length="10" />
+		<property name="outQuantity4" 		column="outQuantity4" 		not-null="false" length="10" />
+		<property name="checkQuantity4" 	column="checkQuantity4" 	not-null="false" length="10" />
+		<property name="diffQuantity4" 		column="diffQuantity4" 		not-null="false" length="10" />
+		<property name="remark4" 			column="remark4" 			not-null="false" length="50" />
+		      
+       	<property name="quantity5" 			column="quantity5" 			not-null="false" length="10" /> 
+		<property name="inQuantity5" 		column="inQuantity5" 		not-null="false" length="10" />
+		<property name="outQuantity5" 		column="outQuantity5" 		not-null="false" length="10" />
+		<property name="checkQuantity5" 	column="checkQuantity5" 	not-null="false" length="10" />
+		<property name="diffQuantity5" 		column="diffQuantity5" 		not-null="false" length="10" />
+		<property name="remark5" 			column="remark5" 			not-null="false" length="50" />
+		      
+       	<property name="quantity6" 			column="quantity6" 			not-null="false" length="10" /> 
+		<property name="inQuantity6" 		column="inQuantity6" 		not-null="false" length="10" />
+		<property name="outQuantity6" 		column="outQuantity6" 		not-null="false" length="10" />
+		<property name="checkQuantity6" 	column="checkQuantity6" 	not-null="false" length="10" />
+		<property name="diffQuantity6" 		column="diffQuantity6" 		not-null="false" length="10" />
+		<property name="remark6" 			column="remark6" 			not-null="false" length="50" />
+		      
+       	<property name="quantity7" 			column="quantity7" 			not-null="false" length="10" /> 
+		<property name="inQuantity7" 		column="inQuantity7" 		not-null="false" length="10" />
+		<property name="outQuantity7" 		column="outQuantity7" 		not-null="false" length="10" />
+		<property name="checkQuantity7" 	column="checkQuantity7" 	not-null="false" length="10" />
+		<property name="diffQuantity7" 		column="diffQuantity7" 		not-null="false" length="10" />
+		<property name="remark7" 			column="remark7" 			not-null="false" length="50" />
+		      
+       	<property name="quantity8" 			column="quantity8" 			not-null="false" length="10" /> 
+		<property name="inQuantity8" 		column="inQuantity8" 		not-null="false" length="10" />
+		<property name="outQuantity8" 		column="outQuantity8" 		not-null="false" length="10" />
+		<property name="checkQuantity8" 	column="checkQuantity8" 	not-null="false" length="10" />
+		<property name="diffQuantity8" 		column="diffQuantity8" 		not-null="false" length="10" />
+		<property name="remark8" 			column="remark8" 			not-null="false" length="50" />
+		      
+       	<property name="quantity9" 			column="quantity9" 			not-null="false" length="10" /> 
+		<property name="inQuantity9" 		column="inQuantity9" 		not-null="false" length="10" />
+		<property name="outQuantity9" 		column="outQuantity9" 		not-null="false" length="10" />
+		<property name="checkQuantity9" 	column="checkQuantity9" 	not-null="false" length="10" />
+		<property name="diffQuantity9" 		column="diffQuantity9" 		not-null="false" length="10" />
+		<property name="remark9" 			column="remark9" 			not-null="false" length="50" />
+		      
+       	<property name="quantity10" 		column="quantity10" 		not-null="false" length="10" /> 
+		<property name="inQuantity10" 		column="inQuantity10" 		not-null="false" length="10" />
+		<property name="outQuantity10" 		column="outQuantity10" 		not-null="false" length="10" />
+		<property name="checkQuantity10" 	column="checkQuantity10" 	not-null="false" length="10" />
+		<property name="diffQuantity10" 	column="diffQuantity10" 	not-null="false" length="10" />
+		<property name="remark10" 			column="remark10" 			not-null="false" length="50" />
+		      
+       	<property name="quantity11" 		column="quantity11" 		not-null="false" length="10" /> 
+		<property name="inQuantity11" 		column="inQuantity11" 		not-null="false" length="10" />
+		<property name="outQuantity11" 		column="outQuantity11" 		not-null="false" length="10" />
+		<property name="checkQuantity11" 	column="checkQuantity11" 	not-null="false" length="10" />
+		<property name="diffQuantity11" 	column="diffQuantity11" 	not-null="false" length="10" />
+		<property name="remark11" 			column="remark11" 			not-null="false" length="50" />
+		      
+       	<property name="quantity12" 		column="quantity12" 		not-null="false" length="10" /> 
+		<property name="inQuantity12" 		column="inQuantity12" 		not-null="false" length="10" />
+		<property name="outQuantity12" 		column="outQuantity12" 		not-null="false" length="10" />
+		<property name="checkQuantity12" 	column="checkQuantity12" 	not-null="false" length="10" />
+		<property name="diffQuantity12" 	column="diffQuantity12" 	not-null="false" length="10" />
+		<property name="remark12" 			column="remark12" 			not-null="false" length="50" />
+    </class> 
+ 
+    <class name="HongXunAuthority" table="HongXunAuthority" dynamic-update="true">
+        <id name="idc" column="ID" type="integer" > 
+            <generator class="identity"/>           
+        </id>  
+        <property name="userName" 			column="userName" 		not-null="false" length="30" />	  
+        <property name="userCode" 			column="userCode" 		not-null="false" length="30" />  		
+		<property name="position" 			column="position" 		not-null="false" length="20" />				
+		<property name="stateValue" 		column="stateValue" 	not-null="false" length="10" />	
+		<property name="stateValue1" 		column="stateValue1" 	not-null="false" length="10" />	
+		<property name="stateValue2" 		column="stateValue2" 	not-null="false" length="10" />
+		<property name="authorityDsc" 		column="authorityDsc" 	not-null="false" length="10" />
+
+    </class> 
+    
+    <class name="HongXunTablesStatus" table="HongXunTablesStatus" dynamic-update="true">
+        <id name="idc" column="ID" type="integer" > 
+            <generator class="identity"/>           
+        </id>  
+        <property name="bomModify" 			column="bomModify" 		not-null="false" length="10" />	  
+        <property name="analysis" 			column="analysis" 		not-null="false" length="10" />  
+        <property name="onekeyExport" 		column="onekeyExport" 	not-null="false" length="10" />  
+        <property name="bomEnable" 			column="bomEnable" 		not-null="false" length="10" />  
+    </class>   
+    <class name="HongXunSuppliersPrice" table="HongXunSuppliersPrice" dynamic-update="true">
+        <id name="idc" column="ID" type="integer" > 
+            <generator class="identity"/>           
+        </id>         
+        <property name="materialNum" 			column="materialNum" 		not-null="true" 	length="40" />	  
+        <property name="specification" 			column="specification" 		not-null="false" 	length="80" />
+        <property name="supplier" 				column="supplier" 			not-null="false" 	length="40" />  
+        <property name="price" 					column="price" 				not-null="false" 	length="40" />  
+        <property name="remark" 				column="remark" 			not-null="false" 	length="80" />  
+		<!-- <many-to-one name="hongXunMaterialStock" class="HongXunMaterialStock" cascade="none" lazy="false" fetch="join" column="materialStockId"></many-to-one>		 -->
+    </class>   
+
+</hibernate-mapping>

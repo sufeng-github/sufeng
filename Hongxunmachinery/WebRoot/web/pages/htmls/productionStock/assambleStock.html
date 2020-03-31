@@ -1,0 +1,90 @@
+﻿
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <title>基本信息</title> 
+
+    <link href="../../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../custom/uimaker/easyui.css">
+    <link rel="stylesheet" type="text/css" href="../../../custom/uimaker/icon.css">   
+    <link href="../../css/basic_info.css" rel="stylesheet">
+    <script type="text/javascript" src="../../../custom/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../custom/jquery.easyui.min.js"></script>
+ 	<script type="text/javascript" src="../../js/myjs/myjs.js"></script>  
+    <script type="text/javascript" src="../../js/myjs/gridHeader.js"></script> 
+    <script type="text/javascript" src="../../js/myjs/ajaxfileupload.js"></script> 
+    <script type="text/javascript" src="../../js/myjs/pdfobject.min.js"></script> 
+    
+</head>
+
+<body>
+
+		<div class="easyui-layout"  data-options="fit:true">	
+		    <div data-options="region:'center'" style="padding:0px;background:#eee;">
+		    	<!-- <a href="javascript:void(0)" onclick="analysis()" class="easyui-linkbutton" iconCls="icon-search" style="width:100%; height:30px;">分解定单</a>					 -->
+ 				<div id="tt" class="easyui-tabs1" style="width:100%;height:100%;">
+	          	</div>	 				
+			</div> 
+		</div>	
+ 	 
+		
+	<script type="text/javascript">
+		
+        $('.easyui-tabs1').tabs({
+          	tabHeight: 26,
+           /*	onSelect:function(title,index){
+	           	if(title.indexOf('A01焊接下料')>-1){
+	          		var currentTab = $('.easyui-tabs1').tabs("getSelected");
+	               	if(currentTab.find("iframe") && currentTab.find("iframe").size()){
+	                  	currentTab.find("iframe").attr("src",currentTab.find("iframe").attr("src"));
+	               	}
+	               	if(title.indexOf('筛选清单')>-1){
+	               		analysis();
+	               	}
+	           	}
+	      	} */    	
+        });
+      
+		function addTab(title, url){
+                if ($('#tt').tabs('exists', title)){
+                    $('#tt').tabs('select', title);
+                } else {
+                    var content = '<iframe scrolling="auto" frameborder="0"  src="'+url+'" style="width:100%;height:100%;"></iframe>';
+                    $('#tt').tabs('add',{
+                        title:title,
+                        content:content,
+                        closable:false
+                    });                    
+                    
+                }
+     	}
+     	
+      	function getFatherParameter() {
+		   	return "productionStock.htm";
+		}
+		
+      	$(function(){					
+            	setTimeout(function(){
+            		addTab('装配实时库存','./analysisHtml/productionStock.jsp');
+					addTab('装配入库记录','./analysisHtml/productionInStockDetail.jsp');
+					//addTab('出库详细','./instoreHtml/pf_bd_tables3_0_2.jsp');
+					addTab('装配月盘点表','./analysisHtml/productionCompilation.jsp');
+					//addTab('工单入库','./analysisHtml/pf_bd_tables4_2_2.jsp');					
+					//addTab('装配扫描入库','./analysisHtml/pf_bd_tables4_2_3.jsp');
+					//addTab('无限制装配扫描出库','./analysisHtml/pf_bd_tables4_2_4.jsp');
+					addTab('装配送货单汇总','./analysisHtml/productionSendOutNum.jsp');
+				},300);
+	   	});
+	   	
+	    $(window).resize(function(){
+	    	$('.easyui-tabs1').tabs("resize");
+	    }).resize(); 
+	    
+	</script>
+
+</body> 
+</html>
+
+

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>echarts.js案例一</title>
+
+	<script type="text/javascript" src="../../incubator-echarts-4.2.1/dist/echarts.min.js"></script>
+</head>
+<body>
+    <div id="chart" style="width:600px;height:400px;"></div>
+</body>
+<script type="text/javascript">
+    // 初始化图表标签
+    var myChart = echarts.init(document.getElementById('chart'));
+    
+		var data = [30]
+		options = {
+			title: {
+				text: '完成度',
+				show: false
+			},
+			xAxis: {
+				show: false
+			},
+			yAxis: [{
+				show: false,
+				data: []
+			}, {
+				show: false,
+				data: []
+			}],
+			series: [{
+				name: '条',
+				type: 'bar',
+				yAxisIndex: 0,
+				data: data,
+				stack: 'income',
+				barWidth: 30,
+				itemStyle: {
+					normal: {
+						color: '#6E7074',
+						
+					}},
+					 label: {
+						normal: {
+							show: false,
+							position: 'inside',
+							formatter: '{c}%'
+						}},
+			}, 
+			{
+				name: '条',
+				type: 'bar',
+				yAxisIndex: 0,
+				data: [40],
+				stack: 'income',
+				barWidth: 30,
+				itemStyle: {
+					normal: {
+						color: '#E2E2E2',
+						
+					}},
+					 label: {
+						normal: {
+							show: true,
+							position: 'inside',
+							formatter: '{c}%'
+						}},
+			},{
+				name: '框',
+				type: 'bar',
+				yAxisIndex: 1,
+				barGap: '-100%',
+				data: [100],
+				barWidth: 30,
+				itemStyle: {
+					normal: {
+						color: 'none',
+						borderColor: '#E2E2E2',
+						borderWidth: 1,
+						barBorderRadius: 1,
+					}
+				}
+			},]
+		};
+    myChart.setOption(options);
+</script>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>TreeGrid - jQuery EasyUI Demo</title>
+		<link rel="stylesheet" type="text/css" href="easyui/css/themes/default/easyui.css">
+		<link rel="stylesheet" type="text/css" href="easyui/css/themes/icon.css">
+		<link rel="stylesheet" type="text/css" href="easyui/css/demo.css">
+		<link rel="stylesheet" type="text/css" href="easyui/css/dlg.css">
+		<script type="text/javascript" src="easyui/js/jquery-1.8.2.min.js"></script>
+		<script type="text/javascript" src="easyui/js/jquery.easyui.min.js"></script>
+<!-- 
+插记录时,将其父节点的数据库字段state改为closed,本身节点的数据库字段state插位入open,字段parentid插入父节点id
+数据录字段必有parentid,state(是否能展开) 
+-->
+	<script>
+	//***************************************************************************************树形表格(数据库用一个表,用parentid关联)
+		$(function(){
+			 $('#dd_tg').hide();
+			  $('#ddf_tg').hide();
+			$('#tg').treegrid({
+				title:'树形表格',
+				iconCls:'icon-save',
+				width:600,                                             //*********************设置treegrid宽度
+				height:600,                                            //*********************设置treegrid高度 -->
+				nowrap: false,
+				animate:true,
+				collapsible:true,
+				url:'treegrid_data.json',                               //**************获取数据地址返回的数据是集合(对象类型)
+				idField:'id',                                          //********************每行记录对应一个唯一标识,id值
+				treeField:'type',
+				columns:[[                                             //********************* 设置字段名
+				    {field:'type',title:'类型',width:198},
+					{field:'addr',title:'地址',width:198},
+					{field:'work',title:'内容',width:198}
+				]],
+				onBeforeLoad:function(row,param){                      //*********************异步加载,即点击父节点展开时运行该方法 -->
+					if (row){
+						$(this).treegrid('options').url = 'treegrid_subdata.json';
+						<!-- alert(row.id+' '+row.code+'  '+row.name+'  '+row.col4); -->
+					} else {
+						$(this).treegrid('options').url = 'treegrid_data.json';
+					}
+				},
+
+   //***************************************************************************************************************************************** -->
+				//onClickRow:function(row){                               //*********************为所有子节点(不能展开)添加点击事件 按需添加-->
+				//	 var node = $('#tg').treegrid('getSelected');
+				//	 var nodes = $('#tg').treegrid('getChildren');
+				//	  if(node.id!=nodes[0].id){
+				//		alert(node.id);
+				//	  }
+			//	},
+  //*****************************************************************************工具栏
+					toolbar:[{
+					id:'btnadd',
+					text:'添加',
+					iconCls:'icon-add',
+					handler:function(){
+						//$('#btnsave').linkbutton('enable');
+						add_tg();
+					}
+				},{
+					id:'btnedit',
+					text:'编辑',
+					iconCls:'icon-edit',
+					handler:function(){
+						//$('#btnsave').linkbutton('enable');
+						edit_tg();
+					}
+				},{
+					id:'btncut',
+					text:'删除',
+					iconCls:'icon-no',
+					handler:function(){
+						//$('#btnsave').linkbutton('enable');
+						dele_tg();
+					}
+				}]
+			});
+		});
+ //******************************************************************************添加
+		function add_tg(){
+			$("#fm_tg").form("clear");
+			var s='';
+			var node = $('#tg').treegrid('getSelected');
+			if (node){
+				$('#fid').val(node.id);
+				$('#flx').val(node.type);
+				 $('#dd_tg').show();
+				 s='#dd_tg';
+			}else{
+				$('#ddf_tg').show();
+				 s='#ddf_tg';
+			}
+			  $(''+s).dialog({   
+				    title: '添加/编辑',   
+				    width: 400,   
+				    height: 250,   
+				    closed: false,   
+				    cache: false,   
+				    modal: true,
+				    buttons:[{
+						text:'保存',
+						iconCls:'icon-save',
+						handler:function(){
+							/*$.post("#", $("#fm_tg").serialize(),function(data){
+									$('#tg').treegrid('reload');
+									$(''+s).window('close');
+									}
+							);*/
+
+							$('#tg').treegrid('append',{
+								parent: node.id,  // the node has a 'id' value that defined through 'idField' property
+ 								data: [{
+									type: $("#fm_tg").find('input[name=lx]').val(),
+									addr: $("#fm_tg").find('input[name=dz]').val(),
+									work: $("#fm_tg").find('input[name=nr]').val(),
+								}] 
+								//data:$("#fm_tg").serialize()
+							});
+							
+							var data = $.param({'parentid':node.id})  + '&' + $('#fm_tg').serialize();
+							getData(tt, url, data);
+						}
+					},{
+						text:'关闭',
+						iconCls:'icon-cancel',
+						handler:function(){
+							$(''+s).window('close');
+						}
+					}]
+				}); 
+		}
+//*********************************************************************编辑
+		function edit_tg(){
+			var s='';
+			 var node = $('#tg').treegrid('getSelected');
+			if (node){
+					var node = $('#tg').treegrid('getSelected');
+					var nodep = $('#tg').treegrid('getParent',node.id);
+					var nodec = $('#tg').treegrid('getChildren',node.id);
+					var nodes = $('#tg').treegrid('getChildren');      //*******************treegrid('getChildren')获取的是该节点本身及(其所有子节点)或(兄弟节点和父节点)
+					var f_id;
+					var f_lx;
+					if(!(nodep!=null && node.id!=nodep.id && (nodec[0]==null))){                                 //**************************判断点击的节点是否是父节点
+								f_id=node.id;
+								f_lx=node.type;
+								$('#ffid').val(f_id);
+								$('#fflx').val(f_lx);
+								 $('#ddf_tg').show();
+								 s='#ddf_tg';
+					}else{
+								f_id=nodep.id;
+								f_lx=nodep.type;
+								$('#fid').val(f_id);
+								$('#flx').val(f_lx);
+								$('#lx').val(node.type);
+								$('#dz').val(node.addr);
+								$('#nr').val(node.work);
+								$('#dd_tg').show();
+								s='#dd_tg';
+					}
+		 $(''+s).dialog({   
+				    title: '添加/编辑',   
+				    width: 400,   
+				    height: 250,   
+				    closed: false,   
+				    cache: false,   
+				    modal: true,
+				    buttons:[{
+						text:'保存',
+						iconCls:'icon-save',
+						handler:function(){
+/* 							$.post("#", $("#fm_tg").serialize(),function(data){
+									$('#tg').treegrid('reload');
+									$(''+s).window('close');
+									}
+							
+							); */
+							$(''+s).window('close');
+						}
+					},{
+						text:'关闭',
+						iconCls:'icon-cancel',
+						handler:function(){
+							$(''+s).window('close');
+						}
+					}]
+				}); 
+			}
+		}
+//*********************************************************************************删除
+		function dele_tg(){
+			 var node = $('#tg').treegrid('getSelected');
+			 if (node){
+				  
+/* 				$.post("*", { id: ''+node.id},function(data){
+					$('#tg').treegrid('reload');
+				} ); */
+				$('#tg').treegrid('remove', node.id);
+			}
+		}
+		function getData(tt, url, data){
+			$.ajax({ 
+				type: "post",  
+				url:url,
+				data:data,
+				traditional: true,
+				dataType:"json",  
+				beforeSend: function () {
+					load();
+				},
+				complete: function () {
+					disLoad();
+				},
+				success: function(result) {
+					//$(tt).datagrid('loadData', result);	
+				},
+				error : function() {
+			       	alert("出错了！");
+			   	}
+			});	
+        }
+		
+	</script>
+</head>
+<body>
+<div >
+<!--树形表格  -->
+	<table id="tg" ></table>
+<!--添加/编辑弹出框 父 -->
+	<div id="ddf_tg">
+		  <form id="ffm_tg">
+		   <input type="hidden" name="fid" id="ffid">
+			 <p> 类型:&nbsp;&nbsp;&nbsp;<input name="flx" id="fflx"><p/>
+	      </form>
+	</div>  
+<!--添加/编辑弹出框  子-->
+	<div id="dd_tg">
+		  <form id="fm_tg">
+		      <input type="hidden" name="fid" id="fid">
+			 <p> 父类型:<input name="flx" id="flx" readonly="readonly"><p/>
+			 <p> 类型:&nbsp;&nbsp;&nbsp;<input name="lx" id="lx"><p/>
+			 <p> 地址:&nbsp;&nbsp;&nbsp;<input name="dz" id="dz"><p/>
+			 <p> 内容:&nbsp;&nbsp;&nbsp;<input name="nr" id="nr"><p/>
+	      </form>
+	</div>
+</div>
+</body>
+</html>

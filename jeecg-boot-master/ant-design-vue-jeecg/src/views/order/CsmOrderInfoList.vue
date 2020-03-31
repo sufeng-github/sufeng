@@ -19,17 +19,19 @@
           <template v-if="toggleSearchStatus">
             <a-col :md="6" :sm="8">
               <a-form-item label="工具箱">
-                <a-input placeholder="请输入工具箱" v-model="queryParam.toolId"></a-input>
+                <m-dict-select-tag placeholder="请输入工具箱" v-model="queryParam.toolId" dictCode="csm_toolbox_info"/>
               </a-form-item>
             </a-col>
             <a-col :md="6" :sm="8">
               <a-form-item label="螺钉架">
-                <a-input placeholder="请输入螺钉架" v-model="queryParam.scrId"></a-input>
+                <!--<a-input placeholder="请输入螺钉架" v-model="queryParam.scrId"></a-input>-->
+                <m-dict-select-tag placeholder="请输入螺钉架" v-model="queryParam.scrId" dictCode="csm_toolbox_info"/>
               </a-form-item>
             </a-col>
             <a-col :md="6" :sm="8">
               <a-form-item label="医院">
-                <a-input placeholder="请输入医院" v-model="queryParam.hospitalId"></a-input>
+               <!-- <a-input placeholder="请输入医院" v-model="queryParam.hospitalId"></a-input>-->
+                <m-dict-select-tag placeholder="请输入医院" v-model="queryParam.hospitalId" dictCode="csm_hospital"/>
               </a-form-item>
             </a-col>
             <a-col :md="6" :sm="8">
@@ -329,22 +331,22 @@
     },
     methods: {
       initDictConfig(){
-        initDictOptions('').then((res) => {
+        initDictOptionsmy('csm_operations_info').then((res) => {
           if (res.success) {
             this.$set(this.dictOptions, 'opeId', res.result)
           }
         })
-        initDictOptions('').then((res) => {
+        initDictOptionsmy('csm_toolbox_info').then((res) => {
           if (res.success) {
             this.$set(this.dictOptions, 'toolId', res.result)
           }
         })
-        initDictOptions('').then((res) => {
+        initDictOptionsmy('csm_screw_info').then((res) => {
           if (res.success) {
             this.$set(this.dictOptions, 'scrId', res.result)
           }
         })
-        initDictOptions('').then((res) => {
+        initDictOptionsmy('csm_hospital').then((res) => {
           if (res.success) {
             this.$set(this.dictOptions, 'hospitalId', res.result)
           }

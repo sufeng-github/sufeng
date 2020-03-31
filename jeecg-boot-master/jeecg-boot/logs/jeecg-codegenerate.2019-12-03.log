@@ -1,0 +1,758 @@
+2019-12-03 10:50:35.870 [main] INFO  org.jeecg.JeecgApplication:50 - Starting JeecgApplication on DESKTOP-89SVNT6 with PID 19280 (D:\CSM\jeecg-boot-master\jeecg-boot\jeecg-boot-module-system\target\classes started by dell in D:\CSM\jeecg-boot-master\jeecg-boot\jeecg-boot-module-system)
+2019-12-03 10:50:35.877 [main] INFO  org.jeecg.JeecgApplication:679 - The following profiles are active: dev
+2019-12-03 10:50:37.894 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:244 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-12-03 10:50:37.900 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:126 - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-12-03 10:50:38.071 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:182 - Finished Spring Data repository scanning in 141ms. Found 0 repository interfaces.
+2019-12-03 10:50:38.611 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'shiroConfig' of type [org.jeecg.config.ShiroConfig$$EnhancerBySpringCGLIB$$460b87a5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-03 10:50:38.753 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'shiroRealm' of type [org.jeecg.modules.shiro.authc.ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-03 10:50:40.317 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-03 10:50:40.377 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-03 10:50:40.455 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$26061e0f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-03 10:50:40.693 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'spring.datasource.dynamic-com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-03 10:50:40.700 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$8f948ee0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-03 10:50:40.711 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'dsProcessor' of type [com.baomidou.dynamic.datasource.processor.DsHeaderProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-03 10:50:40.719 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'dynamicDatasourceAnnotationAdvisor' of type [com.baomidou.dynamic.datasource.aop.DynamicDataSourceAnnotationAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-03 10:50:40.742 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'spring.redis-org.springframework.boot.autoconfigure.data.redis.RedisProperties' of type [org.springframework.boot.autoconfigure.data.redis.RedisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-03 10:50:40.752 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration' of type [org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration$$EnhancerBySpringCGLIB$$3b1fdc59] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-03 10:50:41.019 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'lettuceClientResources' of type [io.lettuce.core.resource.DefaultClientResources] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-03 10:50:41.197 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'redisConnectionFactory' of type [org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-03 10:50:41.212 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'redisConfig' of type [org.jeecg.config.RedisConfig$$EnhancerBySpringCGLIB$$90da0eef] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-03 10:50:41.256 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.apache.shiro.spring.boot.autoconfigure.ShiroBeanAutoConfiguration' of type [org.apache.shiro.spring.boot.autoconfigure.ShiroBeanAutoConfiguration$$EnhancerBySpringCGLIB$$391efbbf] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-03 10:50:41.263 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'eventBus' of type [org.apache.shiro.event.support.DefaultEventBus] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-03 10:50:41.824 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:90 - Tomcat initialized with port(s): 8889 (http)
+2019-12-03 10:50:41.846 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8889"]
+2019-12-03 10:50:41.871 [main] INFO  org.apache.catalina.core.StandardService:173 - Starting service [Tomcat]
+2019-12-03 10:50:41.872 [main] INFO  org.apache.catalina.core.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-12-03 10:50:41.884 [main] INFO  org.apache.catalina.core.AprLifecycleListener:173 - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jre1.8.0_191\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Program Files/Java/jre1.8.0_191/bin/server;C:/Program Files/Java/jre1.8.0_191/bin;C:/Program Files/Java/jre1.8.0_191/lib/amd64;C:\Program Files (x86)\NetSarang\Xftp 6\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Java\jdk1.8.0_191\bin;C:\Program Files\Java\jdk1.8.0_191\jre\bin;D:\MYSQL\mysql-5.7.24-winx64\bin;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\nodejs\;C:\Program Files\TortoiseSVN\bin;C:\Users\dell\AppData\Local\Microsoft\WindowsApps;C:\Program Files\nodejs\node_global;C:\Users\dell\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\dell\AppData\Local\Yarn\bin;C:\Users\dell\AppData\Roaming\npm;C:\Users\dell\Desktop;;.]
+2019-12-03 10:50:42.049 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/jeecg-boot]:173 - Initializing Spring embedded WebApplicationContext
+2019-12-03 10:50:42.049 [main] INFO  org.springframework.web.context.ContextLoader:296 - Root WebApplicationContext: initialization completed in 6124 ms
+2019-12-03 10:50:42.488 [main] INFO  c.b.dynamic.datasource.DynamicDataSourceCreator:113 - 动态数据源-检测到druid存在,如配置中未指定type,druid会默认配置
+2019-12-03 10:50:43.993 [main] INFO  com.alibaba.druid.pool.DruidDataSource:1003 - {dataSource-1,master} inited
+2019-12-03 10:50:43.994 [main] INFO  c.b.dynamic.datasource.DynamicRoutingDataSource:203 - 初始共加载 1 个数据源
+2019-12-03 10:50:43.995 [main] INFO  c.b.dynamic.datasource.DynamicRoutingDataSource:142 - 动态数据源-加载 master 成功
+2019-12-03 10:50:43.995 [main] INFO  c.b.dynamic.datasource.DynamicRoutingDataSource:212 - 当前的默认数据源是单数据源，数据源名为 master
+2019-12-03 10:50:49.502 [main] INFO  org.quartz.impl.StdSchedulerFactory:1208 - Using default implementation for ThreadExecutor
+2019-12-03 10:50:49.526 [main] INFO  org.quartz.core.SchedulerSignalerImpl:61 - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2019-12-03 10:50:49.527 [main] INFO  org.quartz.core.QuartzScheduler:229 - Quartz Scheduler v.2.3.0 created.
+2019-12-03 10:50:49.532 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:672 - Using db table-based data access locking (synchronization).
+2019-12-03 10:50:49.536 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:145 - JobStoreCMT initialized.
+2019-12-03 10:50:49.537 [main] INFO  org.quartz.core.QuartzScheduler:294 - Scheduler meta-data: Quartz Scheduler (v2.3.0) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is not clustered.
+
+2019-12-03 10:50:49.537 [main] INFO  org.quartz.impl.StdSchedulerFactory:1362 - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2019-12-03 10:50:49.538 [main] INFO  org.quartz.impl.StdSchedulerFactory:1366 - Quartz scheduler version: 2.3.0
+2019-12-03 10:50:49.538 [main] INFO  org.quartz.core.QuartzScheduler:2287 - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@25b87e1b
+2019-12-03 10:50:51.763 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver:59 - Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-12-03 10:50:51.978 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping:69 - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-12-03 10:50:52.313 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor:171 - Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-03 10:50:53.309 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper:160 - Context refreshed
+2019-12-03 10:50:53.347 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper:163 - Found 1 custom documentation plugin(s)
+2019-12-03 10:50:53.408 [main] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner:41 - Scanning for api listing references
+2019-12-03 10:50:53.656 [main] INFO  o.s.scheduling.quartz.SchedulerFactoryBean:726 - Starting Quartz Scheduler now
+2019-12-03 10:50:54.313 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:866 - Freed 0 triggers from 'acquired' / 'blocked' state.
+2019-12-03 10:50:54.394 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:876 - Recovering 0 jobs that were in-progress at the time of the last shut-down.
+2019-12-03 10:50:54.394 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:889 - Recovery complete.
+2019-12-03 10:50:54.408 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:896 - Removed 0 'complete' triggers.
+2019-12-03 10:50:54.410 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:901 - Removed 0 stale fired job entries.
+2019-12-03 10:50:54.418 [main] INFO  org.quartz.core.QuartzScheduler:547 - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2019-12-03 10:50:54.436 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Starting ProtocolHandler ["http-nio-8889"]
+2019-12-03 10:50:54.476 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:204 - Tomcat started on port(s): 8889 (http) with context path '/jeecg-boot'
+2019-12-03 10:50:54.479 [main] INFO  org.jeecg.JeecgApplication:59 - Started JeecgApplication in 19.106 seconds (JVM running for 20.234)
+2019-12-03 10:50:54.493 [main] INFO  org.jeecg.JeecgApplication:26 - 
+----------------------------------------------------------
+	Application Jeecg-Boot is running! Access URLs:
+	Local: 		http://localhost:8889/jeecg-boot/
+	External: 	http://192.168.61.117:8889/jeecg-boot/
+	swagger-ui: 	http://192.168.61.117:8889/jeecg-boot/swagger-ui.html
+	Doc: 		http://192.168.61.117:8889/jeecg-boot/doc.html
+----------------------------------------------------------
+2019-12-03 10:53:16.682 [http-nio-8889-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/jeecg-boot]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-03 10:53:16.683 [http-nio-8889-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:524 - Initializing Servlet 'dispatcherServlet'
+2019-12-03 10:53:16.703 [http-nio-8889-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:546 - Completed initialization in 20 ms
+2019-12-03 10:53:17.009 [http-nio-8889-exec-1] ERROR o.a.c.c.C.[.[.[/jeecg-boot].[dispatcherServlet]:175 - Servlet.service() for servlet [dispatcherServlet] in context with path [/jeecg-boot] threw exception [org.apache.shiro.authc.AuthenticationException: Token失效，请重新登录] with root cause
+org.apache.shiro.authc.AuthenticationException: 用户不存在!
+	at org.jeecg.modules.shiro.authc.ShiroRealm.checkUserTokenIsEffect(ShiroRealm.java:114)
+	at org.jeecg.modules.shiro.authc.ShiroRealm.doGetAuthenticationInfo(ShiroRealm.java:94)
+	at org.apache.shiro.realm.AuthenticatingRealm.getAuthenticationInfo(AuthenticatingRealm.java:571)
+	at org.apache.shiro.authc.pam.ModularRealmAuthenticator.doSingleRealmAuthentication(ModularRealmAuthenticator.java:180)
+	at org.apache.shiro.authc.pam.ModularRealmAuthenticator.doAuthenticate(ModularRealmAuthenticator.java:267)
+	at org.apache.shiro.authc.AbstractAuthenticator.authenticate(AbstractAuthenticator.java:198)
+	at org.apache.shiro.mgt.AuthenticatingSecurityManager.authenticate(AuthenticatingSecurityManager.java:106)
+	at org.apache.shiro.mgt.DefaultSecurityManager.login(DefaultSecurityManager.java:274)
+	at org.apache.shiro.subject.support.DelegatingSubject.login(DelegatingSubject.java:260)
+	at org.jeecg.modules.shiro.authc.aop.JwtFilter.executeLogin(JwtFilter.java:51)
+	at org.jeecg.modules.shiro.authc.aop.JwtFilter.isAccessAllowed(JwtFilter.java:34)
+	at org.apache.shiro.web.filter.AccessControlFilter.onPreHandle(AccessControlFilter.java:162)
+	at org.apache.shiro.web.filter.PathMatchingFilter.isFilterChainContinued(PathMatchingFilter.java:203)
+	at org.apache.shiro.web.filter.PathMatchingFilter.preHandle(PathMatchingFilter.java:178)
+	at org.jeecg.modules.shiro.authc.aop.JwtFilter.preHandle(JwtFilter.java:71)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:131)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:387)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:124)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.web.trace.servlet.HttpTraceFilter.doFilterInternal(HttpTraceFilter.java:90)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.filterAndRecordMetrics(WebMvcMetricsFilter.java:117)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:106)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+2019-12-03 10:53:34.672 [http-nio-8889-exec-4] INFO  io.lettuce.core.EpollProvider:68 - Starting without optional epoll library
+2019-12-03 10:53:34.675 [http-nio-8889-exec-4] INFO  io.lettuce.core.KqueueProvider:70 - Starting without optional kqueue library
+2019-12-03 10:53:37.729 [http-nio-8889-exec-5] INFO  o.j.m.system.controller.SysPermissionController:120 -  ------ 通过令牌获取用户拥有的访问菜单 ---- TOKEN ------ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzUzNDM0MTQsInVzZXJuYW1lIjoiYWRtaW4ifQ.z5R3ZZ2Mp1NOQJTJL7MCcnUV-DS4tkFqZ68HUzb3t6c
+2019-12-03 10:53:41.200 [http-nio-8889-exec-10] INFO  o.j.m.demo.system.controller.CsmSysdictController:73 - Result(success=true, message=操作成功！, code=0, result=[CsmBom(id=1199141056379756545, name=桌子, species=4*4, code=12636, model=45/69, regnum=1233, supplierId=1198906387692503041, createBy=admin, createTime=Tue Nov 26 00:00:00 CST 2019, updateBy=admin, updateTime=Tue Nov 26 00:00:00 CST 2019, sysOrgCode=A01)], timestamp=1575341621135)
+2019-12-03 10:53:45.340 [http-nio-8889-exec-2] INFO  o.j.m.demo.system.controller.CsmSysdictController:36 -  dictCode : csm_company
+2019-12-03 10:53:45.396 [http-nio-8889-exec-3] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : orderStatus
+2019-12-03 10:53:45.430 [http-nio-8889-exec-3] INFO  o.j.modules.system.service.impl.SysDictServiceImpl:48 - 无缓存dictCache的时候调用这里！
+2019-12-03 10:53:45.621 [http-nio-8889-exec-2] INFO  o.j.m.demo.system.controller.CsmSysdictController:45 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1199578235035893761, text=华为), DictModel(value=1199578306305507330, text=小米), DictModel(value=1199579264813023233, text=中兴)], timestamp=1575341625341)
+2019-12-03 10:53:45.675 [http-nio-8889-exec-3] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1, text=待处理), DictModel(value=4, text=已销售), DictModel(value=5, text=已开票), DictModel(value=3, text=工具取回), DictModel(value=2, text=已送货)], timestamp=1575341625397)
+2019-12-03 10:53:48.207 [http-nio-8889-exec-5] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 10:53:48.219 [http-nio-8889-exec-5] INFO  o.j.modules.system.service.impl.SysDictServiceImpl:48 - 无缓存dictCache的时候调用这里！
+2019-12-03 10:53:48.241 [http-nio-8889-exec-5] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575341628208)
+2019-12-03 10:53:48.750 [http-nio-8889-exec-7] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 10:53:48.755 [http-nio-8889-exec-7] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575341628750)
+2019-12-03 11:03:21.753 [http-nio-8889-exec-9] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 11:03:21.758 [http-nio-8889-exec-9] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575342201754)
+2019-12-03 11:03:21.956 [http-nio-8889-exec-10] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 11:03:21.959 [http-nio-8889-exec-10] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575342201957)
+2019-12-03 11:07:28.715 [http-nio-8889-exec-1] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 11:07:28.719 [http-nio-8889-exec-1] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575342448716)
+2019-12-03 11:10:16.976 [http-nio-8889-exec-3] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 11:10:16.979 [http-nio-8889-exec-3] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575342616977)
+2019-12-03 11:10:17.227 [http-nio-8889-exec-4] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 11:10:17.229 [http-nio-8889-exec-4] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575342617228)
+2019-12-03 11:10:32.218 [http-nio-8889-exec-5] INFO  o.j.m.system.controller.SysPermissionController:120 -  ------ 通过令牌获取用户拥有的访问菜单 ---- TOKEN ------ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzUzNDM0MTQsInVzZXJuYW1lIjoiYWRtaW4ifQ.z5R3ZZ2Mp1NOQJTJL7MCcnUV-DS4tkFqZ68HUzb3t6c
+2019-12-03 11:10:48.731 [http-nio-8889-exec-10] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 11:10:48.737 [http-nio-8889-exec-10] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575342648732)
+2019-12-03 11:10:49.057 [http-nio-8889-exec-1] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 11:10:49.059 [http-nio-8889-exec-1] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575342649057)
+2019-12-03 11:11:02.634 [http-nio-8889-exec-2] INFO  o.j.m.system.controller.SysPermissionController:120 -  ------ 通过令牌获取用户拥有的访问菜单 ---- TOKEN ------ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzUzNDM0MTQsInVzZXJuYW1lIjoiYWRtaW4ifQ.z5R3ZZ2Mp1NOQJTJL7MCcnUV-DS4tkFqZ68HUzb3t6c
+2019-12-03 11:11:19.621 [http-nio-8889-exec-5] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 11:11:19.624 [http-nio-8889-exec-5] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575342679622)
+2019-12-03 11:11:19.875 [http-nio-8889-exec-7] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 11:11:19.879 [http-nio-8889-exec-7] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575342679877)
+2019-12-03 11:14:42.662 [http-nio-8889-exec-10] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 11:14:42.677 [http-nio-8889-exec-10] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575342882663)
+2019-12-03 11:14:42.809 [http-nio-8889-exec-9] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 11:14:42.812 [http-nio-8889-exec-9] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575342882810)
+2019-12-03 11:15:43.330 [http-nio-8889-exec-3] INFO  o.j.m.demo.system.controller.CsmSysdictController:73 - Result(success=true, message=操作成功！, code=0, result=[CsmBom(id=1199141056379756545, name=桌子, species=4*4, code=12636, model=45/69, regnum=1233, supplierId=1198906387692503041, createBy=admin, createTime=Tue Nov 26 00:00:00 CST 2019, updateBy=admin, updateTime=Tue Nov 26 00:00:00 CST 2019, sysOrgCode=A01)], timestamp=1575342943322)
+2019-12-03 11:18:51.046 [http-nio-8889-exec-5] INFO  o.j.m.demo.system.controller.CsmSysdictController:36 -  dictCode : csm_company
+2019-12-03 11:18:51.046 [http-nio-8889-exec-6] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : orderStatus
+2019-12-03 11:18:51.048 [http-nio-8889-exec-6] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1, text=待处理), DictModel(value=4, text=已销售), DictModel(value=5, text=已开票), DictModel(value=3, text=工具取回), DictModel(value=2, text=已送货)], timestamp=1575343131046)
+2019-12-03 11:18:51.048 [http-nio-8889-exec-5] INFO  o.j.m.demo.system.controller.CsmSysdictController:45 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1199578235035893761, text=华为), DictModel(value=1199578306305507330, text=小米), DictModel(value=1199579264813023233, text=中兴)], timestamp=1575343131046)
+2019-12-03 11:18:58.015 [http-nio-8889-exec-4] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 11:18:58.019 [http-nio-8889-exec-4] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575343138017)
+2019-12-03 11:54:02.650 [http-nio-8889-exec-7] ERROR o.a.c.c.C.[.[.[/jeecg-boot].[dispatcherServlet]:175 - Servlet.service() for servlet [dispatcherServlet] in context with path [/jeecg-boot] threw exception [org.apache.shiro.authc.AuthenticationException: Token失效，请重新登录] with root cause
+org.apache.shiro.authc.AuthenticationException: Token失效，请重新登录!
+	at org.jeecg.modules.shiro.authc.ShiroRealm.checkUserTokenIsEffect(ShiroRealm.java:119)
+	at org.jeecg.modules.shiro.authc.ShiroRealm.doGetAuthenticationInfo(ShiroRealm.java:94)
+	at org.apache.shiro.realm.AuthenticatingRealm.getAuthenticationInfo(AuthenticatingRealm.java:571)
+	at org.apache.shiro.authc.pam.ModularRealmAuthenticator.doSingleRealmAuthentication(ModularRealmAuthenticator.java:180)
+	at org.apache.shiro.authc.pam.ModularRealmAuthenticator.doAuthenticate(ModularRealmAuthenticator.java:267)
+	at org.apache.shiro.authc.AbstractAuthenticator.authenticate(AbstractAuthenticator.java:198)
+	at org.apache.shiro.mgt.AuthenticatingSecurityManager.authenticate(AuthenticatingSecurityManager.java:106)
+	at org.apache.shiro.mgt.DefaultSecurityManager.login(DefaultSecurityManager.java:274)
+	at org.apache.shiro.subject.support.DelegatingSubject.login(DelegatingSubject.java:260)
+	at org.jeecg.modules.shiro.authc.aop.JwtFilter.executeLogin(JwtFilter.java:51)
+	at org.jeecg.modules.shiro.authc.aop.JwtFilter.isAccessAllowed(JwtFilter.java:34)
+	at org.apache.shiro.web.filter.AccessControlFilter.onPreHandle(AccessControlFilter.java:162)
+	at org.apache.shiro.web.filter.PathMatchingFilter.isFilterChainContinued(PathMatchingFilter.java:203)
+	at org.apache.shiro.web.filter.PathMatchingFilter.preHandle(PathMatchingFilter.java:178)
+	at org.jeecg.modules.shiro.authc.aop.JwtFilter.preHandle(JwtFilter.java:71)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:131)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:387)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:124)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.web.trace.servlet.HttpTraceFilter.doFilterInternal(HttpTraceFilter.java:90)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.filterAndRecordMetrics(WebMvcMetricsFilter.java:117)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:106)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+2019-12-03 11:54:02.604 [http-nio-8889-exec-8] ERROR o.a.c.c.C.[.[.[/jeecg-boot].[dispatcherServlet]:175 - Servlet.service() for servlet [dispatcherServlet] in context with path [/jeecg-boot] threw exception [org.apache.shiro.authc.AuthenticationException: Token失效，请重新登录] with root cause
+org.apache.shiro.authc.AuthenticationException: Token失效，请重新登录!
+	at org.jeecg.modules.shiro.authc.ShiroRealm.checkUserTokenIsEffect(ShiroRealm.java:119)
+	at org.jeecg.modules.shiro.authc.ShiroRealm.doGetAuthenticationInfo(ShiroRealm.java:94)
+	at org.apache.shiro.realm.AuthenticatingRealm.getAuthenticationInfo(AuthenticatingRealm.java:571)
+	at org.apache.shiro.authc.pam.ModularRealmAuthenticator.doSingleRealmAuthentication(ModularRealmAuthenticator.java:180)
+	at org.apache.shiro.authc.pam.ModularRealmAuthenticator.doAuthenticate(ModularRealmAuthenticator.java:267)
+	at org.apache.shiro.authc.AbstractAuthenticator.authenticate(AbstractAuthenticator.java:198)
+	at org.apache.shiro.mgt.AuthenticatingSecurityManager.authenticate(AuthenticatingSecurityManager.java:106)
+	at org.apache.shiro.mgt.DefaultSecurityManager.login(DefaultSecurityManager.java:274)
+	at org.apache.shiro.subject.support.DelegatingSubject.login(DelegatingSubject.java:260)
+	at org.jeecg.modules.shiro.authc.aop.JwtFilter.executeLogin(JwtFilter.java:51)
+	at org.jeecg.modules.shiro.authc.aop.JwtFilter.isAccessAllowed(JwtFilter.java:34)
+	at org.apache.shiro.web.filter.AccessControlFilter.onPreHandle(AccessControlFilter.java:162)
+	at org.apache.shiro.web.filter.PathMatchingFilter.isFilterChainContinued(PathMatchingFilter.java:203)
+	at org.apache.shiro.web.filter.PathMatchingFilter.preHandle(PathMatchingFilter.java:178)
+	at org.jeecg.modules.shiro.authc.aop.JwtFilter.preHandle(JwtFilter.java:71)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:131)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:387)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:124)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.web.trace.servlet.HttpTraceFilter.doFilterInternal(HttpTraceFilter.java:90)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.filterAndRecordMetrics(WebMvcMetricsFilter.java:117)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:106)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+2019-12-03 11:54:03.093 [http-nio-8889-exec-10] ERROR o.a.c.c.C.[.[.[/jeecg-boot].[dispatcherServlet]:175 - Servlet.service() for servlet [dispatcherServlet] in context with path [/jeecg-boot] threw exception [org.apache.shiro.authc.AuthenticationException: Token失效，请重新登录] with root cause
+org.apache.shiro.authc.AuthenticationException: Token失效，请重新登录!
+	at org.jeecg.modules.shiro.authc.ShiroRealm.checkUserTokenIsEffect(ShiroRealm.java:119)
+	at org.jeecg.modules.shiro.authc.ShiroRealm.doGetAuthenticationInfo(ShiroRealm.java:94)
+	at org.apache.shiro.realm.AuthenticatingRealm.getAuthenticationInfo(AuthenticatingRealm.java:571)
+	at org.apache.shiro.authc.pam.ModularRealmAuthenticator.doSingleRealmAuthentication(ModularRealmAuthenticator.java:180)
+	at org.apache.shiro.authc.pam.ModularRealmAuthenticator.doAuthenticate(ModularRealmAuthenticator.java:267)
+	at org.apache.shiro.authc.AbstractAuthenticator.authenticate(AbstractAuthenticator.java:198)
+	at org.apache.shiro.mgt.AuthenticatingSecurityManager.authenticate(AuthenticatingSecurityManager.java:106)
+	at org.apache.shiro.mgt.DefaultSecurityManager.login(DefaultSecurityManager.java:274)
+	at org.apache.shiro.subject.support.DelegatingSubject.login(DelegatingSubject.java:260)
+	at org.jeecg.modules.shiro.authc.aop.JwtFilter.executeLogin(JwtFilter.java:51)
+	at org.jeecg.modules.shiro.authc.aop.JwtFilter.isAccessAllowed(JwtFilter.java:34)
+	at org.apache.shiro.web.filter.AccessControlFilter.onPreHandle(AccessControlFilter.java:162)
+	at org.apache.shiro.web.filter.PathMatchingFilter.isFilterChainContinued(PathMatchingFilter.java:203)
+	at org.apache.shiro.web.filter.PathMatchingFilter.preHandle(PathMatchingFilter.java:178)
+	at org.jeecg.modules.shiro.authc.aop.JwtFilter.preHandle(JwtFilter.java:71)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:131)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:387)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:124)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.web.trace.servlet.HttpTraceFilter.doFilterInternal(HttpTraceFilter.java:90)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.filterAndRecordMetrics(WebMvcMetricsFilter.java:117)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:106)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+2019-12-03 13:33:25.469 [http-nio-8889-exec-9] ERROR o.a.c.c.C.[.[.[/jeecg-boot].[dispatcherServlet]:175 - Servlet.service() for servlet [dispatcherServlet] in context with path [/jeecg-boot] threw exception [org.apache.shiro.authc.AuthenticationException: Token失效，请重新登录] with root cause
+org.apache.shiro.authc.AuthenticationException: Token失效，请重新登录!
+	at org.jeecg.modules.shiro.authc.ShiroRealm.checkUserTokenIsEffect(ShiroRealm.java:119)
+	at org.jeecg.modules.shiro.authc.ShiroRealm.doGetAuthenticationInfo(ShiroRealm.java:94)
+	at org.apache.shiro.realm.AuthenticatingRealm.getAuthenticationInfo(AuthenticatingRealm.java:571)
+	at org.apache.shiro.authc.pam.ModularRealmAuthenticator.doSingleRealmAuthentication(ModularRealmAuthenticator.java:180)
+	at org.apache.shiro.authc.pam.ModularRealmAuthenticator.doAuthenticate(ModularRealmAuthenticator.java:267)
+	at org.apache.shiro.authc.AbstractAuthenticator.authenticate(AbstractAuthenticator.java:198)
+	at org.apache.shiro.mgt.AuthenticatingSecurityManager.authenticate(AuthenticatingSecurityManager.java:106)
+	at org.apache.shiro.mgt.DefaultSecurityManager.login(DefaultSecurityManager.java:274)
+	at org.apache.shiro.subject.support.DelegatingSubject.login(DelegatingSubject.java:260)
+	at org.jeecg.modules.shiro.authc.aop.JwtFilter.executeLogin(JwtFilter.java:51)
+	at org.jeecg.modules.shiro.authc.aop.JwtFilter.isAccessAllowed(JwtFilter.java:34)
+	at org.apache.shiro.web.filter.AccessControlFilter.onPreHandle(AccessControlFilter.java:162)
+	at org.apache.shiro.web.filter.PathMatchingFilter.isFilterChainContinued(PathMatchingFilter.java:203)
+	at org.apache.shiro.web.filter.PathMatchingFilter.preHandle(PathMatchingFilter.java:178)
+	at org.jeecg.modules.shiro.authc.aop.JwtFilter.preHandle(JwtFilter.java:71)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:131)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:387)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:124)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.web.trace.servlet.HttpTraceFilter.doFilterInternal(HttpTraceFilter.java:90)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.filterAndRecordMetrics(WebMvcMetricsFilter.java:117)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:106)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+2019-12-03 13:33:26.921 [http-nio-8889-exec-3] INFO  o.jeecg.modules.system.controller.LoginController:118 -  用户名:  管理员,退出成功！ 
+2019-12-03 13:35:44.715 [http-nio-8889-exec-6] INFO  o.j.m.system.controller.SysPermissionController:120 -  ------ 通过令牌获取用户拥有的访问菜单 ---- TOKEN ------ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzUzNTMxNDIsInVzZXJuYW1lIjoiYWRtaW4ifQ.LKR7QGWkxFpuB8sksSz52-INppRB1FW_eLaK_2hY57s
+2019-12-03 13:35:46.886 [http-nio-8889-exec-4] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 13:35:47.172 [http-nio-8889-exec-4] INFO  o.j.modules.system.service.impl.SysDictServiceImpl:48 - 无缓存dictCache的时候调用这里！
+2019-12-03 13:35:47.619 [http-nio-8889-exec-4] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575351346960)
+2019-12-03 13:35:47.709 [http-nio-8889-exec-7] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 13:35:47.718 [http-nio-8889-exec-7] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575351347716)
+2019-12-03 13:35:50.765 [http-nio-8889-exec-10] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 13:35:50.767 [http-nio-8889-exec-10] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575351350765)
+2019-12-03 13:41:34.976 [http-nio-8889-exec-9] INFO  o.j.m.system.controller.SysPermissionController:120 -  ------ 通过令牌获取用户拥有的访问菜单 ---- TOKEN ------ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzUzNTMxNDIsInVzZXJuYW1lIjoiYWRtaW4ifQ.LKR7QGWkxFpuB8sksSz52-INppRB1FW_eLaK_2hY57s
+2019-12-03 13:41:36.405 [http-nio-8889-exec-1] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 13:41:36.409 [http-nio-8889-exec-1] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575351696406)
+2019-12-03 13:41:36.635 [http-nio-8889-exec-6] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 13:41:36.637 [http-nio-8889-exec-6] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575351696635)
+2019-12-03 13:42:30.445 [http-nio-8889-exec-8] INFO  o.j.m.system.controller.SysPermissionController:120 -  ------ 通过令牌获取用户拥有的访问菜单 ---- TOKEN ------ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzUzNTMxNDIsInVzZXJuYW1lIjoiYWRtaW4ifQ.LKR7QGWkxFpuB8sksSz52-INppRB1FW_eLaK_2hY57s
+2019-12-03 13:42:35.843 [http-nio-8889-exec-9] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 13:42:35.852 [http-nio-8889-exec-9] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575351755850)
+2019-12-03 13:42:36.105 [http-nio-8889-exec-1] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 13:42:36.107 [http-nio-8889-exec-1] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575351756106)
+2019-12-03 13:46:22.913 [http-nio-8889-exec-5] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 13:46:22.914 [http-nio-8889-exec-5] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575351982913)
+2019-12-03 13:47:20.480 [http-nio-8889-exec-6] INFO  o.j.m.system.controller.SysPermissionController:120 -  ------ 通过令牌获取用户拥有的访问菜单 ---- TOKEN ------ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzUzNTMxNDIsInVzZXJuYW1lIjoiYWRtaW4ifQ.LKR7QGWkxFpuB8sksSz52-INppRB1FW_eLaK_2hY57s
+2019-12-03 13:47:46.171 [http-nio-8889-exec-9] INFO  o.j.m.demo.system.controller.CsmSysdictController:73 - Result(success=true, message=操作成功！, code=0, result=[CsmBom(id=1199141056379756545, name=桌子, species=4*4, code=12636, model=45/69, regnum=1233, supplierId=1198906387692503041, createBy=admin, createTime=Tue Nov 26 00:00:00 CST 2019, updateBy=admin, updateTime=Tue Nov 26 00:00:00 CST 2019, sysOrgCode=A01)], timestamp=1575352065893)
+2019-12-03 13:47:48.272 [http-nio-8889-exec-1] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 13:47:48.276 [http-nio-8889-exec-1] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575352068273)
+2019-12-03 13:47:48.639 [http-nio-8889-exec-3] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 13:47:48.641 [http-nio-8889-exec-3] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575352068640)
+2019-12-03 14:00:56.229 [http-nio-8889-exec-5] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 14:00:56.231 [http-nio-8889-exec-5] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575352856229)
+2019-12-03 14:04:33.743 [http-nio-8889-exec-6] INFO  o.j.m.system.controller.SysPermissionController:120 -  ------ 通过令牌获取用户拥有的访问菜单 ---- TOKEN ------ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzUzNTMxNDIsInVzZXJuYW1lIjoiYWRtaW4ifQ.LKR7QGWkxFpuB8sksSz52-INppRB1FW_eLaK_2hY57s
+2019-12-03 14:04:37.368 [http-nio-8889-exec-8] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 14:04:37.451 [http-nio-8889-exec-8] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575353077403)
+2019-12-03 14:04:38.287 [http-nio-8889-exec-9] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 14:04:38.307 [http-nio-8889-exec-9] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575353078303)
+2019-12-03 14:04:39.996 [http-nio-8889-exec-4] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 14:04:39.998 [http-nio-8889-exec-4] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575353079997)
+2019-12-03 14:05:16.948 [http-nio-8889-exec-10] INFO  o.j.m.system.controller.SysPermissionController:120 -  ------ 通过令牌获取用户拥有的访问菜单 ---- TOKEN ------ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzUzNTMxNDIsInVzZXJuYW1lIjoiYWRtaW4ifQ.LKR7QGWkxFpuB8sksSz52-INppRB1FW_eLaK_2hY57s
+2019-12-03 14:05:19.569 [http-nio-8889-exec-3] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 14:05:19.573 [http-nio-8889-exec-3] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575353119570)
+2019-12-03 14:05:22.833 [http-nio-8889-exec-6] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 14:05:22.835 [http-nio-8889-exec-6] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575353122833)
+2019-12-03 14:05:23.690 [http-nio-8889-exec-8] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 14:05:23.713 [http-nio-8889-exec-8] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575353123691)
+2019-12-03 14:15:17.998 [http-nio-8889-exec-7] INFO  o.j.m.system.controller.SysPermissionController:120 -  ------ 通过令牌获取用户拥有的访问菜单 ---- TOKEN ------ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzUzNTMxNDIsInVzZXJuYW1lIjoiYWRtaW4ifQ.LKR7QGWkxFpuB8sksSz52-INppRB1FW_eLaK_2hY57s
+2019-12-03 14:16:28.214 [http-nio-8889-exec-3] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 14:16:28.540 [http-nio-8889-exec-3] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575353788218)
+2019-12-03 14:16:28.857 [http-nio-8889-exec-1] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 14:16:28.916 [http-nio-8889-exec-1] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575353788911)
+2019-12-03 14:20:43.353 [http-nio-8889-exec-2] INFO  o.j.m.system.controller.SysPermissionController:120 -  ------ 通过令牌获取用户拥有的访问菜单 ---- TOKEN ------ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzUzNTMxNDIsInVzZXJuYW1lIjoiYWRtaW4ifQ.LKR7QGWkxFpuB8sksSz52-INppRB1FW_eLaK_2hY57s
+2019-12-03 14:20:45.098 [http-nio-8889-exec-1] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 14:20:45.213 [http-nio-8889-exec-1] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575354045100)
+2019-12-03 14:20:45.630 [http-nio-8889-exec-6] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 14:20:45.632 [http-nio-8889-exec-6] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575354045631)
+2019-12-03 14:20:48.955 [http-nio-8889-exec-8] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 14:20:48.957 [http-nio-8889-exec-8] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575354048956)
+2019-12-03 14:21:50.663 [http-nio-8889-exec-7] INFO  o.j.m.system.controller.SysPermissionController:120 -  ------ 通过令牌获取用户拥有的访问菜单 ---- TOKEN ------ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzUzNTMxNDIsInVzZXJuYW1lIjoiYWRtaW4ifQ.LKR7QGWkxFpuB8sksSz52-INppRB1FW_eLaK_2hY57s
+2019-12-03 14:21:53.527 [http-nio-8889-exec-9] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 14:21:53.542 [http-nio-8889-exec-9] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575354113542)
+2019-12-03 14:21:53.979 [http-nio-8889-exec-2] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 14:21:53.979 [http-nio-8889-exec-2] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575354113979)
+2019-12-03 14:33:49.144 [http-nio-8889-exec-3] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 14:33:49.166 [http-nio-8889-exec-3] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575354829148)
+2019-12-03 14:34:04.469 [http-nio-8889-exec-10] INFO  o.j.m.system.controller.SysPermissionController:120 -  ------ 通过令牌获取用户拥有的访问菜单 ---- TOKEN ------ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzUzNTMxNDIsInVzZXJuYW1lIjoiYWRtaW4ifQ.LKR7QGWkxFpuB8sksSz52-INppRB1FW_eLaK_2hY57s
+2019-12-03 14:34:10.787 [http-nio-8889-exec-6] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 14:34:11.239 [http-nio-8889-exec-6] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575354850805)
+2019-12-03 14:34:12.565 [http-nio-8889-exec-6] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 14:34:12.746 [http-nio-8889-exec-6] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575354852565)
+2019-12-03 14:34:15.552 [http-nio-8889-exec-9] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 14:34:15.554 [http-nio-8889-exec-9] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575354855552)
+2019-12-03 14:36:14.535 [http-nio-8889-exec-2] INFO  o.j.m.system.controller.SysPermissionController:120 -  ------ 通过令牌获取用户拥有的访问菜单 ---- TOKEN ------ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzUzNTMxNDIsInVzZXJuYW1lIjoiYWRtaW4ifQ.LKR7QGWkxFpuB8sksSz52-INppRB1FW_eLaK_2hY57s
+2019-12-03 14:36:15.878 [http-nio-8889-exec-10] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 14:36:15.922 [http-nio-8889-exec-10] INFO  o.j.modules.system.service.impl.SysDictServiceImpl:48 - 无缓存dictCache的时候调用这里！
+2019-12-03 14:36:16.433 [http-nio-8889-exec-10] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575354975879)
+2019-12-03 14:36:16.652 [http-nio-8889-exec-8] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 14:36:16.721 [http-nio-8889-exec-8] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575354976652)
+2019-12-03 14:36:22.192 [http-nio-8889-exec-6] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 14:36:22.203 [http-nio-8889-exec-6] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575354982192)
+2019-12-03 14:43:01.568 [http-nio-8889-exec-1] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 14:43:01.632 [http-nio-8889-exec-1] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575355381601)
+2019-12-03 14:47:39.877 [http-nio-8889-exec-4] INFO  o.j.m.system.controller.SysPermissionController:120 -  ------ 通过令牌获取用户拥有的访问菜单 ---- TOKEN ------ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzUzNTMxNDIsInVzZXJuYW1lIjoiYWRtaW4ifQ.LKR7QGWkxFpuB8sksSz52-INppRB1FW_eLaK_2hY57s
+2019-12-03 14:47:43.412 [http-nio-8889-exec-3] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 14:47:43.529 [http-nio-8889-exec-3] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575355663417)
+2019-12-03 14:47:43.899 [http-nio-8889-exec-10] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 14:47:44.296 [http-nio-8889-exec-10] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575355663900)
+2019-12-03 14:47:46.116 [http-nio-8889-exec-8] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 14:47:46.131 [http-nio-8889-exec-8] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575355666118)
+2019-12-03 14:53:49.192 [http-nio-8889-exec-9] INFO  o.j.m.system.controller.SysPermissionController:120 -  ------ 通过令牌获取用户拥有的访问菜单 ---- TOKEN ------ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzUzNTMxNDIsInVzZXJuYW1lIjoiYWRtaW4ifQ.LKR7QGWkxFpuB8sksSz52-INppRB1FW_eLaK_2hY57s
+2019-12-03 14:53:51.297 [http-nio-8889-exec-4] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 14:53:51.325 [http-nio-8889-exec-4] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575356031298)
+2019-12-03 14:53:51.366 [http-nio-8889-exec-7] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 14:53:51.417 [http-nio-8889-exec-7] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575356031416)
+2019-12-03 14:53:53.786 [http-nio-8889-exec-2] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 14:53:53.788 [http-nio-8889-exec-2] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575356033786)
+2019-12-03 14:55:17.119 [http-nio-8889-exec-10] INFO  o.j.m.system.controller.SysPermissionController:120 -  ------ 通过令牌获取用户拥有的访问菜单 ---- TOKEN ------ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzUzNTMxNDIsInVzZXJuYW1lIjoiYWRtaW4ifQ.LKR7QGWkxFpuB8sksSz52-INppRB1FW_eLaK_2hY57s
+2019-12-03 14:55:18.962 [http-nio-8889-exec-6] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 14:55:19.219 [http-nio-8889-exec-6] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575356118962)
+2019-12-03 14:55:19.422 [http-nio-8889-exec-9] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 14:55:19.424 [http-nio-8889-exec-9] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575356119423)
+2019-12-03 14:55:22.927 [http-nio-8889-exec-5] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 14:55:22.930 [http-nio-8889-exec-5] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575356122928)
+2019-12-03 15:00:01.473 [http-nio-8889-exec-4] INFO  o.j.m.system.controller.SysPermissionController:120 -  ------ 通过令牌获取用户拥有的访问菜单 ---- TOKEN ------ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzUzNTMxNDIsInVzZXJuYW1lIjoiYWRtaW4ifQ.LKR7QGWkxFpuB8sksSz52-INppRB1FW_eLaK_2hY57s
+2019-12-03 15:00:02.990 [http-nio-8889-exec-3] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 15:00:02.993 [http-nio-8889-exec-3] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575356402991)
+2019-12-03 15:00:03.028 [http-nio-8889-exec-10] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 15:00:03.030 [http-nio-8889-exec-10] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575356403029)
+2019-12-03 15:00:05.536 [http-nio-8889-exec-6] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 15:00:05.539 [http-nio-8889-exec-6] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575356405537)
+2019-12-03 15:04:31.479 [http-nio-8889-exec-3] INFO  o.j.m.system.controller.SysPermissionController:120 -  ------ 通过令牌获取用户拥有的访问菜单 ---- TOKEN ------ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzUzNTMxNDIsInVzZXJuYW1lIjoiYWRtaW4ifQ.LKR7QGWkxFpuB8sksSz52-INppRB1FW_eLaK_2hY57s
+2019-12-03 15:04:32.829 [http-nio-8889-exec-2] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 15:04:32.885 [http-nio-8889-exec-2] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575356672830)
+2019-12-03 15:04:33.233 [http-nio-8889-exec-1] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 15:04:33.235 [http-nio-8889-exec-1] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575356673233)
+2019-12-03 15:04:42.845 [http-nio-8889-exec-9] INFO  o.j.m.system.controller.SysPermissionController:120 -  ------ 通过令牌获取用户拥有的访问菜单 ---- TOKEN ------ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzUzNTMxNDIsInVzZXJuYW1lIjoiYWRtaW4ifQ.LKR7QGWkxFpuB8sksSz52-INppRB1FW_eLaK_2hY57s
+2019-12-03 15:04:44.900 [http-nio-8889-exec-5] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 15:04:44.903 [http-nio-8889-exec-5] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575356684901)
+2019-12-03 15:04:45.275 [http-nio-8889-exec-7] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 15:04:45.277 [http-nio-8889-exec-7] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575356685275)
+2019-12-03 15:05:37.335 [http-nio-8889-exec-3] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 15:05:37.339 [http-nio-8889-exec-3] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575356737338)
+2019-12-03 15:09:21.741 [http-nio-8889-exec-6] INFO  o.j.m.system.controller.SysPermissionController:120 -  ------ 通过令牌获取用户拥有的访问菜单 ---- TOKEN ------ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzUzNTMxNDIsInVzZXJuYW1lIjoiYWRtaW4ifQ.LKR7QGWkxFpuB8sksSz52-INppRB1FW_eLaK_2hY57s
+2019-12-03 15:09:23.358 [http-nio-8889-exec-9] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 15:09:23.474 [http-nio-8889-exec-9] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575356963368)
+2019-12-03 15:09:23.506 [http-nio-8889-exec-4] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 15:09:23.508 [http-nio-8889-exec-4] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575356963506)
+2019-12-03 15:09:26.801 [http-nio-8889-exec-5] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 15:09:26.813 [http-nio-8889-exec-5] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575356966802)
+2019-12-03 15:09:53.647 [http-nio-8889-exec-7] INFO  o.j.m.system.controller.SysPermissionController:120 -  ------ 通过令牌获取用户拥有的访问菜单 ---- TOKEN ------ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzUzNTMxNDIsInVzZXJuYW1lIjoiYWRtaW4ifQ.LKR7QGWkxFpuB8sksSz52-INppRB1FW_eLaK_2hY57s
+2019-12-03 15:09:55.112 [http-nio-8889-exec-2] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 15:09:55.132 [http-nio-8889-exec-2] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575356995130)
+2019-12-03 15:09:55.251 [http-nio-8889-exec-6] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 15:09:55.252 [http-nio-8889-exec-6] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575356995251)
+2019-12-03 15:09:58.191 [http-nio-8889-exec-1] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 15:09:58.199 [http-nio-8889-exec-1] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575356998191)
+2019-12-03 15:15:26.119 [http-nio-8889-exec-9] INFO  o.j.m.system.controller.SysPermissionController:120 -  ------ 通过令牌获取用户拥有的访问菜单 ---- TOKEN ------ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzUzNTMxNDIsInVzZXJuYW1lIjoiYWRtaW4ifQ.LKR7QGWkxFpuB8sksSz52-INppRB1FW_eLaK_2hY57s
+2019-12-03 15:15:28.919 [http-nio-8889-exec-8] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 15:15:28.944 [http-nio-8889-exec-8] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575357328920)
+2019-12-03 15:15:29.040 [http-nio-8889-exec-7] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 15:15:29.041 [http-nio-8889-exec-7] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575357329040)
+2019-12-03 15:15:31.544 [http-nio-8889-exec-10] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 15:15:31.544 [http-nio-8889-exec-10] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575357331544)
+2019-12-03 15:17:47.909 [http-nio-8889-exec-2] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 15:17:47.911 [http-nio-8889-exec-2] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575357467909)
+2019-12-03 15:20:39.315 [http-nio-8889-exec-6] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 15:20:39.317 [http-nio-8889-exec-6] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575357639315)
+2019-12-03 15:22:21.265 [http-nio-8889-exec-3] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 15:22:21.387 [http-nio-8889-exec-3] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575357741266)
+2019-12-03 15:23:47.143 [http-nio-8889-exec-1] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 15:23:47.146 [http-nio-8889-exec-1] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575357827144)
+2019-12-03 15:34:06.603 [http-nio-8889-exec-9] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 15:34:06.606 [http-nio-8889-exec-9] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575358446604)
+2019-12-03 15:36:36.681 [http-nio-8889-exec-8] INFO  o.j.m.system.controller.SysPermissionController:120 -  ------ 通过令牌获取用户拥有的访问菜单 ---- TOKEN ------ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzUzNTMxNDIsInVzZXJuYW1lIjoiYWRtaW4ifQ.LKR7QGWkxFpuB8sksSz52-INppRB1FW_eLaK_2hY57s
+2019-12-03 15:36:38.978 [http-nio-8889-exec-4] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 15:36:39.123 [http-nio-8889-exec-4] INFO  o.j.modules.system.service.impl.SysDictServiceImpl:48 - 无缓存dictCache的时候调用这里！
+2019-12-03 15:36:41.197 [http-nio-8889-exec-4] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575358599002)
+2019-12-03 15:36:41.635 [http-nio-8889-exec-10] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 15:36:41.637 [http-nio-8889-exec-10] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575358601636)
+2019-12-03 15:36:47.933 [http-nio-8889-exec-2] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 15:36:48.008 [http-nio-8889-exec-2] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575358608006)
+2019-12-03 15:40:57.114 [http-nio-8889-exec-6] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 15:40:57.131 [http-nio-8889-exec-6] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575358857115)
+2019-12-03 15:43:41.096 [http-nio-8889-exec-3] INFO  o.j.m.system.controller.SysPermissionController:120 -  ------ 通过令牌获取用户拥有的访问菜单 ---- TOKEN ------ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzUzNTMxNDIsInVzZXJuYW1lIjoiYWRtaW4ifQ.LKR7QGWkxFpuB8sksSz52-INppRB1FW_eLaK_2hY57s
+2019-12-03 15:43:42.340 [http-nio-8889-exec-9] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 15:43:42.342 [http-nio-8889-exec-9] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575359022341)
+2019-12-03 15:43:42.397 [http-nio-8889-exec-5] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 15:43:42.399 [http-nio-8889-exec-5] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575359022398)
+2019-12-03 15:43:44.645 [http-nio-8889-exec-7] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 15:43:44.647 [http-nio-8889-exec-7] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575359024645)
+2019-12-03 15:47:03.186 [http-nio-8889-exec-4] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 15:47:03.237 [http-nio-8889-exec-4] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575359223231)
+2019-12-03 17:27:45.624 [main] INFO  org.jeecg.JeecgApplication:50 - Starting JeecgApplication on DESKTOP-89SVNT6 with PID 19136 (D:\CSM\jeecg-boot-master\jeecg-boot\jeecg-boot-module-system\target\classes started by dell in D:\CSM\jeecg-boot-master\jeecg-boot\jeecg-boot-module-system)
+2019-12-03 17:27:45.636 [main] INFO  org.jeecg.JeecgApplication:679 - The following profiles are active: dev
+2019-12-03 17:27:47.954 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:244 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-12-03 17:27:47.960 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:126 - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-12-03 17:27:48.121 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:182 - Finished Spring Data repository scanning in 129ms. Found 0 repository interfaces.
+2019-12-03 17:27:48.776 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'shiroConfig' of type [org.jeecg.config.ShiroConfig$$EnhancerBySpringCGLIB$$29b4557d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-03 17:27:48.924 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'shiroRealm' of type [org.jeecg.modules.shiro.authc.ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-03 17:27:50.173 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-03 17:27:50.216 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-03 17:27:50.307 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$9aeebe7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-03 17:27:50.610 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'spring.datasource.dynamic-com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-03 17:27:50.617 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$733d5cb8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-03 17:27:50.630 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'dsProcessor' of type [com.baomidou.dynamic.datasource.processor.DsHeaderProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-03 17:27:50.641 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'dynamicDatasourceAnnotationAdvisor' of type [com.baomidou.dynamic.datasource.aop.DynamicDataSourceAnnotationAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-03 17:27:50.671 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'spring.redis-org.springframework.boot.autoconfigure.data.redis.RedisProperties' of type [org.springframework.boot.autoconfigure.data.redis.RedisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-03 17:27:50.683 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration' of type [org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration$$EnhancerBySpringCGLIB$$1ec8aa31] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-03 17:27:51.043 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'lettuceClientResources' of type [io.lettuce.core.resource.DefaultClientResources] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-03 17:27:51.271 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'redisConnectionFactory' of type [org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-03 17:27:51.289 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'redisConfig' of type [org.jeecg.config.RedisConfig$$EnhancerBySpringCGLIB$$7482dcc7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-03 17:27:51.342 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.apache.shiro.spring.boot.autoconfigure.ShiroBeanAutoConfiguration' of type [org.apache.shiro.spring.boot.autoconfigure.ShiroBeanAutoConfiguration$$EnhancerBySpringCGLIB$$1cc7c997] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-03 17:27:51.351 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'eventBus' of type [org.apache.shiro.event.support.DefaultEventBus] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-03 17:27:52.150 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:90 - Tomcat initialized with port(s): 8889 (http)
+2019-12-03 17:27:52.191 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8889"]
+2019-12-03 17:27:52.225 [main] INFO  org.apache.catalina.core.StandardService:173 - Starting service [Tomcat]
+2019-12-03 17:27:52.225 [main] INFO  org.apache.catalina.core.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-12-03 17:27:52.240 [main] INFO  org.apache.catalina.core.AprLifecycleListener:173 - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jre1.8.0_191\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Program Files/Java/jre1.8.0_191/bin/server;C:/Program Files/Java/jre1.8.0_191/bin;C:/Program Files/Java/jre1.8.0_191/lib/amd64;C:\Program Files (x86)\NetSarang\Xftp 6\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Java\jdk1.8.0_191\bin;C:\Program Files\Java\jdk1.8.0_191\jre\bin;D:\MYSQL\mysql-5.7.24-winx64\bin;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\nodejs\;C:\Program Files\TortoiseSVN\bin;C:\Users\dell\AppData\Local\Microsoft\WindowsApps;C:\Program Files\nodejs\node_global;C:\Users\dell\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\dell\AppData\Local\Yarn\bin;C:\Users\dell\AppData\Roaming\npm;C:\Users\dell\Desktop;;.]
+2019-12-03 17:27:52.463 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/jeecg-boot]:173 - Initializing Spring embedded WebApplicationContext
+2019-12-03 17:27:52.464 [main] INFO  org.springframework.web.context.ContextLoader:296 - Root WebApplicationContext: initialization completed in 6768 ms
+2019-12-03 17:27:53.641 [main] INFO  c.b.dynamic.datasource.DynamicDataSourceCreator:113 - 动态数据源-检测到druid存在,如配置中未指定type,druid会默认配置
+2019-12-03 17:27:55.287 [main] INFO  com.alibaba.druid.pool.DruidDataSource:1003 - {dataSource-1,master} inited
+2019-12-03 17:27:55.288 [main] INFO  c.b.dynamic.datasource.DynamicRoutingDataSource:203 - 初始共加载 1 个数据源
+2019-12-03 17:27:55.290 [main] INFO  c.b.dynamic.datasource.DynamicRoutingDataSource:142 - 动态数据源-加载 master 成功
+2019-12-03 17:27:55.291 [main] INFO  c.b.dynamic.datasource.DynamicRoutingDataSource:212 - 当前的默认数据源是单数据源，数据源名为 master
+2019-12-03 17:28:02.594 [main] INFO  org.quartz.impl.StdSchedulerFactory:1208 - Using default implementation for ThreadExecutor
+2019-12-03 17:28:03.064 [main] INFO  org.quartz.core.SchedulerSignalerImpl:61 - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2019-12-03 17:28:03.065 [main] INFO  org.quartz.core.QuartzScheduler:229 - Quartz Scheduler v.2.3.0 created.
+2019-12-03 17:28:04.660 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:672 - Using db table-based data access locking (synchronization).
+2019-12-03 17:28:04.812 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:145 - JobStoreCMT initialized.
+2019-12-03 17:28:04.813 [main] INFO  org.quartz.core.QuartzScheduler:294 - Scheduler meta-data: Quartz Scheduler (v2.3.0) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is not clustered.
+
+2019-12-03 17:28:04.814 [main] INFO  org.quartz.impl.StdSchedulerFactory:1362 - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2019-12-03 17:28:04.814 [main] INFO  org.quartz.impl.StdSchedulerFactory:1366 - Quartz scheduler version: 2.3.0
+2019-12-03 17:28:04.815 [main] INFO  org.quartz.core.QuartzScheduler:2287 - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@4d0e6424
+2019-12-03 17:28:33.197 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver:59 - Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-12-03 17:28:35.558 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping:69 - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-12-03 17:28:39.921 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor:171 - Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-03 17:28:47.332 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper:160 - Context refreshed
+2019-12-03 17:28:47.427 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper:163 - Found 1 custom documentation plugin(s)
+2019-12-03 17:28:50.180 [main] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner:41 - Scanning for api listing references
+2019-12-03 17:28:54.327 [main] INFO  o.s.scheduling.quartz.SchedulerFactoryBean:726 - Starting Quartz Scheduler now
+2019-12-03 17:28:59.446 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:866 - Freed 0 triggers from 'acquired' / 'blocked' state.
+2019-12-03 17:28:59.756 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:876 - Recovering 0 jobs that were in-progress at the time of the last shut-down.
+2019-12-03 17:28:59.756 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:889 - Recovery complete.
+2019-12-03 17:28:59.781 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:896 - Removed 0 'complete' triggers.
+2019-12-03 17:28:59.807 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:901 - Removed 0 stale fired job entries.
+2019-12-03 17:28:59.888 [main] INFO  org.quartz.core.QuartzScheduler:547 - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2019-12-03 17:29:01.017 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Starting ProtocolHandler ["http-nio-8889"]
+2019-12-03 17:29:02.298 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:204 - Tomcat started on port(s): 8889 (http) with context path '/jeecg-boot'
+2019-12-03 17:29:02.401 [main] INFO  org.jeecg.JeecgApplication:59 - Started JeecgApplication in 77.298 seconds (JVM running for 78.446)
+2019-12-03 17:29:03.072 [main] INFO  org.jeecg.JeecgApplication:26 - 
+----------------------------------------------------------
+	Application Jeecg-Boot is running! Access URLs:
+	Local: 		http://localhost:8889/jeecg-boot/
+	External: 	http://192.168.61.105:8889/jeecg-boot/
+	swagger-ui: 	http://192.168.61.105:8889/jeecg-boot/swagger-ui.html
+	Doc: 		http://192.168.61.105:8889/jeecg-boot/doc.html
+----------------------------------------------------------
+2019-12-03 17:34:47.522 [http-nio-8889-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/jeecg-boot]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-03 17:34:47.525 [http-nio-8889-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:524 - Initializing Servlet 'dispatcherServlet'
+2019-12-03 17:34:48.494 [http-nio-8889-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:546 - Completed initialization in 960 ms
+2019-12-03 17:34:54.656 [http-nio-8889-exec-1] INFO  io.lettuce.core.EpollProvider:68 - Starting without optional epoll library
+2019-12-03 17:34:54.671 [http-nio-8889-exec-1] INFO  io.lettuce.core.KqueueProvider:70 - Starting without optional kqueue library
+2019-12-03 17:35:47.856 [http-nio-8889-exec-7] INFO  o.j.m.system.controller.SysPermissionController:120 -  ------ 通过令牌获取用户拥有的访问菜单 ---- TOKEN ------ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzUzNjc1NDQsInVzZXJuYW1lIjoiYWRtaW4ifQ.4KzXaCkvZ0fqKMo-JFrjUaYl3cZadL5j-iJY0L9vVoI
+2019-12-03 17:35:56.847 [http-nio-8889-exec-10] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 17:35:57.055 [http-nio-8889-exec-10] INFO  o.j.modules.system.service.impl.SysDictServiceImpl:48 - 无缓存dictCache的时候调用这里！
+2019-12-03 17:35:57.223 [http-nio-8889-exec-10] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575365756848)
+2019-12-03 17:35:57.557 [http-nio-8889-exec-5] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 17:35:57.583 [http-nio-8889-exec-5] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575365757558)
+2019-12-03 17:37:36.866 [http-nio-8889-exec-4] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 17:37:36.869 [http-nio-8889-exec-4] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575365856866)
+2019-12-03 17:59:31.232 [http-nio-8889-exec-1] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : purchaseStatus
+2019-12-03 17:59:31.278 [http-nio-8889-exec-1] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=4, text=采购完成), DictModel(value=3, text=采购退货), DictModel(value=2, text=采购中), DictModel(value=1, text=待采购)], timestamp=1575367171233)
+2019-12-03 18:00:28.401 [http-nio-8889-exec-7] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : sex
+2019-12-03 18:00:28.436 [http-nio-8889-exec-7] INFO  o.j.modules.system.service.impl.SysDictServiceImpl:48 - 无缓存dictCache的时候调用这里！
+2019-12-03 18:00:28.571 [http-nio-8889-exec-7] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1, text=男), DictModel(value=2, text=女)], timestamp=1575367228402)
+2019-12-03 18:00:41.140 [http-nio-8889-exec-2] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : sex
+2019-12-03 18:00:41.145 [http-nio-8889-exec-2] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1, text=男), DictModel(value=2, text=女)], timestamp=1575367241141)
+2019-12-03 18:00:41.241 [http-nio-8889-exec-6] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : sys_user,realname,id
+2019-12-03 18:00:41.242 [http-nio-8889-exec-6] INFO  o.j.modules.system.service.impl.SysDictServiceImpl:77 - 无缓存dictTableList的时候调用这里！
+2019-12-03 18:00:41.243 [http-nio-8889-exec-10] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : sys_user,realname,id,username!='admin' order by create_time
+2019-12-03 18:00:41.243 [http-nio-8889-exec-10] INFO  o.j.modules.system.service.impl.SysDictServiceImpl:83 - 无缓存dictTableList的时候调用这里！
+2019-12-03 18:00:41.255 [http-nio-8889-exec-10] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=42d153bffeea74f72a9c1697874fa4a7, text=23232), DictModel(value=a75d45a015c44384a04449ee80dc3503, text=jeecg), DictModel(value=35c236bcf78357244c4e34aefb020107, text=张三), DictModel(value=f0019fdebedb443c98dcb17d88222c38, text=张小红)], timestamp=1575367241243)
+2019-12-03 18:00:41.254 [http-nio-8889-exec-6] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=35c236bcf78357244c4e34aefb020107, text=张三), DictModel(value=42d153bffeea74f72a9c1697874fa4a7, text=23232), DictModel(value=a75d45a015c44384a04449ee80dc3503, text=jeecg), DictModel(value=e9ca23d68d884d4ebb19d07889727dae, text=管理员), DictModel(value=f0019fdebedb443c98dcb17d88222c38, text=张小红)], timestamp=1575367241242)
+2019-12-03 18:00:42.029 [http-nio-8889-exec-3] INFO  o.j.modules.system.service.impl.SysDictServiceImpl:62 - 无缓存dictText的时候调用这里！
+2019-12-03 18:00:42.158 [http-nio-8889-exec-3] INFO  o.j.modules.system.service.impl.SysDictServiceImpl:62 - 无缓存dictText的时候调用这里！
+2019-12-03 18:00:42.184 [http-nio-8889-exec-3] INFO  o.j.modules.system.service.impl.SysDictServiceImpl:62 - 无缓存dictText的时候调用这里！
+2019-12-03 18:00:42.194 [http-nio-8889-exec-3] INFO  o.j.modules.system.service.impl.SysDictServiceImpl:62 - 无缓存dictText的时候调用这里！

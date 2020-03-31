@@ -1,0 +1,830 @@
+2019-11-19 13:05:40.095 [main] INFO  org.jeecg.JeecgApplication:50 - Starting JeecgApplication on DESKTOP-89SVNT6 with PID 13592 (D:\CSM\jeecg-boot-master\jeecg-boot\jeecg-boot-module-system\target\classes started by dell in D:\CSM\jeecg-boot-master\jeecg-boot\jeecg-boot-module-system)
+2019-11-19 13:05:40.103 [main] INFO  org.jeecg.JeecgApplication:679 - The following profiles are active: dev
+2019-11-19 13:05:52.103 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:244 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-19 13:05:52.111 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:126 - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-19 13:05:52.284 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:182 - Finished Spring Data repository scanning in 131ms. Found 0 repository interfaces.
+2019-11-19 13:05:52.949 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'shiroConfig' of type [org.jeecg.config.ShiroConfig$$EnhancerBySpringCGLIB$$e01966c9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 13:05:53.140 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'shiroRealm' of type [org.jeecg.modules.shiro.authc.ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 13:05:54.587 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 13:05:54.627 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 13:05:54.719 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$c013fd33] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 13:05:54.995 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'spring.datasource.dynamic-com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 13:05:55.002 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$29a26e04] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 13:05:55.014 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'dsProcessor' of type [com.baomidou.dynamic.datasource.processor.DsHeaderProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 13:05:55.023 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'dynamicDatasourceAnnotationAdvisor' of type [com.baomidou.dynamic.datasource.aop.DynamicDataSourceAnnotationAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 13:05:55.050 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'spring.redis-org.springframework.boot.autoconfigure.data.redis.RedisProperties' of type [org.springframework.boot.autoconfigure.data.redis.RedisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 13:05:55.059 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration' of type [org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration$$EnhancerBySpringCGLIB$$d52dbb7d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 13:05:55.350 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'lettuceClientResources' of type [io.lettuce.core.resource.DefaultClientResources] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 13:05:55.547 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'redisConnectionFactory' of type [org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 13:05:55.561 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'redisConfig' of type [org.jeecg.config.RedisConfig$$EnhancerBySpringCGLIB$$2ae7ee13] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 13:05:55.602 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.apache.shiro.spring.boot.autoconfigure.ShiroBeanAutoConfiguration' of type [org.apache.shiro.spring.boot.autoconfigure.ShiroBeanAutoConfiguration$$EnhancerBySpringCGLIB$$d32cdae3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 13:05:55.609 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'eventBus' of type [org.apache.shiro.event.support.DefaultEventBus] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 13:05:56.244 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:90 - Tomcat initialized with port(s): 8889 (http)
+2019-11-19 13:05:56.266 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8889"]
+2019-11-19 13:05:56.288 [main] INFO  org.apache.catalina.core.StandardService:173 - Starting service [Tomcat]
+2019-11-19 13:05:56.289 [main] INFO  org.apache.catalina.core.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-11-19 13:05:56.300 [main] INFO  org.apache.catalina.core.AprLifecycleListener:173 - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jre1.8.0_191\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Program Files/Java/jre1.8.0_191/bin/server;C:/Program Files/Java/jre1.8.0_191/bin;C:/Program Files/Java/jre1.8.0_191/lib/amd64;C:\Program Files (x86)\NetSarang\Xftp 6\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Java\jdk1.8.0_191\bin;C:\Program Files\Java\jdk1.8.0_191\jre\bin;D:\MYSQL\mysql-5.7.24-winx64\bin;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\nodejs\;C:\Program Files\TortoiseSVN\bin;C:\Users\dell\AppData\Local\Microsoft\WindowsApps;C:\Program Files\nodejs\node_global;C:\Users\dell\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\dell\AppData\Local\Yarn\bin;C:\Users\dell\AppData\Roaming\npm;C:\Users\dell\Desktop;;.]
+2019-11-19 13:05:56.468 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/jeecg-boot]:173 - Initializing Spring embedded WebApplicationContext
+2019-11-19 13:05:56.468 [main] INFO  org.springframework.web.context.ContextLoader:296 - Root WebApplicationContext: initialization completed in 16286 ms
+2019-11-19 13:05:56.939 [main] INFO  c.b.dynamic.datasource.DynamicDataSourceCreator:113 - 动态数据源-检测到druid存在,如配置中未指定type,druid会默认配置
+2019-11-19 13:05:59.018 [main] INFO  com.alibaba.druid.pool.DruidDataSource:1003 - {dataSource-1,master} inited
+2019-11-19 13:05:59.019 [main] INFO  c.b.dynamic.datasource.DynamicRoutingDataSource:203 - 初始共加载 1 个数据源
+2019-11-19 13:05:59.020 [main] INFO  c.b.dynamic.datasource.DynamicRoutingDataSource:142 - 动态数据源-加载 master 成功
+2019-11-19 13:05:59.023 [main] INFO  c.b.dynamic.datasource.DynamicRoutingDataSource:212 - 当前的默认数据源是单数据源，数据源名为 master
+2019-11-19 13:06:02.361 [main] INFO  org.quartz.impl.StdSchedulerFactory:1208 - Using default implementation for ThreadExecutor
+2019-11-19 13:06:02.383 [main] INFO  org.quartz.core.SchedulerSignalerImpl:61 - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2019-11-19 13:06:02.384 [main] INFO  org.quartz.core.QuartzScheduler:229 - Quartz Scheduler v.2.3.0 created.
+2019-11-19 13:06:02.389 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:672 - Using db table-based data access locking (synchronization).
+2019-11-19 13:06:02.391 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:145 - JobStoreCMT initialized.
+2019-11-19 13:06:02.393 [main] INFO  org.quartz.core.QuartzScheduler:294 - Scheduler meta-data: Quartz Scheduler (v2.3.0) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is not clustered.
+
+2019-11-19 13:06:02.393 [main] INFO  org.quartz.impl.StdSchedulerFactory:1362 - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2019-11-19 13:06:02.393 [main] INFO  org.quartz.impl.StdSchedulerFactory:1366 - Quartz scheduler version: 2.3.0
+2019-11-19 13:06:02.394 [main] INFO  org.quartz.core.QuartzScheduler:2287 - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@14764fdd
+2019-11-19 13:06:04.510 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver:59 - Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-11-19 13:06:04.763 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping:69 - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-11-19 13:06:05.139 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor:171 - Initializing ExecutorService 'applicationTaskExecutor'
+2019-11-19 13:06:06.300 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper:160 - Context refreshed
+2019-11-19 13:06:06.339 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper:163 - Found 1 custom documentation plugin(s)
+2019-11-19 13:06:06.406 [main] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner:41 - Scanning for api listing references
+2019-11-19 13:06:06.703 [main] INFO  o.s.scheduling.quartz.SchedulerFactoryBean:726 - Starting Quartz Scheduler now
+2019-11-19 13:06:07.221 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:866 - Freed 0 triggers from 'acquired' / 'blocked' state.
+2019-11-19 13:06:07.254 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:876 - Recovering 0 jobs that were in-progress at the time of the last shut-down.
+2019-11-19 13:06:07.254 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:889 - Recovery complete.
+2019-11-19 13:06:07.256 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:896 - Removed 0 'complete' triggers.
+2019-11-19 13:06:07.266 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:901 - Removed 0 stale fired job entries.
+2019-11-19 13:06:07.268 [main] INFO  org.quartz.core.QuartzScheduler:547 - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2019-11-19 13:06:07.295 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Starting ProtocolHandler ["http-nio-8889"]
+2019-11-19 13:06:07.335 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:204 - Tomcat started on port(s): 8889 (http) with context path '/jeecg-boot'
+2019-11-19 13:06:07.338 [main] INFO  org.jeecg.JeecgApplication:59 - Started JeecgApplication in 28.018 seconds (JVM running for 29.364)
+2019-11-19 13:06:07.352 [main] INFO  org.jeecg.JeecgApplication:26 - 
+----------------------------------------------------------
+	Application Jeecg-Boot is running! Access URLs:
+	Local: 		http://localhost:8889/jeecg-boot/
+	External: 	http://192.168.60.108:8889/jeecg-boot/
+	swagger-ui: 	http://192.168.60.108:8889/jeecg-boot/swagger-ui.html
+	Doc: 		http://192.168.60.108:8889/jeecg-boot/doc.html
+----------------------------------------------------------
+2019-11-19 13:08:16.805 [http-nio-8889-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/jeecg-boot]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-11-19 13:08:16.807 [http-nio-8889-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:524 - Initializing Servlet 'dispatcherServlet'
+2019-11-19 13:08:16.838 [http-nio-8889-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:546 - Completed initialization in 31 ms
+2019-11-19 13:08:17.523 [http-nio-8889-exec-1] INFO  io.lettuce.core.EpollProvider:68 - Starting without optional epoll library
+2019-11-19 13:08:17.528 [http-nio-8889-exec-1] INFO  io.lettuce.core.KqueueProvider:70 - Starting without optional kqueue library
+2019-11-19 13:08:19.021 [http-nio-8889-exec-1] ERROR o.a.c.c.C.[.[.[/jeecg-boot].[dispatcherServlet]:175 - Servlet.service() for servlet [dispatcherServlet] in context with path [/jeecg-boot] threw exception [org.apache.shiro.authc.AuthenticationException: Token失效，请重新登录] with root cause
+org.apache.shiro.authc.AuthenticationException: Token失效，请重新登录!
+	at org.jeecg.modules.shiro.authc.ShiroRealm.checkUserTokenIsEffect(ShiroRealm.java:119)
+	at org.jeecg.modules.shiro.authc.ShiroRealm.doGetAuthenticationInfo(ShiroRealm.java:94)
+	at org.apache.shiro.realm.AuthenticatingRealm.getAuthenticationInfo(AuthenticatingRealm.java:571)
+	at org.apache.shiro.authc.pam.ModularRealmAuthenticator.doSingleRealmAuthentication(ModularRealmAuthenticator.java:180)
+	at org.apache.shiro.authc.pam.ModularRealmAuthenticator.doAuthenticate(ModularRealmAuthenticator.java:267)
+	at org.apache.shiro.authc.AbstractAuthenticator.authenticate(AbstractAuthenticator.java:198)
+	at org.apache.shiro.mgt.AuthenticatingSecurityManager.authenticate(AuthenticatingSecurityManager.java:106)
+	at org.apache.shiro.mgt.DefaultSecurityManager.login(DefaultSecurityManager.java:274)
+	at org.apache.shiro.subject.support.DelegatingSubject.login(DelegatingSubject.java:260)
+	at org.jeecg.modules.shiro.authc.aop.JwtFilter.executeLogin(JwtFilter.java:51)
+	at org.jeecg.modules.shiro.authc.aop.JwtFilter.isAccessAllowed(JwtFilter.java:34)
+	at org.apache.shiro.web.filter.AccessControlFilter.onPreHandle(AccessControlFilter.java:162)
+	at org.apache.shiro.web.filter.PathMatchingFilter.isFilterChainContinued(PathMatchingFilter.java:203)
+	at org.apache.shiro.web.filter.PathMatchingFilter.preHandle(PathMatchingFilter.java:178)
+	at org.jeecg.modules.shiro.authc.aop.JwtFilter.preHandle(JwtFilter.java:71)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:131)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:387)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:124)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.web.trace.servlet.HttpTraceFilter.doFilterInternal(HttpTraceFilter.java:90)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.filterAndRecordMetrics(WebMvcMetricsFilter.java:117)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:106)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+2019-11-19 13:08:21.547 [http-nio-8889-exec-2] INFO  o.jeecg.modules.system.controller.LoginController:118 -  用户名:  管理员,退出成功！ 
+2019-11-19 13:08:41.018 [http-nio-8889-exec-5] INFO  o.j.m.system.controller.SysPermissionController:120 -  ------ 通过令牌获取用户拥有的访问菜单 ---- TOKEN ------ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzQxNDE5MjAsInVzZXJuYW1lIjoiYWRtaW4ifQ.mp0R-h8W_xcukqXtdqCSmUduGYNy6mOXj94opHwvAEY
+2019-11-19 13:08:49.209 [http-nio-8889-exec-10] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : cgform_table_type
+2019-11-19 13:08:49.255 [http-nio-8889-exec-10] INFO  o.j.modules.system.service.impl.SysDictServiceImpl:48 - 无缓存dictCache的时候调用这里！
+2019-11-19 13:08:49.692 [http-nio-8889-exec-10] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1, text=单表), DictModel(value=2, text=主表), DictModel(value=3, text=附表)], timestamp=1574140129211)
+2019-11-19 13:08:50.033 [http-nio-8889-exec-1] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : cgform_table_type
+2019-11-19 13:08:50.041 [http-nio-8889-exec-1] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1, text=单表), DictModel(value=2, text=主表), DictModel(value=3, text=附表)], timestamp=1574140130034)
+2019-11-19 13:09:07.606 [http-nio-8889-exec-6] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:61 - ————权限认证 [ roles、permissions]————
+2019-11-19 13:09:07.670 [http-nio-8889-exec-6] INFO  o.j.modules.system.service.impl.SysUserServiceImpl:107 - -------通过数据库读取用户拥有的角色Rules------username： admin,Roles size: 1
+2019-11-19 13:09:07.733 [http-nio-8889-exec-6] INFO  o.j.modules.system.service.impl.SysUserServiceImpl:131 - -------通过数据库读取用户拥有的权限Perms------username： admin,Perms size: 9
+2019-11-19 13:09:07.738 [http-nio-8889-exec-6] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:61 - ————权限认证 [ roles、permissions]————
+2019-11-19 13:09:07.750 [http-nio-8889-exec-6] INFO  org.jeecg.modules.online.cgform.a.d:440 - [IP] [online数据库导入表]   --表名：csm_order_info
+2019-11-19 13:09:08.121 [http-nio-8889-exec-6] INFO  org.jeecg.modules.online.cgform.service.a.c:464 -   columnt : {"fieldDbName":"ID","fieldName":"id","filedComment":"id","fieldType":"java.lang.String","fieldDbType":"varchar","classType":"inputxt","classType_row":"","optionType":"*","charmaxLength":"64","precision":"","scale":"","nullable":"N","fieldLength":"null","fieldHref":"null","fieldValidType":"null","fieldDefault":"null","fieldShowType":"null","fieldOrderNum":"null","isKey":"null","isShow":"null","isShowList":"null","isQuery":"null","queryMode":"null","dictField":"null","dictTable":"null","dictText":"null"}
+2019-11-19 13:09:08.122 [http-nio-8889-exec-6] INFO  org.jeecg.modules.online.cgform.service.a.c:464 -   columnt : {"fieldDbName":"OPE_ID","fieldName":"opeId","filedComment":"手术类型","fieldType":"java.lang.String","fieldDbType":"varchar","classType":"inputxt","classType_row":"","optionType":"","charmaxLength":"64","precision":"","scale":"","nullable":"Y","fieldLength":"null","fieldHref":"null","fieldValidType":"null","fieldDefault":"null","fieldShowType":"null","fieldOrderNum":"null","isKey":"null","isShow":"null","isShowList":"null","isQuery":"null","queryMode":"null","dictField":"null","dictTable":"null","dictText":"null"}
+2019-11-19 13:09:08.122 [http-nio-8889-exec-6] INFO  org.jeecg.modules.online.cgform.service.a.c:464 -   columnt : {"fieldDbName":"DATE","fieldName":"date","filedComment":"日期","fieldType":"java.util.Date","fieldDbType":"datetime","classType":"inputxt","classType_row":"","optionType":"","charmaxLength":"","precision":"","scale":"","nullable":"Y","fieldLength":"null","fieldHref":"null","fieldValidType":"null","fieldDefault":"null","fieldShowType":"null","fieldOrderNum":"null","isKey":"null","isShow":"null","isShowList":"null","isQuery":"null","queryMode":"null","dictField":"null","dictTable":"null","dictText":"null"}
+2019-11-19 13:09:08.123 [http-nio-8889-exec-6] INFO  org.jeecg.modules.online.cgform.service.a.c:464 -   columnt : {"fieldDbName":"TOOL_ID","fieldName":"toolId","filedComment":"工具箱","fieldType":"java.lang.String","fieldDbType":"varchar","classType":"inputxt","classType_row":"","optionType":"","charmaxLength":"64","precision":"","scale":"","nullable":"Y","fieldLength":"null","fieldHref":"null","fieldValidType":"null","fieldDefault":"null","fieldShowType":"null","fieldOrderNum":"null","isKey":"null","isShow":"null","isShowList":"null","isQuery":"null","queryMode":"null","dictField":"null","dictTable":"null","dictText":"null"}
+2019-11-19 13:09:08.123 [http-nio-8889-exec-6] INFO  org.jeecg.modules.online.cgform.service.a.c:464 -   columnt : {"fieldDbName":"SCR_ID","fieldName":"scrId","filedComment":"螺钉架","fieldType":"java.lang.String","fieldDbType":"varchar","classType":"inputxt","classType_row":"","optionType":"","charmaxLength":"64","precision":"","scale":"","nullable":"Y","fieldLength":"null","fieldHref":"null","fieldValidType":"null","fieldDefault":"null","fieldShowType":"null","fieldOrderNum":"null","isKey":"null","isShow":"null","isShowList":"null","isQuery":"null","queryMode":"null","dictField":"null","dictTable":"null","dictText":"null"}
+2019-11-19 13:09:08.123 [http-nio-8889-exec-6] INFO  org.jeecg.modules.online.cgform.service.a.c:464 -   columnt : {"fieldDbName":"HOSPITAL_ID","fieldName":"hospitalId","filedComment":"医院","fieldType":"java.lang.String","fieldDbType":"varchar","classType":"inputxt","classType_row":"","optionType":"","charmaxLength":"64","precision":"","scale":"","nullable":"Y","fieldLength":"null","fieldHref":"null","fieldValidType":"null","fieldDefault":"null","fieldShowType":"null","fieldOrderNum":"null","isKey":"null","isShow":"null","isShowList":"null","isQuery":"null","queryMode":"null","dictField":"null","dictTable":"null","dictText":"null"}
+2019-11-19 13:09:08.124 [http-nio-8889-exec-6] INFO  org.jeecg.modules.online.cgform.service.a.c:464 -   columnt : {"fieldDbName":"PATIENT","fieldName":"patient","filedComment":"患者","fieldType":"java.lang.String","fieldDbType":"varchar","classType":"inputxt","classType_row":"","optionType":"","charmaxLength":"64","precision":"","scale":"","nullable":"Y","fieldLength":"null","fieldHref":"null","fieldValidType":"null","fieldDefault":"null","fieldShowType":"null","fieldOrderNum":"null","isKey":"null","isShow":"null","isShowList":"null","isQuery":"null","queryMode":"null","dictField":"null","dictTable":"null","dictText":"null"}
+2019-11-19 13:09:08.125 [http-nio-8889-exec-6] INFO  org.jeecg.modules.online.cgform.service.a.c:464 -   columnt : {"fieldDbName":"CODE","fieldName":"code","filedComment":"编号","fieldType":"java.lang.String","fieldDbType":"varchar","classType":"inputxt","classType_row":"","optionType":"","charmaxLength":"64","precision":"","scale":"","nullable":"Y","fieldLength":"null","fieldHref":"null","fieldValidType":"null","fieldDefault":"null","fieldShowType":"null","fieldOrderNum":"null","isKey":"null","isShow":"null","isShowList":"null","isQuery":"null","queryMode":"null","dictField":"null","dictTable":"null","dictText":"null"}
+2019-11-19 13:09:08.126 [http-nio-8889-exec-6] INFO  org.jeecg.modules.online.cgform.service.a.c:464 -   columnt : {"fieldDbName":"BEDNUM","fieldName":"bednum","filedComment":"病床号","fieldType":"java.lang.String","fieldDbType":"varchar","classType":"inputxt","classType_row":"","optionType":"","charmaxLength":"64","precision":"","scale":"","nullable":"Y","fieldLength":"null","fieldHref":"null","fieldValidType":"null","fieldDefault":"null","fieldShowType":"null","fieldOrderNum":"null","isKey":"null","isShow":"null","isShowList":"null","isQuery":"null","queryMode":"null","dictField":"null","dictTable":"null","dictText":"null"}
+2019-11-19 13:09:08.126 [http-nio-8889-exec-6] INFO  org.jeecg.modules.online.cgform.service.a.c:464 -   columnt : {"fieldDbName":"COMPANY_ID","fieldName":"companyId","filedComment":"销售公司","fieldType":"java.lang.String","fieldDbType":"varchar","classType":"inputxt","classType_row":"","optionType":"","charmaxLength":"64","precision":"","scale":"","nullable":"Y","fieldLength":"null","fieldHref":"null","fieldValidType":"null","fieldDefault":"null","fieldShowType":"null","fieldOrderNum":"null","isKey":"null","isShow":"null","isShowList":"null","isQuery":"null","queryMode":"null","dictField":"null","dictTable":"null","dictText":"null"}
+2019-11-19 13:09:08.126 [http-nio-8889-exec-6] INFO  org.jeecg.modules.online.cgform.service.a.c:464 -   columnt : {"fieldDbName":"CUSTOMER_ID","fieldName":"customerId","filedComment":"客户","fieldType":"java.lang.String","fieldDbType":"varchar","classType":"inputxt","classType_row":"","optionType":"","charmaxLength":"64","precision":"","scale":"","nullable":"Y","fieldLength":"null","fieldHref":"null","fieldValidType":"null","fieldDefault":"null","fieldShowType":"null","fieldOrderNum":"null","isKey":"null","isShow":"null","isShowList":"null","isQuery":"null","queryMode":"null","dictField":"null","dictTable":"null","dictText":"null"}
+2019-11-19 13:09:08.127 [http-nio-8889-exec-6] INFO  org.jeecg.modules.online.cgform.service.a.c:464 -   columnt : {"fieldDbName":"INVOICES","fieldName":"invoices","filedComment":"发票号","fieldType":"java.lang.String","fieldDbType":"varchar","classType":"inputxt","classType_row":"","optionType":"","charmaxLength":"64","precision":"","scale":"","nullable":"Y","fieldLength":"null","fieldHref":"null","fieldValidType":"null","fieldDefault":"null","fieldShowType":"null","fieldOrderNum":"null","isKey":"null","isShow":"null","isShowList":"null","isQuery":"null","queryMode":"null","dictField":"null","dictTable":"null","dictText":"null"}
+2019-11-19 13:09:08.127 [http-nio-8889-exec-6] INFO  org.jeecg.modules.online.cgform.service.a.c:464 -   columnt : {"fieldDbName":"STATUS","fieldName":"status","filedComment":"状态","fieldType":"java.lang.String","fieldDbType":"varchar","classType":"inputxt","classType_row":"","optionType":"","charmaxLength":"64","precision":"","scale":"","nullable":"Y","fieldLength":"null","fieldHref":"null","fieldValidType":"null","fieldDefault":"null","fieldShowType":"null","fieldOrderNum":"null","isKey":"null","isShow":"null","isShowList":"null","isQuery":"null","queryMode":"null","dictField":"null","dictTable":"null","dictText":"null"}
+2019-11-19 13:09:08.128 [http-nio-8889-exec-6] INFO  org.jeecg.modules.online.cgform.service.a.c:464 -   columnt : {"fieldDbName":"CREATE_BY","fieldName":"createBy","filedComment":"创建人","fieldType":"java.lang.String","fieldDbType":"varchar","classType":"inputxt","classType_row":"","optionType":"","charmaxLength":"50","precision":"","scale":"","nullable":"Y","fieldLength":"null","fieldHref":"null","fieldValidType":"null","fieldDefault":"null","fieldShowType":"null","fieldOrderNum":"null","isKey":"null","isShow":"null","isShowList":"null","isQuery":"null","queryMode":"null","dictField":"null","dictTable":"null","dictText":"null"}
+2019-11-19 13:09:08.128 [http-nio-8889-exec-6] INFO  org.jeecg.modules.online.cgform.service.a.c:464 -   columnt : {"fieldDbName":"CREATE_TIME","fieldName":"createTime","filedComment":"创建日期","fieldType":"java.util.Date","fieldDbType":"datetime","classType":"inputxt","classType_row":"","optionType":"","charmaxLength":"","precision":"","scale":"","nullable":"Y","fieldLength":"null","fieldHref":"null","fieldValidType":"null","fieldDefault":"null","fieldShowType":"null","fieldOrderNum":"null","isKey":"null","isShow":"null","isShowList":"null","isQuery":"null","queryMode":"null","dictField":"null","dictTable":"null","dictText":"null"}
+2019-11-19 13:09:08.128 [http-nio-8889-exec-6] INFO  org.jeecg.modules.online.cgform.service.a.c:464 -   columnt : {"fieldDbName":"UPDATE_BY","fieldName":"updateBy","filedComment":"更新人","fieldType":"java.lang.String","fieldDbType":"varchar","classType":"inputxt","classType_row":"","optionType":"","charmaxLength":"50","precision":"","scale":"","nullable":"Y","fieldLength":"null","fieldHref":"null","fieldValidType":"null","fieldDefault":"null","fieldShowType":"null","fieldOrderNum":"null","isKey":"null","isShow":"null","isShowList":"null","isQuery":"null","queryMode":"null","dictField":"null","dictTable":"null","dictText":"null"}
+2019-11-19 13:09:08.129 [http-nio-8889-exec-6] INFO  org.jeecg.modules.online.cgform.service.a.c:464 -   columnt : {"fieldDbName":"UPDATE_TIME","fieldName":"updateTime","filedComment":"更新日期","fieldType":"java.util.Date","fieldDbType":"datetime","classType":"inputxt","classType_row":"","optionType":"","charmaxLength":"","precision":"","scale":"","nullable":"Y","fieldLength":"null","fieldHref":"null","fieldValidType":"null","fieldDefault":"null","fieldShowType":"null","fieldOrderNum":"null","isKey":"null","isShow":"null","isShowList":"null","isQuery":"null","queryMode":"null","dictField":"null","dictTable":"null","dictText":"null"}
+2019-11-19 13:09:08.129 [http-nio-8889-exec-6] INFO  org.jeecg.modules.online.cgform.service.a.c:464 -   columnt : {"fieldDbName":"SYS_ORG_CODE","fieldName":"sysOrgCode","filedComment":"所属部门","fieldType":"java.lang.String","fieldDbType":"varchar","classType":"inputxt","classType_row":"","optionType":"","charmaxLength":"64","precision":"","scale":"","nullable":"Y","fieldLength":"null","fieldHref":"null","fieldValidType":"null","fieldDefault":"null","fieldShowType":"null","fieldOrderNum":"null","isKey":"null","isShow":"null","isShowList":"null","isQuery":"null","queryMode":"null","dictField":"null","dictTable":"null","dictText":"null"}
+2019-11-19 13:18:24.905 [http-nio-8889-exec-9] INFO  o.j.codegenerate.generate.impl.CodeGenerateOne:122 - ----jeecg---Code----Generation----[单表模型:csm_order_info]------- 生成中。。。
+2019-11-19 13:18:24.938 [http-nio-8889-exec-9] INFO  o.j.codegenerate.generate.impl.CodeGenerateOne:117 - code template data: {primaryKeyPolicy=java.lang.String, serialVersionUID=1311868414885491704, entityPackage=order, entityName=CsmOrderInfo, primaryKeyField=id, columns=[{"fieldDbName":"ope_id","fieldName":"opeId","filedComment":"手术类型","fieldType":"java.lang.String","fieldDbType":"string","classType":"list","classType_row":"list","optionType":"","charmaxLength":"","precision":"null","scale":"null","nullable":"Y","fieldLength":"60","fieldHref":"","fieldValidType":"null","fieldDefault":"","fieldShowType":"list","fieldOrderNum":"2","isKey":"N","isShow":"Y","isShowList":"Y","isQuery":"Y","queryMode":"single","dictField":"","dictTable":"","dictText":""}, {"fieldDbName":"date","fieldName":"date","filedComment":"日期","fieldType":"java.util.Date","fieldDbType":"Date","classType":"date","classType_row":"date","optionType":"","charmaxLength":"","precision":"null","scale":"null","nullable":"Y","fieldLength":"60","fieldHref":"","fieldValidType":"null","fieldDefault":"","fieldShowType":"date","fieldOrderNum":"3","isKey":"N","isShow":"Y","isShowList":"Y","isQuery":"Y","queryMode":"group","dictField":"","dictTable":"","dictText":""}, {"fieldDbName":"tool_id","fieldName":"toolId","filedComment":"工具箱","fieldType":"java.lang.String","fieldDbType":"string","classType":"list","classType_row":"list","optionType":"","charmaxLength":"","precision":"null","scale":"null","nullable":"Y","fieldLength":"60","fieldHref":"","fieldValidType":"null","fieldDefault":"","fieldShowType":"list","fieldOrderNum":"4","isKey":"N","isShow":"Y","isShowList":"Y","isQuery":"Y","queryMode":"single","dictField":"","dictTable":"","dictText":""}, {"fieldDbName":"scr_id","fieldName":"scrId","filedComment":"螺钉架","fieldType":"java.lang.String","fieldDbType":"string","classType":"list","classType_row":"list","optionType":"","charmaxLength":"","precision":"null","scale":"null","nullable":"Y","fieldLength":"60","fieldHref":"","fieldValidType":"null","fieldDefault":"","fieldShowType":"list","fieldOrderNum":"5","isKey":"N","isShow":"Y","isShowList":"Y","isQuery":"Y","queryMode":"single","dictField":"","dictTable":"","dictText":""}, {"fieldDbName":"hospital_id","fieldName":"hospitalId","filedComment":"医院","fieldType":"java.lang.String","fieldDbType":"string","classType":"list","classType_row":"list","optionType":"","charmaxLength":"","precision":"null","scale":"null","nullable":"Y","fieldLength":"60","fieldHref":"","fieldValidType":"null","fieldDefault":"","fieldShowType":"list","fieldOrderNum":"6","isKey":"N","isShow":"Y","isShowList":"Y","isQuery":"Y","queryMode":"single","dictField":"","dictTable":"","dictText":""}, {"fieldDbName":"patient","fieldName":"patient","filedComment":"患者","fieldType":"java.lang.String","fieldDbType":"string","classType":"text","classType_row":"text","optionType":"","charmaxLength":"","precision":"null","scale":"null","nullable":"Y","fieldLength":"60","fieldHref":"","fieldValidType":"null","fieldDefault":"","fieldShowType":"text","fieldOrderNum":"7","isKey":"N","isShow":"Y","isShowList":"Y","isQuery":"Y","queryMode":"single","dictField":"","dictTable":"","dictText":""}, {"fieldDbName":"code","fieldName":"code","filedComment":"编号","fieldType":"java.lang.String","fieldDbType":"string","classType":"text","classType_row":"text","optionType":"","charmaxLength":"","precision":"null","scale":"null","nullable":"Y","fieldLength":"60","fieldHref":"","fieldValidType":"null","fieldDefault":"","fieldShowType":"text","fieldOrderNum":"8","isKey":"N","isShow":"Y","isShowList":"Y","isQuery":"Y","queryMode":"single","dictField":"","dictTable":"","dictText":""}, {"fieldDbName":"bednum","fieldName":"bednum","filedComment":"病床号","fieldType":"java.lang.String","fieldDbType":"string","classType":"text","classType_row":"text","optionType":"","charmaxLength":"","precision":"null","scale":"null","nullable":"Y","fieldLength":"60","fieldHref":"","fieldValidType":"null","fieldDefault":"","fieldShowType":"text","fieldOrderNum":"9","isKey":"N","isShow":"Y","isShowList":"Y","isQuery":"Y","queryMode":"single","dictField":"","dictTable":"","dictText":""}, {"fieldDbName":"company_id","fieldName":"companyId","filedComment":"销售公司","fieldType":"java.lang.String","fieldDbType":"string","classType":"list","classType_row":"list","optionType":"","charmaxLength":"","precision":"null","scale":"null","nullable":"Y","fieldLength":"60","fieldHref":"","fieldValidType":"null","fieldDefault":"","fieldShowType":"list","fieldOrderNum":"10","isKey":"N","isShow":"Y","isShowList":"Y","isQuery":"Y","queryMode":"single","dictField":"","dictTable":"","dictText":""}, {"fieldDbName":"customer_id","fieldName":"customerId","filedComment":"客户","fieldType":"java.lang.String","fieldDbType":"string","classType":"list","classType_row":"list","optionType":"","charmaxLength":"","precision":"null","scale":"null","nullable":"Y","fieldLength":"60","fieldHref":"","fieldValidType":"null","fieldDefault":"","fieldShowType":"list","fieldOrderNum":"11","isKey":"N","isShow":"Y","isShowList":"Y","isQuery":"Y","queryMode":"single","dictField":"","dictTable":"","dictText":""}, {"fieldDbName":"invoices","fieldName":"invoices","filedComment":"发票号","fieldType":"java.lang.String","fieldDbType":"string","classType":"text","classType_row":"text","optionType":"","charmaxLength":"","precision":"null","scale":"null","nullable":"Y","fieldLength":"60","fieldHref":"","fieldValidType":"null","fieldDefault":"","fieldShowType":"text","fieldOrderNum":"12","isKey":"N","isShow":"Y","isShowList":"Y","isQuery":"Y","queryMode":"single","dictField":"","dictTable":"","dictText":""}, {"fieldDbName":"status","fieldName":"status","filedComment":"状态","fieldType":"java.lang.String","fieldDbType":"string","classType":"list","classType_row":"list","optionType":"","charmaxLength":"","precision":"null","scale":"null","nullable":"Y","fieldLength":"60","fieldHref":"","fieldValidType":"null","fieldDefault":"","fieldShowType":"list","fieldOrderNum":"13","isKey":"N","isShow":"Y","isShowList":"Y","isQuery":"Y","queryMode":"single","dictField":"orderStatus","dictTable":"","dictText":""}], tableVo={"tableName":"csm_order_info","ftlDescription":"csm_order_info","primaryKeyPolicy":"null","sequenceCode":"null","entityPackage":"order","entityName":"CsmOrderInfo","fieldRowNum":"1","searchFieldNum":"-1","fieldRequiredNum":"4"}, originalColumns=[{"fieldDbName":"id","fieldName":"id","filedComment":"id","fieldType":"java.lang.String","fieldDbType":"string","classType":"text","classType_row":"text","optionType":"","charmaxLength":"","precision":"null","scale":"null","nullable":"N","fieldLength":"120","fieldHref":"","fieldValidType":"null","fieldDefault":"","fieldShowType":"text","fieldOrderNum":"1","isKey":"Y","isShow":"N","isShowList":"N","isQuery":"N","queryMode":"group","dictField":"","dictTable":"","dictText":""}, {"fieldDbName":"ope_id","fieldName":"opeId","filedComment":"手术类型","fieldType":"java.lang.String","fieldDbType":"string","classType":"list","classType_row":"list","optionType":"","charmaxLength":"","precision":"null","scale":"null","nullable":"Y","fieldLength":"60","fieldHref":"","fieldValidType":"null","fieldDefault":"","fieldShowType":"list","fieldOrderNum":"2","isKey":"N","isShow":"Y","isShowList":"Y","isQuery":"Y","queryMode":"single","dictField":"","dictTable":"","dictText":""}, {"fieldDbName":"date","fieldName":"date","filedComment":"日期","fieldType":"java.util.Date","fieldDbType":"Date","classType":"date","classType_row":"date","optionType":"","charmaxLength":"","precision":"null","scale":"null","nullable":"Y","fieldLength":"60","fieldHref":"","fieldValidType":"null","fieldDefault":"","fieldShowType":"date","fieldOrderNum":"3","isKey":"N","isShow":"Y","isShowList":"Y","isQuery":"Y","queryMode":"group","dictField":"","dictTable":"","dictText":""}, {"fieldDbName":"tool_id","fieldName":"toolId","filedComment":"工具箱","fieldType":"java.lang.String","fieldDbType":"string","classType":"list","classType_row":"list","optionType":"","charmaxLength":"","precision":"null","scale":"null","nullable":"Y","fieldLength":"60","fieldHref":"","fieldValidType":"null","fieldDefault":"","fieldShowType":"list","fieldOrderNum":"4","isKey":"N","isShow":"Y","isShowList":"Y","isQuery":"Y","queryMode":"single","dictField":"","dictTable":"","dictText":""}, {"fieldDbName":"scr_id","fieldName":"scrId","filedComment":"螺钉架","fieldType":"java.lang.String","fieldDbType":"string","classType":"list","classType_row":"list","optionType":"","charmaxLength":"","precision":"null","scale":"null","nullable":"Y","fieldLength":"60","fieldHref":"","fieldValidType":"null","fieldDefault":"","fieldShowType":"list","fieldOrderNum":"5","isKey":"N","isShow":"Y","isShowList":"Y","isQuery":"Y","queryMode":"single","dictField":"","dictTable":"","dictText":""}, {"fieldDbName":"hospital_id","fieldName":"hospitalId","filedComment":"医院","fieldType":"java.lang.String","fieldDbType":"string","classType":"list","classType_row":"list","optionType":"","charmaxLength":"","precision":"null","scale":"null","nullable":"Y","fieldLength":"60","fieldHref":"","fieldValidType":"null","fieldDefault":"","fieldShowType":"list","fieldOrderNum":"6","isKey":"N","isShow":"Y","isShowList":"Y","isQuery":"Y","queryMode":"single","dictField":"","dictTable":"","dictText":""}, {"fieldDbName":"patient","fieldName":"patient","filedComment":"患者","fieldType":"java.lang.String","fieldDbType":"string","classType":"text","classType_row":"text","optionType":"","charmaxLength":"","precision":"null","scale":"null","nullable":"Y","fieldLength":"60","fieldHref":"","fieldValidType":"null","fieldDefault":"","fieldShowType":"text","fieldOrderNum":"7","isKey":"N","isShow":"Y","isShowList":"Y","isQuery":"Y","queryMode":"single","dictField":"","dictTable":"","dictText":""}, {"fieldDbName":"code","fieldName":"code","filedComment":"编号","fieldType":"java.lang.String","fieldDbType":"string","classType":"text","classType_row":"text","optionType":"","charmaxLength":"","precision":"null","scale":"null","nullable":"Y","fieldLength":"60","fieldHref":"","fieldValidType":"null","fieldDefault":"","fieldShowType":"text","fieldOrderNum":"8","isKey":"N","isShow":"Y","isShowList":"Y","isQuery":"Y","queryMode":"single","dictField":"","dictTable":"","dictText":""}, {"fieldDbName":"bednum","fieldName":"bednum","filedComment":"病床号","fieldType":"java.lang.String","fieldDbType":"string","classType":"text","classType_row":"text","optionType":"","charmaxLength":"","precision":"null","scale":"null","nullable":"Y","fieldLength":"60","fieldHref":"","fieldValidType":"null","fieldDefault":"","fieldShowType":"text","fieldOrderNum":"9","isKey":"N","isShow":"Y","isShowList":"Y","isQuery":"Y","queryMode":"single","dictField":"","dictTable":"","dictText":""}, {"fieldDbName":"company_id","fieldName":"companyId","filedComment":"销售公司","fieldType":"java.lang.String","fieldDbType":"string","classType":"list","classType_row":"list","optionType":"","charmaxLength":"","precision":"null","scale":"null","nullable":"Y","fieldLength":"60","fieldHref":"","fieldValidType":"null","fieldDefault":"","fieldShowType":"list","fieldOrderNum":"10","isKey":"N","isShow":"Y","isShowList":"Y","isQuery":"Y","queryMode":"single","dictField":"","dictTable":"","dictText":""}, {"fieldDbName":"customer_id","fieldName":"customerId","filedComment":"客户","fieldType":"java.lang.String","fieldDbType":"string","classType":"list","classType_row":"list","optionType":"","charmaxLength":"","precision":"null","scale":"null","nullable":"Y","fieldLength":"60","fieldHref":"","fieldValidType":"null","fieldDefault":"","fieldShowType":"list","fieldOrderNum":"11","isKey":"N","isShow":"Y","isShowList":"Y","isQuery":"Y","queryMode":"single","dictField":"","dictTable":"","dictText":""}, {"fieldDbName":"invoices","fieldName":"invoices","filedComment":"发票号","fieldType":"java.lang.String","fieldDbType":"string","classType":"text","classType_row":"text","optionType":"","charmaxLength":"","precision":"null","scale":"null","nullable":"Y","fieldLength":"60","fieldHref":"","fieldValidType":"null","fieldDefault":"","fieldShowType":"text","fieldOrderNum":"12","isKey":"N","isShow":"Y","isShowList":"Y","isQuery":"Y","queryMode":"single","dictField":"","dictTable":"","dictText":""}, {"fieldDbName":"status","fieldName":"status","filedComment":"状态","fieldType":"java.lang.String","fieldDbType":"string","classType":"list","classType_row":"list","optionType":"","charmaxLength":"","precision":"null","scale":"null","nullable":"Y","fieldLength":"60","fieldHref":"","fieldValidType":"null","fieldDefault":"","fieldShowType":"list","fieldOrderNum":"13","isKey":"N","isShow":"Y","isShowList":"Y","isQuery":"Y","queryMode":"single","dictField":"orderStatus","dictTable":"","dictText":""}, {"fieldDbName":"create_by","fieldName":"createBy","filedComment":"创建人","fieldType":"java.lang.String","fieldDbType":"string","classType":"text","classType_row":"text","optionType":"","charmaxLength":"","precision":"null","scale":"null","nullable":"Y","fieldLength":"120","fieldHref":"","fieldValidType":"null","fieldDefault":"","fieldShowType":"text","fieldOrderNum":"14","isKey":"N","isShow":"N","isShowList":"N","isQuery":"N","queryMode":"group","dictField":"","dictTable":"","dictText":""}, {"fieldDbName":"create_time","fieldName":"createTime","filedComment":"创建日期","fieldType":"java.util.Date","fieldDbType":"Date","classType":"date","classType_row":"date","optionType":"","charmaxLength":"","precision":"null","scale":"null","nullable":"Y","fieldLength":"120","fieldHref":"","fieldValidType":"null","fieldDefault":"","fieldShowType":"date","fieldOrderNum":"15","isKey":"N","isShow":"N","isShowList":"N","isQuery":"N","queryMode":"group","dictField":"","dictTable":"","dictText":""}, {"fieldDbName":"update_by","fieldName":"updateBy","filedComment":"更新人","fieldType":"java.lang.String","fieldDbType":"string","classType":"text","classType_row":"text","optionType":"","charmaxLength":"","precision":"null","scale":"null","nullable":"Y","fieldLength":"120","fieldHref":"","fieldValidType":"null","fieldDefault":"","fieldShowType":"text","fieldOrderNum":"16","isKey":"N","isShow":"N","isShowList":"N","isQuery":"N","queryMode":"group","dictField":"","dictTable":"","dictText":""}, {"fieldDbName":"update_time","fieldName":"updateTime","filedComment":"更新日期","fieldType":"java.util.Date","fieldDbType":"Date","classType":"date","classType_row":"date","optionType":"","charmaxLength":"","precision":"null","scale":"null","nullable":"Y","fieldLength":"120","fieldHref":"","fieldValidType":"null","fieldDefault":"","fieldShowType":"date","fieldOrderNum":"17","isKey":"N","isShow":"N","isShowList":"N","isQuery":"N","queryMode":"group","dictField":"","dictTable":"","dictText":""}, {"fieldDbName":"sys_org_code","fieldName":"sysOrgCode","filedComment":"所属部门","fieldType":"java.lang.String","fieldDbType":"string","classType":"text","classType_row":"text","optionType":"","charmaxLength":"","precision":"null","scale":"null","nullable":"Y","fieldLength":"120","fieldHref":"","fieldValidType":"null","fieldDefault":"","fieldShowType":"text","fieldOrderNum":"18","isKey":"N","isShow":"N","isShowList":"N","isQuery":"N","queryMode":"group","dictField":"","dictTable":"","dictText":""}], bussiPackage=org.jeecg.modules.demo, tableName=csm_order_info}
+2019-11-19 13:18:24.947 [http-nio-8889-exec-9] INFO  org.jeecgframework.codegenerate.generate.a.a:34 - ----templatePath-----------------/jeecg/code-template-online/one
+2019-11-19 13:18:26.078 [http-nio-8889-exec-9] INFO  o.j.codegenerate.generate.impl.CodeGenerateOne:136 - ----jeecg----Code----Generation-----[单表模型：csm_order_info]------ 生成完成。。。
+2019-11-19 13:20:33.054 [http-nio-8889-exec-2] INFO  o.j.m.system.controller.SysPermissionController:120 -  ------ 通过令牌获取用户拥有的访问菜单 ---- TOKEN ------ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzQxNDE5MjAsInVzZXJuYW1lIjoiYWRtaW4ifQ.mp0R-h8W_xcukqXtdqCSmUduGYNy6mOXj94opHwvAEY
+2019-11-19 13:20:35.968 [http-nio-8889-exec-5] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : cgform_table_type
+2019-11-19 13:20:36.864 [http-nio-8889-exec-5] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1, text=单表), DictModel(value=2, text=主表), DictModel(value=3, text=附表)], timestamp=1574140835969)
+2019-11-19 13:21:00.141 [http-nio-8889-exec-8] INFO  o.j.m.system.controller.SysPermissionController:120 -  ------ 通过令牌获取用户拥有的访问菜单 ---- TOKEN ------ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzQxNDE5MjAsInVzZXJuYW1lIjoiYWRtaW4ifQ.mp0R-h8W_xcukqXtdqCSmUduGYNy6mOXj94opHwvAEY
+2019-11-19 13:21:02.124 [http-nio-8889-exec-10] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : cgform_table_type
+2019-11-19 13:21:02.129 [http-nio-8889-exec-10] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1, text=单表), DictModel(value=2, text=主表), DictModel(value=3, text=附表)], timestamp=1574140862127)
+2019-11-19 13:21:02.595 [http-nio-8889-exec-2] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : cgform_table_type
+2019-11-19 13:21:02.598 [http-nio-8889-exec-2] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1, text=单表), DictModel(value=2, text=主表), DictModel(value=3, text=附表)], timestamp=1574140862596)
+2019-11-19 13:21:52.520 [main] INFO  org.jeecg.JeecgApplication:50 - Starting JeecgApplication on DESKTOP-89SVNT6 with PID 15644 (D:\CSM\jeecg-boot-master\jeecg-boot\jeecg-boot-module-system\target\classes started by dell in D:\CSM\jeecg-boot-master\jeecg-boot\jeecg-boot-module-system)
+2019-11-19 13:21:52.528 [main] INFO  org.jeecg.JeecgApplication:679 - The following profiles are active: dev
+2019-11-19 13:21:55.528 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:244 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-19 13:21:55.534 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:126 - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-19 13:21:55.707 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:182 - Finished Spring Data repository scanning in 142ms. Found 0 repository interfaces.
+2019-11-19 13:21:56.436 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'shiroConfig' of type [org.jeecg.config.ShiroConfig$$EnhancerBySpringCGLIB$$e9e89127] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 13:21:56.632 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'shiroRealm' of type [org.jeecg.modules.shiro.authc.ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 13:21:58.292 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 13:21:58.338 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 13:21:58.428 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$c9e32791] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 13:21:58.768 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'spring.datasource.dynamic-com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 13:21:58.775 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$33719862] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 13:21:58.786 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'dsProcessor' of type [com.baomidou.dynamic.datasource.processor.DsHeaderProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 13:21:58.794 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'dynamicDatasourceAnnotationAdvisor' of type [com.baomidou.dynamic.datasource.aop.DynamicDataSourceAnnotationAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 13:21:58.821 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'spring.redis-org.springframework.boot.autoconfigure.data.redis.RedisProperties' of type [org.springframework.boot.autoconfigure.data.redis.RedisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 13:21:58.837 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration' of type [org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration$$EnhancerBySpringCGLIB$$defce5db] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 13:21:59.277 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'lettuceClientResources' of type [io.lettuce.core.resource.DefaultClientResources] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 13:21:59.540 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'redisConnectionFactory' of type [org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 13:21:59.559 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'redisConfig' of type [org.jeecg.config.RedisConfig$$EnhancerBySpringCGLIB$$34b71871] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 13:21:59.612 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.apache.shiro.spring.boot.autoconfigure.ShiroBeanAutoConfiguration' of type [org.apache.shiro.spring.boot.autoconfigure.ShiroBeanAutoConfiguration$$EnhancerBySpringCGLIB$$dcfc0541] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 13:21:59.623 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'eventBus' of type [org.apache.shiro.event.support.DefaultEventBus] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 13:22:00.338 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:90 - Tomcat initialized with port(s): 8889 (http)
+2019-11-19 13:22:00.366 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8889"]
+2019-11-19 13:22:00.396 [main] INFO  org.apache.catalina.core.StandardService:173 - Starting service [Tomcat]
+2019-11-19 13:22:00.397 [main] INFO  org.apache.catalina.core.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-11-19 13:22:00.420 [main] INFO  org.apache.catalina.core.AprLifecycleListener:173 - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jre1.8.0_191\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Program Files/Java/jre1.8.0_191/bin/server;C:/Program Files/Java/jre1.8.0_191/bin;C:/Program Files/Java/jre1.8.0_191/lib/amd64;C:\Program Files (x86)\NetSarang\Xftp 6\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Java\jdk1.8.0_191\bin;C:\Program Files\Java\jdk1.8.0_191\jre\bin;D:\MYSQL\mysql-5.7.24-winx64\bin;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\nodejs\;C:\Program Files\TortoiseSVN\bin;C:\Users\dell\AppData\Local\Microsoft\WindowsApps;C:\Program Files\nodejs\node_global;C:\Users\dell\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\dell\AppData\Local\Yarn\bin;C:\Users\dell\AppData\Roaming\npm;C:\Users\dell\Desktop;;.]
+2019-11-19 13:22:00.703 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/jeecg-boot]:173 - Initializing Spring embedded WebApplicationContext
+2019-11-19 13:22:00.704 [main] INFO  org.springframework.web.context.ContextLoader:296 - Root WebApplicationContext: initialization completed in 8112 ms
+2019-11-19 13:22:01.235 [main] INFO  c.b.dynamic.datasource.DynamicDataSourceCreator:113 - 动态数据源-检测到druid存在,如配置中未指定type,druid会默认配置
+2019-11-19 13:22:02.138 [main] INFO  com.alibaba.druid.pool.DruidDataSource:1003 - {dataSource-1,master} inited
+2019-11-19 13:22:02.139 [main] INFO  c.b.dynamic.datasource.DynamicRoutingDataSource:203 - 初始共加载 1 个数据源
+2019-11-19 13:22:02.140 [main] INFO  c.b.dynamic.datasource.DynamicRoutingDataSource:142 - 动态数据源-加载 master 成功
+2019-11-19 13:22:02.141 [main] INFO  c.b.dynamic.datasource.DynamicRoutingDataSource:212 - 当前的默认数据源是单数据源，数据源名为 master
+2019-11-19 13:22:05.301 [main] INFO  org.quartz.impl.StdSchedulerFactory:1208 - Using default implementation for ThreadExecutor
+2019-11-19 13:22:05.324 [main] INFO  org.quartz.core.SchedulerSignalerImpl:61 - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2019-11-19 13:22:05.324 [main] INFO  org.quartz.core.QuartzScheduler:229 - Quartz Scheduler v.2.3.0 created.
+2019-11-19 13:22:05.331 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:672 - Using db table-based data access locking (synchronization).
+2019-11-19 13:22:05.333 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:145 - JobStoreCMT initialized.
+2019-11-19 13:22:05.335 [main] INFO  org.quartz.core.QuartzScheduler:294 - Scheduler meta-data: Quartz Scheduler (v2.3.0) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is not clustered.
+
+2019-11-19 13:22:05.335 [main] INFO  org.quartz.impl.StdSchedulerFactory:1362 - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2019-11-19 13:22:05.336 [main] INFO  org.quartz.impl.StdSchedulerFactory:1366 - Quartz scheduler version: 2.3.0
+2019-11-19 13:22:05.336 [main] INFO  org.quartz.core.QuartzScheduler:2287 - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@53b83897
+2019-11-19 13:22:07.865 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver:59 - Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-11-19 13:22:08.078 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping:69 - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-11-19 13:22:08.619 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor:171 - Initializing ExecutorService 'applicationTaskExecutor'
+2019-11-19 13:22:09.883 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper:160 - Context refreshed
+2019-11-19 13:22:09.933 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper:163 - Found 1 custom documentation plugin(s)
+2019-11-19 13:22:10.000 [main] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner:41 - Scanning for api listing references
+2019-11-19 13:22:10.315 [main] INFO  o.s.scheduling.quartz.SchedulerFactoryBean:726 - Starting Quartz Scheduler now
+2019-11-19 13:22:10.748 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:866 - Freed 0 triggers from 'acquired' / 'blocked' state.
+2019-11-19 13:22:10.852 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:876 - Recovering 0 jobs that were in-progress at the time of the last shut-down.
+2019-11-19 13:22:10.853 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:889 - Recovery complete.
+2019-11-19 13:22:10.855 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:896 - Removed 0 'complete' triggers.
+2019-11-19 13:22:10.858 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:901 - Removed 0 stale fired job entries.
+2019-11-19 13:22:10.859 [main] INFO  org.quartz.core.QuartzScheduler:547 - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2019-11-19 13:22:10.889 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Starting ProtocolHandler ["http-nio-8889"]
+2019-11-19 13:22:10.948 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:204 - Tomcat started on port(s): 8889 (http) with context path '/jeecg-boot'
+2019-11-19 13:22:10.954 [main] INFO  org.jeecg.JeecgApplication:59 - Started JeecgApplication in 19.056 seconds (JVM running for 20.228)
+2019-11-19 13:22:10.974 [main] INFO  org.jeecg.JeecgApplication:26 - 
+----------------------------------------------------------
+	Application Jeecg-Boot is running! Access URLs:
+	Local: 		http://localhost:8889/jeecg-boot/
+	External: 	http://192.168.60.108:8889/jeecg-boot/
+	swagger-ui: 	http://192.168.60.108:8889/jeecg-boot/swagger-ui.html
+	Doc: 		http://192.168.60.108:8889/jeecg-boot/doc.html
+----------------------------------------------------------
+2019-11-19 13:22:59.654 [http-nio-8889-exec-3] INFO  o.a.c.c.C.[Tomcat].[localhost].[/jeecg-boot]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-11-19 13:22:59.654 [http-nio-8889-exec-3] INFO  org.springframework.web.servlet.DispatcherServlet:524 - Initializing Servlet 'dispatcherServlet'
+2019-11-19 13:22:59.692 [http-nio-8889-exec-3] INFO  org.springframework.web.servlet.DispatcherServlet:546 - Completed initialization in 38 ms
+2019-11-19 13:23:00.575 [http-nio-8889-exec-3] INFO  io.lettuce.core.EpollProvider:68 - Starting without optional epoll library
+2019-11-19 13:23:00.578 [http-nio-8889-exec-3] INFO  io.lettuce.core.KqueueProvider:70 - Starting without optional kqueue library
+2019-11-19 13:23:02.214 [http-nio-8889-exec-3] INFO  o.j.m.system.controller.SysPermissionController:120 -  ------ 通过令牌获取用户拥有的访问菜单 ---- TOKEN ------ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzQxNDE5MjAsInVzZXJuYW1lIjoiYWRtaW4ifQ.mp0R-h8W_xcukqXtdqCSmUduGYNy6mOXj94opHwvAEY
+2019-11-19 13:23:09.113 [http-nio-8889-exec-5] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : orderStatus
+2019-11-19 13:23:09.352 [http-nio-8889-exec-5] INFO  o.j.modules.system.service.impl.SysDictServiceImpl:48 - 无缓存dictCache的时候调用这里！
+2019-11-19 13:23:10.470 [http-nio-8889-exec-5] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1, text=待处理), DictModel(value=4, text=已销售), DictModel(value=5, text=已开票), DictModel(value=3, text=工具取回), DictModel(value=2, text=已送货)], timestamp=1574140989114)
+2019-11-19 13:23:17.154 [http-nio-8889-exec-7] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : orderStatus
+2019-11-19 13:23:17.180 [http-nio-8889-exec-7] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1, text=待处理), DictModel(value=4, text=已销售), DictModel(value=5, text=已开票), DictModel(value=3, text=工具取回), DictModel(value=2, text=已送货)], timestamp=1574140997155)
+2019-11-19 13:24:05.783 [http-nio-8889-exec-9] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : orderStatus
+2019-11-19 13:24:05.788 [http-nio-8889-exec-9] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1, text=待处理), DictModel(value=4, text=已销售), DictModel(value=5, text=已开票), DictModel(value=3, text=工具取回), DictModel(value=2, text=已送货)], timestamp=1574141045784)
+2019-11-19 13:30:13.190 [http-nio-8889-exec-6] INFO  o.j.m.system.controller.SysPermissionController:120 -  ------ 通过令牌获取用户拥有的访问菜单 ---- TOKEN ------ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzQxNDE5MjAsInVzZXJuYW1lIjoiYWRtaW4ifQ.mp0R-h8W_xcukqXtdqCSmUduGYNy6mOXj94opHwvAEY
+2019-11-19 13:30:23.740 [http-nio-8889-exec-8] INFO  o.j.m.system.controller.SysPermissionController:120 -  ------ 通过令牌获取用户拥有的访问菜单 ---- TOKEN ------ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzQxNDE5MjAsInVzZXJuYW1lIjoiYWRtaW4ifQ.mp0R-h8W_xcukqXtdqCSmUduGYNy6mOXj94opHwvAEY
+2019-11-19 13:30:39.322 [http-nio-8889-exec-1] INFO  o.j.m.system.controller.SysPermissionController:120 -  ------ 通过令牌获取用户拥有的访问菜单 ---- TOKEN ------ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzQxNDE5MjAsInVzZXJuYW1lIjoiYWRtaW4ifQ.mp0R-h8W_xcukqXtdqCSmUduGYNy6mOXj94opHwvAEY
+2019-11-19 13:33:07.675 [http-nio-8889-exec-7] INFO  o.j.m.system.controller.SysPermissionController:120 -  ------ 通过令牌获取用户拥有的访问菜单 ---- TOKEN ------ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzQxNDE5MjAsInVzZXJuYW1lIjoiYWRtaW4ifQ.mp0R-h8W_xcukqXtdqCSmUduGYNy6mOXj94opHwvAEY
+2019-11-19 13:33:23.790 [http-nio-8889-exec-2] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : orderStatus
+2019-11-19 13:33:23.991 [http-nio-8889-exec-2] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1, text=待处理), DictModel(value=4, text=已销售), DictModel(value=5, text=已开票), DictModel(value=3, text=工具取回), DictModel(value=2, text=已送货)], timestamp=1574141603791)
+2019-11-19 13:33:25.220 [http-nio-8889-exec-1] INFO  o.j.m.demo.system.controller.CsmSysdictController:33 -  dictCode : csm_company
+2019-11-19 13:33:25.856 [http-nio-8889-exec-1] INFO  o.j.m.demo.system.controller.CsmSysdictController:42 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1194848454465736705, text=华为), DictModel(value=1194848507053920258, text=小米)], timestamp=1574141605260)
+2019-11-19 13:33:27.533 [http-nio-8889-exec-4] INFO  o.j.m.demo.system.controller.CsmSysdictController:33 -  dictCode : csm_company
+2019-11-19 13:33:27.573 [http-nio-8889-exec-4] INFO  o.j.m.demo.system.controller.CsmSysdictController:42 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1194848454465736705, text=华为), DictModel(value=1194848507053920258, text=小米)], timestamp=1574141607534)
+2019-11-19 13:33:27.798 [http-nio-8889-exec-6] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : orderStatus
+2019-11-19 13:33:27.812 [http-nio-8889-exec-6] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1, text=待处理), DictModel(value=4, text=已销售), DictModel(value=5, text=已开票), DictModel(value=3, text=工具取回), DictModel(value=2, text=已送货)], timestamp=1574141607800)
+2019-11-19 13:33:42.313 [http-nio-8889-exec-7] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : orderStatus
+2019-11-19 13:33:42.315 [http-nio-8889-exec-7] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1, text=待处理), DictModel(value=4, text=已销售), DictModel(value=5, text=已开票), DictModel(value=3, text=工具取回), DictModel(value=2, text=已送货)], timestamp=1574141622313)
+2019-11-19 13:35:01.331 [http-nio-8889-exec-1] INFO  o.j.m.system.controller.SysPermissionController:120 -  ------ 通过令牌获取用户拥有的访问菜单 ---- TOKEN ------ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzQxNDE5MjAsInVzZXJuYW1lIjoiYWRtaW4ifQ.mp0R-h8W_xcukqXtdqCSmUduGYNy6mOXj94opHwvAEY
+2019-11-19 13:35:04.827 [http-nio-8889-exec-5] INFO  o.j.m.demo.system.controller.CsmSysdictController:33 -  dictCode : csm_company
+2019-11-19 13:35:04.830 [http-nio-8889-exec-5] INFO  o.j.m.demo.system.controller.CsmSysdictController:42 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1194848454465736705, text=华为), DictModel(value=1194848507053920258, text=小米)], timestamp=1574141704828)
+2019-11-19 13:35:05.070 [http-nio-8889-exec-8] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : orderStatus
+2019-11-19 13:35:05.074 [http-nio-8889-exec-8] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1, text=待处理), DictModel(value=4, text=已销售), DictModel(value=5, text=已开票), DictModel(value=3, text=工具取回), DictModel(value=2, text=已送货)], timestamp=1574141705071)
+2019-11-19 13:35:07.699 [http-nio-8889-exec-2] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : orderStatus
+2019-11-19 13:35:07.701 [http-nio-8889-exec-2] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1, text=待处理), DictModel(value=4, text=已销售), DictModel(value=5, text=已开票), DictModel(value=3, text=工具取回), DictModel(value=2, text=已送货)], timestamp=1574141707700)
+2019-11-19 13:35:16.213 [http-nio-8889-exec-5] INFO  o.j.m.system.controller.SysPermissionController:120 -  ------ 通过令牌获取用户拥有的访问菜单 ---- TOKEN ------ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzQxNDE5MjAsInVzZXJuYW1lIjoiYWRtaW4ifQ.mp0R-h8W_xcukqXtdqCSmUduGYNy6mOXj94opHwvAEY
+2019-11-19 13:35:21.013 [http-nio-8889-exec-3] INFO  o.j.m.demo.system.controller.CsmSysdictController:33 -  dictCode : csm_company
+2019-11-19 13:35:21.039 [http-nio-8889-exec-3] INFO  o.j.m.demo.system.controller.CsmSysdictController:42 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1194848454465736705, text=华为), DictModel(value=1194848507053920258, text=小米)], timestamp=1574141721014)
+2019-11-19 13:35:21.073 [http-nio-8889-exec-1] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : orderStatus
+2019-11-19 13:35:21.092 [http-nio-8889-exec-1] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1, text=待处理), DictModel(value=4, text=已销售), DictModel(value=5, text=已开票), DictModel(value=3, text=工具取回), DictModel(value=2, text=已送货)], timestamp=1574141721090)
+2019-11-19 13:35:23.500 [http-nio-8889-exec-7] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : orderStatus
+2019-11-19 13:35:23.502 [http-nio-8889-exec-7] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1, text=待处理), DictModel(value=4, text=已销售), DictModel(value=5, text=已开票), DictModel(value=3, text=工具取回), DictModel(value=2, text=已送货)], timestamp=1574141723501)
+2019-11-19 13:36:45.204 [http-nio-8889-exec-3] INFO  o.j.m.system.controller.SysPermissionController:120 -  ------ 通过令牌获取用户拥有的访问菜单 ---- TOKEN ------ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzQxNDE5MjAsInVzZXJuYW1lIjoiYWRtaW4ifQ.mp0R-h8W_xcukqXtdqCSmUduGYNy6mOXj94opHwvAEY
+2019-11-19 13:36:48.039 [http-nio-8889-exec-7] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : orderStatus
+2019-11-19 13:36:48.078 [http-nio-8889-exec-7] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1, text=待处理), DictModel(value=4, text=已销售), DictModel(value=5, text=已开票), DictModel(value=3, text=工具取回), DictModel(value=2, text=已送货)], timestamp=1574141808076)
+2019-11-19 13:36:48.062 [http-nio-8889-exec-5] INFO  o.j.m.demo.system.controller.CsmSysdictController:33 -  dictCode : csm_company
+2019-11-19 13:36:48.097 [http-nio-8889-exec-5] INFO  o.j.m.demo.system.controller.CsmSysdictController:42 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1194848454465736705, text=华为), DictModel(value=1194848507053920258, text=小米)], timestamp=1574141808096)
+2019-11-19 13:36:51.805 [http-nio-8889-exec-10] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : orderStatus
+2019-11-19 13:36:51.807 [http-nio-8889-exec-10] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1, text=待处理), DictModel(value=4, text=已销售), DictModel(value=5, text=已开票), DictModel(value=3, text=工具取回), DictModel(value=2, text=已送货)], timestamp=1574141811806)
+2019-11-19 13:38:18.179 [http-nio-8889-exec-7] INFO  o.j.m.system.controller.SysPermissionController:120 -  ------ 通过令牌获取用户拥有的访问菜单 ---- TOKEN ------ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzQxNDE5MjAsInVzZXJuYW1lIjoiYWRtaW4ifQ.mp0R-h8W_xcukqXtdqCSmUduGYNy6mOXj94opHwvAEY
+2019-11-19 13:38:20.765 [http-nio-8889-exec-9] INFO  o.j.m.demo.system.controller.CsmSysdictController:33 -  dictCode : csm_company
+2019-11-19 13:38:20.770 [http-nio-8889-exec-9] INFO  o.j.m.demo.system.controller.CsmSysdictController:42 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1194848454465736705, text=华为), DictModel(value=1194848507053920258, text=小米)], timestamp=1574141900766)
+2019-11-19 13:38:21.091 [http-nio-8889-exec-3] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : orderStatus
+2019-11-19 13:38:21.094 [http-nio-8889-exec-3] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1, text=待处理), DictModel(value=4, text=已销售), DictModel(value=5, text=已开票), DictModel(value=3, text=工具取回), DictModel(value=2, text=已送货)], timestamp=1574141901091)
+2019-11-19 13:38:23.445 [http-nio-8889-exec-4] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : orderStatus
+2019-11-19 13:38:23.447 [http-nio-8889-exec-4] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1, text=待处理), DictModel(value=4, text=已销售), DictModel(value=5, text=已开票), DictModel(value=3, text=工具取回), DictModel(value=2, text=已送货)], timestamp=1574141903446)
+2019-11-19 13:38:23.454 [http-nio-8889-exec-1] INFO  o.j.m.demo.system.controller.CsmSysdictController:33 -  dictCode : csm_company
+2019-11-19 13:38:23.457 [http-nio-8889-exec-1] INFO  o.j.m.demo.system.controller.CsmSysdictController:42 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1194848454465736705, text=华为), DictModel(value=1194848507053920258, text=小米)], timestamp=1574141903456)
+2019-11-19 13:43:23.331 [http-nio-8889-exec-4] INFO  o.j.m.system.controller.SysPermissionController:120 -  ------ 通过令牌获取用户拥有的访问菜单 ---- TOKEN ------ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzQxNDE5MjAsInVzZXJuYW1lIjoiYWRtaW4ifQ.mp0R-h8W_xcukqXtdqCSmUduGYNy6mOXj94opHwvAEY
+2019-11-19 13:43:24.661 [http-nio-8889-exec-7] INFO  o.j.m.demo.system.controller.CsmSysdictController:33 -  dictCode : csm_company
+2019-11-19 13:43:24.712 [http-nio-8889-exec-5] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : orderStatus
+2019-11-19 13:43:24.724 [http-nio-8889-exec-7] INFO  o.j.m.demo.system.controller.CsmSysdictController:42 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1194848454465736705, text=华为), DictModel(value=1194848507053920258, text=小米)], timestamp=1574142204673)
+2019-11-19 13:43:24.725 [http-nio-8889-exec-5] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1, text=待处理), DictModel(value=4, text=已销售), DictModel(value=5, text=已开票), DictModel(value=3, text=工具取回), DictModel(value=2, text=已送货)], timestamp=1574142204712)
+2019-11-19 13:46:27.829 [http-nio-8889-exec-10] INFO  o.j.m.demo.system.controller.CsmSysdictController:33 -  dictCode : csm_company
+2019-11-19 13:46:27.831 [http-nio-8889-exec-10] INFO  o.j.m.demo.system.controller.CsmSysdictController:42 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1194848454465736705, text=华为), DictModel(value=1194848507053920258, text=小米)], timestamp=1574142387830)
+2019-11-19 13:46:27.901 [http-nio-8889-exec-9] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : orderStatus
+2019-11-19 13:46:27.903 [http-nio-8889-exec-9] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1, text=待处理), DictModel(value=4, text=已销售), DictModel(value=5, text=已开票), DictModel(value=3, text=工具取回), DictModel(value=2, text=已送货)], timestamp=1574142387902)
+2019-11-19 13:47:51.091 [http-nio-8889-exec-10] INFO  o.j.m.demo.system.controller.CsmSysdictController:33 -  dictCode : csm_company
+2019-11-19 13:47:51.100 [http-nio-8889-exec-9] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : orderStatus
+2019-11-19 13:47:51.119 [http-nio-8889-exec-10] INFO  o.j.m.demo.system.controller.CsmSysdictController:42 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1194848454465736705, text=华为), DictModel(value=1194848507053920258, text=小米)], timestamp=1574142471092)
+2019-11-19 13:47:51.120 [http-nio-8889-exec-9] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1, text=待处理), DictModel(value=4, text=已销售), DictModel(value=5, text=已开票), DictModel(value=3, text=工具取回), DictModel(value=2, text=已送货)], timestamp=1574142471100)
+2019-11-19 13:50:36.675 [http-nio-8889-exec-3] INFO  o.j.m.system.controller.SysPermissionController:120 -  ------ 通过令牌获取用户拥有的访问菜单 ---- TOKEN ------ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzQxNDE5MjAsInVzZXJuYW1lIjoiYWRtaW4ifQ.mp0R-h8W_xcukqXtdqCSmUduGYNy6mOXj94opHwvAEY
+2019-11-19 13:50:55.940 [http-nio-8889-exec-1] INFO  o.j.m.system.controller.SysPermissionController:120 -  ------ 通过令牌获取用户拥有的访问菜单 ---- TOKEN ------ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzQxNDE5MjAsInVzZXJuYW1lIjoiYWRtaW4ifQ.mp0R-h8W_xcukqXtdqCSmUduGYNy6mOXj94opHwvAEY
+2019-11-19 13:50:59.113 [http-nio-8889-exec-2] INFO  o.j.m.demo.system.controller.CsmSysdictController:33 -  dictCode : csm_company
+2019-11-19 13:50:59.171 [http-nio-8889-exec-2] INFO  o.j.m.demo.system.controller.CsmSysdictController:42 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1194848454465736705, text=华为), DictModel(value=1194848507053920258, text=小米)], timestamp=1574142659164)
+2019-11-19 13:50:59.329 [http-nio-8889-exec-10] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : orderStatus
+2019-11-19 13:50:59.332 [http-nio-8889-exec-10] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1, text=待处理), DictModel(value=4, text=已销售), DictModel(value=5, text=已开票), DictModel(value=3, text=工具取回), DictModel(value=2, text=已送货)], timestamp=1574142659330)
+2019-11-19 13:51:03.182 [http-nio-8889-exec-9] INFO  o.j.m.demo.system.controller.CsmSysdictController:33 -  dictCode : csm_company
+2019-11-19 13:51:03.184 [http-nio-8889-exec-9] INFO  o.j.m.demo.system.controller.CsmSysdictController:42 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1194848454465736705, text=华为), DictModel(value=1194848507053920258, text=小米)], timestamp=1574142663183)
+2019-11-19 13:51:03.239 [http-nio-8889-exec-8] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : orderStatus
+2019-11-19 13:51:03.242 [http-nio-8889-exec-8] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1, text=待处理), DictModel(value=4, text=已销售), DictModel(value=5, text=已开票), DictModel(value=3, text=工具取回), DictModel(value=2, text=已送货)], timestamp=1574142663240)
+2019-11-19 13:51:08.311 [http-nio-8889-exec-3] INFO  org.jeecg.common.system.query.QueryGenerator:387 - --查询规则-->company_id = 1194848454465736705
+2019-11-19 13:51:12.818 [http-nio-8889-exec-1] INFO  org.jeecg.common.system.query.QueryGenerator:387 - --查询规则-->company_id = 1194848507053920258
+2019-11-19 14:23:46.043 [http-nio-8889-exec-4] INFO  o.j.m.system.controller.SysPermissionController:120 -  ------ 通过令牌获取用户拥有的访问菜单 ---- TOKEN ------ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzQxNDE5MjAsInVzZXJuYW1lIjoiYWRtaW4ifQ.mp0R-h8W_xcukqXtdqCSmUduGYNy6mOXj94opHwvAEY
+2019-11-19 14:24:21.311 [http-nio-8889-exec-9] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : orderStatus
+2019-11-19 14:24:21.869 [http-nio-8889-exec-10] INFO  o.j.m.demo.system.controller.CsmSysdictController:33 -  dictCode : csm_company
+2019-11-19 14:24:21.968 [http-nio-8889-exec-10] INFO  o.j.m.demo.system.controller.CsmSysdictController:42 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1194848454465736705, text=华为), DictModel(value=1194848507053920258, text=小米)], timestamp=1574144661870)
+2019-11-19 14:24:22.291 [http-nio-8889-exec-9] INFO  o.j.modules.system.service.impl.SysDictServiceImpl:48 - 无缓存dictCache的时候调用这里！
+2019-11-19 14:24:23.053 [http-nio-8889-exec-9] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1, text=待处理), DictModel(value=4, text=已销售), DictModel(value=5, text=已开票), DictModel(value=3, text=工具取回), DictModel(value=2, text=已送货)], timestamp=1574144661313)
+2019-11-19 14:24:28.878 [http-nio-8889-exec-3] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : orderStatus
+2019-11-19 14:24:28.890 [http-nio-8889-exec-3] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1, text=待处理), DictModel(value=4, text=已销售), DictModel(value=5, text=已开票), DictModel(value=3, text=工具取回), DictModel(value=2, text=已送货)], timestamp=1574144668878)
+2019-11-19 14:24:28.934 [http-nio-8889-exec-1] INFO  o.j.m.demo.system.controller.CsmSysdictController:33 -  dictCode : csm_company
+2019-11-19 14:24:28.974 [http-nio-8889-exec-1] INFO  o.j.m.demo.system.controller.CsmSysdictController:42 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1194848454465736705, text=华为), DictModel(value=1194848507053920258, text=小米)], timestamp=1574144668935)
+2019-11-19 14:24:48.145 [http-nio-8889-exec-3] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : orderStatus
+2019-11-19 14:24:48.147 [http-nio-8889-exec-3] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1, text=待处理), DictModel(value=4, text=已销售), DictModel(value=5, text=已开票), DictModel(value=3, text=工具取回), DictModel(value=2, text=已送货)], timestamp=1574144688145)
+2019-11-19 14:24:48.165 [http-nio-8889-exec-9] INFO  o.j.m.demo.system.controller.CsmSysdictController:33 -  dictCode : csm_company
+2019-11-19 14:24:48.167 [http-nio-8889-exec-9] INFO  o.j.m.demo.system.controller.CsmSysdictController:42 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1194848454465736705, text=华为), DictModel(value=1194848507053920258, text=小米)], timestamp=1574144688166)
+2019-11-19 14:24:52.529 [http-nio-8889-exec-1] INFO  org.jeecg.common.system.query.QueryGenerator:387 - --查询规则-->company_id = 1194848454465736705
+2019-11-19 14:25:13.619 [http-nio-8889-exec-8] INFO  o.j.m.system.controller.SysPermissionController:120 -  ------ 通过令牌获取用户拥有的访问菜单 ---- TOKEN ------ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzQxNDE5MjAsInVzZXJuYW1lIjoiYWRtaW4ifQ.mp0R-h8W_xcukqXtdqCSmUduGYNy6mOXj94opHwvAEY
+2019-11-19 14:25:15.213 [http-nio-8889-exec-4] INFO  o.j.m.demo.system.controller.CsmSysdictController:33 -  dictCode : csm_company
+2019-11-19 14:25:15.215 [http-nio-8889-exec-4] INFO  o.j.m.demo.system.controller.CsmSysdictController:42 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1194848454465736705, text=华为), DictModel(value=1194848507053920258, text=小米)], timestamp=1574144715213)
+2019-11-19 14:25:15.415 [http-nio-8889-exec-5] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : orderStatus
+2019-11-19 14:25:15.420 [http-nio-8889-exec-5] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1, text=待处理), DictModel(value=4, text=已销售), DictModel(value=5, text=已开票), DictModel(value=3, text=工具取回), DictModel(value=2, text=已送货)], timestamp=1574144715417)
+2019-11-19 14:34:09.596 [http-nio-8889-exec-4] INFO  o.j.m.demo.system.controller.CsmSysdictController:33 -  dictCode : csm_company
+2019-11-19 14:34:09.985 [http-nio-8889-exec-4] INFO  o.j.m.demo.system.controller.CsmSysdictController:42 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1194848454465736705, text=华为), DictModel(value=1194848507053920258, text=小米)], timestamp=1574145249596)
+2019-11-19 14:34:10.343 [http-nio-8889-exec-2] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : orderStatus
+2019-11-19 14:34:10.345 [http-nio-8889-exec-2] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1, text=待处理), DictModel(value=4, text=已销售), DictModel(value=5, text=已开票), DictModel(value=3, text=工具取回), DictModel(value=2, text=已送货)], timestamp=1574145250343)
+2019-11-19 15:38:15.529 [http-nio-8889-exec-5] ERROR o.a.c.c.C.[.[.[/jeecg-boot].[dispatcherServlet]:175 - Servlet.service() for servlet [dispatcherServlet] in context with path [/jeecg-boot] threw exception [org.apache.shiro.authc.AuthenticationException: Token失效，请重新登录] with root cause
+org.apache.shiro.authc.AuthenticationException: Token失效，请重新登录!
+	at org.jeecg.modules.shiro.authc.ShiroRealm.checkUserTokenIsEffect(ShiroRealm.java:119)
+	at org.jeecg.modules.shiro.authc.ShiroRealm.doGetAuthenticationInfo(ShiroRealm.java:94)
+	at org.apache.shiro.realm.AuthenticatingRealm.getAuthenticationInfo(AuthenticatingRealm.java:571)
+	at org.apache.shiro.authc.pam.ModularRealmAuthenticator.doSingleRealmAuthentication(ModularRealmAuthenticator.java:180)
+	at org.apache.shiro.authc.pam.ModularRealmAuthenticator.doAuthenticate(ModularRealmAuthenticator.java:267)
+	at org.apache.shiro.authc.AbstractAuthenticator.authenticate(AbstractAuthenticator.java:198)
+	at org.apache.shiro.mgt.AuthenticatingSecurityManager.authenticate(AuthenticatingSecurityManager.java:106)
+	at org.apache.shiro.mgt.DefaultSecurityManager.login(DefaultSecurityManager.java:274)
+	at org.apache.shiro.subject.support.DelegatingSubject.login(DelegatingSubject.java:260)
+	at org.jeecg.modules.shiro.authc.aop.JwtFilter.executeLogin(JwtFilter.java:51)
+	at org.jeecg.modules.shiro.authc.aop.JwtFilter.isAccessAllowed(JwtFilter.java:34)
+	at org.apache.shiro.web.filter.AccessControlFilter.onPreHandle(AccessControlFilter.java:162)
+	at org.apache.shiro.web.filter.PathMatchingFilter.isFilterChainContinued(PathMatchingFilter.java:203)
+	at org.apache.shiro.web.filter.PathMatchingFilter.preHandle(PathMatchingFilter.java:178)
+	at org.jeecg.modules.shiro.authc.aop.JwtFilter.preHandle(JwtFilter.java:71)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:131)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:387)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:124)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.web.trace.servlet.HttpTraceFilter.doFilterInternal(HttpTraceFilter.java:90)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.filterAndRecordMetrics(WebMvcMetricsFilter.java:117)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:106)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+2019-11-19 15:38:23.438 [http-nio-8889-exec-7] INFO  o.jeecg.modules.system.controller.LoginController:118 -  用户名:  管理员,退出成功！ 
+2019-11-19 15:38:30.196 [http-nio-8889-exec-9] INFO  o.j.m.system.controller.SysPermissionController:120 -  ------ 通过令牌获取用户拥有的访问菜单 ---- TOKEN ------ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzQxNTA5MDcsInVzZXJuYW1lIjoiYWRtaW4ifQ.DrrumcM0xRYiUMDOJnEDx_7H0ujmDg6WMg1TqctmseM
+2019-11-19 15:38:49.158 [http-nio-8889-exec-10] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : orderStatus
+2019-11-19 15:38:49.160 [http-nio-8889-exec-5] INFO  o.j.m.demo.system.controller.CsmSysdictController:33 -  dictCode : csm_company
+2019-11-19 15:38:49.321 [http-nio-8889-exec-7] INFO  o.j.m.demo.system.controller.CsmSysdictController:33 -  dictCode : csm_company
+2019-11-19 15:38:49.552 [http-nio-8889-exec-7] INFO  o.j.m.demo.system.controller.CsmSysdictController:42 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1194848454465736705, text=华为), DictModel(value=1194848507053920258, text=小米)], timestamp=1574149129322)
+2019-11-19 15:38:49.552 [http-nio-8889-exec-5] INFO  o.j.m.demo.system.controller.CsmSysdictController:42 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1194848454465736705, text=华为), DictModel(value=1194848507053920258, text=小米)], timestamp=1574149129191)
+2019-11-19 15:38:49.497 [http-nio-8889-exec-10] INFO  o.j.modules.system.service.impl.SysDictServiceImpl:48 - 无缓存dictCache的时候调用这里！
+2019-11-19 15:38:49.725 [http-nio-8889-exec-10] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1, text=待处理), DictModel(value=4, text=已销售), DictModel(value=5, text=已开票), DictModel(value=3, text=工具取回), DictModel(value=2, text=已送货)], timestamp=1574149129184)
+2019-11-19 15:38:53.219 [http-nio-8889-exec-3] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : csm_company
+2019-11-19 15:38:53.221 [http-nio-8889-exec-3] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1194848454465736705, text=华为), DictModel(value=1194848507053920258, text=小米)], timestamp=1574149133220)
+2019-11-19 15:38:53.600 [http-nio-8889-exec-2] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : orderStatus
+2019-11-19 15:38:53.602 [http-nio-8889-exec-2] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1, text=待处理), DictModel(value=4, text=已销售), DictModel(value=5, text=已开票), DictModel(value=3, text=工具取回), DictModel(value=2, text=已送货)], timestamp=1574149133600)
+2019-11-19 15:38:53.933 [http-nio-8889-exec-4] INFO  o.j.m.demo.system.controller.CsmSysdictController:33 -  dictCode : csm_company
+2019-11-19 15:38:53.954 [http-nio-8889-exec-4] INFO  o.j.m.demo.system.controller.CsmSysdictController:42 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1194848454465736705, text=华为), DictModel(value=1194848507053920258, text=小米)], timestamp=1574149133952)
+2019-11-19 15:39:34.788 [http-nio-8889-exec-2] INFO  o.j.m.demo.system.controller.CsmSysdictController:33 -  dictCode : csm_company
+2019-11-19 15:39:34.790 [http-nio-8889-exec-2] INFO  o.j.m.demo.system.controller.CsmSysdictController:42 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1194848454465736705, text=华为), DictModel(value=1194848507053920258, text=小米)], timestamp=1574149174789)
+2019-11-19 15:39:34.801 [http-nio-8889-exec-6] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : orderStatus
+2019-11-19 15:39:35.040 [http-nio-8889-exec-6] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1, text=待处理), DictModel(value=4, text=已销售), DictModel(value=5, text=已开票), DictModel(value=3, text=工具取回), DictModel(value=2, text=已送货)], timestamp=1574149174802)
+2019-11-19 15:39:35.164 [http-nio-8889-exec-3] INFO  o.j.m.demo.system.controller.CsmSysdictController:33 -  dictCode : csm_company
+2019-11-19 15:39:35.166 [http-nio-8889-exec-3] INFO  o.j.m.demo.system.controller.CsmSysdictController:42 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1194848454465736705, text=华为), DictModel(value=1194848507053920258, text=小米)], timestamp=1574149175165)
+2019-11-19 15:39:43.047 [http-nio-8889-exec-1] INFO  org.jeecg.common.system.query.QueryGenerator:387 - --查询规则-->customer_id = 1194848454465736705
+2019-11-19 15:41:47.544 [http-nio-8889-exec-9] INFO  o.j.m.system.controller.SysPermissionController:120 -  ------ 通过令牌获取用户拥有的访问菜单 ---- TOKEN ------ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzQxNTA5MDcsInVzZXJuYW1lIjoiYWRtaW4ifQ.DrrumcM0xRYiUMDOJnEDx_7H0ujmDg6WMg1TqctmseM
+2019-11-19 15:42:01.932 [http-nio-8889-exec-3] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : orderStatus
+2019-11-19 15:42:01.975 [http-nio-8889-exec-6] INFO  o.j.m.demo.system.controller.CsmSysdictController:33 -  dictCode : csm_company
+2019-11-19 15:42:02.025 [http-nio-8889-exec-3] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1, text=待处理), DictModel(value=4, text=已销售), DictModel(value=5, text=已开票), DictModel(value=3, text=工具取回), DictModel(value=2, text=已送货)], timestamp=1574149321933)
+2019-11-19 15:42:02.174 [http-nio-8889-exec-6] INFO  o.j.m.demo.system.controller.CsmSysdictController:42 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1194848454465736705, text=华为), DictModel(value=1194848507053920258, text=小米)], timestamp=1574149322011)
+2019-11-19 15:42:02.280 [http-nio-8889-exec-2] INFO  o.j.m.demo.system.controller.CsmSysdictController:33 -  dictCode : csm_company
+2019-11-19 15:42:02.396 [http-nio-8889-exec-2] INFO  o.j.m.demo.system.controller.CsmSysdictController:42 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1194848454465736705, text=华为), DictModel(value=1194848507053920258, text=小米)], timestamp=1574149322298)
+2019-11-19 15:42:07.329 [http-nio-8889-exec-4] INFO  o.j.m.demo.system.controller.CsmSysdictController:33 -  dictCode : csm_company
+2019-11-19 15:42:07.332 [http-nio-8889-exec-4] INFO  o.j.m.demo.system.controller.CsmSysdictController:42 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1194848454465736705, text=华为), DictModel(value=1194848507053920258, text=小米)], timestamp=1574149327330)
+2019-11-19 15:42:07.418 [http-nio-8889-exec-7] INFO  o.j.m.demo.system.controller.CsmSysdictController:33 -  dictCode : csm_company
+2019-11-19 15:42:07.422 [http-nio-8889-exec-7] INFO  o.j.m.demo.system.controller.CsmSysdictController:42 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1194848454465736705, text=华为), DictModel(value=1194848507053920258, text=小米)], timestamp=1574149327420)
+2019-11-19 15:42:08.091 [http-nio-8889-exec-3] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : orderStatus
+2019-11-19 15:42:08.093 [http-nio-8889-exec-3] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1, text=待处理), DictModel(value=4, text=已销售), DictModel(value=5, text=已开票), DictModel(value=3, text=工具取回), DictModel(value=2, text=已送货)], timestamp=1574149328092)
+2019-11-19 15:45:47.416 [http-nio-8889-exec-8] INFO  o.j.m.demo.system.controller.CsmSysdictController:33 -  dictCode : csm_company
+2019-11-19 15:45:47.433 [http-nio-8889-exec-8] INFO  o.j.m.demo.system.controller.CsmSysdictController:42 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1194848454465736705, text=华为), DictModel(value=1194848507053920258, text=小米)], timestamp=1574149547431)
+2019-11-19 15:45:47.694 [http-nio-8889-exec-6] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : orderStatus
+2019-11-19 15:45:47.697 [http-nio-8889-exec-6] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1, text=待处理), DictModel(value=4, text=已销售), DictModel(value=5, text=已开票), DictModel(value=3, text=工具取回), DictModel(value=2, text=已送货)], timestamp=1574149547695)
+2019-11-19 15:45:47.722 [http-nio-8889-exec-1] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : orderStatus
+2019-11-19 15:45:47.746 [http-nio-8889-exec-5] INFO  o.j.m.demo.system.controller.CsmSysdictController:33 -  dictCode : csm_company
+2019-11-19 15:45:47.944 [http-nio-8889-exec-1] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1, text=待处理), DictModel(value=4, text=已销售), DictModel(value=5, text=已开票), DictModel(value=3, text=工具取回), DictModel(value=2, text=已送货)], timestamp=1574149547940)
+2019-11-19 15:45:47.943 [http-nio-8889-exec-5] INFO  o.j.m.demo.system.controller.CsmSysdictController:42 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1194848454465736705, text=华为), DictModel(value=1194848507053920258, text=小米)], timestamp=1574149547940)
+2019-11-19 18:01:22.332 [main] INFO  org.jeecg.JeecgApplication:50 - Starting JeecgApplication on DESKTOP-89SVNT6 with PID 10660 (D:\CSM\jeecg-boot-master\jeecg-boot\jeecg-boot-module-system\target\classes started by dell in D:\CSM\jeecg-boot-master\jeecg-boot\jeecg-boot-module-system)
+2019-11-19 18:01:22.353 [main] INFO  org.jeecg.JeecgApplication:679 - The following profiles are active: dev
+2019-11-19 18:01:25.019 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:244 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-19 18:01:25.023 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:126 - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-19 18:01:25.175 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:182 - Finished Spring Data repository scanning in 123ms. Found 0 repository interfaces.
+2019-11-19 18:01:25.860 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'shiroConfig' of type [org.jeecg.config.ShiroConfig$$EnhancerBySpringCGLIB$$d3280ed5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 18:01:26.059 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'shiroRealm' of type [org.jeecg.modules.shiro.authc.ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 18:01:27.298 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 18:01:27.340 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 18:01:27.440 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$b322a53f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 18:01:27.740 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'spring.datasource.dynamic-com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 18:01:27.748 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$1cb11610] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 18:01:27.758 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'dsProcessor' of type [com.baomidou.dynamic.datasource.processor.DsHeaderProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 18:01:27.766 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'dynamicDatasourceAnnotationAdvisor' of type [com.baomidou.dynamic.datasource.aop.DynamicDataSourceAnnotationAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 18:01:27.793 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'spring.redis-org.springframework.boot.autoconfigure.data.redis.RedisProperties' of type [org.springframework.boot.autoconfigure.data.redis.RedisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 18:01:27.803 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration' of type [org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration$$EnhancerBySpringCGLIB$$c83c6389] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 18:01:28.202 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'lettuceClientResources' of type [io.lettuce.core.resource.DefaultClientResources] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 18:01:28.475 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'redisConnectionFactory' of type [org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 18:01:28.491 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'redisConfig' of type [org.jeecg.config.RedisConfig$$EnhancerBySpringCGLIB$$1df6961f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 18:01:28.580 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.apache.shiro.spring.boot.autoconfigure.ShiroBeanAutoConfiguration' of type [org.apache.shiro.spring.boot.autoconfigure.ShiroBeanAutoConfiguration$$EnhancerBySpringCGLIB$$c63b82ef] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 18:01:28.592 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'eventBus' of type [org.apache.shiro.event.support.DefaultEventBus] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 18:01:29.374 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:90 - Tomcat initialized with port(s): 8889 (http)
+2019-11-19 18:01:29.397 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8889"]
+2019-11-19 18:01:29.428 [main] INFO  org.apache.catalina.core.StandardService:173 - Starting service [Tomcat]
+2019-11-19 18:01:29.429 [main] INFO  org.apache.catalina.core.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-11-19 18:01:29.444 [main] INFO  org.apache.catalina.core.AprLifecycleListener:173 - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jre1.8.0_191\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Program Files/Java/jre1.8.0_191/bin/server;C:/Program Files/Java/jre1.8.0_191/bin;C:/Program Files/Java/jre1.8.0_191/lib/amd64;C:\Program Files (x86)\NetSarang\Xftp 6\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Java\jdk1.8.0_191\bin;C:\Program Files\Java\jdk1.8.0_191\jre\bin;D:\MYSQL\mysql-5.7.24-winx64\bin;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\nodejs\;C:\Program Files\TortoiseSVN\bin;C:\Users\dell\AppData\Local\Microsoft\WindowsApps;C:\Program Files\nodejs\node_global;C:\Users\dell\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\dell\AppData\Local\Yarn\bin;C:\Users\dell\AppData\Roaming\npm;C:\Users\dell\Desktop;;.]
+2019-11-19 18:01:29.683 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/jeecg-boot]:173 - Initializing Spring embedded WebApplicationContext
+2019-11-19 18:01:29.684 [main] INFO  org.springframework.web.context.ContextLoader:296 - Root WebApplicationContext: initialization completed in 7262 ms
+2019-11-19 18:01:30.203 [main] INFO  c.b.dynamic.datasource.DynamicDataSourceCreator:113 - 动态数据源-检测到druid存在,如配置中未指定type,druid会默认配置
+2019-11-19 18:01:32.971 [main] INFO  com.alibaba.druid.pool.DruidDataSource:1003 - {dataSource-1,master} inited
+2019-11-19 18:01:32.973 [main] INFO  c.b.dynamic.datasource.DynamicRoutingDataSource:203 - 初始共加载 1 个数据源
+2019-11-19 18:01:32.974 [main] INFO  c.b.dynamic.datasource.DynamicRoutingDataSource:142 - 动态数据源-加载 master 成功
+2019-11-19 18:01:32.974 [main] INFO  c.b.dynamic.datasource.DynamicRoutingDataSource:212 - 当前的默认数据源是单数据源，数据源名为 master
+2019-11-19 18:01:36.378 [main] INFO  org.quartz.impl.StdSchedulerFactory:1208 - Using default implementation for ThreadExecutor
+2019-11-19 18:01:36.411 [main] INFO  org.quartz.core.SchedulerSignalerImpl:61 - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2019-11-19 18:01:36.412 [main] INFO  org.quartz.core.QuartzScheduler:229 - Quartz Scheduler v.2.3.0 created.
+2019-11-19 18:01:36.418 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:672 - Using db table-based data access locking (synchronization).
+2019-11-19 18:01:36.420 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:145 - JobStoreCMT initialized.
+2019-11-19 18:01:36.421 [main] INFO  org.quartz.core.QuartzScheduler:294 - Scheduler meta-data: Quartz Scheduler (v2.3.0) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is not clustered.
+
+2019-11-19 18:01:36.422 [main] INFO  org.quartz.impl.StdSchedulerFactory:1362 - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2019-11-19 18:01:36.422 [main] INFO  org.quartz.impl.StdSchedulerFactory:1366 - Quartz scheduler version: 2.3.0
+2019-11-19 18:01:36.422 [main] INFO  org.quartz.core.QuartzScheduler:2287 - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@2330c995
+2019-11-19 18:01:38.965 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver:59 - Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-11-19 18:01:39.241 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping:69 - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-11-19 18:01:39.594 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor:171 - Initializing ExecutorService 'applicationTaskExecutor'
+2019-11-19 18:01:40.706 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper:160 - Context refreshed
+2019-11-19 18:01:40.736 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper:163 - Found 1 custom documentation plugin(s)
+2019-11-19 18:01:40.797 [main] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner:41 - Scanning for api listing references
+2019-11-19 18:01:41.101 [main] INFO  o.s.scheduling.quartz.SchedulerFactoryBean:726 - Starting Quartz Scheduler now
+2019-11-19 18:01:41.858 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:866 - Freed 0 triggers from 'acquired' / 'blocked' state.
+2019-11-19 18:01:42.006 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:876 - Recovering 0 jobs that were in-progress at the time of the last shut-down.
+2019-11-19 18:01:42.006 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:889 - Recovery complete.
+2019-11-19 18:01:42.008 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:896 - Removed 0 'complete' triggers.
+2019-11-19 18:01:42.048 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:901 - Removed 0 stale fired job entries.
+2019-11-19 18:01:42.050 [main] INFO  org.quartz.core.QuartzScheduler:547 - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2019-11-19 18:01:42.066 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Starting ProtocolHandler ["http-nio-8889"]
+2019-11-19 18:01:42.155 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:204 - Tomcat started on port(s): 8889 (http) with context path '/jeecg-boot'
+2019-11-19 18:01:42.158 [main] INFO  org.jeecg.JeecgApplication:59 - Started JeecgApplication in 20.405 seconds (JVM running for 21.53)
+2019-11-19 18:01:42.217 [main] INFO  org.jeecg.JeecgApplication:26 - 
+----------------------------------------------------------
+	Application Jeecg-Boot is running! Access URLs:
+	Local: 		http://localhost:8889/jeecg-boot/
+	External: 	http://192.168.60.108:8889/jeecg-boot/
+	swagger-ui: 	http://192.168.60.108:8889/jeecg-boot/swagger-ui.html
+	Doc: 		http://192.168.60.108:8889/jeecg-boot/doc.html
+----------------------------------------------------------
+2019-11-19 18:02:41.603 [http-nio-8889-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/jeecg-boot]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-11-19 18:02:41.625 [http-nio-8889-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet:524 - Initializing Servlet 'dispatcherServlet'
+2019-11-19 18:02:41.647 [http-nio-8889-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet:546 - Completed initialization in 22 ms
+2019-11-19 18:02:42.526 [http-nio-8889-exec-2] INFO  io.lettuce.core.EpollProvider:68 - Starting without optional epoll library
+2019-11-19 18:02:42.528 [http-nio-8889-exec-2] INFO  io.lettuce.core.KqueueProvider:70 - Starting without optional kqueue library
+2019-11-19 18:02:44.382 [http-nio-8889-exec-2] ERROR o.a.c.c.C.[.[.[/jeecg-boot].[dispatcherServlet]:175 - Servlet.service() for servlet [dispatcherServlet] in context with path [/jeecg-boot] threw exception [org.apache.shiro.authc.AuthenticationException: Token失效，请重新登录] with root cause
+org.apache.shiro.authc.AuthenticationException: Token失效，请重新登录!
+	at org.jeecg.modules.shiro.authc.ShiroRealm.checkUserTokenIsEffect(ShiroRealm.java:119)
+	at org.jeecg.modules.shiro.authc.ShiroRealm.doGetAuthenticationInfo(ShiroRealm.java:94)
+	at org.apache.shiro.realm.AuthenticatingRealm.getAuthenticationInfo(AuthenticatingRealm.java:571)
+	at org.apache.shiro.authc.pam.ModularRealmAuthenticator.doSingleRealmAuthentication(ModularRealmAuthenticator.java:180)
+	at org.apache.shiro.authc.pam.ModularRealmAuthenticator.doAuthenticate(ModularRealmAuthenticator.java:267)
+	at org.apache.shiro.authc.AbstractAuthenticator.authenticate(AbstractAuthenticator.java:198)
+	at org.apache.shiro.mgt.AuthenticatingSecurityManager.authenticate(AuthenticatingSecurityManager.java:106)
+	at org.apache.shiro.mgt.DefaultSecurityManager.login(DefaultSecurityManager.java:274)
+	at org.apache.shiro.subject.support.DelegatingSubject.login(DelegatingSubject.java:260)
+	at org.jeecg.modules.shiro.authc.aop.JwtFilter.executeLogin(JwtFilter.java:51)
+	at org.jeecg.modules.shiro.authc.aop.JwtFilter.isAccessAllowed(JwtFilter.java:34)
+	at org.apache.shiro.web.filter.AccessControlFilter.onPreHandle(AccessControlFilter.java:162)
+	at org.apache.shiro.web.filter.PathMatchingFilter.isFilterChainContinued(PathMatchingFilter.java:203)
+	at org.apache.shiro.web.filter.PathMatchingFilter.preHandle(PathMatchingFilter.java:178)
+	at org.jeecg.modules.shiro.authc.aop.JwtFilter.preHandle(JwtFilter.java:71)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:131)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:387)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:124)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.web.trace.servlet.HttpTraceFilter.doFilterInternal(HttpTraceFilter.java:90)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.filterAndRecordMetrics(WebMvcMetricsFilter.java:117)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:106)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+2019-11-19 18:02:46.444 [http-nio-8889-exec-1] INFO  o.jeecg.modules.system.controller.LoginController:118 -  用户名:  管理员,退出成功！ 
+2019-11-19 18:03:03.555 [http-nio-8889-exec-5] INFO  o.j.m.system.controller.SysPermissionController:120 -  ------ 通过令牌获取用户拥有的访问菜单 ---- TOKEN ------ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzQxNTk1ODEsInVzZXJuYW1lIjoiYWRtaW4ifQ.wvL7heuozgJE0PqoNM0vHVNtxf91so99powU0JvwVhw
+2019-11-19 18:03:12.954 [http-nio-8889-exec-4] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : cgform_table_type
+2019-11-19 18:03:13.005 [http-nio-8889-exec-4] INFO  o.j.modules.system.service.impl.SysDictServiceImpl:48 - 无缓存dictCache的时候调用这里！
+2019-11-19 18:03:13.162 [http-nio-8889-exec-4] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1, text=单表), DictModel(value=2, text=主表), DictModel(value=3, text=附表)], timestamp=1574157792955)
+2019-11-19 18:03:13.493 [http-nio-8889-exec-1] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : cgform_table_type
+2019-11-19 18:03:13.503 [http-nio-8889-exec-1] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1, text=单表), DictModel(value=2, text=主表), DictModel(value=3, text=附表)], timestamp=1574157793494)
+2019-11-19 18:07:43.259 [main] INFO  org.jeecg.JeecgApplication:50 - Starting JeecgApplication on DESKTOP-89SVNT6 with PID 15760 (D:\CSM\jeecg-boot-master\jeecg-boot\jeecg-boot-module-system\target\classes started by dell in D:\CSM\jeecg-boot-master\jeecg-boot\jeecg-boot-module-system)
+2019-11-19 18:07:43.266 [main] INFO  org.jeecg.JeecgApplication:679 - The following profiles are active: dev
+2019-11-19 18:07:45.942 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:244 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-19 18:07:45.946 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:126 - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-19 18:07:46.082 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:182 - Finished Spring Data repository scanning in 111ms. Found 0 repository interfaces.
+2019-11-19 18:07:46.683 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'shiroConfig' of type [org.jeecg.config.ShiroConfig$$EnhancerBySpringCGLIB$$1cfd01d9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 18:07:46.833 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'shiroRealm' of type [org.jeecg.modules.shiro.authc.ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 18:07:48.195 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 18:07:48.235 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 18:07:48.319 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$fcf79843] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 18:07:48.586 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'spring.datasource.dynamic-com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 18:07:48.591 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$66860914] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 18:07:48.600 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'dsProcessor' of type [com.baomidou.dynamic.datasource.processor.DsHeaderProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 18:07:48.608 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'dynamicDatasourceAnnotationAdvisor' of type [com.baomidou.dynamic.datasource.aop.DynamicDataSourceAnnotationAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 18:07:48.632 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'spring.redis-org.springframework.boot.autoconfigure.data.redis.RedisProperties' of type [org.springframework.boot.autoconfigure.data.redis.RedisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 18:07:48.641 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration' of type [org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration$$EnhancerBySpringCGLIB$$1211568d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 18:07:48.952 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'lettuceClientResources' of type [io.lettuce.core.resource.DefaultClientResources] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 18:07:49.131 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'redisConnectionFactory' of type [org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 18:07:49.145 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'redisConfig' of type [org.jeecg.config.RedisConfig$$EnhancerBySpringCGLIB$$67cb8923] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 18:07:49.193 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.apache.shiro.spring.boot.autoconfigure.ShiroBeanAutoConfiguration' of type [org.apache.shiro.spring.boot.autoconfigure.ShiroBeanAutoConfiguration$$EnhancerBySpringCGLIB$$101075f3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 18:07:49.201 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'eventBus' of type [org.apache.shiro.event.support.DefaultEventBus] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 18:07:49.992 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:90 - Tomcat initialized with port(s): 8889 (http)
+2019-11-19 18:07:50.012 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8889"]
+2019-11-19 18:07:50.033 [main] INFO  org.apache.catalina.core.StandardService:173 - Starting service [Tomcat]
+2019-11-19 18:07:50.033 [main] INFO  org.apache.catalina.core.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-11-19 18:07:50.045 [main] INFO  org.apache.catalina.core.AprLifecycleListener:173 - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jre1.8.0_191\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Program Files/Java/jre1.8.0_191/bin/server;C:/Program Files/Java/jre1.8.0_191/bin;C:/Program Files/Java/jre1.8.0_191/lib/amd64;C:\Program Files (x86)\NetSarang\Xftp 6\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Java\jdk1.8.0_191\bin;C:\Program Files\Java\jdk1.8.0_191\jre\bin;D:\MYSQL\mysql-5.7.24-winx64\bin;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\nodejs\;C:\Program Files\TortoiseSVN\bin;C:\Users\dell\AppData\Local\Microsoft\WindowsApps;C:\Program Files\nodejs\node_global;C:\Users\dell\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\dell\AppData\Local\Yarn\bin;C:\Users\dell\AppData\Roaming\npm;C:\Users\dell\Desktop;;.]
+2019-11-19 18:07:50.230 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/jeecg-boot]:173 - Initializing Spring embedded WebApplicationContext
+2019-11-19 18:07:50.233 [main] INFO  org.springframework.web.context.ContextLoader:296 - Root WebApplicationContext: initialization completed in 6908 ms
+2019-11-19 18:07:50.711 [main] INFO  c.b.dynamic.datasource.DynamicDataSourceCreator:113 - 动态数据源-检测到druid存在,如配置中未指定type,druid会默认配置
+2019-11-19 18:07:52.194 [main] INFO  com.alibaba.druid.pool.DruidDataSource:1003 - {dataSource-1,master} inited
+2019-11-19 18:07:52.195 [main] INFO  c.b.dynamic.datasource.DynamicRoutingDataSource:203 - 初始共加载 1 个数据源
+2019-11-19 18:07:52.195 [main] INFO  c.b.dynamic.datasource.DynamicRoutingDataSource:142 - 动态数据源-加载 master 成功
+2019-11-19 18:07:52.196 [main] INFO  c.b.dynamic.datasource.DynamicRoutingDataSource:212 - 当前的默认数据源是单数据源，数据源名为 master
+2019-11-19 18:07:56.757 [main] INFO  org.quartz.impl.StdSchedulerFactory:1208 - Using default implementation for ThreadExecutor
+2019-11-19 18:07:56.826 [main] INFO  org.quartz.core.SchedulerSignalerImpl:61 - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2019-11-19 18:07:56.827 [main] INFO  org.quartz.core.QuartzScheduler:229 - Quartz Scheduler v.2.3.0 created.
+2019-11-19 18:07:56.869 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:672 - Using db table-based data access locking (synchronization).
+2019-11-19 18:07:56.872 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:145 - JobStoreCMT initialized.
+2019-11-19 18:07:56.873 [main] INFO  org.quartz.core.QuartzScheduler:294 - Scheduler meta-data: Quartz Scheduler (v2.3.0) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is not clustered.
+
+2019-11-19 18:07:56.873 [main] INFO  org.quartz.impl.StdSchedulerFactory:1362 - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2019-11-19 18:07:56.874 [main] INFO  org.quartz.impl.StdSchedulerFactory:1366 - Quartz scheduler version: 2.3.0
+2019-11-19 18:07:56.874 [main] INFO  org.quartz.core.QuartzScheduler:2287 - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@a1689e8
+2019-11-19 18:07:59.569 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver:59 - Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-11-19 18:07:59.970 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping:69 - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-11-19 18:08:01.252 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor:171 - Initializing ExecutorService 'applicationTaskExecutor'
+2019-11-19 18:08:02.739 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper:160 - Context refreshed
+2019-11-19 18:08:02.787 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper:163 - Found 1 custom documentation plugin(s)
+2019-11-19 18:08:02.897 [main] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner:41 - Scanning for api listing references
+2019-11-19 18:08:03.681 [main] INFO  o.s.scheduling.quartz.SchedulerFactoryBean:726 - Starting Quartz Scheduler now
+2019-11-19 18:08:04.968 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:866 - Freed 0 triggers from 'acquired' / 'blocked' state.
+2019-11-19 18:08:05.174 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:876 - Recovering 0 jobs that were in-progress at the time of the last shut-down.
+2019-11-19 18:08:05.176 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:889 - Recovery complete.
+2019-11-19 18:08:05.180 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:896 - Removed 0 'complete' triggers.
+2019-11-19 18:08:05.181 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:901 - Removed 0 stale fired job entries.
+2019-11-19 18:08:05.185 [main] INFO  org.quartz.core.QuartzScheduler:547 - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2019-11-19 18:08:05.204 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Starting ProtocolHandler ["http-nio-8889"]
+2019-11-19 18:08:05.257 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:204 - Tomcat started on port(s): 8889 (http) with context path '/jeecg-boot'
+2019-11-19 18:08:05.262 [main] INFO  org.jeecg.JeecgApplication:59 - Started JeecgApplication in 22.519 seconds (JVM running for 23.477)
+2019-11-19 18:08:05.277 [main] INFO  org.jeecg.JeecgApplication:26 - 
+----------------------------------------------------------
+	Application Jeecg-Boot is running! Access URLs:
+	Local: 		http://localhost:8889/jeecg-boot/
+	External: 	http://192.168.60.108:8889/jeecg-boot/
+	swagger-ui: 	http://192.168.60.108:8889/jeecg-boot/swagger-ui.html
+	Doc: 		http://192.168.60.108:8889/jeecg-boot/doc.html
+----------------------------------------------------------
+2019-11-19 18:08:21.370 [http-nio-8889-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/jeecg-boot]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-11-19 18:08:21.371 [http-nio-8889-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:524 - Initializing Servlet 'dispatcherServlet'
+2019-11-19 18:08:21.405 [http-nio-8889-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:546 - Completed initialization in 34 ms
+2019-11-19 18:08:21.841 [http-nio-8889-exec-1] INFO  io.lettuce.core.EpollProvider:68 - Starting without optional epoll library
+2019-11-19 18:08:21.843 [http-nio-8889-exec-1] INFO  io.lettuce.core.KqueueProvider:70 - Starting without optional kqueue library
+2019-11-19 18:08:32.354 [http-nio-8889-exec-3] INFO  o.j.m.system.controller.SysPermissionController:120 -  ------ 通过令牌获取用户拥有的访问菜单 ---- TOKEN ------ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzQxNTk1ODEsInVzZXJuYW1lIjoiYWRtaW4ifQ.wvL7heuozgJE0PqoNM0vHVNtxf91so99powU0JvwVhw
+2019-11-19 18:08:45.769 [http-nio-8889-exec-8] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : cgform_table_type
+2019-11-19 18:08:45.825 [http-nio-8889-exec-8] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1, text=单表), DictModel(value=2, text=主表), DictModel(value=3, text=附表)], timestamp=1574158125770)
+2019-11-19 18:08:45.992 [http-nio-8889-exec-9] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : cgform_table_type
+2019-11-19 18:08:45.996 [http-nio-8889-exec-9] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1, text=单表), DictModel(value=2, text=主表), DictModel(value=3, text=附表)], timestamp=1574158125993)
+2019-11-19 18:09:55.533 [http-nio-8889-exec-1] INFO  o.j.m.system.controller.SysPermissionController:120 -  ------ 通过令牌获取用户拥有的访问菜单 ---- TOKEN ------ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzQxNTk1ODEsInVzZXJuYW1lIjoiYWRtaW4ifQ.wvL7heuozgJE0PqoNM0vHVNtxf91so99powU0JvwVhw
+2019-11-19 18:10:00.266 [http-nio-8889-exec-8] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : cgform_table_type
+2019-11-19 18:10:00.270 [http-nio-8889-exec-8] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1, text=单表), DictModel(value=2, text=主表), DictModel(value=3, text=附表)], timestamp=1574158200267)
+2019-11-19 18:10:00.597 [http-nio-8889-exec-6] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : cgform_table_type
+2019-11-19 18:10:00.601 [http-nio-8889-exec-6] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1, text=单表), DictModel(value=2, text=主表), DictModel(value=3, text=附表)], timestamp=1574158200598)
+2019-11-19 18:12:05.108 [main] INFO  org.jeecg.JeecgApplication:50 - Starting JeecgApplication on DESKTOP-89SVNT6 with PID 10448 (D:\CSM\jeecg-boot-master\jeecg-boot\jeecg-boot-module-system\target\classes started by dell in D:\CSM\jeecg-boot-master\jeecg-boot\jeecg-boot-module-system)
+2019-11-19 18:12:05.116 [main] INFO  org.jeecg.JeecgApplication:679 - The following profiles are active: dev
+2019-11-19 18:12:08.145 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:244 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-19 18:12:08.150 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:126 - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-19 18:12:08.400 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:182 - Finished Spring Data repository scanning in 222ms. Found 0 repository interfaces.
+2019-11-19 18:12:09.001 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'shiroConfig' of type [org.jeecg.config.ShiroConfig$$EnhancerBySpringCGLIB$$c51292a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 18:12:09.241 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'shiroRealm' of type [org.jeecg.modules.shiro.authc.ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 18:12:10.623 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 18:12:10.673 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 18:12:10.771 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$ec4bbf94] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 18:12:11.094 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'spring.datasource.dynamic-com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 18:12:11.100 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$55da3065] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 18:12:11.111 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'dsProcessor' of type [com.baomidou.dynamic.datasource.processor.DsHeaderProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 18:12:11.119 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'dynamicDatasourceAnnotationAdvisor' of type [com.baomidou.dynamic.datasource.aop.DynamicDataSourceAnnotationAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 18:12:11.144 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'spring.redis-org.springframework.boot.autoconfigure.data.redis.RedisProperties' of type [org.springframework.boot.autoconfigure.data.redis.RedisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 18:12:11.153 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration' of type [org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration$$EnhancerBySpringCGLIB$$1657dde] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 18:12:11.448 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'lettuceClientResources' of type [io.lettuce.core.resource.DefaultClientResources] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 18:12:11.676 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'redisConnectionFactory' of type [org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 18:12:11.709 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'redisConfig' of type [org.jeecg.config.RedisConfig$$EnhancerBySpringCGLIB$$571fb074] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 18:12:11.775 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.apache.shiro.spring.boot.autoconfigure.ShiroBeanAutoConfiguration' of type [org.apache.shiro.spring.boot.autoconfigure.ShiroBeanAutoConfiguration$$EnhancerBySpringCGLIB$$ff649d44] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 18:12:11.784 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'eventBus' of type [org.apache.shiro.event.support.DefaultEventBus] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-19 18:12:12.795 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:90 - Tomcat initialized with port(s): 8889 (http)
+2019-11-19 18:12:12.848 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8889"]
+2019-11-19 18:12:12.883 [main] INFO  org.apache.catalina.core.StandardService:173 - Starting service [Tomcat]
+2019-11-19 18:12:12.884 [main] INFO  org.apache.catalina.core.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-11-19 18:12:12.912 [main] INFO  org.apache.catalina.core.AprLifecycleListener:173 - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jre1.8.0_191\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Program Files/Java/jre1.8.0_191/bin/server;C:/Program Files/Java/jre1.8.0_191/bin;C:/Program Files/Java/jre1.8.0_191/lib/amd64;C:\Program Files (x86)\NetSarang\Xftp 6\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Java\jdk1.8.0_191\bin;C:\Program Files\Java\jdk1.8.0_191\jre\bin;D:\MYSQL\mysql-5.7.24-winx64\bin;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\nodejs\;C:\Program Files\TortoiseSVN\bin;C:\Users\dell\AppData\Local\Microsoft\WindowsApps;C:\Program Files\nodejs\node_global;C:\Users\dell\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\dell\AppData\Local\Yarn\bin;C:\Users\dell\AppData\Roaming\npm;C:\Users\dell\Desktop;;.]
+2019-11-19 18:12:13.713 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/jeecg-boot]:173 - Initializing Spring embedded WebApplicationContext
+2019-11-19 18:12:13.714 [main] INFO  org.springframework.web.context.ContextLoader:296 - Root WebApplicationContext: initialization completed in 8547 ms
+2019-11-19 18:12:14.293 [main] INFO  c.b.dynamic.datasource.DynamicDataSourceCreator:113 - 动态数据源-检测到druid存在,如配置中未指定type,druid会默认配置
+2019-11-19 18:12:16.324 [main] INFO  com.alibaba.druid.pool.DruidDataSource:1003 - {dataSource-1,master} inited
+2019-11-19 18:12:16.325 [main] INFO  c.b.dynamic.datasource.DynamicRoutingDataSource:203 - 初始共加载 1 个数据源
+2019-11-19 18:12:16.325 [main] INFO  c.b.dynamic.datasource.DynamicRoutingDataSource:142 - 动态数据源-加载 master 成功
+2019-11-19 18:12:16.326 [main] INFO  c.b.dynamic.datasource.DynamicRoutingDataSource:212 - 当前的默认数据源是单数据源，数据源名为 master
+2019-11-19 18:12:26.547 [main] INFO  org.quartz.impl.StdSchedulerFactory:1208 - Using default implementation for ThreadExecutor
+2019-11-19 18:12:26.575 [main] INFO  org.quartz.core.SchedulerSignalerImpl:61 - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2019-11-19 18:12:26.576 [main] INFO  org.quartz.core.QuartzScheduler:229 - Quartz Scheduler v.2.3.0 created.
+2019-11-19 18:12:26.581 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:672 - Using db table-based data access locking (synchronization).
+2019-11-19 18:12:26.585 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:145 - JobStoreCMT initialized.
+2019-11-19 18:12:26.586 [main] INFO  org.quartz.core.QuartzScheduler:294 - Scheduler meta-data: Quartz Scheduler (v2.3.0) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is not clustered.
+
+2019-11-19 18:12:26.587 [main] INFO  org.quartz.impl.StdSchedulerFactory:1362 - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2019-11-19 18:12:26.587 [main] INFO  org.quartz.impl.StdSchedulerFactory:1366 - Quartz scheduler version: 2.3.0
+2019-11-19 18:12:26.588 [main] INFO  org.quartz.core.QuartzScheduler:2287 - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@4a5c6b30
+2019-11-19 18:12:29.310 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver:59 - Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-11-19 18:12:30.163 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping:69 - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-11-19 18:12:30.549 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor:171 - Initializing ExecutorService 'applicationTaskExecutor'
+2019-11-19 18:12:31.814 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper:160 - Context refreshed
+2019-11-19 18:12:31.856 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper:163 - Found 1 custom documentation plugin(s)
+2019-11-19 18:12:31.925 [main] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner:41 - Scanning for api listing references
+2019-11-19 18:12:32.245 [main] INFO  o.s.scheduling.quartz.SchedulerFactoryBean:726 - Starting Quartz Scheduler now
+2019-11-19 18:12:32.630 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:866 - Freed 0 triggers from 'acquired' / 'blocked' state.
+2019-11-19 18:12:32.652 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:876 - Recovering 0 jobs that were in-progress at the time of the last shut-down.
+2019-11-19 18:12:32.653 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:889 - Recovery complete.
+2019-11-19 18:12:32.656 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:896 - Removed 0 'complete' triggers.
+2019-11-19 18:12:32.657 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:901 - Removed 0 stale fired job entries.
+2019-11-19 18:12:32.659 [main] INFO  org.quartz.core.QuartzScheduler:547 - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2019-11-19 18:12:32.679 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Starting ProtocolHandler ["http-nio-8889"]
+2019-11-19 18:12:32.728 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:204 - Tomcat started on port(s): 8889 (http) with context path '/jeecg-boot'
+2019-11-19 18:12:32.732 [main] INFO  org.jeecg.JeecgApplication:59 - Started JeecgApplication in 28.227 seconds (JVM running for 29.204)
+2019-11-19 18:12:32.750 [main] INFO  org.jeecg.JeecgApplication:26 - 
+----------------------------------------------------------
+	Application Jeecg-Boot is running! Access URLs:
+	Local: 		http://localhost:8889/jeecg-boot/
+	External: 	http://192.168.60.108:8889/jeecg-boot/
+	swagger-ui: 	http://192.168.60.108:8889/jeecg-boot/swagger-ui.html
+	Doc: 		http://192.168.60.108:8889/jeecg-boot/doc.html
+----------------------------------------------------------
+2019-11-19 18:12:41.830 [http-nio-8889-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/jeecg-boot]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-11-19 18:12:41.830 [http-nio-8889-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet:524 - Initializing Servlet 'dispatcherServlet'
+2019-11-19 18:12:41.854 [http-nio-8889-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet:546 - Completed initialization in 23 ms
+2019-11-19 18:12:42.246 [http-nio-8889-exec-2] INFO  io.lettuce.core.EpollProvider:68 - Starting without optional epoll library
+2019-11-19 18:12:42.248 [http-nio-8889-exec-2] INFO  io.lettuce.core.KqueueProvider:70 - Starting without optional kqueue library
+2019-11-19 18:12:43.514 [http-nio-8889-exec-2] INFO  o.j.m.system.controller.SysPermissionController:120 -  ------ 通过令牌获取用户拥有的访问菜单 ---- TOKEN ------ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzQxNTk1ODEsInVzZXJuYW1lIjoiYWRtaW4ifQ.wvL7heuozgJE0PqoNM0vHVNtxf91so99powU0JvwVhw
+2019-11-19 18:12:50.557 [http-nio-8889-exec-6] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : cgform_table_type
+2019-11-19 18:12:50.624 [http-nio-8889-exec-6] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1, text=单表), DictModel(value=2, text=主表), DictModel(value=3, text=附表)], timestamp=1574158370560)
+2019-11-19 18:12:50.990 [http-nio-8889-exec-8] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : cgform_table_type
+2019-11-19 18:12:50.998 [http-nio-8889-exec-8] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1, text=单表), DictModel(value=2, text=主表), DictModel(value=3, text=附表)], timestamp=1574158370991)
+2019-11-19 18:13:08.497 [http-nio-8889-exec-2] INFO  o.j.m.demo.system.controller.CsmSysdictController:33 -  dictCode : csm_company
+2019-11-19 18:13:08.500 [http-nio-8889-exec-1] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : orderStatus
+2019-11-19 18:13:08.539 [http-nio-8889-exec-1] INFO  o.j.modules.system.service.impl.SysDictServiceImpl:48 - 无缓存dictCache的时候调用这里！
+2019-11-19 18:13:08.654 [http-nio-8889-exec-1] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1, text=待处理), DictModel(value=4, text=已销售), DictModel(value=5, text=已开票), DictModel(value=3, text=工具取回), DictModel(value=2, text=已送货)], timestamp=1574158388501)
+2019-11-19 18:13:08.717 [http-nio-8889-exec-2] INFO  o.j.m.demo.system.controller.CsmSysdictController:42 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1194848454465736705, text=华为), DictModel(value=1194848507053920258, text=小米)], timestamp=1574158388498)
+2019-11-19 18:13:08.731 [http-nio-8889-exec-3] INFO  o.j.m.demo.system.controller.CsmSysdictController:33 -  dictCode : csm_company
+2019-11-19 18:13:08.733 [http-nio-8889-exec-3] INFO  o.j.m.demo.system.controller.CsmSysdictController:42 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1194848454465736705, text=华为), DictModel(value=1194848507053920258, text=小米)], timestamp=1574158388731)
+2019-11-19 18:13:13.163 [http-nio-8889-exec-5] INFO  o.j.m.demo.system.controller.CsmSysdictController:33 -  dictCode : csm_company
+2019-11-19 18:13:13.163 [http-nio-8889-exec-6] INFO  o.j.modules.system.controller.SysDictController:127 -  dictCode : orderStatus
+2019-11-19 18:13:13.182 [http-nio-8889-exec-6] INFO  o.j.modules.system.controller.SysDictController:160 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1, text=待处理), DictModel(value=4, text=已销售), DictModel(value=5, text=已开票), DictModel(value=3, text=工具取回), DictModel(value=2, text=已送货)], timestamp=1574158393166)
+2019-11-19 18:13:13.182 [http-nio-8889-exec-5] INFO  o.j.m.demo.system.controller.CsmSysdictController:42 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1194848454465736705, text=华为), DictModel(value=1194848507053920258, text=小米)], timestamp=1574158393166)
+2019-11-19 18:13:13.405 [http-nio-8889-exec-7] INFO  o.j.m.demo.system.controller.CsmSysdictController:33 -  dictCode : csm_company
+2019-11-19 18:13:13.407 [http-nio-8889-exec-7] INFO  o.j.m.demo.system.controller.CsmSysdictController:42 - Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1194848454465736705, text=华为), DictModel(value=1194848507053920258, text=小米)], timestamp=1574158393406)

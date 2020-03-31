@@ -31,7 +31,7 @@
       </a-form>
     </div>
     <!-- 查询区域-END -->
-
+    
     <!-- 操作按钮区域 -->
     <div class="table-operator">
       <a-button @click="handleAdd" type="primary" icon="plus">新增</a-button>
@@ -65,7 +65,7 @@
         :loading="loading"
         :rowSelection="{selectedRowKeys: selectedRowKeys, onChange: onSelectChange}"
         @change="handleTableChange">
-
+        
         <template slot="imgSlot" slot-scope="text">
           <span v-if="!text" style="font-size: 12px;font-style: italic;">无此图片</span>
           <img v-else :src="getImgView(text)" height="25px" alt="图片不存在" style="max-width:80px;font-size: 12px;font-style: italic;"/>
@@ -84,7 +84,7 @@
         </template>
 
         <span slot="action" slot-scope="text, record">
-          <a @click="handleEdit(record); ctrlDisable(0,'edit');">编辑</a>
+          <a @click="handleEdit(record)">编辑</a>
 
           <a-divider type="vertical" />
           <a-dropdown>
@@ -109,7 +109,7 @@
 <script>
 
   import { JeecgListMixin } from '@/mixins/JeecgListMixin'
-  import CsmPurchaseModal from './modules/CsmPurchaseModal'
+  import CsmPurchaseModal from './modules/CsmPurchaseModal1'
   import JDictSelectTag from '@/components/dict/JDictSelectTag.vue'
   import JDate from '@/components/jeecg/JDate.vue'
   import {initDictOptions, filterMultiDictText} from '@/components/dict/JDictSelectUtil'
@@ -182,7 +182,7 @@
         },
         dictOptions:{
          status:[],
-        }
+        } 
       }
     },
     computed: {
@@ -190,38 +190,15 @@
         return `${window._CONFIG['domianURL']}/${this.url.importExcelUrl}`;
       }
     },
-    mounted() {
-    },
     methods: {
-      initDictConfig() {
+      initDictConfig(){
         initDictOptions('purchaseStatus').then((res) => {
           if (res.success) {
             this.$set(this.dictOptions, 'status', res.result)
           }
         })
-      },
-      //判断模态框是否可以编辑
-      ctrlDisable(status, text) {
-        if (status == 1) {
-          this.$refs.modalForm.ModalDisabled = true
-        } else {
-          this.$refs.modalForm.ModalDisabled = false
-        }
-        if (text == 'add') {
-          this.$refs.modalForm.modalStatus = 'add'
-          this.$refs.modalForm.tabIndex = 0
-          this.$refs.modalForm.addCurrent = 0
-        }
-        if (text == 'edit') {
-          this.$refs.modalForm.modalStatus = 'edit'
-          this.$refs.modalForm.tabIndex = 0
-          this.$refs.modalForm.editCurrent = 0
-        }
-        if (text == 'look') {
-          this.$refs.modalForm.modalStatus = 'look'
-          this.$refs.modalForm.tabIndex = 1
-        }
       }
+       
     }
   }
 </script>

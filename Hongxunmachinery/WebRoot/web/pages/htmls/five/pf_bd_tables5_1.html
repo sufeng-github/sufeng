@@ -1,0 +1,775 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <title>工作台</title> 
+
+<link href="../../css/base.css" rel="stylesheet">
+<link rel="stylesheet" href="../../../custom/uimaker/easyui.css">
+<link rel="stylesheet" href="../../../custom/uimaker/icon.css">
+<link rel="stylesheet" href="./rectangles.css">
+</head> 
+<body>
+    <div class="container">
+        <div id="hd">
+            
+        </div>
+
+        <div id="bd">
+            <div class="bd-content">
+                <div class="center-part">
+                    <div  class="center-hd">
+                        <div>
+                            <span class="con-span">选择车间: </span>
+                            <select class="easyui-combobox chejian" name="language">
+                                <option value="AL">第一车间</option>
+                                <option value="AK">第二车间</option>
+                                <option value="AZ">第三车间</option>
+                                <option value="AR">第四车间</option>
+                                <option value="CA">第五车间</option>
+                                <option value="CO">第六车间</option>
+                                <option value="CT">第七车间</option>
+                                <option value="DE">第八车间</option>
+                            </select>
+                            <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search'" style="height:20px;width:0px">查询</a>
+                        </div>
+                        <div class = "margin-top-5">
+                            <table>
+                                <tr>
+                                    <td><div class="width-100">设备组 </div></td>
+                                    <td><input type="checkbox" class="hw-15">自定义设备组6台</td>
+                                    <td><input type="checkbox" class="hw-15">二车间本周重点设备</td>
+                                </tr>
+                                <tr>
+                                    <td><div class="width-100">设备运行状态 </div> </td>
+                                    <td><input type="checkbox" class="hw-15">离线设备10台  </td>
+                                    <td><input type="checkbox" class="hw-15">在线/停车5台  </td>
+                                    <td><input type="checkbox" class="hw-15">在线/运行7台  </td>
+                                </tr>
+                                <tr>
+                                    <td><div class="width-100">工单生产状态 </div> </td>
+                                    <td><input type="checkbox" class="hw-15">无工单 1台  </td>
+                                    <td><input type="checkbox" class="hw-15">工单未开始 11台  </td>
+                                    <td><input type="checkbox" class="hw-15">待转产1台  </td>
+                                    <td><input type="checkbox" class="hw-15 ml">转产0台</td>
+                                    <td><input type="checkbox" class="hw-15 ml">待调机1台</td>
+                                    <td><input type="checkbox" class="hw-15 ml">调机1台  </td>
+                                    <td><input type="checkbox" class="hw-15 ml">生产20台  </td>
+                                    <td><input type="checkbox" class="hw-15 ml">工单完成1台  </td>
+                                </tr>
+                            </table>
+                        </div>
+                            
+            
+                    </div>  
+                          
+                    <div class="center-items todo">
+                        <!--
+                        <div class="calendar-part">
+                             <div class="easyui-calendar" style="width:205px;height:231px;"></div>
+                        </div>
+                        -->
+                        <ul class="work-items clearfix">
+                            <li>
+                                <div class="work-inner">
+                                    <div class="work-item green">
+                                        <div class="horizontaldiv h80"  align="center">
+                                            <div class ="floatdiv-20">
+                                                <div  class="floatdiv-20-top">#21</div>
+                                                <div  class="floatdiv-20-bottom">
+                                                   <div class ="floatdiv-20-bottom-img"  > <img src="./img/user.png" width=30px height=30px/></div>
+                                                    <div class ="floatdiv-20-bottom-text">在线/运行</div>
+                                                </div>
+                                            </div>
+                                            <div class="divsplit h80"></div>
+                                            <div class="floatdiv-79">
+                                                <div class="floatdiv-79-top"><img src="./img/user.png" width=30px height=30px/>
+                                                </div>
+                                                 
+                                                <div class="horizontaldiv h50" align="center">
+                                                     <div class="floatletf-69" >生产</div>
+                                                     <div class="divsplit h50" ></div>
+                                                     <div class="floatdiv-30">
+                                                        <div class="floatdiv-30-top"> <img src="./img/user.png" width=30px height=30px/></div>
+                                                        <div class="floatdiv-30-bottom">告警</div>
+                                                     </div>
+                              
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                        <div  class="horizontaldiv h2" align="center">
+                                             <div class="floatleft w3p_h2"></div>
+                                             <div class="floatleft w94p_h2"></div>
+                                             <div class="floatleft w3p_h2"></div>
+                                        </div>
+                                        <div class="horizontaldiv h20" style=" margin-top:5px" align="center">
+                                            <div class="floatleft w5p_h20"></div>
+                                            <div class="floatleft w35p_h20">生产工单：</div>
+                                            <div class="floatleft w60p_h20">12521532654</div>
+                                        </div>
+                                        <div class="horizontaldiv h20" align="center">
+                                            <div class="floatleft w5p_h20"></div>
+                                            <div class="floatleft w35p_h20">产品编码：</div>
+                                            <div class="floatleft w60p_h20">125212654</div>
+                                        </div>
+                                            <div class="horizontaldiv h20" align="center">
+                                            <div class="floatleft w5p_h20"></div>
+                                            <div class="floatleft w35p_h20">产品名称：</div>
+                                            <div class="floatleft w60p_h20">saiuusafdkdkfs</div>
+                                        </div>
+                                        <div class="horizontaldiv h20" align="center">
+                                            <div class="floatleft w5p_h20"></div>
+                                            <div class="floatleft w35p_h20">计划生产数量：</div>
+                                            <div class="floatleft w60p_h20">125212654</div>
+                                        </div>
+                                        <div class="horizontaldiv h20" align="center">
+                                            <div class="floatleft w5p_h20"></div>
+                                            <div class="floatleft w35p_h20">实际生产数量：</div>
+                                            <div class="floatleft w60p_h20">125212654</div>
+                                        </div>
+                                        <div class="horizontaldiv h20" align="center">
+                                            <div class="floatleft w5p_h20"></div>
+                                            <div class="floatleft w35p_h20">合格数量：</div>
+                                            <div class="floatleft w60p_h20">125212654</div>
+                                        </div>
+                                        <div class="horizontaldiv h20" align="center">
+                                            <div class="floatleft w5p_h20"></div>
+                                            <div class="floatleft w35p_h20">生产进度：</div>
+                                            <div class="floatleft w60p_h20">
+                                                <div class="easyui-progressbar" data-options="value:60"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="work-inner">
+                                    <div class="work-item green">
+                                        <div class="horizontaldiv h80"  align="center">
+                                            <div class ="floatdiv-20">
+                                                <div  class="floatdiv-20-top">#21</div>
+                                                <div  class="floatdiv-20-bottom">
+                                                   <div class ="floatdiv-20-bottom-img"  > <img src="./img/user.png" width=30px height=30px/></div>
+                                                    <div class ="floatdiv-20-bottom-text">在线/运行</div>
+                                                </div>
+                                            </div>
+                                            <div class="divsplit h80"></div>
+                                            <div class="floatdiv-79">
+                                                <div class="floatdiv-79-top"><img src="./img/user.png" width=30px height=30px/>
+                                                </div>
+                                                 
+                                                <div class="horizontaldiv h50" align="center">
+                                                     <div class="floatletf-69" >生产</div>
+                                                     <div class="divsplit h50" ></div>
+                                                     <div class="floatdiv-30">
+                                                        <div class="floatdiv-30-top"> <img src="./img/user.png" width=30px height=30px/></div>
+                                                        <div class="floatdiv-30-bottom">告警</div>
+                                                     </div>
+                              
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                        <div  class="horizontaldiv h2" align="center">
+                                             <div class="floatleft w3p_h2"></div>
+                                             <div class="floatleft w94p_h2"></div>
+                                             <div class="floatleft w3p_h2"></div>
+                                        </div>
+                                        <div class="horizontaldiv h20" style=" margin-top:5px" align="center">
+                                            <div class="floatleft w5p_h20"></div>
+                                            <div class="floatleft w35p_h20">生产工单：</div>
+                                            <div class="floatleft w60p_h20">12521532654</div>
+                                        </div>
+                                        <div class="horizontaldiv h20" align="center">
+                                            <div class="floatleft w5p_h20"></div>
+                                            <div class="floatleft w35p_h20">产品编码：</div>
+                                            <div class="floatleft w60p_h20">125212654</div>
+                                        </div>
+                                            <div class="horizontaldiv h20" align="center">
+                                            <div class="floatleft w5p_h20"></div>
+                                            <div class="floatleft w35p_h20">产品名称：</div>
+                                            <div class="floatleft w60p_h20">saiuusafdkdkfs</div>
+                                        </div>
+                                        <div class="horizontaldiv h20" align="center">
+                                            <div class="floatleft w5p_h20"></div>
+                                            <div class="floatleft w35p_h20">计划生产数量：</div>
+                                            <div class="floatleft w60p_h20">125212654</div>
+                                        </div>
+                                        <div class="horizontaldiv h20" align="center">
+                                            <div class="floatleft w5p_h20"></div>
+                                            <div class="floatleft w35p_h20">实际生产数量：</div>
+                                            <div class="floatleft w60p_h20">125212654</div>
+                                        </div>
+                                        <div class="horizontaldiv h20" align="center">
+                                            <div class="floatleft w5p_h20"></div>
+                                            <div class="floatleft w35p_h20">合格数量：</div>
+                                            <div class="floatleft w60p_h20">125212654</div>
+                                        </div>
+                                        <div class="horizontaldiv h20" align="center">
+                                            <div class="floatleft w5p_h20"></div>
+                                            <div class="floatleft w35p_h20">生产进度：</div>
+                                            <div class="floatleft w60p_h20">
+                                                <div class="easyui-progressbar" data-options="value:60"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="work-inner">
+                                    <div class="work-item green">
+                                        <div class="horizontaldiv h80"  align="center">
+                                            <div class ="floatdiv-20">
+                                                <div  class="floatdiv-20-top">#21</div>
+                                                <div  class="floatdiv-20-bottom">
+                                                   <div class ="floatdiv-20-bottom-img"  > <img src="./img/user.png" width=30px height=30px/></div>
+                                                    <div class ="floatdiv-20-bottom-text">在线/运行</div>
+                                                </div>
+                                            </div>
+                                            <div class="divsplit h80"></div>
+                                            <div class="floatdiv-79">
+                                                <div class="floatdiv-79-top"><img src="./img/user.png" width=30px height=30px/>
+                                                </div>
+                                                 
+                                                <div class="horizontaldiv h50" align="center">
+                                                     <div class="floatletf-69" >生产</div>
+                                                     <div class="divsplit h50" ></div>
+                                                     <div class="floatdiv-30">
+                                                        <div class="floatdiv-30-top"> <img src="./img/user.png" width=30px height=30px/></div>
+                                                        <div class="floatdiv-30-bottom">告警</div>
+                                                     </div>
+                              
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                        <div  class="horizontaldiv h2" align="center">
+                                             <div class="floatleft w3p_h2"></div>
+                                             <div class="floatleft w94p_h2"></div>
+                                             <div class="floatleft w3p_h2"></div>
+                                        </div>
+                                        <div class="horizontaldiv h20" style=" margin-top:5px" align="center">
+                                            <div class="floatleft w5p_h20"></div>
+                                            <div class="floatleft w35p_h20">生产工单：</div>
+                                            <div class="floatleft w60p_h20">12521532654</div>
+                                        </div>
+                                        <div class="horizontaldiv h20" align="center">
+                                            <div class="floatleft w5p_h20"></div>
+                                            <div class="floatleft w35p_h20">产品编码：</div>
+                                            <div class="floatleft w60p_h20">125212654</div>
+                                        </div>
+                                            <div class="horizontaldiv h20" align="center">
+                                            <div class="floatleft w5p_h20"></div>
+                                            <div class="floatleft w35p_h20">产品名称：</div>
+                                            <div class="floatleft w60p_h20">saiuusafdkdkfs</div>
+                                        </div>
+                                        <div class="horizontaldiv h20" align="center">
+                                            <div class="floatleft w5p_h20"></div>
+                                            <div class="floatleft w35p_h20">计划生产数量：</div>
+                                            <div class="floatleft w60p_h20">125212654</div>
+                                        </div>
+                                        <div class="horizontaldiv h20" align="center">
+                                            <div class="floatleft w5p_h20"></div>
+                                            <div class="floatleft w35p_h20">实际生产数量：</div>
+                                            <div class="floatleft w60p_h20">125212654</div>
+                                        </div>
+                                        <div class="horizontaldiv h20" align="center">
+                                            <div class="floatleft w5p_h20"></div>
+                                            <div class="floatleft w35p_h20">合格数量：</div>
+                                            <div class="floatleft w60p_h20">125212654</div>
+                                        </div>
+                                        <div class="horizontaldiv h20" align="center">
+                                            <div class="floatleft w5p_h20"></div>
+                                            <div class="floatleft w35p_h20">生产进度：</div>
+                                            <div class="floatleft w60p_h20">
+                                                <div class="easyui-progressbar" data-options="value:60"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="work-inner">
+                                    <div class="work-item green">
+                                        <div class="horizontaldiv h80"  align="center">
+                                            <div class ="floatdiv-20">
+                                                <div  class="floatdiv-20-top">#21</div>
+                                                <div  class="floatdiv-20-bottom">
+                                                   <div class ="floatdiv-20-bottom-img"  > <img src="./img/user.png" width=30px height=30px/></div>
+                                                    <div class ="floatdiv-20-bottom-text">在线/运行</div>
+                                                </div>
+                                            </div>
+                                            <div class="divsplit h80"></div>
+                                            <div class="floatdiv-79">
+                                                <div class="floatdiv-79-top"><img src="./img/user.png" width=30px height=30px/>
+                                                </div>
+                                                 
+                                                <div class="horizontaldiv h50" align="center">
+                                                     <div class="floatletf-69" >生产</div>
+                                                     <div class="divsplit h50" ></div>
+                                                     <div class="floatdiv-30">
+                                                        <div class="floatdiv-30-top"> <img src="./img/user.png" width=30px height=30px/></div>
+                                                        <div class="floatdiv-30-bottom">告警</div>
+                                                     </div>
+                              
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                        <div  class="horizontaldiv h2" align="center">
+                                             <div class="floatleft w3p_h2"></div>
+                                             <div class="floatleft w94p_h2"></div>
+                                             <div class="floatleft w3p_h2"></div>
+                                        </div>
+                                        <div class="horizontaldiv h20" style=" margin-top:5px" align="center">
+                                            <div class="floatleft w5p_h20"></div>
+                                            <div class="floatleft w35p_h20">生产工单：</div>
+                                            <div class="floatleft w60p_h20">12521532654</div>
+                                        </div>
+                                        <div class="horizontaldiv h20" align="center">
+                                            <div class="floatleft w5p_h20"></div>
+                                            <div class="floatleft w35p_h20">产品编码：</div>
+                                            <div class="floatleft w60p_h20">125212654</div>
+                                        </div>
+                                            <div class="horizontaldiv h20" align="center">
+                                            <div class="floatleft w5p_h20"></div>
+                                            <div class="floatleft w35p_h20">产品名称：</div>
+                                            <div class="floatleft w60p_h20">saiuusafdkdkfs</div>
+                                        </div>
+                                        <div class="horizontaldiv h20" align="center">
+                                            <div class="floatleft w5p_h20"></div>
+                                            <div class="floatleft w35p_h20">计划生产数量：</div>
+                                            <div class="floatleft w60p_h20">125212654</div>
+                                        </div>
+                                        <div class="horizontaldiv h20" align="center">
+                                            <div class="floatleft w5p_h20"></div>
+                                            <div class="floatleft w35p_h20">实际生产数量：</div>
+                                            <div class="floatleft w60p_h20">125212654</div>
+                                        </div>
+                                        <div class="horizontaldiv h20" align="center">
+                                            <div class="floatleft w5p_h20"></div>
+                                            <div class="floatleft w35p_h20">合格数量：</div>
+                                            <div class="floatleft w60p_h20">125212654</div>
+                                        </div>
+                                        <div class="horizontaldiv h20" align="center">
+                                            <div class="floatleft w5p_h20"></div>
+                                            <div class="floatleft w35p_h20">生产进度：</div>
+                                            <div class="floatleft w60p_h20">
+                                                <div class="easyui-progressbar" data-options="value:60"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="work-inner">
+                                    <div class="work-item purple">
+                                         <i class="iconfont">&#xe61e;</i>
+                                        <span title="2000,00万" class="num">100,00&nbsp;<span class="unit">万</span></span>
+                                        <label>已完成的合同金额</label>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="work-inner">
+                                    <div class="work-item gray">
+                                         <i class="iconfont">&#xe620;</i>
+                                        <span class="num">10&nbsp;<span class="unit">个</span></span>
+                                        <label>供应商开发</label>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="work-inner">
+                                    <div class="work-item gray">
+                                         <i class="iconfont">&#xe620;</i>
+                                        <span class="num">10&nbsp;<span class="unit">个</span></span>
+                                        <label>供应商开发</label>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="work-inner">
+                                    <div class="work-item gray">
+                                         <i class="iconfont">&#xe620;</i>
+                                        <span class="num">10&nbsp;<span class="unit">个</span></span>
+                                        <label>供应商开发</label>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="work-inner">
+                                    <div class="work-item gray">
+                                         <i class="iconfont">&#xe620;</i>
+                                        <span class="num">10&nbsp;<span class="unit">个</span></span>
+                                        <label>供应商开发</label>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="work-inner">
+                                    <div class="work-item gray">
+                                         <i class="iconfont">&#xe620;</i>
+                                        <span class="num">10&nbsp;<span class="unit">个</span></span>
+                                        <label>供应商开发</label>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="work-inner">
+                                    <div class="work-item gray">
+                                         <i class="iconfont">&#xe620;</i>
+                                        <span class="num">10&nbsp;<span class="unit">个</span></span>
+                                        <label>供应商开发</label>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="work-inner">
+                                    <div class="work-item gray">
+                                         <i class="iconfont">&#xe620;</i>
+                                        <span class="num">10&nbsp;<span class="unit">个</span></span>
+                                        <label>供应商开发</label>
+                                    </div>
+                                </div>
+                            </li>     
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="ft"></div>
+    </div>
+    <div class="todo-panel">
+         <div class="todo-title">
+            <i class="iconfont">&#xe61f;</i>
+            <span class="num">14&nbsp;<span class="unit">个</span></span>
+            <label>待办未处理</label>
+        </div>
+        <div class="todo-items">
+            <ul>
+                <li>
+                    <span></span>
+                    <a href="javascript:;" class="ellipsis">您有<span>2条</span>供应商开发申请未处理<i></i></a>
+                    <label>04-13</label>
+                </li>
+                <li>
+                    <span></span>
+                    <a href="javascript:;" class="ellipsis">您有<span>10条</span>供应商开发申请未处理<i></i></a></a>
+                    <label>04-13</label>
+                </li>
+                <li>
+                    <span></span>
+                    <a href="javascript:;" class="ellipsis">您有<span>0条</span>供应商开发申请未处理，请及时审批<i></i></a></a>
+                    <label>04-13</label>
+                </li>
+                <li>
+                    <span></span>
+                    <a href="javascript:;" class="ellipsis">您有<span>1条</span>供应商开发申请未处理，请及时审批</a></a>
+                    <label>04-13</label>
+                </li>
+                <li>
+                    <span></span>
+                    <a href="javascript:;" class="ellipsis">您有<span>4条</span>供应商开发申请未处理，请及时审批</a></a>
+                    <label>04-13</label>
+                </li>
+                <li>
+                    <span></span>
+                    <a href="javascript:;" class="ellipsis">您有<span>6条</span>供应商开发申请未处理，请及时审批，未处理会导致失效</a></a>
+                    <label>04-13</label>
+                </li>
+                <li>
+                    <span></span>
+                    <a href="javascript:;" class="ellipsis">您有<span>2条</span>供应商开发申请未处理，请及时审批，未处理会导致失效</a></a>
+                    <label>04-13</label>
+                </li>
+                <li>
+                    <span></span>
+                    <a href="javascript:;" class="ellipsis">您有<span>2条</span>供应商开发申请未处理，请及时审批，未处理会导致失效</a></a>
+                    <label>04-13</label>
+                </li>
+                <li>
+                    <span></span>
+                    <a href="javascript:;" class="ellipsis">您有<span>2条</span>供应商开发申请未处理，请及时审批，未处理</a></a>
+                    <label>04-13</label>
+                </li>
+                <li>
+                    <span></span>
+                    <a href="javascript:;" class="ellipsis">您有<span>2条</span>供应商开发申请未处理，请及时审批，未处理会导致失效</a></a>
+                    <label>04-13</label>
+                </li>
+                <li>
+                    <span></span>
+                    <a href="javascript:;" class="ellipsis">您有<span>2条</span>供应商开发申请未处理，未处理会导致失效</a></a>
+                    <label>04-13</label>
+                </li>
+                <li>
+                    <span></span>
+                    <a href="javascript:;" class="ellipsis">您有<span>2条</span>开发申请未处理，请及时审批，未处理会导致失效</a></a>
+                    <label>04-13</label>
+                </li>
+                <li>
+                    <span></span>
+                    <a href="javascript:;" class="ellipsis">您有<span>2条</span>供应商开发申请未处理，请及时审批，未处理会导致失效</a></a>
+                    <label>04-13</label>
+                </li>
+                <li>
+                    <span></span>
+                    <a href="javascript:;" class="ellipsis">您有<span>2条</span>供应商开发申请未处理，请及时审批，会导致失效</a></a>
+                    <label>04-13</label>
+                </li>
+                <li>
+                    <span></span>
+                    <a href="javascript:;" class="ellipsis">您有<span>2条</span>供应商开发申请未处理，请及时审批，未处理</a></a>
+                    <label>04-13</label>
+                </li>
+                <li>
+                    <span></span>
+                    <a href="javascript:;" class="ellipsis">您有<span>2条</span>供应商开发申请未处理，请及时审批</a></a>
+                    <label>04-13</label>
+                </li>
+            </ul>
+        </div>
+        
+    </div>
+    <script type="text/javascript" src="../../../custom/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../custom/jquery.easyui.min.js"></script>
+    <!-- <script type="text/javascript" src="js/menu.js"></script> -->
+
+    
+    <script type="text/javascript">
+    //chart0
+
+    $(document).ready(function(){
+       /* var option0 = {
+            tooltip : {
+                trigger: 'item',
+                formatter: "{a} <br/>{b} : {c} ({d}%)"
+            },
+            legend: {
+                orient : 'vertical',
+                x : 'left',
+                data:['直接访问','邮件营销','联盟广告','视频广告','搜索引擎'],
+                show:false
+            },
+            toolbox: {
+                show : false,
+                feature : {
+                    mark : {show: true},
+                    dataView : {show: true, readOnly: false},
+                    magicType : {
+                        show: true, 
+                        type: ['pie', 'funnel'],
+                        option: {
+                            funnel: {
+                                x: '25%',
+                                width: '50%',
+                                funnelAlign: 'center',
+                                max: 1548
+                            }
+                        }
+                    },
+                    restore : {show: true},
+                    saveAsImage : {show: true}
+                }
+            },
+            calculable : true,
+            series : [
+                {
+                    name:'访问来源',
+                    type:'pie',
+                    radius : ['50%', '70%'],
+                    itemStyle : {
+                        normal : {
+                            label : {
+                                show : false
+                            },
+                            labelLine : {
+                                show : false
+                            }
+                        },
+                        emphasis : {
+                            label : {
+                                show : true,
+                                position : 'center',
+                                textStyle : {
+                                    fontSize : '30',
+                                    fontWeight : 'bold'
+                                }
+                            }
+                        }
+                    },
+                    data:[
+                        {value:335, name:'直接访问'},
+                        {value:310, name:'邮件营销'},
+                        {value:234, name:'联盟广告'},
+                        {value:135, name:'视频广告'},
+                        {value:1548, name:'搜索引擎'}
+                    ]
+                }
+            ]
+        };
+
+      var myChart0 = echarts.init(document.getElementById('chart0'));
+      myChart0.setOption(option0);
+
+      //chart1
+     var option1 = {
+            tooltip : {
+                trigger: 'axis'
+            },
+            legend: {
+                data:['邮件营销','联盟广告','视频广告','直接访问','搜索引擎'],
+                show:false
+            },
+            toolbox: {
+                show : false,
+                feature : {
+                    mark : {show: true},
+                    dataView : {show: true, readOnly: false},
+                    magicType : {show: true, type: ['line', 'bar', 'stack', 'tiled']},
+                    restore : {show: true},
+                    saveAsImage : {show: true}
+                }
+            },
+            calculable : true,
+            xAxis : [
+                {
+                    type : 'category',
+                    boundaryGap : false,
+                    data : ['第一周','第二周','第三周','第四周','第五周','第六周','第七周']
+                }
+            ],
+            yAxis : [
+                {
+                    type : 'value'
+                }
+            ],
+            series : [
+                {
+                    name:'邮件营销',
+                    type:'line',
+                    stack: '总量',
+                    data:[120, 132, 101, 134, 90, 230, 210]
+                },
+                {
+                    name:'联盟广告',
+                    type:'line',
+                    stack: '总量',
+                    data:[220, 182, 191, 234, 290, 330, 310]
+                },
+                {
+                    name:'视频广告',
+                    type:'line',
+                    stack: '总量',
+                    data:[150, 232, 201, 154, 190, 330, 410]
+                },
+                {
+                    name:'直接访问',
+                    type:'line',
+                    stack: '总量',
+                    data:[320, 332, 301, 334, 390, 330, 320]
+                },
+                {
+                    name:'搜索引擎',
+                    type:'line',
+                    stack: '总量',
+                    data:[820, 932, 901, 934, 1290, 1330, 1320]
+                }
+            ]
+        };
+        var myChart1 = echarts.init(document.getElementById('chart1'));
+        myChart1.setOption(option1);
+
+        var option3 = {
+            tooltip : {
+                trigger: 'axis'
+            },
+            legend: {
+                data:['蒸发量'],
+                show:false
+            },
+            toolbox: {
+                show : false,
+                feature : {
+                    mark : {show: true},
+                    dataView : {show: true, readOnly: false},
+                    magicType : {show: true, type: ['line', 'bar']},
+                    restore : {show: true},
+                    saveAsImage : {show: true}
+                }
+            },
+            calculable : true,
+            xAxis : [
+                {
+                    type : 'category',
+                    data : ['采购组织','供应商','新物料','uimaker','信息管理','业务系统','采购商']
+                }
+            ],
+            yAxis : [
+                {
+                    type : 'value'
+                }
+            ],
+            series : [
+                {
+                    name:'蒸发量',
+                    type:'bar',
+                    data:[60, 45, 73, 23, 37, 48, 18],
+                    markPoint : {
+                        data : [
+                            {type : 'max', name: '最大值'},
+                            {type : 'min', name: '最小值'}
+                        ]
+                    },
+                    markLine : {
+                        data : [
+                            {type : 'average', name: '平均值'}
+                        ]
+                    }
+                }
+            ]
+        };
+
+        var myChart3 = echarts.init(document.getElementById('chart3'));
+        myChart3.setOption(option3);         
+          */
+        //我的待办点击事件
+        $(document).on('click','.work-item.green',function(event){
+            var width = (2 * $(this).width()) + 10;
+            $(".todo-panel").width(width -2).css({top:$(this).offset().top,left:$(this).offset().left}).show();
+            event.stopPropagation();
+        });  
+        $(document).on('click','.work-item.red',function(event){
+            var width = (2 * $(this).width()) + 10;
+            $(".todo-panel").width(width -2).css({top:$(this).offset().top,left:$(this).offset().left}).show();
+            event.stopPropagation();
+        });  
+        $(document).on('click','.work-item.yellow',function(event){
+            var width = (2 * $(this).width()) + 10;
+            $(".todo-panel").width(width -2).css({top:$(this).offset().top,left:$(this).offset().left}).show();
+            event.stopPropagation();
+        });
+        $(".todo-panel").click(function(){
+             event.stopPropagation();
+        });    
+        $(document).click(function(){
+            $(".todo-panel").hide();
+        });      
+
+    });
+        
+    //公开附件tab事件处理
+    $(".attached-tab").on("click","a",function(){
+        $(this).closest(".attached-tab").find("a").removeClass("current");
+        $(this).addClass("current");
+        $(this).closest(".attached").find("ul").addClass("hide");   
+        $(this).closest(".attached").find("ul." + $(this).attr("attached")).removeClass("hide");    
+    })
+                    
+    </script>
+</body> 
+</html>

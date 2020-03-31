@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+   <head>
+       <meta charset="utf-8">
+        
+		<link href="../../css/base.css" rel="stylesheet">
+		<link rel="stylesheet" href="../../../custom/uimaker/easyui.css">
+		<link rel="stylesheet" type="text/css" href="../../../custom/uimaker/icon.css">
+		<link rel="stylesheet" href="../../css/providers1.css">
+   </head>
+   <body style="height: 100%; margin: 0">
+       <div id="container" style="height: 25%"></div>
+<!--      
+	   <div class="container" style="width:100%;height: 75% "  >
+	       <table id="dg" style="width:60%;text-align:center;" title="计划管理->订单计划" data-options="
+	                rownumbers:true,
+	                singleSelect:false,
+	                autoRowHeight:false,
+	                pagination:true,
+	                fitColumns:true,
+	                striped:true,
+	                checkOnSelect:false,
+	                selectOnCheck:false,
+	                collapsible:true,
+	                toolbar:'#tb',
+	                pageSize:10">
+	            <thead>
+	                <tr>
+	                	<th data-options="field:'ck',checkbox:true"></th>	
+	                    <th field="code" width="110">计划项</th>
+	                    <th field="name" width="226">订单编号</th>
+	                    <th field="level" width="112">产品编号</th>
+	                    <th field="provide" width="170">产品名称</th>
+	                    <th field="full" width="130">订单数量</th>
+	                    <th field="issubmit" width="136">开始日期</th>
+	                    <th field="status" width="120">结束日期</th>
+	                </tr>
+	            </thead>
+	        </table>
+	      <div id="tb" style="padding:0 30px;">
+	        <div class="conditions hide">
+	            <span class="con-span">供应商编码: </span><input class="easyui-textbox" type="text" name="code" style="width:166px;height:35px;line-height:35px;"></input>
+	            <span class="con-span">供应商名称: </span><input class="easyui-textbox" type="text" name="name" style="width:166px;height:35px;line-height:35px;"></input>
+	            <a href="#" class="easyui-linkbutton" iconCls="icon-search" data-options="selected:true">查询</a>
+	            <a href="#" class="easyui-linkbutton" iconCls="icon-reload">重置</a>
+	            <a href="#" class="easyui-linkbutton more" iconCls="icon-more">更多</a>
+	        </div>
+	        <div class="conditions">
+	            <span class="con-span">订单编号: </span><input class="easyui-textbox" type="text" name="code" style="width:166px;height:35px;line-height:35px;"></input>
+	            <span class="con-span">订单数量: </span><input class="easyui-textbox" type="text" name="code" style="width:166px;height:35px;line-height:35px;"></input>
+	        </div>
+	        <div class="conditions"> 
+	            <span class="con-span">产品编码: </span><input class="easyui-textbox" type="text" name="code" style="width:166px;height:35px;line-height:35px;"></input>
+	            <span class="con-span">产品名称: </span><input class="easyui-textbox" type="text" name="code" style="width:166px;height:35px;line-height:35px;"></input>
+	        </div>
+	        <div class="conditions">
+			 	<span class="con-span">计划日期: </span><input class="easyui-datetimebox" style="width:166px;height:35px;line-height:35px;">
+	            <span class="con-span">至 </span><input class="easyui-datetimebox" style="width:166px;height:35px;line-height:35px;">
+	            <span class="con-span">发货日期: </span><input class="easyui-datetimebox" style="width:166px;height:35px;line-height:35px;">
+	        </div>
+	        <div class="opt-buttons">
+	            <a href="#" class="easyui-linkbutton" data-options="selected:true">新增</a>
+	            <a href="#" class="easyui-linkbutton">删除</a>
+	            <a href="#" class="easyui-linkbutton">编辑</a>
+	            <a href="#" class="easyui-linkbutton">详情</a>
+	
+	        </div>
+	      </div>
+	   </div>
+	     --> 
+	   <!-- 
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+       <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+        -->
+       
+       <script type="text/javascript" src="../../../../echarts/echarts.js"></script>
+       <script type="text/javascript" src="../../../custom/jquery.min.js"></script>
+       <script type="text/javascript" src="../../../custom/jquery.easyui.min.js"></script>
+       <script type="text/javascript" src="../../../custom/easyui-lang-zh_CN.js"></script>
+       <script type="text/javascript">
+			var dom = document.getElementById("container");
+			var myChart = echarts.init(dom);
+			var app = {};
+			option = null;
+			
+			var data = [];
+			var dataCount = 10;
+			var startTime = 0;//+new Date();
+			var categories = ['打砂机'];
+			var types = [
+			    {name: 'JS Heap', color: '#7b9ce1'},
+			    {name: 'Documents', color: '#bd6d6c'},
+			    {name: 'Nodes', color: '#75d874'},
+			    {name: 'Listeners', color: '#e0bc78'}
+			];
+			
+			// Generate mock data
+			echarts.util.each(categories, function (c1ategory, index) {
+			    var baseTime = startTime;
+			    for (var i = 0; i < dataCount; i++) {
+			        /*
+			        var typeItem = types[Math.round(Math.random() * (types.length - 1))];
+			        var duration = Math.round(Math.random() * 10000);
+			        var typeItem = types[Math.round(Math.random() * (types.length - 1))];
+			        */
+			        var typeItem = types[Math.round(Math.random() * (types.length - 1))];
+			        var duration = 100;//Math.round(Math.random() * 10000);
+			        data.push({
+			            name: typeItem.name,
+			            value: [
+			                index,
+			                baseTime,
+			                baseTime += duration,
+			                duration
+			            ],
+			            itemStyle: {
+			                normal: {
+			                    color:typeItem.color
+			                }
+			            }
+			        });
+			        baseTime += 0;//Math.round(Math.random() * 2000);
+			    }
+			   // alert('length:' + data.length);
+			});
+			
+			function renderItem(params, api) {
+			    var categoryIndex = api.value(0);
+			    var start = api.coord([api.value(1), categoryIndex]);
+			    var end = api.coord([api.value(2), categoryIndex]);
+			    var height = api.size([0, 1])[1] * 0.6;
+			
+			    var rectShape = echarts.graphic.clipRectByRect({
+			        x: start[0],
+			        y: start[1] - height / 2,
+			        width: end[0] - start[0],
+			        height: height
+			    }, {
+			        x: params.coordSys.x,
+			        y: params.coordSys.y,
+			        width: params.coordSys.width,
+			        height: params.coordSys.height
+			    });
+			
+			    return rectShape && {
+			        type: 'rect',
+			        shape: rectShape,
+			        style: api.style()
+			    };
+			}
+			
+			
+			option = {
+			    tooltip: {
+			        formatter: function (params) {
+			            return params.marker + params.name + ': ' + params.value[3] + ' ms';
+			        }
+			    },
+			    title: {
+			        text: '打砂机实时状态图',
+			        left: 'center'
+			    },
+			    dataZoom: [{
+			        type: 'slider',
+			        filterMode: 'weakFilter',
+			        showDataShadow: false,
+			        top: 400,
+			        height: 10,
+			        borderColor: 'transparent',
+			        backgroundColor: '#e2e2e2',
+			        handleIcon: 'M10.7,11.9H9.3c-4.9,0.3-8.8,4.4-8.8,9.4c0,5,3.9,9.1,8.8,9.4h1.3c4.9-0.3,8.8-4.4,8.8-9.4C19.5,16.3,15.6,12.2,10.7,11.9z M13.3,24.4H6.7v-1.2h6.6z M13.3,22H6.7v-1.2h6.6z M13.3,19.6H6.7v-1.2h6.6z', // jshint ignore:line
+			        handleSize: 20,
+			        handleStyle: {
+			            shadowBlur: 6,
+			            shadowOffsetX: 1,
+			            shadowOffsetY: 2,
+			            shadowColor: '#aaa'
+			        },
+			        labelFormatter: ''
+			    }, {
+			        type: 'inside',
+			        filterMode: 'weakFilter'
+			    }],
+			    grid: {
+			        height:80
+			    },
+			    xAxis: {
+			        min: startTime,
+			        max: 1440,
+			        interval: 60,
+			        axisLabel:{
+			            formatter: function (val,index) {
+			                console.info(val);
+			                var sss=val/60 + 'h';
+			            return sss;
+			            }
+			        }
+			    },
+			    yAxis: {
+			        data: categories
+			    },
+			    series: [{
+			        type: 'custom',
+			        renderItem: renderItem,
+			        itemStyle: {
+			            normal: {
+			                opacity: 0.8
+			            }
+			        },
+			        encode: {
+			            x: [1, 2],
+			            y: 0
+			        },
+			        data: data
+			    }]
+			};;
+			if (option && typeof option === "object") {
+			    myChart.setOption(option, false);
+			}
+       </script>
+       
+	   <script type="text/javascript">
+	   /*         (function($){
+	            function pagerFilter(data){
+	                if ($.isArray(data)){   // is array
+	                    data = {
+	                        total: data.length,
+	                        rows: data
+	                    }
+	                }
+	                var target = this;
+	                var dg = $(target);
+	                var state = dg.data('datagrid');
+	                var opts = dg.datagrid('options');
+	                if (!state.allRows){
+	                    state.allRows = (data.rows);
+	                }
+	                if (!opts.remoteSort && opts.sortName){
+	                    var names = opts.sortName.split(',');
+	                    var orders = opts.sortOrder.split(',');
+	                    state.allRows.sort(function(r1,r2){
+	                        var r = 0;
+	                        for(var i=0; i<names.length; i++){
+	                            var sn = names[i];
+	                            var so = orders[i];
+	                            var col = $(target).datagrid('getColumnOption', sn);
+	                            var sortFunc = col.sorter || function(a,b){
+	                                return a==b ? 0 : (a>b?1:-1);
+	                            };
+	                            r = sortFunc(r1[sn], r2[sn]) * (so=='asc'?1:-1);
+	                            if (r != 0){
+	                                return r;
+	                            }
+	                        }
+	                        return r;
+	                    });
+	                }
+	                var start = (opts.pageNumber-1)*parseInt(opts.pageSize);
+	                var end = start + parseInt(opts.pageSize);
+	                data.rows = state.allRows.slice(start, end);
+	                return data;
+	            }
+	
+	            var loadDataMethod = $.fn.datagrid.methods.loadData;
+	            var deleteRowMethod = $.fn.datagrid.methods.deleteRow;
+	            $.extend($.fn.datagrid.methods, {
+	                clientPaging: function(jq){
+	                    return jq.each(function(){
+	                        var dg = $(this);
+	                        var state = dg.data('datagrid');
+	                        var opts = state.options;
+	                        opts.loadFilter = pagerFilter;
+	                        var onBeforeLoad = opts.onBeforeLoad;
+	                        opts.onBeforeLoad = function(param){
+	                            state.allRows = null;
+	                            return onBeforeLoad.call(this, param);
+	                        }
+	                        var pager = dg.datagrid('getPager');
+	                        pager.pagination({
+	                            onSelectPage:function(pageNum, pageSize){
+	                                opts.pageNumber = pageNum;
+	                                opts.pageSize = pageSize;
+	                                pager.pagination('refresh',{
+	                                    pageNumber:pageNum,
+	                                    pageSize:pageSize
+	                                });
+	                                dg.datagrid('loadData',state.allRows);
+	                            }
+	                        });
+	                        $(this).datagrid('loadData', state.data);
+	                        if (opts.url){
+	                            $(this).datagrid('reload');
+	                        }
+	                    });
+	                },
+	                loadData: function(jq, data){
+	                    jq.each(function(){
+	                        $(this).data('datagrid').allRows = null;
+	                    });
+	                    return loadDataMethod.call($.fn.datagrid.methods, jq, data);
+	                },
+	                deleteRow: function(jq, index){
+	                    return jq.each(function(){
+	                        var row = $(this).datagrid('getRows')[index];
+	                        deleteRowMethod.call($.fn.datagrid.methods, $(this), index);
+	                        var state = $(this).data('datagrid');
+	                        if (state.options.loadFilter == pagerFilter){
+	                            for(var i=0; i<state.allRows.length; i++){
+	                                if (state.allRows[i] == row){
+	                                    state.allRows.splice(i,1);
+	                                    break;
+	                                }
+	                            }
+	                            $(this).datagrid('loadData', state.allRows);
+	                        }
+	                    });
+	                },
+	                getAllRows: function(jq){
+	                    return jq.data('datagrid').allRows;
+	                }
+	            })
+	        })(jQuery);
+	        
+	        function getData(){
+	            var rows = [];
+	            for(var i=1; i<=800; i++){
+	                rows.push({
+	                    code: 'V',
+	                    name: 'DD201809035',
+	                    level: 'F432040659500',
+	                    provide: '上段导轨装配（组合套件）B型<560KN',
+	                    full: '35',
+	                    issubmit: '2018/05/03',
+	                    status:'2018/01/02'
+	                });
+	            }
+	            return rows;
+	        }
+	        
+	        $(function(){
+	            $('#dg').datagrid({data:getData()}).datagrid('clientPaging');
+	        });    
+	
+	
+	        $(".more").click(function(){
+	            $(this).closest(".conditions").siblings().toggleClass("hide");
+	        });*/
+	    </script>
+   </body>
+</html>

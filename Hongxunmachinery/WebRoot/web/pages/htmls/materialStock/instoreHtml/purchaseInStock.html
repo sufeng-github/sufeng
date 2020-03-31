@@ -1,0 +1,82 @@
+﻿
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <title>基本信息</title> 
+   	<link rel="stylesheet" type="text/css" href="../../../../../jquery-easyui-1.7.0/themes/icon.css">
+ 	<link rel="stylesheet" href="../../../../../jquery-easyui-1.7.0/themes/default/easyui.css"> 
+    <script type="text/javascript" src="../../../../../jquery-easyui-1.7.0/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../../../jquery-easyui-1.7.0/jquery.easyui.min.js"></script> 
+   	<script type="text/javascript" src="../../../js/myjs/xlsx.js"></script>
+    <script type="text/javascript" src="../../../js/myjs/datagrid-export.js"></script>
+ 	<script type="text/javascript" src="../../../js/myjs/materialReadOnly.js"></script>
+    <script type="text/javascript" src="../../../js/myjs/myjs.js"></script>    
+    <script type="text/javascript" src="../../../js/myjs/gridHeader.js"></script> 
+    <script type="text/javascript" src="../../../../custom/easyui-lang-zh_CN.js"></script>
+
+</head>
+
+<body>
+
+	<div class="easyui-layout" data-options="fit:true">
+		<div data-options="region:'center'"
+			style="padding:0px;background:#eee;">
+			<div id="tt" class="easyui-tabs1" style="width:100%;height:100%;">
+			</div>
+		</div>
+	</div>
+
+
+	<script type="text/javascript">
+		
+        $('.easyui-tabs1').tabs({
+          	tabHeight: 26,   	
+        });
+        function getDialogTitle(){
+        	return window.parent.window.getDlgOrderNumID("#dialog");
+        }
+
+        function getPurchaseNumID(){
+        	return window.parent.window.getPurchaseNumID("#dialog");
+		}
+	
+		function getPurchaseItemsInstoreData() {
+			var tab = $('#tt').tabs('getTab', '采购入库单');
+			var iframeWindow = tab.find('iframe')[0].contentWindow;
+			return iframeWindow.$('#tt').datagrid("getData");
+		}
+		function getFatherDeItemStr() {
+		     return "material";
+		}
+		function addTab(title, url) {
+			if ($('#tt').tabs('exists', title)) {
+				$('#tt').tabs('select', title);
+			} else {
+				var content = '<iframe scrolling="auto" frameborder="0"  src="' + url + '" style="width:100%;height:100%;"></iframe>';
+				$('#tt').tabs('add', {
+					title : title,
+					content : content,
+					closable : false
+				});
+			}
+		}
+	
+		$(function() {
+			setTimeout(function() {
+				addTab('采购入库单', '../../planMag/analysisHtml/purchaseItem.jsp');
+				addTab('采购扫码入库', './purchaseItemInStock.jsp');
+			}, 300);
+		});
+	
+		$(window).resize(function(){
+	    	$('.easyui-tabs1').tabs("resize");
+	    }).resize(); 
+	    
+	</script>
+
+</body> 
+</html>
+
+

@@ -15,7 +15,7 @@ import org.jeecg.common.aspect.annotation.Dict;
 /**
  * @Description: csm_hospital
  * @Author: jeecg-boot
- * @Date:   2019-11-20
+ * @Date:   2019-12-18
  * @Version: V1.0
  */
 @Data
