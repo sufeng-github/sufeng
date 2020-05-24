@@ -11,7 +11,7 @@
       <a-form :form="form">
 
         <a-form-item label="手术类型" :labelCol="labelCol" :wrapperCol="wrapperCol">
-          <j-dict-select-tag type="list" v-decorator="['opeId']" :trigger-change="true" dictCode="" placeholder="请选择手术类型"/>
+          <m-dict-select-tag type="list" v-decorator="['opeId']" :trigger-change="true" dictCode="csm_operations_info" placeholder="请选择手术类型"/>
         </a-form-item>
           
         <a-form-item label="日期" :labelCol="labelCol" :wrapperCol="wrapperCol">
@@ -19,15 +19,15 @@
         </a-form-item>
           
         <a-form-item label="工具箱" :labelCol="labelCol" :wrapperCol="wrapperCol">
-          <j-dict-select-tag type="list" v-decorator="['toolId']" :trigger-change="true" dictCode="" placeholder="请选择工具箱"/>
+          <m-dict-select-tag type="list" v-decorator="['toolId']" :trigger-change="true" dictCode="csm_toolbox_info" placeholder="请选择工具箱"/>
         </a-form-item>
           
         <a-form-item label="螺钉架" :labelCol="labelCol" :wrapperCol="wrapperCol">
-          <j-dict-select-tag type="list" v-decorator="['scrId']" :trigger-change="true" dictCode="" placeholder="请选择螺钉架"/>
+          <m-dict-select-tag type="list" v-decorator="['scrId']" :trigger-change="true" dictCode="csm_screw_info" placeholder="请选择螺钉架"/>
         </a-form-item>
           
         <a-form-item label="医院" :labelCol="labelCol" :wrapperCol="wrapperCol">
-          <j-dict-select-tag type="list" v-decorator="['hospitalId']" :trigger-change="true" dictCode="" placeholder="请选择医院"/>
+          <m-dict-select-tag type="list" v-decorator="['hospitalId']" :trigger-change="true" dictCode="csm_hospital" placeholder="请选择医院"/>
         </a-form-item>
           
         <a-form-item label="患者" :labelCol="labelCol" :wrapperCol="wrapperCol">
@@ -62,6 +62,55 @@
         
       </a-form>
     </a-spin>
+   <!-- <a-collapse v-model="activeKey_collapse" class="modal_myCollapse" :bordered="false">
+      <a-collapse-panel header="工作单元" key="1" :forceRender="true">
+        <div v-if="!ModalDisabled" class="btnRow table-operator marginB10">
+          <a-button @click="addOrEditDetail(1)" type="primary" icon="plus" size="small">新增</a-button>
+          <a-button type="primary" icon="download" @click="handleExportXls('供应商资料')" size="small">导出</a-button>
+          <a-upload name="file" :showUploadList="false" :multiple="false" >
+            <a-button type="primary" icon="import" size="small">导入</a-button>
+          </a-upload>
+        </div>
+
+        <a-table
+          ref="table"
+          size="middle"
+          bordered
+          rowKey="id"
+          :columns="columns"
+          :dataSource="dataSource"
+          :loading="loading"
+        >
+              <span slot="action" slot-scope="text, record" class="tableActionNoBorder">
+                <a-tooltip>
+                  <template slot="title">编辑工作单元名称</template>
+                  <a
+                    @click="editUnitName(record.id,record.name);"
+                    v-if="permitCtrl.isCanEdit && !ModalDisabled "
+                  >
+                    <a-icon type="edit" />
+                  </a>
+                </a-tooltip>
+
+                <a-tooltip>
+                  <template slot="title">编辑设备</template>
+                  <a
+                    @click="editDevice(record.id,record.name);"
+                    v-if="permitCtrl.isCanEdit && !ModalDisabled "
+                  >
+                    <a-icon type="ordered-list" />
+                  </a>
+                </a-tooltip>
+
+                <a-popconfirm title="确定删除吗?" @confirm="() => dateleDetail(1,record.id)">
+                  <a v-if="permitCtrl.isCanEdit && !ModalDisabled ">
+                    <a-icon type="delete" />
+                  </a>
+                </a-popconfirm>
+              </span>
+        </a-table>
+      </a-collapse-panel>
+    </a-collapse>-->
   </a-modal>
 </template>
 
@@ -85,6 +134,7 @@
         title:"操作",
         width:800,
         visible: false,
+        ModalDisabled: false,
         model: {},
         labelCol: {
           xs: { span: 24 },
@@ -94,7 +144,51 @@
           xs: { span: 24 },
           sm: { span: 16 },
         },
+        columns: [
+          {
+            title: '#',
+            dataIndex: '',
+            key: 'rowIndex',
+            width: 60,
+            align: 'center',
+            customRender: function(t, r, index) {
+              return parseInt(index) + 1
+            }
+          },
+          {
+            title: '供应商编码',
+            align: 'center',
+            dataIndex: 'code'
 
+          },
+          {
+            title: '供应商名称',
+            align: 'center',
+            dataIndex: 'name'
+
+          },
+          {
+            title: '负责人',
+            align: 'center',
+            dataIndex: 'leader'
+
+          },
+
+          {
+            title: '负责人电话',
+            align: 'center',
+            dataIndex: 'telephone'
+
+          },
+          {
+            title: '操作',
+            dataIndex: 'action',
+            align: 'center',
+            scopedSlots: { customRender: 'action' }
+          }
+        ],
+        dataSource: [],
+        loading: false,
         confirmLoading: false,
         validatorRules:{
         opeId:{},

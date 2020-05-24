@@ -89,9 +89,9 @@ public class ControllerPurchaseDeNum {
     private List<Map<String, Object>> deleteRow(@RequestBody List<HongXunPurchaseDeNum> hongXunPurchaseDeNumList){
    		List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
    		for(HongXunPurchaseDeNum item: hongXunPurchaseDeNumList){
-   			if(item.getIdc()!=0){
-   				service.deleteRow(item);
-   			}
+   			
+   			service.deleteRow(item);
+   			
    		}
    		return list;
    	} 
@@ -100,9 +100,6 @@ public class ControllerPurchaseDeNum {
     @ResponseBody
    	@RequestMapping("/updateSotockState")
     private List<Map<String,Object>> updateSotockState(@RequestParam(value = "purchaseNumID", required = true) int purchaseNumID){ 
-    	//System.out.println("saveMoney");
-    	//int mainID = hongXunPurchaseItemList.get(0).getPurchaseNumID();
-    	//BigDecimal value = new BigDecimal(hongXunPurchaseItemList.get(0).getMaterialName());
     	return service.updateSotockState(purchaseNumID);
     }
     
@@ -111,7 +108,6 @@ public class ControllerPurchaseDeNum {
    	@RequestMapping("/autotimp")
    	public List<Map<String,Object>> autotimp(HttpServletRequest request) {
     	String q=request.getParameter("q");
-    	//System.out.println("autotimp:" + q); 	
    		return service.autotimp(q);  
    	} 
     
