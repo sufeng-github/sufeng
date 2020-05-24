@@ -47,7 +47,8 @@
         </a-form-item>
           
         <a-form-item label="客户" :labelCol="labelCol" :wrapperCol="wrapperCol">
-          <j-dict-select-tag type="list" v-decorator="['customerId']" :trigger-change="true" dictCode="" placeholder="请选择客户"/>
+          <a-input v-decorator="[ 'customer', validatorRules.customer]" placeholder="请选择客户"></a-input>
+         <!-- <m-dict-select-tag type="list" v-decorator="['customerId']" :trigger-change="true" dictCode="csm_company" placeholder="请选择客户"/>-->
         </a-form-item>
           
         <a-form-item label="发票号" :labelCol="labelCol" :wrapperCol="wrapperCol">
@@ -105,7 +106,7 @@
         code:{},
         bednum:{},
         companyId:{},
-        customerId:{},
+        customer:{},
         invoices:{},
         status:{},
         },
@@ -127,7 +128,7 @@
         this.model = Object.assign({}, record);
         this.visible = true;
         this.$nextTick(() => {
-          this.form.setFieldsValue(pick(this.model,'opeId','date','toolId','scrId','hospitalId','patient','code','bednum','companyId','customerId','invoices','status'))
+          this.form.setFieldsValue(pick(this.model,'opeId','date','toolId','scrId','hospitalId','patient','code','bednum','companyId','customer','invoices','status'))
         })
       },
       close () {
@@ -170,7 +171,7 @@
         this.close()
       },
       popupCallback(row){
-        this.form.setFieldsValue(pick(row,'opeId','date','toolId','scrId','hospitalId','patient','code','bednum','companyId','customerId','invoices','status'))
+        this.form.setFieldsValue(pick(row,'opeId','date','toolId','scrId','hospitalId','patient','code','bednum','companyId','customer','invoices','status'))
       }
       
     }

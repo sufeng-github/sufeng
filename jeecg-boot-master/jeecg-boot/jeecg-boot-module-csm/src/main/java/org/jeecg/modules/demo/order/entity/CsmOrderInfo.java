@@ -57,7 +57,7 @@ public class CsmOrderInfo implements Serializable {
 	private java.lang.String companyId;
 	/**客户*/
 	@Excel(name = "客户", width = 15)
-	private java.lang.String customerId;
+	private java.lang.String customer;
 	/**发票号*/
 	@Excel(name = "发票号", width = 15)
 	private java.lang.String invoices;

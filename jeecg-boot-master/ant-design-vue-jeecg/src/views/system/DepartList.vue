@@ -54,6 +54,7 @@
         </div>
       </a-card>
     </a-col>
+
     <a-col :md="12" :sm="24">
       <a-card :bordered="false">
         <a-form :form="form">

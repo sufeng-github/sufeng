@@ -20,7 +20,8 @@ import preview from 'vue-photo-preview'
 import 'vue-photo-preview/dist/skin.css'
 import "@jeecg/antd-onine"
 import '@jeecg/antd-onine/dist/OnlineForm.css'
-
+import './assets/less/changeAnd.less'
+import './assets/less/page.less'
 
 import {
   ACCESS_TOKEN,

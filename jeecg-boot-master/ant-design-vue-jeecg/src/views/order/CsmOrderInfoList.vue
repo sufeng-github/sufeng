@@ -54,7 +54,7 @@
             </a-col>
             <a-col :md="6" :sm="8">
               <a-form-item label="客户">
-                <a-input placeholder="请输入客户" v-model="queryParam.customerId"></a-input>
+                <a-input placeholder="请输入客户" v-model="queryParam.customer"></a-input>
               </a-form-item>
             </a-col>
             <a-col :md="6" :sm="8">
@@ -164,9 +164,10 @@
   import CsmOrderInfoModal from './modules/CsmOrderInfoModal'
   import JDictSelectTag from '@/components/dict/JDictSelectTag.vue'
   import MDictSelectTag from '@/componentsmy/combo/JDictSelectTag.vue'
+  import {initDictOptionsmy} from '@/componentsmy/combo/JDictSelectUtil'
   import JDate from '@/components/jeecg/JDate.vue'
   import {initDictOptions, filterMultiDictText} from '@/components/dict/JDictSelectUtil'
-  import {initDictOptionsmy} from '@/componentsmy/combo/JDictSelectUtil'
+
   export default {
     name: "CsmOrderInfoList",
     mixins:[JeecgListMixin],
@@ -277,14 +278,7 @@
           {
             title:'客户',
             align:"center",
-            dataIndex: 'customerId',
-            customRender:(text)=>{
-              if(!text){
-                return ''
-              }else{
-                return filterMultiDictText(this.dictOptions['customerId'], text+"")
-              }
-            }
+            dataIndex: 'customer'
           },
           {
             title:'发票号',
@@ -323,7 +317,7 @@
          scrId:[],
          hospitalId:[],
          companyId:[],
-         customerId:[],
+         customer:[],
          status:[],
         } 
       }
@@ -358,11 +352,6 @@
         initDictOptionsmy('csm_company').then((res) => {
           if (res.success) {
             this.$set(this.dictOptions, 'companyId', res.result)
-          }
-        })
-        initDictOptions('').then((res) => {
-          if (res.success) {
-            this.$set(this.dictOptions, 'customerId', res.result)
           }
         })
         initDictOptions('orderStatus').then((res) => {
